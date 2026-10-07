@@ -1,0 +1,72 @@
+AccountCode,AccountName,AccountType,NormalBalance,FSLine,Statement,IsCashAccount,IsControlAccount,IsSuspense,IsPL,PLSign
+1000,Cash on Hand,Asset,Debit,Cash and cash equivalents,BS,Yes,No,No,No,0
+1010,Bank - CBZ USD Current,Asset,Debit,Cash and cash equivalents,BS,Yes,No,No,No,0
+1015,Bank - Stanbic ZAR,Asset,Debit,Cash and cash equivalents,BS,Yes,No,No,No,0
+1020,Petty Cash - Plant,Asset,Debit,Cash and cash equivalents,BS,Yes,No,No,No,0
+1100,Trade Receivables,Asset,Debit,Trade and other receivables,BS,No,Yes,No,No,0
+1110,Allowance for Expected Credit Losses,Asset,Credit,Trade and other receivables,BS,No,No,No,No,0
+1120,Other Receivables,Asset,Debit,Trade and other receivables,BS,No,Yes,No,No,0
+1130,Employee Advances,Asset,Debit,Trade and other receivables,BS,No,No,No,No,0
+1200,Inventory - Raw Materials,Asset,Debit,Inventories,BS,No,No,No,No,0
+1210,Inventory - Work in Progress,Asset,Debit,Inventories,BS,No,No,No,No,0
+1220,Inventory - Finished Goods,Asset,Debit,Inventories,BS,No,No,No,No,0
+1230,Inventory - Provision for Obsolescence,Asset,Credit,Inventories,BS,No,No,No,No,0
+1300,Prepayments,Asset,Debit,Trade and other receivables,BS,No,No,No,No,0
+1310,VAT Receivable,Asset,Debit,Trade and other receivables,BS,No,No,No,No,0
+1400,Plant and Machinery - Cost,Asset,Debit,"Property, plant and equipment",BS,No,No,No,No,0
+1410,Motor Vehicles - Cost,Asset,Debit,"Property, plant and equipment",BS,No,No,No,No,0
+1420,Office Equipment - Cost,Asset,Debit,"Property, plant and equipment",BS,No,No,No,No,0
+1430,Right-of-Use Asset,Asset,Debit,"Property, plant and equipment",BS,No,No,No,No,0
+1440,Accumulated Depreciation - P&M,Asset,Credit,"Property, plant and equipment",BS,No,No,No,No,0
+1450,Accumulated Depreciation - MV,Asset,Credit,"Property, plant and equipment",BS,No,No,No,No,0
+1460,Accumulated Depreciation - OE,Asset,Credit,"Property, plant and equipment",BS,No,No,No,No,0
+1500,Investment Property,Asset,Debit,Investment property,BS,No,No,No,No,0
+1600,Deferred Tax Asset,Asset,Debit,Deferred tax,BS,No,No,No,No,0
+1990,Suspense Account,Asset,Debit,Suspense - to be cleared,BS,No,No,Yes,No,0
+2000,Trade Payables,Liability,Credit,Trade and other payables,BS,No,Yes,No,No,0
+2010,Accruals,Liability,Credit,Trade and other payables,BS,No,No,No,No,0
+2020,Other Payables,Liability,Credit,Trade and other payables,BS,No,No,No,No,0
+2100,VAT Payable,Liability,Credit,Trade and other payables,BS,No,No,No,No,0
+2110,PAYE / Withholding Tax Payable,Liability,Credit,Trade and other payables,BS,No,No,No,No,0
+2120,Pension Contributions Payable,Liability,Credit,Trade and other payables,BS,No,No,No,No,0
+2130,Income Tax Payable,Liability,Credit,Taxation,BS,No,No,No,No,0
+2200,Bank Overdraft,Liability,Credit,Borrowings,BS,No,No,No,No,0
+2300,Lease Liability (IFRS 16),Liability,Credit,Borrowings,BS,No,No,No,No,0
+2400,Deferred Tax Liability,Liability,Credit,Deferred tax,BS,No,No,No,No,0
+2500,Provisions - Legal Claims,Liability,Credit,Provisions,BS,No,No,No,No,0
+3000,Share Capital,Equity,Credit,Share capital,BS,No,No,No,No,0
+3100,Retained Earnings,Equity,Credit,Retained earnings,BS,No,No,No,No,0
+3200,Dividends Declared,Equity,Debit,Retained earnings,BS,No,No,No,No,0
+3300,Revaluation Reserve,Equity,Credit,Other reserves,BS,No,No,No,No,0
+4000,Revenue - Manufactured Goods,Revenue,Credit,Revenue,PL,No,No,No,Yes,1
+4010,Revenue - Trading / Resale,Revenue,Credit,Revenue,PL,No,No,No,Yes,1
+4020,Revenue - Service and Maintenance,Revenue,Credit,Revenue,PL,No,No,No,Yes,1
+4090,Sales Returns and Discounts,Revenue,Debit,Revenue,PL,No,No,No,Yes,1
+5000,Cost of Sales - Materials,Expense,Debit,Cost of sales,PL,No,No,No,Yes,-1
+5010,Cost of Sales - Direct Labour,Expense,Debit,Cost of sales,PL,No,No,No,Yes,-1
+5020,Cost of Sales - Manufacturing Overhead,Expense,Debit,Cost of sales,PL,No,No,No,Yes,-1
+5030,Inventory Write-down,Expense,Debit,Cost of sales,PL,No,No,No,Yes,-1
+6000,Salaries and Wages,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6010,Employee Pension Contributions,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6020,Staff Welfare and Training,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6030,Depreciation,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6040,Repairs and Maintenance,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6050,Fuel and Motor Vehicle Costs,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6060,Electricity and Water,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6070,Rent and Rates,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6080,Insurance,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6090,Professional and Consulting Fees,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6100,Travel and Accommodation,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6110,Marketing and Advertising,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6120,Telecommunications and Internet,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6130,Security Services,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6140,Consumables and Packaging,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6150,Bank Charges,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6160,Expected Credit Loss Impairment,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6170,Fines and Penalties,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6180,Donations,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6190,Sundry Expenses,Expense,Debit,Operating expenses,PL,No,No,No,Yes,-1
+6200,Consulting Income - Advisory,Revenue,Credit,Revenue,PL,No,No,No,Yes,1
+7000,Interest Expense - Borrowings,Expense,Debit,Finance costs,PL,No,No,No,Yes,-1
+7010,Interest Expense - Leases,Expense,Debit,Finance costs,PL,No,No,No,Yes,-1
+8000,Income Tax Expense,Expense,Debit,Taxation,PL,No,No,No,Yes,-1

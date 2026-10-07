@@ -1,0 +1,64 @@
+EmployeeID,EmployeeName,Department,JobTitle,GradeLevel,MonthlyGrossUSD,DateOfBirth,HireDate,BankAccount,NationalIDPresent,TerminationDate,IsFlaggedForReview
+EMP1001,T. Makuvaza,Sales and Marketing,Analyst,B2,3484.51,1987-08-12,2023-11-28,105266300,Yes,,No
+EMP1002,R. Chikafu,Administration,Driver,C1,2269.06,1982-05-17,2022-12-05,101808477,Yes,,No
+EMP1003,M. Nyathi,Information Technology,Supervisor,D1,1205.73,1978-01-25,2015-10-07,108255945,Yes,,No
+EMP1004,K. Dube,Manufacturing,Operator,B2,3114.56,1990-11-09,2018-05-24,104410242,Yes,,No
+EMP1005,S. Moyo,Professional Services,Analyst,A2,1012.84,1977-09-05,2019-01-24,109718072,Yes,,No
+EMP1006,L. Sibanda,Finance,Supervisor,B2,1897.01,1980-04-18,2023-04-14,107831962,Yes,,No
+EMP1007,P. Gumbo,Manufacturing,Operator,C2,2009.16,1983-09-02,2022-09-18,101525193,Yes,,No
+EMP1008,A. Banda,Manufacturing,Clerk,B2,2874.88,1981-10-20,2015-03-25,107208623,Yes,,No
+EMP1009,J. Marufu,Information Technology,Analyst,A2,2832.16,1996-11-02,2019-04-05,108384122,Yes,,No
+EMP1010,N. Zhou,Manufacturing,Operator,C1,7644.59,1978-03-08,2017-05-01,106880453,Yes,,No
+EMP1011,B. Ncube,Manufacturing,Artisan,A2,5577.53,1975-05-23,2017-03-24,107904818,Yes,,No
+EMP1012,D. Mutasa,Information Technology,Artisan,D1,3309.32,1980-01-17,2023-04-03,106972563,Yes,,No
+EMP1013,Anesu Ncube,Manufacturing,Manager,D1,983.34,1987-12-24,2023-06-23,109499741,Yes,,No
+EMP1014,Rudo Ncube,Supply Chain,Artisan,D1,5174.11,1993-06-02,2017-01-16,109662152,Yes,,No
+EMP1015,Ryan Chirwa,Sales and Marketing,Clerk,C1,1304.22,1982-11-09,2022-08-25,102006399,Yes,,No
+EMP1016,Wellington Nyathi,Administration,Analyst,B1,6263.14,1979-11-25,2016-08-23,108270571,Yes,,No
+EMP1017,Panashe Mutasa,Finance,Artisan,A2,4612.3,1998-06-14,2021-05-25,102258123,Yes,,No
+EMP1018,Moses Chinamasa,Manufacturing,Clerk,A2,4323.12,1987-05-13,2015-01-18,101664440,Yes,,No
+EMP1019,Tatenda Mutasa,Manufacturing,Manager,D1,2031.83,1999-01-05,2016-04-23,103505339,No,,No
+EMP1020,Vimbai Mudimu,Sales and Marketing,Supervisor,D1,3002.94,1982-10-03,2023-08-19,102726733,No,,No
+EMP1021,Kudzai Mhlanga,Manufacturing,Clerk,A2,1859.46,1993-01-27,2024-03-29,104071602,Yes,,No
+EMP1022,Vimbai Moyo,Professional Services,Supervisor,D1,1156.48,1988-01-24,2019-09-18,109894252,Yes,,No
+EMP1023,Chiedza Mapfumo,Sales and Marketing,Analyst,D1,3217.82,1993-09-19,2016-09-19,108924594,Yes,,No
+EMP1024,Joshua Mutasa,Finance,Supervisor,C2,961.97,1994-11-03,2020-11-18,107836158,Yes,,No
+EMP1025,Linda Marufu,Sales and Marketing,Clerk,C1,2997.65,1991-03-24,2017-03-17,109056145,Yes,,No
+EMP1026,Blessing Zvobgo,Supply Chain,Supervisor,B2,7976.65,1996-09-10,2019-11-08,108094907,Yes,,No
+EMP1027,Wellington Kanyemba,Manufacturing,Driver,C1,5815.25,1995-09-18,2017-07-30,105417907,Yes,,No
+EMP1028,Chiedza Mhlanga,Administration,Clerk,C1,7944.5,1981-02-11,2021-05-29,103193560,Yes,,No
+EMP1029,Vimbai Dube,Sales and Marketing,Manager,C1,3319.15,1993-07-13,2016-03-17,105952598,No,,No
+EMP1030,Simba Gwenzi,Administration,Driver,C2,2475.36,1996-11-14,2021-11-24,102231029,Yes,,No
+EMP1031,Alois Marufu,Finance,Supervisor,B2,8405.01,1996-01-18,2015-11-18,103633837,Yes,,No
+EMP1032,Daniel Gumbo,Supply Chain,Analyst,B2,6258.15,1996-01-25,2019-05-30,102485117,Yes,,No
+EMP1033,Tariro Marufu,Manufacturing,Clerk,C1,7087.32,1999-07-25,2020-09-20,102430391,Yes,,No
+EMP1034,Bright Marufu,Manufacturing,Analyst,B2,898.72,1977-01-25,2017-10-07,105418003,Yes,,No
+EMP1035,Nyasha Banda,Administration,Operator,C2,5863.86,1996-10-24,2018-10-09,106425250,Yes,,No
+EMP1036,Daniel Moyo,Professional Services,Driver,B1,5292.12,1998-07-11,2024-02-10,101582364,Yes,,No
+EMP1037,Tariro Mutasa,Manufacturing,Supervisor,C2,1241.85,1990-08-18,2020-03-25,102042117,Yes,,No
+EMP1038,Linda Mudimu,Manufacturing,Operator,D1,2107.44,1994-02-15,2015-11-05,109590316,No,,No
+EMP1039,Anesu Marufu,Information Technology,Artisan,C2,2312.07,1979-05-30,2019-11-13,101409826,Yes,,No
+EMP1040,Ropafadzo Kanyemba,Finance,Operator,B1,4295.41,1989-09-29,2017-08-15,101122162,No,,No
+EMP1041,Tendai Mhlanga,Sales and Marketing,Operator,B1,1313.46,1990-01-07,2019-06-03,102003245,Yes,,No
+EMP1042,Blessing Mapfumo,Sales and Marketing,Artisan,C1,4697.75,1979-04-04,2019-08-15,109250718,Yes,,No
+EMP1043,Tatenda Mupfumi,Manufacturing,Clerk,B1,5393.3,1984-11-12,2022-12-02,101921784,Yes,,No
+EMP1044,Panashe Mhlanga,Professional Services,Analyst,C2,3018.66,1983-12-17,2018-12-13,107794434,Yes,,No
+EMP1045,Panashe Dube,Professional Services,Operator,D1,2290.73,1977-05-30,2020-09-09,106373704,Yes,,No
+EMP1046,Wellington Nyathi,Manufacturing,Clerk,B2,2114.5,1982-08-26,2016-10-13,101714985,Yes,,No
+EMP1047,Joshua Chirwa,Sales and Marketing,Operator,B1,2163.03,1976-11-28,2016-09-29,105581662,No,,No
+EMP1048,Kudzai Chikafu,Professional Services,Manager,B1,2324.21,1987-04-14,2015-07-20,105036774,Yes,,No
+EMP1049,Ryan Chirwa,Administration,Supervisor,B1,4778.89,1980-04-17,2020-12-24,105225331,Yes,,No
+EMP1050,Linda Chirwa,Finance,Supervisor,B2,1389.96,1975-08-14,2021-11-13,102975968,Yes,,No
+EMP1051,Blessing Chirwa,Sales and Marketing,Analyst,D1,5320.68,1985-11-23,2017-07-16,105008696,Yes,,No
+EMP1052,Nyasha Chinamasa,Finance,Supervisor,B1,1059.53,1989-02-13,2017-12-18,107622333,Yes,,No
+EMP1053,Grace Moyo,Information Technology,Supervisor,D1,5394.17,1989-07-12,2019-04-11,101510003,Yes,,No
+EMP1054,Tariro Rusike,Professional Services,Operator,B1,1166.95,1998-11-15,2022-03-27,101014315,Yes,,No
+EMP1055,Joshua Moyo,Manufacturing,Analyst,B2,5934.34,1987-02-22,2019-03-30,102569609,Yes,,No
+EMP1056,Blessing Mutasa,Administration,Analyst,C1,2166.53,1976-08-24,2020-07-04,102840840,Yes,,No
+EMP1057,Chiedza Gumbo,Administration,Manager,D1,5746.41,1990-06-22,2022-04-01,105980555,Yes,,No
+EMP1058,Ropafadzo Gumbo,Finance,Analyst,B1,4687.75,1988-10-05,2020-06-09,108185082,Yes,,No
+EMP1059,Vimbai Sibanda,Information Technology,Operator,C2,6141.88,1993-02-19,2017-12-20,103474828,Yes,,No
+EMP1060,Linda Zhou,Information Technology,Driver,D1,1036.11,1978-05-09,2015-01-24,103708116,Yes,,No
+EMP901,Grace Moyo,Manufacturing,Operator,A2,1450.0,1988-06-15,2024-07-01,107086056,No,,Yes
+EMP902,Joshua Chirwa,Manufacturing,Operator,A2,2100.0,1988-06-15,2024-07-01,107513230,No,2025-03-31,Yes
+EMP903,Daniel Gumbo,Manufacturing,Operator,A2,2650.0,1988-06-15,2024-07-01,101009562,No,2025-03-31,Yes

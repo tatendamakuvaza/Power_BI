@@ -1,0 +1,172 @@
+EntryID,AnomalyType,AmountUSD,PreparedBy,ExpectedDetection,Description
+JE202401-00251,DUPLICATE-PAYMENT,7573.13,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-28805 paid twice to V1007
+JE202401-00252,DUPLICATE-PAYMENT,7573.13,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-28805 paid twice to V1007
+JE202401-00253,ROUND-NUMBER-THRESHOLD,4995.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,995.00 to V1017 avoids CFO approval"
+JE202401-00254,ROUND-NUMBER-THRESHOLD,9750.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,750.00 to V1006 avoids CFO approval"
+JE202401-00255,GHOST-VENDOR,22108.39,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Zhou Logistics & Advisory (SUP-772)
+JE202401-00256,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2024-01-20 (Saturday) at 04:00 - outside business hours"
+JE202401-00257,SPLIT-PURCHASE,5215.98,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,431.97 to avoid a PO"
+JE202401-00258,SPLIT-PURCHASE,5215.98,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,431.97 to avoid a PO"
+JE202401-00259,SOD-RARE-COMBO,27500.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202402-00520,DUPLICATE-PAYMENT,11306.44,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-29936 paid twice to V1004
+JE202402-00521,DUPLICATE-PAYMENT,11306.44,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-29936 paid twice to V1004
+JE202402-00522,ROUND-NUMBER-THRESHOLD,9900.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,900.00 to V1016 avoids CFO approval"
+JE202402-00523,ROUND-NUMBER-THRESHOLD,9900.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,900.00 to V1016 avoids CFO approval"
+JE202402-00524,WEEKEND-AFTERHOURS,33000.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 33,000.00 posted on 2024-02-10 (Saturday) at 04:00 - outside business hours"
+JE202402-00525,SPLIT-PURCHASE,4640.71,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,281.42 to avoid a PO"
+JE202402-00526,SPLIT-PURCHASE,4640.71,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,281.42 to avoid a PO"
+JE202402-00527,SOD-RARE-COMBO,27500.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202403-00789,DUPLICATE-PAYMENT,11894.31,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27491 paid twice to V1014
+JE202403-00790,DUPLICATE-PAYMENT,11894.31,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27491 paid twice to V1014
+JE202403-00791,ROUND-NUMBER-THRESHOLD,4985.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,985.00 to V1018 avoids CFO approval"
+JE202403-00792,GHOST-VENDOR,14045.45,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Meridian Consulting Group (SUP-774)
+JE202403-00793,WEEKEND-AFTERHOURS,33000.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 33,000.00 posted on 2024-03-24 (Sunday) at 04:00 - outside business hours"
+JE202403-00794,SPLIT-PURCHASE,5159.77,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,319.53 to avoid a PO"
+JE202403-00795,SPLIT-PURCHASE,5159.77,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,319.53 to avoid a PO"
+JE202403-00796,SOD-RARE-COMBO,27500.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202404-01055,DUPLICATE-PAYMENT,12086.73,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-25674 paid twice to V1005
+JE202404-01056,DUPLICATE-PAYMENT,12086.73,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-25674 paid twice to V1005
+JE202404-01057,ROUND-NUMBER-THRESHOLD,4995.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,995.00 to V1014 avoids CFO approval"
+JE202404-01058,WEEKEND-AFTERHOURS,33000.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 33,000.00 posted on 2024-04-28 (Sunday) at 22:00 - outside business hours"
+JE202404-01059,SPLIT-PURCHASE,5425.48,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,850.97 to avoid a PO"
+JE202404-01060,SPLIT-PURCHASE,5425.48,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,850.97 to avoid a PO"
+JE202404-01061,SOD-RARE-COMBO,16400.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202405-01316,DUPLICATE-PAYMENT,11824.91,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-24984 paid twice to V1018
+JE202405-01317,DUPLICATE-PAYMENT,11824.91,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-24984 paid twice to V1018
+JE202405-01318,ROUND-NUMBER-THRESHOLD,9900.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,900.00 to V1006 avoids CFO approval"
+JE202405-01319,ROUND-NUMBER-THRESHOLD,4990.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,990.00 to V1005 avoids CFO approval"
+JE202405-01320,GHOST-VENDOR,35782.84,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Gumbo General Suppliers (SUP-773)
+JE202405-01321,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2024-05-26 (Sunday) at 22:00 - outside business hours"
+JE202405-01322,SPLIT-PURCHASE,5205.61,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,411.22 to avoid a PO"
+JE202405-01323,SPLIT-PURCHASE,5205.61,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,411.22 to avoid a PO"
+JE202405-01324,SOD-RARE-COMBO,27500.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202406-01579,DUPLICATE-PAYMENT,7389.18,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-20920 paid twice to V1011
+JE202406-01580,DUPLICATE-PAYMENT,7389.18,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-20920 paid twice to V1011
+JE202406-01581,ROUND-NUMBER-THRESHOLD,9750.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,750.00 to V1012 avoids CFO approval"
+JE202406-01582,ROUND-NUMBER-THRESHOLD,9900.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,900.00 to V1002 avoids CFO approval"
+JE202406-01583,WEEKEND-AFTERHOURS,12800.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 12,800.00 posted on 2024-06-29 (Saturday) at 23:00 - outside business hours"
+JE202406-01584,SPLIT-PURCHASE,4653.78,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,307.56 to avoid a PO"
+JE202406-01585,SPLIT-PURCHASE,4653.78,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,307.56 to avoid a PO"
+JE202406-01586,SOD-RARE-COMBO,9800.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202407-01837,DUPLICATE-PAYMENT,4132.71,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-20557 paid twice to V1008
+JE202407-01838,DUPLICATE-PAYMENT,4132.71,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-20557 paid twice to V1008
+JE202407-01839,ROUND-NUMBER-THRESHOLD,4995.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,995.00 to V1018 avoids CFO approval"
+JE202407-01840,ROUND-NUMBER-THRESHOLD,4985.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,985.00 to V1017 avoids CFO approval"
+JE202407-01841,GHOST-VENDOR,51838.58,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor R Chikafu Trading Enterprises (SUP-771)
+JE202407-01842,WEEKEND-AFTERHOURS,7400.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 7,400.00 posted on 2024-07-14 (Sunday) at 22:00 - outside business hours"
+JE202407-01843,SPLIT-PURCHASE,5111.89,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,223.77 to avoid a PO"
+JE202407-01844,SPLIT-PURCHASE,5111.89,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,223.77 to avoid a PO"
+JE202407-01845,SOD-RARE-COMBO,16400.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202408-02085,DUPLICATE-PAYMENT,11691.64,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-24214 paid twice to V1008
+JE202408-02086,DUPLICATE-PAYMENT,11691.64,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-24214 paid twice to V1008
+JE202408-02087,ROUND-NUMBER-THRESHOLD,9900.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,900.00 to V1012 avoids CFO approval"
+JE202408-02088,ROUND-NUMBER-THRESHOLD,9900.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,900.00 to V1003 avoids CFO approval"
+JE202408-02089,WEEKEND-AFTERHOURS,33000.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 33,000.00 posted on 2024-08-10 (Saturday) at 02:00 - outside business hours"
+JE202408-02090,SPLIT-PURCHASE,5202.75,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,405.50 to avoid a PO"
+JE202408-02091,SPLIT-PURCHASE,5202.75,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,405.50 to avoid a PO"
+JE202409-02363,DUPLICATE-PAYMENT,11594.43,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-20207 paid twice to V1014
+JE202409-02364,DUPLICATE-PAYMENT,11594.43,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-20207 paid twice to V1014
+JE202409-02365,ROUND-NUMBER-THRESHOLD,4995.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,995.00 to V1001 avoids CFO approval"
+JE202409-02366,GHOST-VENDOR,33555.68,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Meridian Consulting Group (SUP-774)
+JE202409-02367,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2024-09-14 (Saturday) at 02:00 - outside business hours"
+JE202409-02368,SPLIT-PURCHASE,6104.66,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 12,209.32 to avoid a PO"
+JE202409-02369,SPLIT-PURCHASE,6104.66,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 12,209.32 to avoid a PO"
+JE202409-02370,SOD-RARE-COMBO,16400.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202410-02624,UNREVERSED-ACCRUAL,2400.0,USR-005,Manual accruals with no matching reversal in the following period,Prepayment amortisation posted but never reversed
+JE202410-02643,DUPLICATE-PAYMENT,7411.71,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-21113 paid twice to V1006
+JE202410-02644,DUPLICATE-PAYMENT,7411.71,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-21113 paid twice to V1006
+JE202410-02645,ROUND-NUMBER-THRESHOLD,4995.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,995.00 to V1007 avoids CFO approval"
+JE202410-02646,WEEKEND-AFTERHOURS,12800.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 12,800.00 posted on 2024-10-12 (Saturday) at 22:00 - outside business hours"
+JE202410-02647,SPLIT-PURCHASE,5410.48,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,820.97 to avoid a PO"
+JE202410-02648,SPLIT-PURCHASE,5410.48,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,820.97 to avoid a PO"
+JE202411-02890,UNREVERSED-ACCRUAL,2400.0,USR-005,Manual accruals with no matching reversal in the following period,Prepayment amortisation posted but never reversed
+JE202411-02912,DUPLICATE-PAYMENT,4144.63,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27322 paid twice to V1018
+JE202411-02913,DUPLICATE-PAYMENT,4144.63,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27322 paid twice to V1018
+JE202411-02914,ROUND-NUMBER-THRESHOLD,9750.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,750.00 to V1009 avoids CFO approval"
+JE202411-02915,ROUND-NUMBER-THRESHOLD,4985.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,985.00 to V1007 avoids CFO approval"
+JE202411-02916,GHOST-VENDOR,24684.9,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Meridian Consulting Group (SUP-774)
+JE202411-02917,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2024-11-30 (Saturday) at 22:00 - outside business hours"
+JE202411-02918,SPLIT-PURCHASE,4892.99,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,785.98 to avoid a PO"
+JE202411-02919,SPLIT-PURCHASE,4892.99,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,785.98 to avoid a PO"
+JE202411-02920,SOD-RARE-COMBO,27500.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202412-03138,UNREVERSED-ACCRUAL,2400.0,USR-005,Manual accruals with no matching reversal in the following period,Prepayment amortisation posted but never reversed
+JE202412-03162,DUPLICATE-PAYMENT,4101.91,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-21375 paid twice to V1018
+JE202412-03163,DUPLICATE-PAYMENT,4101.91,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-21375 paid twice to V1018
+JE202412-03164,ROUND-NUMBER-THRESHOLD,4985.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,985.00 to V1010 avoids CFO approval"
+JE202412-03165,WEEKEND-AFTERHOURS,7400.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 7,400.00 posted on 2024-12-07 (Saturday) at 23:00 - outside business hours"
+JE202412-03166,SPLIT-PURCHASE,5487.73,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,975.47 to avoid a PO"
+JE202412-03167,SPLIT-PURCHASE,5487.73,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,975.47 to avoid a PO"
+JE202501-03387,UNREVERSED-ACCRUAL,2400.0,USR-005,Manual accruals with no matching reversal in the following period,Prepayment amortisation posted but never reversed
+JE202501-03408,DUPLICATE-PAYMENT,7657.95,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-24370 paid twice to V1003
+JE202501-03409,DUPLICATE-PAYMENT,7657.95,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-24370 paid twice to V1003
+JE202501-03410,ROUND-NUMBER-THRESHOLD,4985.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,985.00 to V1018 avoids CFO approval"
+JE202501-03411,GHOST-VENDOR,22571.88,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor R Chikafu Trading Enterprises (SUP-771)
+JE202501-03412,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2025-01-26 (Sunday) at 04:00 - outside business hours"
+JE202501-03413,SPLIT-PURCHASE,5357.93,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,715.85 to avoid a PO"
+JE202501-03414,SPLIT-PURCHASE,5357.93,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,715.85 to avoid a PO"
+JE202501-03415,SOD-RARE-COMBO,9800.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202502-03661,DUPLICATE-PAYMENT,7948.09,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27409 paid twice to V1004
+JE202502-03662,DUPLICATE-PAYMENT,7948.09,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27409 paid twice to V1004
+JE202502-03663,ROUND-NUMBER-THRESHOLD,4985.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,985.00 to V1016 avoids CFO approval"
+JE202502-03664,ROUND-NUMBER-THRESHOLD,4995.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,995.00 to V1012 avoids CFO approval"
+JE202502-03665,GHOST-VENDOR,22178.13,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Zhou Logistics & Advisory (SUP-772)
+JE202502-03666,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2025-02-01 (Saturday) at 04:00 - outside business hours"
+JE202502-03667,SPLIT-PURCHASE,4575.63,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,151.26 to avoid a PO"
+JE202502-03668,SPLIT-PURCHASE,4575.63,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,151.26 to avoid a PO"
+JE202502-03669,SOD-RARE-COMBO,9800.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202503-03910,DUPLICATE-PAYMENT,12005.24,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-28852 paid twice to V1009
+JE202503-03911,DUPLICATE-PAYMENT,12005.24,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-28852 paid twice to V1009
+JE202503-03912,ROUND-NUMBER-THRESHOLD,9750.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,750.00 to V1018 avoids CFO approval"
+JE202503-03913,ROUND-NUMBER-THRESHOLD,4990.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,990.00 to V1002 avoids CFO approval"
+JE202503-03914,GHOST-VENDOR,36511.67,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Gumbo General Suppliers (SUP-773)
+JE202503-03915,WEEKEND-AFTERHOURS,12800.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 12,800.00 posted on 2025-03-29 (Saturday) at 23:00 - outside business hours"
+JE202503-03916,SPLIT-PURCHASE,5793.46,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 11,586.92 to avoid a PO"
+JE202503-03917,SPLIT-PURCHASE,5793.46,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 11,586.92 to avoid a PO"
+JE202503-03918,SOD-RARE-COMBO,9800.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202504-04166,UNREVERSED-ACCRUAL,2400.0,USR-005,Manual accruals with no matching reversal in the following period,Prepayment amortisation posted but never reversed
+JE202504-04188,DUPLICATE-PAYMENT,7437.56,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-24112 paid twice to V1002
+JE202504-04189,DUPLICATE-PAYMENT,7437.56,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-24112 paid twice to V1002
+JE202504-04190,ROUND-NUMBER-THRESHOLD,4990.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,990.00 to V1006 avoids CFO approval"
+JE202504-04191,GHOST-VENDOR,20588.63,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Meridian Consulting Group (SUP-774)
+JE202504-04192,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2025-04-06 (Sunday) at 04:00 - outside business hours"
+JE202504-04193,SPLIT-PURCHASE,5128.76,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,257.51 to avoid a PO"
+JE202504-04194,SPLIT-PURCHASE,5128.76,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,257.51 to avoid a PO"
+JE202504-04195,SOD-RARE-COMBO,27500.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202505-04455,DUPLICATE-PAYMENT,12249.99,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-28631 paid twice to V1008
+JE202505-04456,DUPLICATE-PAYMENT,12249.99,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-28631 paid twice to V1008
+JE202505-04457,ROUND-NUMBER-THRESHOLD,4990.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,990.00 to V1018 avoids CFO approval"
+JE202505-04458,GHOST-VENDOR,44117.29,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Zhou Logistics & Advisory (SUP-772)
+JE202505-04459,WEEKEND-AFTERHOURS,7400.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 7,400.00 posted on 2025-05-24 (Saturday) at 02:00 - outside business hours"
+JE202505-04460,SPLIT-PURCHASE,6349.66,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 12,699.33 to avoid a PO"
+JE202505-04461,SPLIT-PURCHASE,6349.66,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 12,699.33 to avoid a PO"
+JE202505-04462,SOD-RARE-COMBO,9800.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202506-04726,DUPLICATE-PAYMENT,7962.45,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-25628 paid twice to V1003
+JE202506-04727,DUPLICATE-PAYMENT,7962.45,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-25628 paid twice to V1003
+JE202506-04728,ROUND-NUMBER-THRESHOLD,9750.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,750.00 to V1012 avoids CFO approval"
+JE202506-04729,GHOST-VENDOR,14736.16,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Meridian Consulting Group (SUP-774)
+JE202506-04730,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2025-06-07 (Saturday) at 23:00 - outside business hours"
+JE202506-04731,SPLIT-PURCHASE,6069.27,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 12,138.55 to avoid a PO"
+JE202506-04732,SPLIT-PURCHASE,6069.27,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 12,138.55 to avoid a PO"
+JE202506-04733,SOD-RARE-COMBO,16400.0,USR-002,User-account posting matrix: AP clerk posting to revenue/credit notes,AP clerk posted a revenue credit note - segregation of duties breach
+JE202507-04965,UNREVERSED-ACCRUAL,2400.0,USR-005,Manual accruals with no matching reversal in the following period,Prepayment amortisation posted but never reversed
+JE202507-04984,DUPLICATE-PAYMENT,7584.84,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27942 paid twice to V1010
+JE202507-04985,DUPLICATE-PAYMENT,7584.84,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27942 paid twice to V1010
+JE202507-04986,ROUND-NUMBER-THRESHOLD,4995.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,995.00 to V1003 avoids CFO approval"
+JE202507-04987,GHOST-VENDOR,49995.95,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Meridian Consulting Group (SUP-774)
+JE202507-04988,WEEKEND-AFTERHOURS,12800.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 12,800.00 posted on 2025-07-06 (Sunday) at 02:00 - outside business hours"
+JE202507-04989,SPLIT-PURCHASE,5426.41,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,852.83 to avoid a PO"
+JE202507-04990,SPLIT-PURCHASE,5426.41,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 10,852.83 to avoid a PO"
+JE202508-05234,DUPLICATE-PAYMENT,11810.79,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-29834 paid twice to V1012
+JE202508-05235,DUPLICATE-PAYMENT,11810.79,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-29834 paid twice to V1012
+JE202508-05236,ROUND-NUMBER-THRESHOLD,4985.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 4,985.00 to V1009 avoids CFO approval"
+JE202508-05237,GHOST-VENDOR,16052.69,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Meridian Consulting Group (SUP-774)
+JE202508-05238,WEEKEND-AFTERHOURS,7400.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 7,400.00 posted on 2025-08-17 (Sunday) at 04:00 - outside business hours"
+JE202508-05239,SPLIT-PURCHASE,6036.84,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 12,073.68 to avoid a PO"
+JE202508-05240,SPLIT-PURCHASE,6036.84,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 12,073.68 to avoid a PO"
+JE202509-05497,DUPLICATE-PAYMENT,4203.1,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27533 paid twice to V1016
+JE202509-05498,DUPLICATE-PAYMENT,4203.1,USR-012,Duplicate test on VendorID + Amount + Invoice reference within 30 days,Same invoice INV-27533 paid twice to V1016
+JE202509-05499,ROUND-NUMBER-THRESHOLD,9750.0,USR-002,"Payments siting just below the $10,000 approval limit; round-number test","Payment 9,750.00 to V1003 avoids CFO approval"
+JE202509-05500,GHOST-VENDOR,36800.15,USR-001,Join vendor master to payroll/employee list on bank account or name; vendor created within 6 months,Payment to employee-linked vendor Meridian Consulting Group (SUP-774)
+JE202509-05501,WEEKEND-AFTERHOURS,21500.0,USR-012,EnteredOn weekday/time analysis vs posting date; period already closed,"Manual JE of 21,500.00 posted on 2025-09-07 (Sunday) at 22:00 - outside business hours"
+JE202509-05502,SPLIT-PURCHASE,4712.55,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,425.10 to avoid a PO"
+JE202509-05503,SPLIT-PURCHASE,4712.55,USR-002,"Multiple invoices just below the $5,000 PO threshold, same vendor, same period","Purchase split into 2 invoices totalling 9,425.10 to avoid a PO"

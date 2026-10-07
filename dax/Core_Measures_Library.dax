@@ -1,0 +1,371 @@
+// =====================================================================================
+// MAXHUB PVT LTD - CORE MEASURES LIBRARY
+// Project : Mhondoro Manufacturing (Pvt) Ltd - management & forensic reporting
+// Model   : star schema on FactGLJournal + supporting facts (see Module 3)
+// Usage   : create a table _Measures (Modeling > New table > "_Measures = ROW(""Note"",""Measures"")")
+//           and add these measures to it, organised in the display folders shown below.
+//           Paste one measure at a time (Name = expression) or use Tabular Editor.
+// Sign    : ledger convention - debits positive, credits negative. Presentation measures
+//           convert to positive magnitudes for human reading. See Module 6 section 6.2.
+// =====================================================================================
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 00 Data quality
+// -------------------------------------------------------------------------------------
+
+Debit Total = SUM ( FactGLJournal[Debit] )
+
+Credit Total = SUM ( FactGLJournal[Credit] )
+
+GL Lines = COUNTROWS ( FactGLJournal )
+
+GL Amount Signed = SUM ( FactGLJournal[Debit] ) - SUM ( FactGLJournal[Credit] )
+
+GL Amount Abs = SUMX ( FactGLJournal, ABS ( FactGLJournal[AmountUSD] ) )
+
+Average Line Value = DIVIDE ( [GL Amount Abs], [GL Lines] )
+
+// Must be 0.00 - this is the first check on the close pack page (Module 6).
+GL Balance Check = [Debit Total] - [Credit Total]
+
+Journal Count = DISTINCTCOUNT ( FactGLJournal[JournalID] )
+
+Accounts Used = DISTINCTCOUNT ( FactGLJournal[AccountCode] )
+
+Users Posting = DISTINCTCOUNT ( FactGLJournal[PreparedBy] )
+
+Manual Journal Lines =
+CALCULATE ( [GL Lines], FactGLJournal[EntryType] = "Manual" )
+
+Manual Journal % = DIVIDE ( [Manual Journal Lines], [GL Lines] )
+
+Last Posting Date = MAX ( FactGLJournal[PostingDate] )
+
+Last Refresh Note =
+"Source: " & MAX ( FactGLJournal[SourceSystem] ) & " | extracted " &
+FORMAT ( MAX ( FactGLJournal[EnteredOn] ), "yyyy-mm-dd" )
+
+// Orphan key test - must return 0 (see Module 3 section 3.8)
+GL Lines With Unknown Account =
+COUNTROWS ( FILTER ( FactGLJournal, NOT FactGLJournal[AccountCode] IN VALUES ( DimAccount[AccountCode] ) ) )
+
+Unbalanced Journals =
+COUNTROWS (
+    FILTER (
+        VALUES ( FactGLJournal[JournalID] ),
+        VAR Dr = CALCULATE ( SUM ( FactGLJournal[Debit] ) )
+        VAR Cr = CALCULATE ( SUM ( FactGLJournal[Credit] ) )
+        RETURN ABS ( Dr - Cr ) > 0.005
+    )
+)
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 01 Profit or loss
+// -------------------------------------------------------------------------------------
+
+Total Revenue =
+CALCULATE ( [GL Amount Signed], DimAccount[AccountType] = "Revenue" ) * -1
+
+Revenue Manufactured =
+CALCULATE ( [GL Amount Signed], DimAccount[AccountCode] = "4000" ) * -1
+
+Revenue Trading =
+CALCULATE ( [GL Amount Signed], DimAccount[AccountCode] = "4010" ) * -1
+
+Revenue Service =
+CALCULATE ( [GL Amount Signed], DimAccount[AccountCode] = "4020" ) * -1
+
+Revenue Advisory =
+CALCULATE ( [GL Amount Signed], DimAccount[AccountCode] = "6200" ) * -1
+
+Cost of Sales =
+CALCULATE ( [GL Amount Signed], DimAccount[FSLine] = "Cost of sales" )
+
+Cost of Sales % = DIVIDE ( [Cost of Sales], [Total Revenue] )
+
+Gross Profit = [Total Revenue] - [Cost of Sales]
+
+Gross Margin % = DIVIDE ( [Gross Profit], [Total Revenue] )
+
+Operating Expenses =
+CALCULATE ( [GL Amount Signed], DimAccount[FSLine] = "Operating expenses" )
+
+Depreciation =
+CALCULATE ( [GL Amount Signed], DimAccount[AccountCode] = "6030" )
+
+EBITDA = [Gross Profit] - [Operating Expenses] + [Depreciation]
+
+EBITDA Margin % = DIVIDE ( [EBITDA], [Total Revenue] )
+
+Operating Profit = [Gross Profit] - [Operating Expenses]
+
+Operating Margin % = DIVIDE ( [Operating Profit], [Total Revenue] )
+
+Finance Costs =
+CALCULATE ( [GL Amount Signed], DimAccount[FSLine] = "Finance costs" )
+
+Profit Before Tax = [Operating Profit] - [Finance Costs]
+
+Tax Expense =
+CALCULATE ( [GL Amount Signed], DimAccount[FSLine] = "Taxation" )
+
+Effective Tax Rate = DIVIDE ( [Tax Expense], [Profit Before Tax] )
+
+Profit After Tax = [Profit Before Tax] - [Tax Expense]
+
+Net Margin % = DIVIDE ( [Profit After Tax], [Total Revenue] )
+
+Total Operating Costs = [Cost of Sales] + [Operating Expenses] + [Finance Costs]
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 02 Balance sheet
+// -------------------------------------------------------------------------------------
+
+// Cumulative-to-date to the last date visible in the visual (semi-additive - see Module 5)
+Closing Balance =
+VAR LastVisibleDate = MAX ( DimDate[Date] )
+RETURN CALCULATE ( [GL Amount Signed], DimDate[Date] <= LastVisibleDate )
+
+Opening Balance =
+VAR FirstVisibleDate = MIN ( DimDate[Date] )
+RETURN CALCULATE ( [GL Amount Signed], DimDate[Date] < FirstVisibleDate )
+
+Balance Movement = [GL Amount Signed]
+
+Balance Reconciliation =
+VAR Opening = [Opening Balance]
+VAR Movement = [Balance Movement]
+VAR Closing = [Closing Balance]
+RETURN IF ( ABS ( Opening + Movement - Closing ) < 0.005, "Ties",
+            "ERROR: " & FORMAT ( Opening + Movement - Closing, "#,##0.00" ) )
+
+Assets Total = CALCULATE ( [Closing Balance], DimAccount[AccountType] = "Asset" )
+
+Liabilities Total =
+CALCULATE ( [Closing Balance], DimAccount[AccountType] = "Liability" ) * -1
+
+Equity Total = CALCULATE ( [Closing Balance], DimAccount[AccountType] = "Equity" ) * -1
+
+Current Year Result =
+VAR MaxFY = CALCULATE ( MAX ( DimDate[FiscalYear] ), ALL ( DimDate ) )
+RETURN CALCULATE ( [Profit After Tax], DimDate[FiscalYear] = MaxFY )
+
+// Must be 0.00. See Module 6 section 6.4 for why the current-year result is added.
+BS Check = [Assets Total] - ( [Liabilities Total] + [Equity Total] + [Current Year Result] )
+
+Cash Balance = CALCULATE ( [Closing Balance], DimAccount[IsCashAccount] = "Yes" )
+
+Suspense Balance = CALCULATE ( [Closing Balance], DimAccount[IsSuspense] = "Yes" ) * -1
+
+Suspense Lines =
+CALCULATE ( [GL Lines], DimAccount[IsSuspense] = "Yes" )
+
+Receivables Balance = CALCULATE ( [Closing Balance], DimAccount[AccountCode] = "1100" )
+
+Payables Balance = CALCULATE ( [Closing Balance], DimAccount[AccountCode] = "2000" ) * -1
+
+Inventory Balance = CALCULATE ( [Closing Balance], DimAccount[FSLine] = "Inventories" )
+
+Net Working Capital = [Receivables Balance] + [Inventory Balance] - [Payables Balance]
+
+Net Assets = [Assets Total] - [Liabilities Total]
+
+Debt to Equity = DIVIDE ( [Liabilities Total], [Equity Total] )
+
+Current Ratio =
+VAR CA = CALCULATE ( [Closing Balance], DimAccount[FSLine] IN { "Inventories", "Trade and other receivables", "Cash and cash equivalents" } )
+VAR CL = CALCULATE ( [Closing Balance], DimAccount[FSLine] = "Trade and other payables" ) * -1
+RETURN DIVIDE ( CA, CL )
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 03 Working capital & ratios
+// -------------------------------------------------------------------------------------
+
+DSO = DIVIDE ( [Receivables Balance], [Total Revenue] ) * 365
+
+DPO = DIVIDE ( [Payables Balance], [Cost of Sales] ) * 365
+
+DIO = DIVIDE ( [Inventory Balance], [Cost of Sales] ) * 365
+
+Cash Conversion Cycle = [DSO] + [DIO] - [DPO]
+
+Cash Tied Up Per 10 Days = DIVIDE ( [Total Revenue], 365 ) * 10
+
+Cash Tied Up vs Prior Period =
+VAR ThisPeriod = [Receivables Balance]
+VAR PriorPeriod = CALCULATE ( [Receivables Balance], DATEADD ( DimDate[Date], -1, MONTH ) )
+RETURN ThisPeriod - PriorPeriod
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 04 Time (comparatives)
+// -------------------------------------------------------------------------------------
+
+Revenue LY = CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+
+Revenue YoY $ = [Total Revenue] - [Revenue LY]
+
+Revenue YoY % = DIVIDE ( [Revenue YoY $], [Revenue LY] )
+
+Revenue LM = CALCULATE ( [Total Revenue], DATEADD ( DimDate[Date], -1, MONTH ) )
+
+Revenue MoM % = DIVIDE ( [Total Revenue] - [Revenue LM], [Revenue LM] )
+
+Revenue YTD = TOTALYTD ( [Total Revenue], DimDate[Date] )
+
+Profit YTD = TOTALYTD ( [Profit After Tax], DimDate[Date] )
+
+Revenue 3M Average =
+AVERAGEX ( DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -3, MONTH ), [Total Revenue] )
+
+Revenue 12M Average =
+AVERAGEX ( DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -12, MONTH ), [Total Revenue] )
+
+// Part-month safe comparative: never compare 15 days with 30 days
+Revenue Same Period LY =
+VAR CutOff = MAX ( DimDate[DayOfMonth] )
+RETURN CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( DimDate[Date] ), DimDate[DayOfMonth] <= CutOff )
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 05 Budget & variance
+// -------------------------------------------------------------------------------------
+
+Budget Amount = SUM ( FactBudget[BudgetUSD] )
+
+Budget by FSLine =
+CALCULATE ( [Budget Amount], TREATAS ( VALUES ( DimAccount[AccountCode] ), FactBudget[AccountCode] ) )
+
+Budget Utilisation % = DIVIDE ( [GL Amount Abs], [Budget Amount] )
+
+Variance $ = [GL Amount Abs] - [Budget Amount]
+
+Variance % = DIVIDE ( [Variance $], [Budget Amount] )
+
+// Expenses: positive variance = overspend. Revenue: negative variance = shortfall.
+Variance Status =
+SWITCH ( TRUE (),
+    [Variance %] >  0.10, "Adverse",
+    [Variance %] >  0.02, "Watch",
+    [Variance %] < -0.05, "Favourable",
+    "On track" )
+
+Variance Colour =
+SWITCH ( TRUE (),
+    [Variance %] >  0.10, "#C00000",
+    [Variance %] >  0.02, "#ED7D31",
+    [Variance %] < -0.05, "#548235",
+    "#7F7F7F" )
+
+Revenue vs Budget $ = [Total Revenue] - [Budget by FSLine]
+
+Revenue Achievement % = DIVIDE ( [Total Revenue], [Budget by FSLine] )
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 06 Accounts receivable (from FactARAgeing)
+// -------------------------------------------------------------------------------------
+
+AR Invoiced = SUM ( FactARAgeing[AmountUSD] )
+
+AR Received = SUM ( FactARAgeing[AmountReceivedUSD] )
+
+AR Outstanding = [AR Invoiced] - [AR Received]
+
+AR Overdue 90 Plus =
+CALCULATE ( [AR Outstanding], FactARAgeing[AgeingBucket] IN { "91-180 days", "Over 180 days" } )
+
+AR Overdue 90 Plus % = DIVIDE ( [AR Overdue 90 Plus], [AR Outstanding] )
+
+AR Disputed = CALCULATE ( [AR Outstanding], FactARAgeing[DisputedFlag] = "Yes" )
+
+AR Average Days Overdue =
+AVERAGEX ( FILTER ( FactARAgeing, [AR Outstanding] > 0 ), FactARAgeing[DaysOverdue] )
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 07 Accounts payable (from FactAPInvoices)
+// -------------------------------------------------------------------------------------
+
+AP Invoiced = SUM ( FactAPInvoices[AmountUSD] )
+
+AP Outstanding =
+CALCULATE ( SUM ( FactAPInvoices[AmountUSD] ), FactAPInvoices[PaidStatus] = "Outstanding" )
+
+AP Failed 3-Way Match =
+CALCULATE ( COUNTROWS ( FactAPInvoices ), FactAPInvoices[ThreeWayMatch] = "Exception" )
+
+AP Failed 3-Way Match % = DIVIDE ( [AP Failed 3-Way Match], COUNTROWS ( FactAPInvoices ) )
+
+AP Value Without PO =
+CALCULATE ( SUM ( FactAPInvoices[AmountUSD] ), FactAPInvoices[PONumber] = "" )
+
+AP Value Without GRN =
+CALCULATE ( SUM ( FactAPInvoices[AmountUSD] ), FactAPInvoices[GRNNumber] = "" )
+
+AP Duplicate Suspects =
+CALCULATE ( COUNTROWS ( FactAPInvoices ), FactAPInvoices[DuplicateSuspected] = "Yes" )
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 08 Payroll & expenses
+// -------------------------------------------------------------------------------------
+
+Expense Claims Value = SUM ( FactExpenseClaims[ClaimedUSD] )
+
+Claims Without Receipt =
+CALCULATE ( [Expense Claims Value], FactExpenseClaims[ReceiptAttached] = "No" )
+
+Claims Without Receipt % =
+DIVIDE ( CALCULATE ( COUNTROWS ( FactExpenseClaims ), FactExpenseClaims[ReceiptAttached] = "No" ),
+         COUNTROWS ( FactExpenseClaims ) )
+
+Weekend Claims =
+CALCULATE ( [Expense Claims Value], FactExpenseClaims[WeekendClaim] = "Yes" )
+
+Payroll Cost = CALCULATE ( [GL Amount Signed], DimAccount[AccountCode] IN { "6000", "5010" } )
+
+Revenue Per Employee =
+DIVIDE ( [Total Revenue], CALCULATE ( COUNTROWS ( DimEmployee ), ALL ( DimEmployee ) ) )
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 09 Bank & reconciliation
+// -------------------------------------------------------------------------------------
+
+Bank Movements = SUM ( FactBankTransactions[CreditUSD] ) - SUM ( FactBankTransactions[DebitUSD] )
+
+Unreconciled Items =
+CALCULATE ( COUNTROWS ( FactBankTransactions ), FactBankTransactions[ReconciledFlag] = "No" )
+
+Unreconciled Value =
+CALCULATE ( SUM ( FactBankTransactions[DebitUSD] ) + SUM ( FactBankTransactions[CreditUSD] ),
+            FactBankTransactions[ReconciledFlag] = "No" )
+
+Unreconciled % = DIVIDE ( [Unreconciled Items], COUNTROWS ( FactBankTransactions ) )
+
+Oldest Unreconciled Days = MAX ( FactBankTransactions[UnmatchedItemsAgeDays] )
+
+
+// -------------------------------------------------------------------------------------
+// FOLDER: 10 Presentation helpers
+// -------------------------------------------------------------------------------------
+
+Period Label =
+IF ( HASONEVALUE ( DimDate[MonthYear] ), VALUES ( DimDate[MonthYear] ),
+     "FY " & FORMAT ( MIN ( DimDate[FiscalYear] ) ) & " to " & FORMAT ( MAX ( DimDate[FiscalYear] ) ) )
+
+Report Title =
+"Revenue " & FORMAT ( [Total Revenue], "$#,##0,," ) & "m (" &
+FORMAT ( [Revenue YoY %], "+0.0%;-0.0%;0.0%" ) & " vs prior year)"
+
+Zero Safe Amount = IF ( [GL Amount Signed] = 0, BLANK(), [GL Amount Signed] )
+// Then set the format string to $#,##0;($#,##0);"-" so zeros render as a dash.
+
+// =====================================================================================
+// END OF CORE MEASURES LIBRARY
+// =====================================================================================

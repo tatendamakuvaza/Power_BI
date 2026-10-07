@@ -1,0 +1,19 @@
+CustomerID,CustomerCode,CustomerName,Segment,Currency,CreditLimitUSD,PaymentTerms,Country,AccountManager,CustomerSince
+C3001,ZIMGRAIN,Zimbabwe Grain Millers (Pvt) Ltd,Wholesale,USD,150000,45,Zimbabwe,B. Ncube,2022-12-15
+C3002,SAFRET,Safret Traders CC,Export - ZA,ZAR,25000,30,South Africa,T. Makuvaza,2020-05-23
+C3003,UKBUILD,UK Builder Depot Ltd,Export - UK,GBP,75000,30,United Kingdom,T. Makuvaza,2019-05-01
+C3004,DEUTSCHT,Deutsch Technik GmbH,Export - DE,EUR,25000,60,Germany,B. Ncube,2021-02-04
+C3005,MININGCO,Great Dyke Mining Corporation,Mining,USD,75000,30,South Africa,T. Makuvaza,2021-01-29
+C3006,AGRIHUB,AgriHub Cooperative,Agriculture,USD,75000,60,Zimbabwe,B. Ncube,2020-05-08
+C3007,RETAILZ,RetailZ Supermarkets,Retail,USD,25000,30,South Africa,S. Moyo,2019-12-21
+C3008,BUILDMART,BuildMart Hardware,Retail,USD,250000,30,Zimbabwe,T. Makuvaza,2020-10-19
+C3009,SADCIND,SADC Industrial Supplies,Export - Region,USD,150000,30,Zimbabwe,B. Ncube,2022-01-28
+C3010,HOSPITALS,Sunrise Hospitals Group,Healthcare,USD,75000,30,Zimbabwe,T. Makuvaza,2022-07-05
+C3011,UNIVTRUST,University Trust Procurement,Public sector,USD,150000,30,Zimbabwe,S. Moyo,2022-11-27
+C3012,MUNICIPALY,Municipality of Kadoma,Public sector,USD,25000,60,Zimbabwe,B. Ncube,2020-05-08
+C3013,TRANSCO,TransContinental Haulage,Logistics,USD,25000,45,Zimbabwe,B. Ncube,2017-07-01
+C3014,FARMSUP,FarmSupply Depot,Agriculture,USD,50000,45,Zimbabwe,S. Moyo,2016-12-05
+C3015,PLASTICF,PlastiCorp Factory,Manufacturing,USD,25000,30,South Africa,S. Moyo,2017-03-12
+C3016,PRINTWORKS,PrintWorks Limited,Services,GBP,150000,30,United Kingdom,S. Moyo,2023-01-09
+C3017,ENERGYAF,EnergyAfrica Distributors,Energy,USD,25000,30,Zimbabwe,S. Moyo,2017-03-05
+C3018,FOODPROC,FoodProcessors Alliance,Food,USD,250000,30,Zimbabwe,S. Moyo,2020-09-30

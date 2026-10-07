@@ -1,0 +1,241 @@
+OpportunityID,ClientName,Industry,ServiceLine,OpenedDate,Period,Stage,ProbabilityPct,ExpectedFeeUSD,Source,DecisionTargetDate
+OPP-0000,PlastiCorp Factory,Manufacturing,Data Analytics,2024-05-26,2024-05,Qualified,70,122212.05,Referral,2024-10-22
+OPP-0001,RetailZ Supermarkets,Retail,Data Analytics,2025-03-09,2025-03,Proposal,100,16966.15,Website,2025-06-02
+OPP-0002,TransContinental Haulage,Logistics,Internal Audit,2024-12-13,2024-12,Lost,0,18144.8,Website,2025-04-26
+OPP-0003,UnivTrust Procurement,Public sector,Data Analytics,2025-01-22,2025-01,Lead,55,8805.89,LinkedIn,2025-02-11
+OPP-0004,Great Dyke Mining,Mining,IFRS & Technical Advisory,2024-02-11,2024-02,Proposal,0,29159.96,Tender,2024-05-20
+OPP-0005,PlastiCorp Factory,Manufacturing,Forensic Accounting,2025-07-02,2025-07,Won,25,159547.83,Tender,2025-07-25
+OPP-0006,BuildMart Hardware,Retail,Tax Analytics,2023-11-10,2023-11,Qualified,70,27969.26,Tender,2023-12-18
+OPP-0007,FoodProcessors Alliance,Manufacturing,Internal Audit,2024-12-06,2024-12,Qualified,40,61976.98,Tender,2025-03-20
+OPP-0008,PrintWorks Limited,Services,Internal Audit,2025-07-20,2025-07,Qualified,100,20176.72,Tender,2025-11-03
+OPP-0009,PlastiCorp Factory,Manufacturing,Forensic Accounting,2024-01-02,2024-01,Proposal,0,16823.23,Partner network,2024-05-08
+OPP-0010,TransContinental Haulage,Logistics,Internal Audit,2025-02-14,2025-02,Negotiation,25,16720.89,LinkedIn,2025-07-12
+OPP-0011,BuildMart Hardware,Retail,Data Analytics,2024-07-10,2024-07,Negotiation,55,20298.72,Partner network,2024-10-25
+OPP-0012,Municipality of Kadoma,Public sector,IFRS & Technical Advisory,2024-05-08,2024-05,Lead,10,3848.76,Referral,2024-08-09
+OPP-0013,FoodProcessors Alliance,Manufacturing,IFRS & Technical Advisory,2025-05-30,2025-05,Qualified,10,120382.52,Website,2025-09-12
+OPP-0014,AgriHub Cooperative,Agriculture,Machine Learning & AI,2024-11-22,2024-11,Qualified,70,56754.36,LinkedIn,2025-03-12
+OPP-0015,FarmSupply Depot,Agriculture,CFO Advisory,2023-09-04,2023-09,Lost,55,147399.67,Partner network,2023-12-21
+OPP-0016,SADC Industrial Supplies,Wholesale,Machine Learning & AI,2023-12-06,2023-12,Proposal,0,46724.22,Existing client,2023-12-27
+OPP-0017,TransContinental Haulage,Logistics,Machine Learning & AI,2025-01-10,2025-01,Won,40,108476.83,Tender,2025-02-15
+OPP-0018,AgriHub Cooperative,Agriculture,Data Analytics,2023-07-15,2023-07,Negotiation,10,3859.35,Existing client,2023-08-27
+OPP-0019,PlastiCorp Factory,Manufacturing,Forensic Accounting,2023-02-24,2023-02,Lead,55,58986.37,Existing client,2023-04-27
+OPP-0020,PlastiCorp Factory,Manufacturing,Internal Audit,2023-08-31,2023-08,Lead,10,27299.21,Tender,2023-09-21
+OPP-0021,EnergyAfrica Distributors,Energy,Data Analytics,2024-07-24,2024-07,Proposal,55,4509.67,Partner network,2024-08-13
+OPP-0022,BuildMart Hardware,Retail,Tax Analytics,2023-09-25,2023-09,Won,55,156984.03,Tender,2023-12-23
+OPP-0023,BuildMart Hardware,Retail,Internal Audit,2023-10-09,2023-10,Lead,0,34079.1,LinkedIn,2024-03-06
+OPP-0024,TransContinental Haulage,Logistics,Internal Audit,2023-03-16,2023-03,Lost,25,9309.06,Referral,2023-07-04
+OPP-0025,PlastiCorp Factory,Manufacturing,IFRS & Technical Advisory,2024-12-04,2024-12,Won,0,7985.34,Tender,2025-04-22
+OPP-0026,Great Dyke Mining,Mining,Data Analytics,2023-06-01,2023-06,Qualified,0,133378.99,Website,2023-08-11
+OPP-0027,TransContinental Haulage,Logistics,Machine Learning & AI,2024-03-21,2024-03,Lead,0,18343.53,Website,2024-07-28
+OPP-0028,FarmSupply Depot,Agriculture,Data Analytics,2025-02-06,2025-02,Lead,40,15845.55,LinkedIn,2025-04-08
+OPP-0029,Great Dyke Mining,Mining,Tax Analytics,2023-07-20,2023-07,Won,70,30999.24,Referral,2023-08-19
+OPP-0030,Sunrise Hospitals,Healthcare,Data Analytics,2024-01-03,2024-01,Lead,25,59317.84,Tender,2024-01-25
+OPP-0031,Sunrise Hospitals,Healthcare,Data Analytics,2024-02-27,2024-02,Lost,40,31947.37,Website,2024-04-23
+OPP-0032,UnivTrust Procurement,Public sector,Internal Audit,2025-05-06,2025-05,Won,0,16054.64,Website,2025-05-30
+OPP-0033,AgriHub Cooperative,Agriculture,Data Analytics,2024-08-03,2024-08,Lost,25,52534.82,Partner network,2024-11-02
+OPP-0034,UnivTrust Procurement,Public sector,Internal Audit,2024-07-15,2024-07,Qualified,0,32336.93,Website,2024-10-23
+OPP-0035,SADC Industrial Supplies,Wholesale,IFRS & Technical Advisory,2025-01-02,2025-01,Qualified,100,45919.75,Referral,2025-02-27
+OPP-0036,Mhondoro Manufacturing,Manufacturing,Data Analytics,2023-04-27,2023-04,Qualified,0,52803.89,Tender,2023-07-10
+OPP-0037,UnivTrust Procurement,Public sector,Machine Learning & AI,2025-05-21,2025-05,Lost,100,59128.34,Partner network,2025-09-22
+OPP-0038,FarmSupply Depot,Agriculture,Data Analytics,2023-07-14,2023-07,Lost,40,5136.98,LinkedIn,2023-10-02
+OPP-0039,PrintWorks Limited,Services,Tax Analytics,2023-08-08,2023-08,Qualified,100,34938.0,Tender,2023-11-06
+OPP-0040,RetailZ Supermarkets,Retail,Machine Learning & AI,2025-09-07,2025-09,Won,10,150660.82,Referral,2025-10-04
+OPP-0041,PrintWorks Limited,Services,IFRS & Technical Advisory,2024-07-25,2024-07,Proposal,10,149907.85,LinkedIn,2024-09-08
+OPP-0042,PrintWorks Limited,Services,Machine Learning & AI,2023-03-23,2023-03,Lost,40,16329.49,Existing client,2023-05-06
+OPP-0043,AgriHub Cooperative,Agriculture,IFRS & Technical Advisory,2024-09-03,2024-09,Qualified,70,17460.75,Referral,2024-11-16
+OPP-0044,PlastiCorp Factory,Manufacturing,Forensic Accounting,2024-04-25,2024-04,Qualified,10,15318.81,Existing client,2024-07-06
+OPP-0045,PlastiCorp Factory,Manufacturing,Internal Audit,2025-02-07,2025-02,Negotiation,70,101103.3,LinkedIn,2025-05-01
+OPP-0046,PrintWorks Limited,Services,Internal Audit,2024-07-25,2024-07,Negotiation,0,101950.49,Tender,2024-11-08
+OPP-0047,TransContinental Haulage,Logistics,CFO Advisory,2024-11-10,2024-11,Negotiation,70,4894.8,Existing client,2025-01-29
+OPP-0048,UnivTrust Procurement,Public sector,Machine Learning & AI,2023-10-15,2023-10,Qualified,90,59906.23,Partner network,2024-01-27
+OPP-0049,EnergyAfrica Distributors,Energy,Machine Learning & AI,2024-12-07,2024-12,Qualified,0,128657.25,Website,2025-01-08
+OPP-0050,FarmSupply Depot,Agriculture,Data Analytics,2023-08-18,2023-08,Negotiation,10,150928.37,LinkedIn,2023-09-08
+OPP-0051,Mhondoro Manufacturing,Manufacturing,Internal Audit,2023-05-18,2023-05,Won,90,109047.75,Referral,2023-07-05
+OPP-0052,BuildMart Hardware,Retail,Tax Analytics,2023-08-02,2023-08,Lost,70,36666.9,Partner network,2023-10-04
+OPP-0053,Great Dyke Mining,Mining,Forensic Accounting,2025-01-17,2025-01,Negotiation,0,9800.57,Partner network,2025-05-31
+OPP-0054,FoodProcessors Alliance,Manufacturing,Forensic Accounting,2023-12-26,2023-12,Won,10,85139.18,Referral,2024-03-21
+OPP-0055,EnergyAfrica Distributors,Energy,CFO Advisory,2024-02-21,2024-02,Lead,0,3947.1,Existing client,2024-06-23
+OPP-0056,Great Dyke Mining,Mining,Internal Audit,2023-05-08,2023-05,Qualified,25,8967.77,Website,2023-08-27
+OPP-0057,UnivTrust Procurement,Public sector,CFO Advisory,2025-06-12,2025-06,Qualified,40,31102.7,Tender,2025-10-08
+OPP-0058,UnivTrust Procurement,Public sector,Machine Learning & AI,2025-03-03,2025-03,Proposal,25,9527.34,Partner network,2025-03-25
+OPP-0059,Sunrise Hospitals,Healthcare,Forensic Accounting,2024-11-20,2024-11,Lead,0,17191.35,Tender,2025-01-07
+OPP-0060,Sunrise Hospitals,Healthcare,IFRS & Technical Advisory,2025-07-06,2025-07,Qualified,100,4936.32,LinkedIn,2025-11-24
+OPP-0061,AgriHub Cooperative,Agriculture,Forensic Accounting,2025-05-13,2025-05,Qualified,0,147030.23,Existing client,2025-08-18
+OPP-0062,UnivTrust Procurement,Public sector,IFRS & Technical Advisory,2025-03-31,2025-03,Negotiation,0,16128.21,Referral,2025-06-11
+OPP-0063,SADC Industrial Supplies,Wholesale,Internal Audit,2024-04-29,2024-04,Won,10,10316.8,Existing client,2024-08-22
+OPP-0064,BuildMart Hardware,Retail,Internal Audit,2024-10-17,2024-10,Qualified,10,145784.43,Existing client,2025-02-06
+OPP-0065,RetailZ Supermarkets,Retail,Machine Learning & AI,2024-05-22,2024-05,Lead,90,8925.58,Referral,2024-09-02
+OPP-0066,FoodProcessors Alliance,Manufacturing,Data Analytics,2025-04-08,2025-04,Lost,25,19768.17,Tender,2025-07-12
+OPP-0067,PrintWorks Limited,Services,Data Analytics,2023-10-14,2023-10,Negotiation,25,4555.65,Existing client,2024-02-11
+OPP-0068,PlastiCorp Factory,Manufacturing,Tax Analytics,2024-10-22,2024-10,Qualified,25,9198.74,Existing client,2024-12-16
+OPP-0069,Mhondoro Manufacturing,Manufacturing,Data Analytics,2023-08-21,2023-08,Won,25,16078.9,Partner network,2023-09-22
+OPP-0070,AgriHub Cooperative,Agriculture,Data Analytics,2024-02-09,2024-02,Won,70,98955.13,Referral,2024-04-15
+OPP-0071,PlastiCorp Factory,Manufacturing,Forensic Accounting,2023-09-17,2023-09,Negotiation,10,100395.59,Website,2023-10-23
+OPP-0072,FarmSupply Depot,Agriculture,Forensic Accounting,2025-08-03,2025-08,Lost,55,4419.59,Referral,2025-12-10
+OPP-0073,Municipality of Kadoma,Public sector,Machine Learning & AI,2023-03-21,2023-03,Lost,25,29850.21,Tender,2023-06-06
+OPP-0074,Sunrise Hospitals,Healthcare,Internal Audit,2025-07-30,2025-07,Negotiation,70,31058.55,Partner network,2025-10-11
+OPP-0075,SADC Industrial Supplies,Wholesale,Forensic Accounting,2025-04-02,2025-04,Lost,100,92002.51,Tender,2025-05-23
+OPP-0076,PlastiCorp Factory,Manufacturing,IFRS & Technical Advisory,2023-02-05,2023-02,Lead,100,48534.72,Website,2023-06-27
+OPP-0077,Municipality of Kadoma,Public sector,IFRS & Technical Advisory,2025-05-21,2025-05,Lead,0,145897.66,Existing client,2025-06-25
+OPP-0078,Mhondoro Manufacturing,Manufacturing,CFO Advisory,2025-03-31,2025-03,Negotiation,90,17942.35,LinkedIn,2025-06-11
+OPP-0079,PrintWorks Limited,Services,Forensic Accounting,2025-07-02,2025-07,Won,0,19186.79,Tender,2025-08-07
+OPP-0080,TransContinental Haulage,Logistics,Data Analytics,2023-01-18,2023-01,Lead,25,34298.63,Referral,2023-04-05
+OPP-0081,BuildMart Hardware,Retail,Forensic Accounting,2023-12-01,2023-12,Negotiation,40,31960.88,Tender,2024-03-31
+OPP-0082,FarmSupply Depot,Agriculture,CFO Advisory,2024-05-30,2024-05,Won,40,30826.97,Tender,2024-10-22
+OPP-0083,PlastiCorp Factory,Manufacturing,Data Analytics,2024-06-07,2024-06,Won,25,8501.55,Existing client,2024-08-27
+OPP-0084,PlastiCorp Factory,Manufacturing,Forensic Accounting,2025-04-30,2025-04,Proposal,25,5041.13,Website,2025-09-16
+OPP-0085,Mhondoro Manufacturing,Manufacturing,Data Analytics,2025-06-28,2025-06,Won,70,36089.85,Referral,2025-11-02
+OPP-0086,TransContinental Haulage,Logistics,Forensic Accounting,2025-01-14,2025-01,Proposal,100,51790.87,Partner network,2025-03-25
+OPP-0087,Mhondoro Manufacturing,Manufacturing,Forensic Accounting,2025-07-19,2025-07,Lead,0,16123.89,Existing client,2025-11-01
+OPP-0088,UnivTrust Procurement,Public sector,Data Analytics,2023-07-25,2023-07,Qualified,100,31882.76,Existing client,2023-11-21
+OPP-0089,TransContinental Haulage,Logistics,Internal Audit,2024-03-07,2024-03,Won,40,16029.23,LinkedIn,2024-07-12
+OPP-0090,FoodProcessors Alliance,Manufacturing,Data Analytics,2025-04-24,2025-04,Lead,25,49045.99,LinkedIn,2025-07-29
+OPP-0091,AgriHub Cooperative,Agriculture,CFO Advisory,2024-08-07,2024-08,Lost,40,47843.81,Existing client,2024-09-11
+OPP-0092,Mhondoro Manufacturing,Manufacturing,IFRS & Technical Advisory,2025-04-13,2025-04,Lost,10,98450.18,Tender,2025-08-24
+OPP-0093,FarmSupply Depot,Agriculture,IFRS & Technical Advisory,2023-05-20,2023-05,Proposal,70,9788.57,Website,2023-09-01
+OPP-0094,UnivTrust Procurement,Public sector,Internal Audit,2024-01-19,2024-01,Lead,100,60028.74,Partner network,2024-04-29
+OPP-0095,EnergyAfrica Distributors,Energy,IFRS & Technical Advisory,2023-09-19,2023-09,Won,100,34207.94,Existing client,2024-02-01
+OPP-0096,FoodProcessors Alliance,Manufacturing,Data Analytics,2025-06-01,2025-06,Negotiation,10,50103.15,Existing client,2025-08-24
+OPP-0097,Great Dyke Mining,Mining,IFRS & Technical Advisory,2024-02-19,2024-02,Qualified,55,130021.14,Tender,2024-03-23
+OPP-0098,TransContinental Haulage,Logistics,CFO Advisory,2025-06-01,2025-06,Proposal,25,91199.59,Partner network,2025-07-07
+OPP-0099,Sunrise Hospitals,Healthcare,Data Analytics,2024-12-16,2024-12,Negotiation,55,8591.8,Tender,2025-01-19
+OPP-0100,AgriHub Cooperative,Agriculture,Data Analytics,2023-11-30,2023-11,Lost,90,8823.57,LinkedIn,2024-03-04
+OPP-0101,RetailZ Supermarkets,Retail,Data Analytics,2025-03-11,2025-03,Negotiation,10,9213.56,Website,2025-07-29
+OPP-0102,UnivTrust Procurement,Public sector,Internal Audit,2024-12-30,2024-12,Lead,10,122734.37,Existing client,2025-04-16
+OPP-0103,BuildMart Hardware,Retail,IFRS & Technical Advisory,2023-01-07,2023-01,Negotiation,90,98247.79,Tender,2023-03-14
+OPP-0104,Mhondoro Manufacturing,Manufacturing,IFRS & Technical Advisory,2025-01-04,2025-01,Lead,40,4593.23,Website,2025-06-01
+OPP-0105,FoodProcessors Alliance,Manufacturing,Data Analytics,2024-08-30,2024-08,Lead,90,16516.52,Website,2025-01-12
+OPP-0106,Municipality of Kadoma,Public sector,Data Analytics,2023-01-10,2023-01,Proposal,100,19005.39,Tender,2023-05-21
+OPP-0107,AgriHub Cooperative,Agriculture,Internal Audit,2024-12-14,2024-12,Qualified,70,84604.71,Partner network,2025-02-13
+OPP-0108,PlastiCorp Factory,Manufacturing,Data Analytics,2025-02-01,2025-02,Lost,40,20572.05,LinkedIn,2025-05-08
+OPP-0109,Sunrise Hospitals,Healthcare,Data Analytics,2023-11-19,2023-11,Qualified,100,9083.71,Website,2024-02-22
+OPP-0110,Great Dyke Mining,Mining,Machine Learning & AI,2024-07-26,2024-07,Negotiation,40,4356.81,Website,2024-09-23
+OPP-0111,Great Dyke Mining,Mining,IFRS & Technical Advisory,2023-01-24,2023-01,Qualified,100,87922.58,Website,2023-02-27
+OPP-0112,FoodProcessors Alliance,Manufacturing,Data Analytics,2024-12-13,2024-12,Lead,40,5114.75,Tender,2025-02-11
+OPP-0113,UnivTrust Procurement,Public sector,Forensic Accounting,2024-07-10,2024-07,Qualified,25,151216.37,Partner network,2024-09-22
+OPP-0114,Mhondoro Manufacturing,Manufacturing,Forensic Accounting,2023-11-13,2023-11,Lost,70,132474.25,Referral,2024-02-27
+OPP-0115,PrintWorks Limited,Services,Data Analytics,2024-04-24,2024-04,Won,100,15734.21,Existing client,2024-09-17
+OPP-0116,PrintWorks Limited,Services,Data Analytics,2024-01-28,2024-01,Qualified,10,57591.12,Existing client,2024-02-20
+OPP-0117,FarmSupply Depot,Agriculture,Internal Audit,2024-09-19,2024-09,Lost,40,58254.96,Partner network,2025-02-02
+OPP-0118,SADC Industrial Supplies,Wholesale,Data Analytics,2023-05-03,2023-05,Proposal,55,4585.45,Website,2023-09-08
+OPP-0119,FoodProcessors Alliance,Manufacturing,IFRS & Technical Advisory,2025-01-08,2025-01,Lost,0,96244.85,Partner network,2025-04-17
+OPP-0120,PlastiCorp Factory,Manufacturing,IFRS & Technical Advisory,2023-10-28,2023-10,Proposal,0,46098.97,Website,2024-01-27
+OPP-0121,Mhondoro Manufacturing,Manufacturing,IFRS & Technical Advisory,2025-08-14,2025-08,Negotiation,10,8846.31,Partner network,2025-12-22
+OPP-0122,Mhondoro Manufacturing,Manufacturing,Machine Learning & AI,2023-11-06,2023-11,Lost,100,9088.96,Tender,2024-02-02
+OPP-0123,Great Dyke Mining,Mining,Machine Learning & AI,2025-03-29,2025-03,Lead,40,50505.4,Tender,2025-05-16
+OPP-0124,PlastiCorp Factory,Manufacturing,Forensic Accounting,2023-07-17,2023-07,Qualified,0,8576.9,Website,2023-09-10
+OPP-0125,BuildMart Hardware,Retail,Data Analytics,2025-05-11,2025-05,Won,70,61920.67,Tender,2025-06-09
+OPP-0126,EnergyAfrica Distributors,Energy,Forensic Accounting,2024-04-23,2024-04,Lead,0,5045.84,LinkedIn,2024-08-26
+OPP-0127,EnergyAfrica Distributors,Energy,IFRS & Technical Advisory,2023-05-02,2023-05,Won,40,36115.74,LinkedIn,2023-05-29
+OPP-0128,PrintWorks Limited,Services,Internal Audit,2023-09-15,2023-09,Lost,40,51138.45,Tender,2024-01-13
+OPP-0129,Municipality of Kadoma,Public sector,Machine Learning & AI,2024-04-19,2024-04,Lost,70,55655.68,Existing client,2024-08-26
+OPP-0130,Mhondoro Manufacturing,Manufacturing,Data Analytics,2023-04-13,2023-04,Proposal,25,4765.55,Existing client,2023-08-21
+OPP-0131,Municipality of Kadoma,Public sector,IFRS & Technical Advisory,2023-10-05,2023-10,Qualified,40,32892.56,Existing client,2024-02-13
+OPP-0132,Municipality of Kadoma,Public sector,Machine Learning & AI,2025-07-07,2025-07,Lead,0,18021.54,Existing client,2025-10-25
+OPP-0133,FarmSupply Depot,Agriculture,Forensic Accounting,2023-10-07,2023-10,Lost,55,31282.11,Referral,2023-12-19
+OPP-0134,PlastiCorp Factory,Manufacturing,IFRS & Technical Advisory,2023-04-16,2023-04,Qualified,0,8384.82,Tender,2023-07-15
+OPP-0135,EnergyAfrica Distributors,Energy,Tax Analytics,2023-10-27,2023-10,Negotiation,90,19524.44,LinkedIn,2024-01-10
+OPP-0136,EnergyAfrica Distributors,Energy,Forensic Accounting,2024-11-02,2024-11,Lost,10,4751.2,LinkedIn,2024-11-25
+OPP-0137,EnergyAfrica Distributors,Energy,Data Analytics,2024-11-07,2024-11,Won,70,28734.82,Referral,2025-04-04
+OPP-0138,BuildMart Hardware,Retail,Forensic Accounting,2025-06-24,2025-06,Lead,55,98784.99,Partner network,2025-07-20
+OPP-0139,Great Dyke Mining,Mining,Forensic Accounting,2023-06-16,2023-06,Won,100,4201.73,LinkedIn,2023-07-15
+OPP-0140,PlastiCorp Factory,Manufacturing,Internal Audit,2024-07-28,2024-07,Qualified,70,16983.12,Referral,2024-11-10
+OPP-0141,BuildMart Hardware,Retail,CFO Advisory,2025-05-04,2025-05,Lead,100,20074.77,Referral,2025-09-29
+OPP-0142,TransContinental Haulage,Logistics,Internal Audit,2024-06-22,2024-06,Lost,55,132261.45,Existing client,2024-09-25
+OPP-0143,EnergyAfrica Distributors,Energy,Forensic Accounting,2024-03-12,2024-03,Proposal,40,9890.04,Existing client,2024-05-11
+OPP-0144,Mhondoro Manufacturing,Manufacturing,Data Analytics,2023-10-01,2023-10,Proposal,55,16444.83,Partner network,2023-12-09
+OPP-0145,Sunrise Hospitals,Healthcare,Tax Analytics,2025-04-06,2025-04,Lead,100,90621.02,Existing client,2025-08-24
+OPP-0146,Sunrise Hospitals,Healthcare,Forensic Accounting,2025-09-06,2025-09,Lead,70,59033.25,Website,2025-10-03
+OPP-0147,Municipality of Kadoma,Public sector,Internal Audit,2025-03-01,2025-03,Negotiation,10,3992.34,Tender,2025-06-18
+OPP-0148,Sunrise Hospitals,Healthcare,Machine Learning & AI,2025-08-31,2025-08,Negotiation,55,98210.89,Partner network,2026-01-21
+OPP-0149,PrintWorks Limited,Services,IFRS & Technical Advisory,2025-03-25,2025-03,Negotiation,70,52813.35,Website,2025-08-03
+OPP-0150,TransContinental Haulage,Logistics,IFRS & Technical Advisory,2023-07-22,2023-07,Won,90,4425.05,LinkedIn,2023-10-05
+OPP-0151,Mhondoro Manufacturing,Manufacturing,Forensic Accounting,2023-01-12,2023-01,Won,40,17419.98,Website,2023-05-06
+OPP-0152,EnergyAfrica Distributors,Energy,IFRS & Technical Advisory,2023-04-27,2023-04,Negotiation,90,34992.79,Website,2023-08-11
+OPP-0153,Sunrise Hospitals,Healthcare,Forensic Accounting,2023-03-17,2023-03,Proposal,100,61388.13,Website,2023-07-26
+OPP-0154,Sunrise Hospitals,Healthcare,Internal Audit,2025-01-21,2025-01,Won,70,56258.99,Website,2025-03-16
+OPP-0155,RetailZ Supermarkets,Retail,Tax Analytics,2023-02-05,2023-02,Qualified,70,18366.96,LinkedIn,2023-03-18
+OPP-0156,UnivTrust Procurement,Public sector,Tax Analytics,2024-11-17,2024-11,Negotiation,10,55050.81,Tender,2025-03-11
+OPP-0157,RetailZ Supermarkets,Retail,Tax Analytics,2023-12-01,2023-12,Lost,90,19557.85,Referral,2024-01-10
+OPP-0158,PlastiCorp Factory,Manufacturing,Data Analytics,2025-04-18,2025-04,Proposal,10,16465.51,Referral,2025-07-14
+OPP-0159,RetailZ Supermarkets,Retail,Data Analytics,2025-06-22,2025-06,Negotiation,25,94780.96,Existing client,2025-08-31
+OPP-0160,UnivTrust Procurement,Public sector,Data Analytics,2023-12-29,2023-12,Negotiation,10,97891.51,Website,2024-01-27
+OPP-0161,Municipality of Kadoma,Public sector,Internal Audit,2025-01-05,2025-01,Lost,25,5011.17,Referral,2025-04-15
+OPP-0162,AgriHub Cooperative,Agriculture,Internal Audit,2023-11-08,2023-11,Qualified,100,17408.24,Existing client,2024-01-05
+OPP-0163,EnergyAfrica Distributors,Energy,IFRS & Technical Advisory,2024-07-15,2024-07,Won,100,51306.84,Website,2024-11-29
+OPP-0164,RetailZ Supermarkets,Retail,Forensic Accounting,2023-02-23,2023-02,Negotiation,55,9060.46,Referral,2023-07-22
+OPP-0165,Municipality of Kadoma,Public sector,Tax Analytics,2024-11-05,2024-11,Lead,70,59094.43,Partner network,2025-01-04
+OPP-0166,Sunrise Hospitals,Healthcare,Forensic Accounting,2025-07-16,2025-07,Lead,100,141275.26,Referral,2025-10-09
+OPP-0167,Mhondoro Manufacturing,Manufacturing,Tax Analytics,2024-06-19,2024-06,Negotiation,55,5095.34,Existing client,2024-07-12
+OPP-0168,UnivTrust Procurement,Public sector,Internal Audit,2023-02-26,2023-02,Lead,55,59356.46,Tender,2023-04-27
+OPP-0169,PlastiCorp Factory,Manufacturing,Internal Audit,2023-12-17,2023-12,Proposal,10,55276.9,Partner network,2024-05-10
+OPP-0170,Great Dyke Mining,Mining,Forensic Accounting,2024-02-12,2024-02,Lost,55,5151.71,Tender,2024-04-22
+OPP-0171,SADC Industrial Supplies,Wholesale,Forensic Accounting,2024-08-10,2024-08,Qualified,25,8966.86,Website,2024-10-01
+OPP-0172,Sunrise Hospitals,Healthcare,Machine Learning & AI,2024-06-08,2024-06,Qualified,10,4117.55,Tender,2024-08-18
+OPP-0173,FoodProcessors Alliance,Manufacturing,Tax Analytics,2024-10-19,2024-10,Negotiation,70,5075.61,Referral,2025-03-15
+OPP-0174,Great Dyke Mining,Mining,Machine Learning & AI,2025-02-19,2025-02,Lost,100,152436.91,Referral,2025-05-19
+OPP-0175,UnivTrust Procurement,Public sector,Internal Audit,2023-03-08,2023-03,Won,100,148626.89,Website,2023-04-24
+OPP-0176,TransContinental Haulage,Logistics,CFO Advisory,2024-02-21,2024-02,Qualified,70,15671.4,Partner network,2024-06-07
+OPP-0177,FoodProcessors Alliance,Manufacturing,Forensic Accounting,2023-08-08,2023-08,Lead,0,46718.94,Website,2023-11-12
+OPP-0178,EnergyAfrica Distributors,Energy,Internal Audit,2024-07-27,2024-07,Proposal,40,156728.36,Partner network,2024-12-01
+OPP-0179,PrintWorks Limited,Services,Data Analytics,2024-06-27,2024-06,Lead,100,19570.87,Partner network,2024-08-24
+OPP-0180,RetailZ Supermarkets,Retail,Internal Audit,2024-10-24,2024-10,Qualified,10,92031.0,Referral,2025-01-04
+OPP-0181,BuildMart Hardware,Retail,Data Analytics,2025-08-22,2025-08,Negotiation,55,32593.76,Website,2025-12-26
+OPP-0182,UnivTrust Procurement,Public sector,Data Analytics,2024-03-24,2024-03,Negotiation,70,120444.28,Partner network,2024-06-07
+OPP-0183,Mhondoro Manufacturing,Manufacturing,Forensic Accounting,2023-03-18,2023-03,Proposal,25,83356.6,Website,2023-08-08
+OPP-0184,BuildMart Hardware,Retail,IFRS & Technical Advisory,2025-08-28,2025-08,Lead,55,9202.86,Tender,2025-12-29
+OPP-0185,SADC Industrial Supplies,Wholesale,IFRS & Technical Advisory,2025-05-09,2025-05,Negotiation,100,155678.36,LinkedIn,2025-07-19
+OPP-0186,AgriHub Cooperative,Agriculture,Internal Audit,2024-01-31,2024-01,Lead,0,61066.47,Partner network,2024-03-09
+OPP-0187,FoodProcessors Alliance,Manufacturing,Data Analytics,2023-10-23,2023-10,Won,25,100670.9,Website,2024-02-05
+OPP-0188,SADC Industrial Supplies,Wholesale,Data Analytics,2024-12-05,2024-12,Lost,70,61634.0,Referral,2025-04-13
+OPP-0189,Mhondoro Manufacturing,Manufacturing,Internal Audit,2024-07-24,2024-07,Lost,55,29520.49,LinkedIn,2024-09-12
+OPP-0190,TransContinental Haulage,Logistics,IFRS & Technical Advisory,2025-02-15,2025-02,Lead,25,50717.95,Website,2025-07-11
+OPP-0191,RetailZ Supermarkets,Retail,Internal Audit,2023-01-24,2023-01,Qualified,10,90615.09,LinkedIn,2023-02-23
+OPP-0192,Municipality of Kadoma,Public sector,Internal Audit,2023-08-03,2023-08,Lead,90,8442.71,Partner network,2023-09-06
+OPP-0193,UnivTrust Procurement,Public sector,Machine Learning & AI,2023-10-01,2023-10,Won,90,4618.42,Partner network,2023-12-03
+OPP-0194,Sunrise Hospitals,Healthcare,Internal Audit,2023-04-27,2023-04,Negotiation,25,137843.49,Tender,2023-09-06
+OPP-0195,FoodProcessors Alliance,Manufacturing,Forensic Accounting,2023-10-24,2023-10,Negotiation,25,10004.74,Partner network,2024-03-08
+OPP-0196,PlastiCorp Factory,Manufacturing,IFRS & Technical Advisory,2025-04-02,2025-04,Lost,90,122749.34,Tender,2025-08-13
+OPP-0197,PrintWorks Limited,Services,Forensic Accounting,2023-01-05,2023-01,Lost,10,83349.77,LinkedIn,2023-02-05
+OPP-0198,Mhondoro Manufacturing,Manufacturing,Internal Audit,2023-08-25,2023-08,Proposal,40,9352.46,Referral,2023-12-23
+OPP-0199,AgriHub Cooperative,Agriculture,IFRS & Technical Advisory,2025-08-29,2025-08,Qualified,25,55240.72,Partner network,2025-11-27
+OPP-0200,BuildMart Hardware,Retail,Internal Audit,2023-03-08,2023-03,Proposal,40,34269.42,LinkedIn,2023-08-02
+OPP-0201,Sunrise Hospitals,Healthcare,Internal Audit,2024-10-11,2024-10,Proposal,25,61847.66,Website,2024-11-01
+OPP-0202,Great Dyke Mining,Mining,Forensic Accounting,2024-04-02,2024-04,Won,70,57859.91,Website,2024-07-15
+OPP-0203,FoodProcessors Alliance,Manufacturing,Forensic Accounting,2024-03-29,2024-03,Negotiation,10,4169.37,Partner network,2024-07-21
+OPP-0204,FarmSupply Depot,Agriculture,IFRS & Technical Advisory,2024-04-07,2024-04,Lost,40,35635.57,LinkedIn,2024-09-03
+OPP-0205,FoodProcessors Alliance,Manufacturing,Machine Learning & AI,2024-01-26,2024-01,Proposal,25,4166.32,Website,2024-03-26
+OPP-0206,PrintWorks Limited,Services,Data Analytics,2023-10-27,2023-10,Qualified,100,134462.04,LinkedIn,2024-02-05
+OPP-0207,FoodProcessors Alliance,Manufacturing,Internal Audit,2024-03-27,2024-03,Won,10,16629.42,Partner network,2024-06-13
+OPP-0208,Sunrise Hospitals,Healthcare,IFRS & Technical Advisory,2023-02-07,2023-02,Lost,100,4123.68,Referral,2023-02-28
+OPP-0209,EnergyAfrica Distributors,Energy,Data Analytics,2024-01-31,2024-01,Lead,90,124845.65,Partner network,2024-04-15
+OPP-0210,AgriHub Cooperative,Agriculture,IFRS & Technical Advisory,2023-12-13,2023-12,Won,0,131093.12,Website,2024-03-04
+OPP-0211,UnivTrust Procurement,Public sector,Internal Audit,2023-04-06,2023-04,Lead,100,107326.9,Existing client,2023-08-02
+OPP-0212,SADC Industrial Supplies,Wholesale,Data Analytics,2024-03-25,2024-03,Lead,90,29831.19,Existing client,2024-06-27
+OPP-0213,UnivTrust Procurement,Public sector,CFO Advisory,2024-03-07,2024-03,Won,55,86628.92,Tender,2024-07-10
+OPP-0214,Great Dyke Mining,Mining,Data Analytics,2025-07-08,2025-07,Negotiation,10,158833.58,Existing client,2025-09-19
+OPP-0215,Municipality of Kadoma,Public sector,Forensic Accounting,2024-04-05,2024-04,Proposal,55,8149.74,Existing client,2024-07-10
+OPP-0216,SADC Industrial Supplies,Wholesale,Forensic Accounting,2023-07-01,2023-07,Qualified,40,3862.79,Tender,2023-09-03
+OPP-0217,AgriHub Cooperative,Agriculture,Machine Learning & AI,2024-12-08,2024-12,Lead,40,60264.68,Referral,2025-05-06
+OPP-0218,AgriHub Cooperative,Agriculture,IFRS & Technical Advisory,2023-12-18,2023-12,Negotiation,100,5110.42,Tender,2024-03-22
+OPP-0219,Sunrise Hospitals,Healthcare,Internal Audit,2023-05-27,2023-05,Won,55,9177.81,Existing client,2023-07-31
+OPP-0220,EnergyAfrica Distributors,Energy,Machine Learning & AI,2025-08-18,2025-08,Negotiation,100,18653.03,Partner network,2026-01-01
+OPP-0221,UnivTrust Procurement,Public sector,Forensic Accounting,2023-01-15,2023-01,Proposal,90,146423.84,Tender,2023-05-01
+OPP-0222,Municipality of Kadoma,Public sector,Data Analytics,2024-03-18,2024-03,Lost,100,10144.24,Partner network,2024-05-16
+OPP-0223,UnivTrust Procurement,Public sector,IFRS & Technical Advisory,2023-09-23,2023-09,Proposal,100,27523.44,Partner network,2023-12-14
+OPP-0224,Mhondoro Manufacturing,Manufacturing,IFRS & Technical Advisory,2023-11-06,2023-11,Won,90,157853.37,LinkedIn,2024-02-04
+OPP-0225,RetailZ Supermarkets,Retail,CFO Advisory,2024-05-27,2024-05,Negotiation,10,34472.97,Website,2024-09-11
+OPP-0226,RetailZ Supermarkets,Retail,Internal Audit,2024-07-13,2024-07,Lost,90,36662.35,Partner network,2024-10-28
+OPP-0227,EnergyAfrica Distributors,Energy,Forensic Accounting,2023-05-07,2023-05,Lead,0,83162.64,Referral,2023-07-15
+OPP-0228,TransContinental Haulage,Logistics,Machine Learning & AI,2025-02-03,2025-02,Negotiation,55,57324.05,Referral,2025-03-19
+OPP-0229,TransContinental Haulage,Logistics,Machine Learning & AI,2024-04-25,2024-04,Qualified,10,28850.94,Referral,2024-06-17
+OPP-0230,SADC Industrial Supplies,Wholesale,IFRS & Technical Advisory,2024-10-30,2024-10,Qualified,100,51823.55,Tender,2024-12-25
+OPP-0231,UnivTrust Procurement,Public sector,CFO Advisory,2024-04-30,2024-04,Qualified,70,156552.8,Referral,2024-07-25
+OPP-0232,Sunrise Hospitals,Healthcare,Internal Audit,2023-10-28,2023-10,Negotiation,90,52710.86,Website,2024-01-05
+OPP-0233,AgriHub Cooperative,Agriculture,Machine Learning & AI,2024-01-30,2024-01,Lead,100,86454.09,Referral,2024-05-20
+OPP-0234,Sunrise Hospitals,Healthcare,IFRS & Technical Advisory,2024-02-11,2024-02,Lead,40,50866.1,Tender,2024-06-02
+OPP-0235,AgriHub Cooperative,Agriculture,Machine Learning & AI,2024-06-05,2024-06,Lost,25,4316.43,Website,2024-09-01
+OPP-0236,PlastiCorp Factory,Manufacturing,IFRS & Technical Advisory,2023-07-12,2023-07,Lead,25,50106.44,Partner network,2023-09-13
+OPP-0237,FoodProcessors Alliance,Manufacturing,Tax Analytics,2024-10-10,2024-10,Lead,70,4137.04,LinkedIn,2025-01-08
+OPP-0238,BuildMart Hardware,Retail,IFRS & Technical Advisory,2025-03-14,2025-03,Won,25,9120.67,Referral,2025-08-10
+OPP-0239,UnivTrust Procurement,Public sector,Forensic Accounting,2023-12-02,2023-12,Qualified,90,16430.44,Referral,2024-04-18

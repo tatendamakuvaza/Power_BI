@@ -1,0 +1,8 @@
+Score,VendorID_A,VendorName_A,VendorID_B,VendorName_B,NormalisedA,NormalisedB,ExactMatchAfterNormalising,ReviewConclusion
+1.0,,Chinhoyi Hardware & Supplies,,Chinhoyi Hardware and Supplies (Private) Limited,CHINHOYI HARDWARE,CHINHOYI HARDWARE,Yes,
+1.0,,Delta Beverages Ltd,,Delta Beverage Limited,DELTA BEVERAGE,DELTA BEVERAGE,Yes,
+1.0,,NYATSIME TRANSPORT,,Nyatsime Transports Pvt Ltd,NYATSIME TRANSPORT,NYATSIME TRANSPORT,Yes,
+1.0,,Nyatsime Transport (Pvt) Ltd,,NYATSIME TRANSPORT,NYATSIME TRANSPORT,NYATSIME TRANSPORT,Yes,
+1.0,,Nyatsime Transport (Pvt) Ltd,,Nyatsime Transports Pvt Ltd,NYATSIME TRANSPORT,NYATSIME TRANSPORT,Yes,
+1.0,,Sunrise Trading Co (Pvt) Ltd,,Sunrise Tradings,SUNRISE,SUNRISE,Yes,
+1.0,,Zvishavane Steel & Tube,,Zvishavane Steel and Tubes,ZVISHAVANE STEEL TUBE,ZVISHAVANE STEEL TUBE,Yes,

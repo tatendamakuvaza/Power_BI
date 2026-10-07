@@ -1,0 +1,276 @@
+// =====================================================================================
+// MAXHUB PVT LTD - POWER QUERY (M) LIBRARY
+// Copy each query into Power Query (Home > Advanced Editor > paste > rename the query).
+// Replace the file paths with your client's paths - keep them as parameters (query 00).
+// =====================================================================================
+
+
+// -------------------------------------------------------------------------------------
+// 00 - PARAMETERS  (Home > Manage Parameters)
+// -------------------------------------------------------------------------------------
+// Create these as real parameters, not hard-coded values:
+//   pSourceFolder     Text   "C:\Maxhub\Clients\Mhondoro\Data\"
+//   pReportStartDate  Date   2024-01-01
+//   pReportEndDate    Date   2025-09-30
+//   pApprovalLimit    Number 10000
+//   pPOLimit          Number 5000
+//   pVATRate          Number 0.15
+// Then reference them in the queries below. One template serves every client.
+
+
+// -------------------------------------------------------------------------------------
+// 01 - FACT GL JOURNAL  (the main ledger extract: types, signed amount, clean text)
+// -------------------------------------------------------------------------------------
+let
+    Source = Csv.Document(
+        File.Contents(pSourceFolder & "FactGLJournal.csv"),
+        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+    Promote = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+    Types = Table.TransformColumnTypes(Promote, {
+        {"LineID", type text}, {"JournalID", type text}, {"AccountCode", type text},
+        {"PostingDate", type date}, {"DocumentDate", type date}, {"Period", type text},
+        {"FiscalYear", Int64.Type}, {"Description", type text},
+        {"Debit", type number}, {"Credit", type number}, {"AmountUSD", type number},
+        {"AbsAmountUSD", type number}, {"Currency", type text}, {"FXRate", type number},
+        {"CostCentreCode", type text}, {"PreparedBy", type text}, {"ApprovedBy", type text},
+        {"SourceSystem", type text}, {"EntryType", type text},
+        {"EnteredOn", type datetime}, {"IsReversal", type text},
+        {"VendorID", type text}, {"CustomerID", type text}}),
+    // Remove the answer-key column (module 10 reveals it; the model must not contain it)
+    RemoveKey = Table.RemoveColumns(Types, {"AnomalyLabel"}, MissingField.Ignore),
+    // Replace blanks with nulls so text comparisons behave
+    CleanText = Table.TransformColumns(RemoveKey, {
+        {"Description", each if Text.Trim(_) = "" then null else Text.Trim(_), type text},
+        {"VendorID", each if Text.Trim(_) = "" then null else Text.Trim(_), type text},
+        {"CustomerID", each if Text.Trim(_) = "" then null else Text.Trim(_), type text}}),
+    // Signed amount and absolute value: build once, use everywhere
+    AddSigned = Table.AddColumn(CleanText, "AmountSigned",
+        each [Debit] - [Credit], type number),
+    AddAbs = Table.AddColumn(AddSigned, "AmountAbs",
+        each Number.Abs([AmountSigned]), type number),
+    // Period filter driven by the parameters (a single template for all clients)
+    FilterPeriod = Table.SelectRows(AddAbs, each
+        [PostingDate] >= pReportStartDate and [PostingDate] <= pReportEndDate),
+    AddSourceRef = Table.AddColumn(FilterPeriod, "SourceRef",
+        each "GL extract " & Text.From(pReportStartDate) & " to " & Text.From(pReportEndDate), type text),
+    // Document the row count for the working papers
+    RowCount = Table.AddColumn(AddSourceRef, "RowsInExtract", each Table.RowCount(AddSourceRef), Int64.Type)
+in
+    RowCount
+
+
+// -------------------------------------------------------------------------------------
+// 02 - DIMENSIONS WITH ENFORCED TEXT KEYS  (never let an account code become a number)
+// -------------------------------------------------------------------------------------
+let
+    Source = Csv.Document(
+        File.Contents(pSourceFolder & "DimAccount.csv"),
+        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+    Promote = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+    AsText = Table.TransformColumnTypes(Promote, {
+        {"AccountCode", type text}, {"AccountName", type text}, {"AccountType", type text},
+        {"NormalBalance", type text}, {"FSLine", type text}, {"Statement", type text},
+        {"IsCashAccount", type text}, {"IsControlAccount", type text},
+        {"IsSuspense", type text}, {"IsPL", type text}, {"PLSign", Int64.Type}}),
+    Trimmed = Table.TransformColumns(AsText, {
+        {"AccountCode", Text.Trim, type text}, {"AccountName", Text.Trim, type text}}),
+    // Sort key so the P&L/BS present in statement order
+    AddSort = Table.AddColumn(Trimmed, "FSSort",
+        each (if [Statement] = "PL" then 100 else 200) + (try Number.From([AccountCode]) otherwise 999), Int64.Type)
+in
+    AddSort
+
+
+// -------------------------------------------------------------------------------------
+// 03 - UNPIVOT A WIDE BUDGET  (Account | Jan | Feb | ... | Dec  ->  one row per month)
+// -------------------------------------------------------------------------------------
+let
+    Source = Excel.Workbook(File.Contents(pSourceFolder & "Budget.xlsx"), null, true),
+    Sheet = Source{[Item = "Budget", Kind = "Sheet"]}[Data],
+    Promote = Table.PromoteHeaders(Sheet, [PromoteAllScalars = true]),
+    Identity = {"AccountCode", "CostCentreCode", "BudgetVersion"},
+    Unpivoted = Table.UnpivotOtherColumns(Promote, Identity, "MonthName", "BudgetUSD"),
+    Typed = Table.TransformColumnTypes(Unpivoted, {
+        {"AccountCode", type text}, {"CostCentreCode", type text},
+        {"MonthName", type text}, {"BudgetUSD", type number}}),
+    // Turn the month name into a first-of-month date so it joins to DimDate
+    AddDate = Table.AddColumn(Typed, "MonthStart", each
+        Date.FromText("01-" & Text.Start([MonthName], 3) & "-" & Text.From(pReportStartDate)),
+        type date),
+    AddPeriod = Table.AddColumn(AddDate, "Period",
+        each Date.ToText([MonthStart], "yyyy-MM"), type text)
+in
+    AddPeriod
+
+
+// -------------------------------------------------------------------------------------
+// 04 - COMBINE MONTHLY FILES FROM A FOLDER  (the refresh pattern clients love)
+// -------------------------------------------------------------------------------------
+let
+    Source = Folder.Files(pSourceFolder),
+    // Defensive: ignore lock files and anything that is not a GL export
+    OnlyGL = Table.SelectRows(Source, each
+        Text.StartsWith([Name], "GL_") and Text.EndsWith([Name], ".csv") and not Text.StartsWith([Name], "~$")),
+    Combined = Table.Combine(Table.AddColumn(OnlyGL, "Data", each
+        Table.PromoteHeaders(
+            Csv.Document([Content], [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+            [PromoteAllScalars = true]))[Data]),
+    AddSourceFile = Table.AddColumn(Combined, "SourceFile", each [Name]),
+    Typed = Table.TransformColumnTypes(Combined, {
+        {"AccountCode", type text}, {"PostingDate", type date},
+        {"Debit", type number}, {"Credit", type number}})
+in
+    Typed
+
+
+// -------------------------------------------------------------------------------------
+// 05 - CLEAN A MESSY CUSTOMER/VENDOR LIST  (for matching and ghost-vendor testing)
+// -------------------------------------------------------------------------------------
+let
+    Source = Csv.Document(File.Contents(pSourceFolder & "DimVendor.csv"),
+        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+    Promote = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+    Typed = Table.TransformColumnTypes(Promote, {
+        {"VendorID", type text}, {"VendorName", type text}, {"BankAccount", type text},
+        {"TaxClearanceNo", type text}, {"VendorCreatedOn", type date},
+        {"LastBankChangeDate", type date}, {"IsEmployeeLinked", type text}}),
+    AddClean = Table.AddColumn(Typed, "VendorNameClean", each
+        let
+            t = Text.Upper(Text.Trim([VendorName])),
+            noLegal = Text.Replace(Text.Replace(Text.Replace(t, " (PVT) LTD", ""), " LIMITED", ""), " LTD", ""),
+            noPunct = Text.Remove(noLegal, {".", ",", "&", "'"})
+        in Text.Clean(Text.Trim(noPunct)), type text),
+    AddBankChangeFlag = Table.AddColumn(AddClean, "BankChangedAfterCreation", each
+        if [LastBankChangeDate] = null or [VendorCreatedOn] = null then "Unknown"
+        else if [LastBankChangeDate] = [VendorCreatedOn] then "Same day as creation"
+        else "Changed later", type text)
+in
+    AddBankChangeFlag
+
+
+// -------------------------------------------------------------------------------------
+// 06 - DUPLICATE PAYMENT DETECTION  (scales to millions of rows - prefer this to DAX)
+// -------------------------------------------------------------------------------------
+let
+    Source = FactGLJournal,
+    OnlyPayments = Table.SelectRows(Source, each [VendorID] <> null and [Debit] > 0),
+    Grouped = Table.Group(OnlyPayments, {"VendorID", "Debit"}, {
+        {"Occurrences", each Table.RowCount(_), Int64.Type},
+        {"FirstPosting", each List.Min([PostingDate]), type date},
+        {"LastPosting", each List.Max([PostingDate]), type date},
+        {"DaysApart", each Duration.Days(List.Max([PostingDate]) - List.Min([PostingDate])), Int64.Type},
+        {"Journals", each Text.Combine(List.Distinct([JournalID]), ", "), type text},
+        {"Preparers", each Text.Combine(List.Distinct([PreparedBy]), ", "), type text},
+        {"TotalValue", each List.Sum([Debit]), type number}}),
+    Suspects = Table.SelectRows(Grouped, each
+        [Occurrences] > 1 and [TotalValue] >= 2000 and [DaysApart] <= 30),
+    AddOverpayment = Table.AddColumn(Suspects, "ProbableOverpayment",
+        each [Debit] * ([Occurrences] - 1), type number),
+    Sorted = Table.Sort(AddOverpayment, {{"ProbableOverpayment", Order.Descending}})
+in
+    Sorted
+
+
+// -------------------------------------------------------------------------------------
+// 07 - THRESHOLD / STRUCTURING TEST  (count payments just below each control limit)
+// -------------------------------------------------------------------------------------
+let
+    Source = FactGLJournal,
+    Payments = Table.SelectRows(Source, each [Debit] > 0 and [VendorID] <> null),
+    AddBand = Table.AddColumn(Payments, "ControlBand", each
+        if [Debit] >= pApprovalLimit * 0.9 and [Debit] < pApprovalLimit then "A. 90-100% of approval limit"
+        else if [Debit] >= pApprovalLimit and [Debit] < pApprovalLimit * 1.1 then "B. 100-110% of approval limit"
+        else if [Debit] >= pPOLimit * 0.6 and [Debit] < pPOLimit then "C. 60-100% of PO limit"
+        else if [Debit] >= 0.9 * pPOLimit and [Debit] < pPOLimit then "D. 90-100% of PO limit"
+        else "E. Other", type text),
+    Summary = Table.Group(AddBand, {"ControlBand"}, {
+        {"Payments", each Table.RowCount(_), Int64.Type},
+        {"TotalValue", each List.Sum([Debit]), type number},
+        {"Vendors", each List.Count(List.Distinct([VendorID])), Int64.Type}}),
+    Sorted = Table.Sort(Summary, {{"ControlBand", Order.Ascending}})
+in
+    Sorted
+
+
+// -------------------------------------------------------------------------------------
+// 08 - BENFORD DIGITS  (build a helper table, then test the chi-square in DAX)
+// -------------------------------------------------------------------------------------
+let
+    Source = FactGLJournal,
+    Positive = Table.SelectRows(Source, each [AbsAmountUSD] >= 10),   // below 10, Benford is noise
+    FirstDigit = Table.AddColumn(Positive, "FirstDigit", each
+        Number.From(Text.Start(Text.From(Number.Abs([AbsAmountUSD])), 1)), Int64.Type),
+    Grouped = Table.Group(FirstDigit, {"FirstDigit"}, {
+        {"Actual", each Table.RowCount(_), Int64.Type},
+        {"Value", each List.Sum([AbsAmountUSD]), type number}}),
+    Total = List.Sum(Grouped[Actual]),
+    WithPct = Table.AddColumn(Grouped, "ActualPct", each [Actual] / Total, type number),
+    Expected = Table.AddColumn(WithPct, "ExpectedPct",
+        each Number.Log10(1 + 1 / [FirstDigit]), type number),
+    AddDeviation = Table.AddColumn(Expected, "DeviationPct",
+        each [ActualPct] - [ExpectedPct], type number),
+    AddChi = Table.AddColumn(AddDeviation, "ChiContribution", each
+        Number.Power([Actual] - Total * [ExpectedPct], 2) / (Total * [ExpectedPct]), type number)
+    // REPORT THIS IN YOUR WORKING PAPERS:
+    // total chi-square = sum of ChiContribution; df = 8; critical 15.51 (5%), 20.09 (1%)
+in
+    AddChi
+
+
+// -------------------------------------------------------------------------------------
+// 09 - JOURNAL ENTRY RISK FLAGS  (one row per GL line, flags ready for the workbench)
+// -------------------------------------------------------------------------------------
+let
+    Source = FactGLJournal,
+    AddFlags = Table.AddColumn(Source, "RiskFlags", each
+        let
+            flags = List.Select({
+                if [EntryType] = "Manual" then "MANUAL" else null,
+                if [Debit] > 0 and Number.Mod([Debit], 1000) = 0 then "ROUND" else null,
+                if Date.DayOfWeek([PostingDate]) = 6 or Date.DayOfWeek([PostingDate]) = 0 then "WEEKEND-POST" else null,
+                if Date.DayOfWeek(Date.From([EnteredOn])) = 6 or Date.DayOfWeek(Date.From([EnteredOn])) = 0 then "WEEKEND-ENTRY" else null,
+                if Time.Hour(Time.From([EnteredOn])) < 7 or Time.Hour(Time.From([EnteredOn])) > 19 then "AFTER-HOURS" else null,
+                if [ApprovedBy] = null and [AbsAmountUSD] > 10000 then "NO-APPROVAL" else null,
+                if [DocumentDate] <> null and Duration.Days([PostingDate] - [DocumentDate]) >= 10 then "BACKDATED" else null,
+                if [Debit] >= 9000 and [Debit] < 10000 then "BELOW-APPROVAL-LIMIT" else null,
+                if [Debit] >= 3000 and [Debit] < 5000 then "BELOW-PO-LIMIT" else null
+            }, each _ <> null),
+            text = if List.Count(flags) = 0 then "None" else Text.Combine(flags, ", ")
+        in text, type text),
+    AddCount = Table.AddColumn(AddFlags, "RiskFlagCount",
+        each if [RiskFlags] = "None" then 0
+             else List.Count(Text.Split([RiskFlags], ",")), Int64.Type)
+in
+    AddCount
+
+
+// -------------------------------------------------------------------------------------
+// 10 - MAXHUB CLIENT CHURN FEATURES + SCORED OUTPUT  (feed the Module 11 model)
+// -------------------------------------------------------------------------------------
+let
+    Raw = Csv.Document(File.Contents("data/raw/maxhub_client_churn.csv"),
+        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+    Promote = Table.PromoteHeaders(Raw, [PromoteAllScalars = true]),
+    Typed = Table.TransformColumnTypes(Promote, {
+        {"ClientID", type text}, {"ClientName", type text}, {"Industry", type text},
+        {"ClientSize", type text}, {"Year", Int64.Type}, {"AnnualFeeUSD", type number},
+        {"ServicesPurchased", Int64.Type}, {"NPS", Int64.Type}, {"ComplaintsLogged", Int64.Type},
+        {"AvgPaymentDays", Int64.Type}, {"EngagementDelayDays", Int64.Type},
+        {"PartnerHoursOnClient", type number}, {"AuditFindingsRaised", Int64.Type},
+        {"FeeChangePct", type number}, {"Stayed", Int64.Type}}),
+    AddRiskProfile = Table.AddColumn(Typed, "RiskProfile", each
+        let
+            score = (if [NPS] < 7 then 25 else 0)
+                  + (if [ComplaintsLogged] >= 1 then 20 else 0)
+                  + (if [AvgPaymentDays] > 60 then 15 else 0)
+                  + (if [PartnerHoursOnClient] < 18 then 20 else 0)
+                  + (if [ServicesPurchased] = 1 then 20 else 0)
+        in
+            if score >= 60 then "1. High" else if score >= 35 then "2. Medium" else "3. Low",
+        type text)
+in
+    AddRiskProfile
+
+// =====================================================================================
+// END OF M LIBRARY
+// =====================================================================================

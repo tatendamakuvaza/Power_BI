@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Power BI working files and local exports (keep the delivered reports only)
+*.pbix~
+~$*.xlsx
+~$*.csv
+*.tmp
