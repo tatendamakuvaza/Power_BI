@@ -79,12 +79,12 @@ capstone presentations.
 
 | Assessment | Weight | When |
 |---|---|---|
-| Module quizzes (12 × 5 questions) | 15% | End of each module |
+| Module quizzes (12 × 5 questions) | 10% | End of each module |
 | Lab completion (marked against expected results) | 25% | Throughout |
-| Practical exam 1 — modelling & DAX | 15% | After Module 5 |
-| Practical exam 2 — forensic analytics | 20% | After Module 10 |
-| Capstone 1 (forensic investigation report) | 15% | End of course |
-| Capstone 2, 3 or 4 (choose one) | 10% | End of course |
+| Practical exam 1 — modelling & DAX (4 h) | 15% | After Module 5 |
+| Practical exam 2 — forensic analytics (5 h) | 20% | After Module 10 |
+| Practical exam 3 — advisory proposal (2 h) | 10% | After Module 12 |
+| Capstones — any two of four, marked on the published rubrics | 20% | End of course |
 
 Pass mark 70%. The rubric for each assessment is in [`../assessments/`](../assessments/).
 
@@ -117,7 +117,7 @@ That is a **Maxhub engagement deliverable**, and it is what the capstones simula
 
 ---
 
-## 10. One-page course preview
+## 7. One-page course preview
 
 [`Course_Preview.html`](Course_Preview.html) is a self-contained summary of the whole course (open it in any
 browser — no internet needed). Use it to brief a colleague, a client or a cohort before they start.

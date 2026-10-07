@@ -18,6 +18,10 @@ commercial wrap (scope, hours, price, and the three questions every client asks)
 3. Write each up as a portfolio case study: the problem in the client's words, what you did, the number
    you found or saved, how you proved it, and the tool (last).
 
+**Turn each finished capstone into a portfolio case study** using
+[`Portfolio_Case_Study_Template.md`](Portfolio_Case_Study_Template.md) — one page, the outcome in the
+headline, a numbers table, and the 90-second spoken version for interviews and pitches.
+
 **Rules for portfolio use**
 
 - Label everything **"simulated engagement data"**. Never present it as a real client.

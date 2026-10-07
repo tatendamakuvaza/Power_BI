@@ -7,6 +7,11 @@ Builds the Excel workbooks used in the labs:
 """
 import csv
 import os
+import re
+import shutil
+import zipfile
+from datetime import datetime
+
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
@@ -19,6 +24,53 @@ os.makedirs(XLSX, exist_ok=True)
 HEADER_FILL = PatternFill("solid", fgColor="1F4E79")
 HEADER_FONT = Font(color="FFFFFF", bold=True, size=11)
 NOTE_FONT = Font(italic=True, color="595959", size=10)
+
+# Fixed build stamp so a rebuild produces byte-identical files (Git stays clean and CI can
+# prove determinism). The date is a constant, not today's date, on purpose.
+BUILD_STAMP = datetime(2026, 1, 1, 0, 0, 0)
+
+
+ZIP_STAMP = (2026, 1, 1, 0, 0, 0)
+
+
+def normalise_zip(path):
+    """Rewrite the .xlsx container with fixed entry timestamps.
+
+    openpyxl stamps zip entries with the current time, so two identical builds produce
+    different bytes. Rewriting the container makes the file reproducible: a rebuild leaves
+    Git clean, and CI can prove the committed workbooks came from this script."""
+    tmp = path + ".tmp"
+    fixed_iso = "2026-01-01T00:00:00Z"
+    with zipfile.ZipFile(path) as src, zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as dst:
+        for item in src.infolist():
+            data = src.read(item.filename)
+            if item.filename == "docProps/core.xml":
+                # openpyxl re-stamps dcterms:modified at save time; pin it too.
+                text = data.decode("utf-8")
+                text = re.sub(r"<dcterms:modified[^>]*>[^<]*</dcterms:modified>",
+                              f'<dcterms:modified xsi:type="dcterms:W3CDTF">{fixed_iso}</dcterms:modified>',
+                              text)
+                text = re.sub(r'<dcterms:created[^>]*>[^<]*</dcterms:created>',
+                              f'<dcterms:created xsi:type="dcterms:W3CDTF">{fixed_iso}</dcterms:created>',
+                              text)
+                data = text.encode("utf-8")
+            info = zipfile.ZipInfo(item.filename, date_time=ZIP_STAMP)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = item.external_attr
+            info.internal_attr = item.internal_attr
+            info.create_system = 0
+            dst.writestr(info, data)
+    shutil.move(tmp, path)
+
+
+def stamp(wb):
+    """Pin workbook metadata so the .xlsx output is reproducible."""
+    wb.properties.creator = "Maxhub Pvt Ltd - Power BI course"
+    wb.properties.lastModifiedBy = "Maxhub Pvt Ltd - Power BI course"
+    wb.properties.title = "Maxhub Power BI course data"
+    wb.properties.created = BUILD_STAMP
+    wb.properties.modified = BUILD_STAMP
+    return wb
 
 
 def read_csv(name):
@@ -132,7 +184,10 @@ def build_main():
             # Soft gate: keep the answer key out of sight until Module 10.
             # To reveal it: right-click any sheet tab > Unhide. The READ ME says when.
             ws.sheet_state = "hidden"
-    wb.save(os.path.join(XLSX, "Mhondoro_Accounting_Data.xlsx"))
+    stamp(wb)
+    main_path = os.path.join(XLSX, "Mhondoro_Accounting_Data.xlsx")
+    wb.save(main_path)
+    normalise_zip(main_path)
     print("  Mhondoro_Accounting_Data.xlsx")
 
 
@@ -246,7 +301,10 @@ def build_practice():
         bva.append([cc, an, b, a])
     add_sheet(wb, "BudgetVsActual", bva, note="Variance lab: waterfall, KPI and conditional formatting.")
 
-    wb.save(os.path.join(XLSX, "PowerBI_Practice_Workbook.xlsx"))
+    stamp(wb)
+    practice_path = os.path.join(XLSX, "PowerBI_Practice_Workbook.xlsx")
+    wb.save(practice_path)
+    normalise_zip(practice_path)
     print("  PowerBI_Practice_Workbook.xlsx")
 
 
@@ -282,7 +340,10 @@ def build_maxhub():
         ("MaxhubEngagements.csv", "Engagement profitability", 22),
     ]:
         add_sheet(wb, f.replace(".csv", "").replace("maxhub_", "").title()[:31], read_csv(f), note=note)
-    wb.save(os.path.join(XLSX, "Maxhub_Firm_Financials.xlsx"))
+    stamp(wb)
+    maxhub_path = os.path.join(XLSX, "Maxhub_Firm_Financials.xlsx")
+    wb.save(maxhub_path)
+    normalise_zip(maxhub_path)
     print("  Maxhub_Firm_Financials.xlsx")
 
 

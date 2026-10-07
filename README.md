@@ -22,6 +22,7 @@ professional service.
 | Preview the course on one page | [`course/Course_Preview.html`](course/Course_Preview.html) |
 | Track your progress | [`course/Progress_Tracker.csv`](course/Progress_Tracker.csv) |
 | See how the files fit together | Section 5 of this page |
+| Check the data pipeline is healthy | run `python3 scripts/run_all.py` (see [`scripts/README.md`](scripts/README.md)) |
 
 **Rule one:** every module ends with a lab. Do the lab before moving on. Reading about
 CALCULATE is not the same as writing it.
@@ -101,7 +102,8 @@ Power_BI/
 ├── assessments/               quizzes, practical exams, self-assessment
 ├── reference/                 glossary, cheat sheet, errors, career guide
 ├── data/                      practice data warehouse (xlsx, raw csv, dictionary)
-├── scripts/                   generators + data verification tools (Python)
+├── scripts/                   generators, verifier, churn model, vendor matcher (see scripts/README.md)
+├── .github/workflows/         CI: regenerates the data and proves the results still tie
 └── assets/                    report theme and brand guidelines
 ```
 
@@ -114,10 +116,12 @@ python3 scripts/generate_maxhub_data.py    # Maxhub firm data
 python3 scripts/build_workbooks.py         # Excel workbooks  (needs openpyxl)
 python3 scripts/build_dictionary.py        # data dictionary
 python3 scripts/verify_data.py             # control-total checks
+python3 scripts/run_all.py                 # or: everything above, in the right order
 ```
 
-> The data is deterministic: the same seed always produces the same transactions, so your
-> numbers will match the expected results printed in the labs.
+> The data is deterministic **and reproducible**: the same seed always produces the same transactions
+> and the workbooks rebuild to identical bytes, so your numbers will match the expected results printed
+> in the labs. CI (`.github/workflows/verify-data.yml`) proves this on every push.
 
 ---
 

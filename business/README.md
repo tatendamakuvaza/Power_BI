@@ -10,6 +10,8 @@ client-ready: replace the bracketed fields, delete the guidance notes, and issue
 | [`Engagement_Letter_Template.md`](Engagement_Letter_Template.md) | The proposal is accepted — put the terms, data handling and fees in writing before work starts |
 | [`Advisory_Report_Template.md`](Advisory_Report_Template.md) | Writing the forensic or advisory report itself |
 | [`PowerBI_Build_Standard.md`](PowerBI_Build_Standard.md) | Building and quality-controlling any `.pbix` you deliver |
+| [`Data_Request_List_Template.md`](Data_Request_List_Template.md) | Within 24 hours of the kick-off call — 32 items, prioritised, with the instructions clients need |
+| [`Working_Paper_Template.md`](Working_Paper_Template.md) | One per test, so a reviewer can re-perform the work and reach the same conclusion |
 
 ## The Maxhub commercial rules
 

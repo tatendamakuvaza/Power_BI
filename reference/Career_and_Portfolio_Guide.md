@@ -51,6 +51,10 @@ explain down to the source row.
 
 ---
 
+**Write each artefact up as a one-page case study** with
+[`../capstones/Portfolio_Case_Study_Template.md`](../capstones/Portfolio_Case_Study_Template.md):
+the outcome in the headline, the numbers in a table, and the 90-second spoken version for interviews.
+
 ## 3. How to tell the story
 
 Use this structure every time (interview, LinkedIn, proposal):

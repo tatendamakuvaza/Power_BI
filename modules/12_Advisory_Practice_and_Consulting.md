@@ -46,7 +46,8 @@ The difference between "I do Power BI" and a product:
 
 Each productised offer should have: a name, a defined scope, a defined deliverable, a price, a
 timeline, and a "what's not included" list. That is what goes in the proposal
-([`../business/Client_Proposal_Template.md`](../business/Client_Proposal_Template.md)).
+([`../business/Client_Proposal_Template.md`](../business/Client_Proposal_Template.md), and send the
+[`../business/Data_Request_List_Template.md`](../business/Data_Request_List_Template.md) within 24 hours of kick-off).
 
 ---
 
