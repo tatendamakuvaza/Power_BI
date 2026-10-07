@@ -1,0 +1,268 @@
+Table,Column,Description,Source file
+DimAccount,AccountCode,Primary key. GL account number.,data/raw/DimAccount.csv
+DimAccount,AccountName,Account description as used in the general ledger.,data/raw/DimAccount.csv
+DimAccount,AccountType,Asset / Liability / Equity / Revenue / Expense.,data/raw/DimAccount.csv
+DimAccount,NormalBalance,Debit or Credit - the side that increases the account.,data/raw/DimAccount.csv
+DimAccount,FSLine,Financial statement caption the account maps to.,data/raw/DimAccount.csv
+DimAccount,Statement,BS (balance sheet) or PL (profit or loss).,data/raw/DimAccount.csv
+DimAccount,IsCashAccount,Yes for bank and cash accounts.,data/raw/DimAccount.csv
+DimAccount,IsControlAccount,Yes for AR and AP control accounts.,data/raw/DimAccount.csv
+DimAccount,IsSuspense,Yes for the suspense account - unresolved items are an audit red flag.,data/raw/DimAccount.csv
+DimAccount,IsPL,Yes if the account belongs in the income statement.,data/raw/DimAccount.csv
+DimAccount,PLSign,"1 for revenue, -1 for expense, 0 otherwise. Used to sign P&L measures.",data/raw/DimAccount.csv
+DimCostCentre,CostCentreCode,Primary key.,data/raw/DimCostCentre.csv
+DimCostCentre,CostCentreName,Descriptive name of the cost centre.,data/raw/DimCostCentre.csv
+DimCostCentre,Department,Owning department.,data/raw/DimCostCentre.csv
+DimCostCentre,AnnualBudgetUSD,Board approved annual operating budget.,data/raw/DimCostCentre.csv
+DimCustomer,CustomerID,Primary key.,data/raw/DimCustomer.csv
+DimCustomer,CustomerCode,Short code.,data/raw/DimCustomer.csv
+DimCustomer,CustomerName,Customer name.,data/raw/DimCustomer.csv
+DimCustomer,Segment,Channel or segment.,data/raw/DimCustomer.csv
+DimCustomer,Currency,Invoicing currency.,data/raw/DimCustomer.csv
+DimCustomer,CreditLimitUSD,Approved credit limit.,data/raw/DimCustomer.csv
+DimCustomer,PaymentTerms,Agreed credit period in days.,data/raw/DimCustomer.csv
+DimCustomer,Country,Customer country.,data/raw/DimCustomer.csv
+DimCustomer,AccountManager,Relationship owner.,data/raw/DimCustomer.csv
+DimCustomer,CustomerSince,Onboarding date.,data/raw/DimCustomer.csv
+DimDate,Date,Date (unique key for the date table).,data/raw/DimDate.csv
+DimDate,DateKey,yyyyMMdd integer key - join to fact tables on the date key.,data/raw/DimDate.csv
+DimDate,DayName,Weekday name. Use it to expose weekend postings.,data/raw/DimDate.csv
+DimDate,DayNameShort,Abbreviated weekday.,data/raw/DimDate.csv
+DimDate,DayOfMonth,Day of month.,data/raw/DimDate.csv
+DimDate,DayOfWeekNumber,1 = Monday ... 7 = Sunday.,data/raw/DimDate.csv
+DimDate,IsWeekend,Yes / No.,data/raw/DimDate.csv
+DimDate,WeekNumberISO,ISO week number.,data/raw/DimDate.csv
+DimDate,MonthNumber,Month number 1-12. Sort MonthName by this column.,data/raw/DimDate.csv
+DimDate,MonthName,Month name.,data/raw/DimDate.csv
+DimDate,MonthShort,Abbreviated month.,data/raw/DimDate.csv
+DimDate,MonthYear,e.g. 'Sep 2025' for axis labels.,data/raw/DimDate.csv
+DimDate,Quarter,Q1 - Q4.,data/raw/DimDate.csv
+DimDate,QuarterYear,e.g. '2025 Q3'.,data/raw/DimDate.csv
+DimDate,FiscalYear,"FY2024, FY2025 (financial year = calendar year).",data/raw/DimDate.csv
+DimDate,FiscalPeriod,yyyy-MM period label used to join the GL.,data/raw/DimDate.csv
+DimDate,FiscalPeriodEnd,Last day of the fiscal period.,data/raw/DimDate.csv
+DimDate,IsMonthEnd,Yes on the last day of the month.,data/raw/DimDate.csv
+DimDate,IsCurrentFY,Yes for the current financial year in the dataset.,data/raw/DimDate.csv
+DimEmployee,EmployeeID,Primary key. Compare against payroll GL and vendor bank accounts.,data/raw/DimEmployee.csv
+DimEmployee,EmployeeName,Employee name.,data/raw/DimEmployee.csv
+DimEmployee,Department,Department.,data/raw/DimEmployee.csv
+DimEmployee,JobTitle,Job title.,data/raw/DimEmployee.csv
+DimEmployee,GradeLevel,Pay grade band.,data/raw/DimEmployee.csv
+DimEmployee,MonthlyGrossUSD,Monthly gross salary.,data/raw/DimEmployee.csv
+DimEmployee,DateOfBirth,Date of birth.,data/raw/DimEmployee.csv
+DimEmployee,HireDate,Hire date.,data/raw/DimEmployee.csv
+DimEmployee,BankAccount,Salary bank account - match against vendor bank accounts for ghost vendors.,data/raw/DimEmployee.csv
+DimEmployee,NationalIDPresent,Whether an ID document is on file (No = weak onboarding control).,data/raw/DimEmployee.csv
+DimEmployee,TerminationDate,Leaver date. Blank means still active.,data/raw/DimEmployee.csv
+DimEmployee,IsFlaggedForReview,Yes for records the payroll team already flagged.,data/raw/DimEmployee.csv
+DimFXRate,Period,yyyy-MM.,data/raw/DimFXRate.csv
+DimFXRate,PeriodEndDate,Last day of the period.,data/raw/DimFXRate.csv
+DimFXRate,FromCurrency,Foreign currency.,data/raw/DimFXRate.csv
+DimFXRate,ToCurrency,Functional currency (USD).,data/raw/DimFXRate.csv
+DimFXRate,AverageRate,Average rate for the period (P&L translation).,data/raw/DimFXRate.csv
+DimFXRate,ClosingRate,Closing rate (balance sheet translation).,data/raw/DimFXRate.csv
+DimUser,UserID,Primary key. ERP login identity.,data/raw/DimUser.csv
+DimUser,UserName,Person's name.,data/raw/DimUser.csv
+DimUser,JobTitle,Job title.,data/raw/DimUser.csv
+DimUser,Department,Department.,data/raw/DimUser.csv
+DimUser,Role,Approver / Controller / Accountant / Clerk / Officer / Auditor / Manager / Admin.,data/raw/DimUser.csv
+DimUser,CanPostManualJE,Whether the user may post manual journals (segregation of duties input).,data/raw/DimUser.csv
+DimUser,CanApprovePayment,Whether the user may approve payments.,data/raw/DimUser.csv
+DimUser,SystemAccess,Module the user can access.,data/raw/DimUser.csv
+DimUser,StartDate,Employment start date.,data/raw/DimUser.csv
+DimVendor,VendorID,Primary key. Join key for AP and GL.,data/raw/DimVendor.csv
+DimVendor,VendorCode,Short vendor code used on invoices.,data/raw/DimVendor.csv
+DimVendor,VendorName,Registered vendor name.,data/raw/DimVendor.csv
+DimVendor,Category,Spend category.,data/raw/DimVendor.csv
+DimVendor,BankAccount,Vendor bank account number - the key control for payment fraud testing.,data/raw/DimVendor.csv
+DimVendor,BankName,Vendor bank.,data/raw/DimVendor.csv
+DimVendor,TaxClearanceNo,Tax clearance certificate number. Blank = compliance risk.,data/raw/DimVendor.csv
+DimVendor,Address,Physical address.,data/raw/DimVendor.csv
+DimVendor,PaymentTerms,Agreed credit period in days.,data/raw/DimVendor.csv
+DimVendor,VendorCreatedOn,Date the vendor was created in the master file.,data/raw/DimVendor.csv
+DimVendor,LastBankChangeDate,Date the bank details were last changed - compare with VendorCreatedOn.,data/raw/DimVendor.csv
+DimVendor,IsEmployeeLinked,Yes where the vendor resembles an employee / related party.,data/raw/DimVendor.csv
+DimVendor,IsActive,Yes / No.,data/raw/DimVendor.csv
+FactAPInvoices,APInvoiceNo,Internal AP reference.,data/raw/FactAPInvoices.csv
+FactAPInvoices,SupplierInvoiceRef,Supplier's own invoice number - duplicates here signal double payment.,data/raw/FactAPInvoices.csv
+FactAPInvoices,VendorID,FK to DimVendor.,data/raw/FactAPInvoices.csv
+FactAPInvoices,InvoiceDate,Invoice date.,data/raw/FactAPInvoices.csv
+FactAPInvoices,DueDate,Due date.,data/raw/FactAPInvoices.csv
+FactAPInvoices,AmountUSD,Invoice value in USD.,data/raw/FactAPInvoices.csv
+FactAPInvoices,PONumber,Purchase order reference. Blank = no PO raised.,data/raw/FactAPInvoices.csv
+FactAPInvoices,GRNNumber,Goods received note. Blank = goods never receipted.,data/raw/FactAPInvoices.csv
+FactAPInvoices,ThreeWayMatch,Matched or Exception (PO/GRN/receipt mismatch).,data/raw/FactAPInvoices.csv
+FactAPInvoices,DuplicateSuspected,Flagged for duplicate testing.,data/raw/FactAPInvoices.csv
+FactAPInvoices,ApprovedBy,Approver user ID.,data/raw/FactAPInvoices.csv
+FactAPInvoices,PaidStatus,Paid / Outstanding.,data/raw/FactAPInvoices.csv
+FactAPInvoices,PaymentDate,Date paid.,data/raw/FactAPInvoices.csv
+FactARAgeing,InvoiceNo,Sales invoice number.,data/raw/FactARAgeing.csv
+FactARAgeing,CustomerID,FK to DimCustomer.,data/raw/FactARAgeing.csv
+FactARAgeing,InvoiceDate,Invoice date.,data/raw/FactARAgeing.csv
+FactARAgeing,DueDate,Due date per credit terms.,data/raw/FactARAgeing.csv
+FactARAgeing,Currency,Invoice currency.,data/raw/FactARAgeing.csv
+FactARAgeing,AmountUSD,Invoice value in USD.,data/raw/FactARAgeing.csv
+FactARAgeing,AmountReceivedUSD,Amount settled by the as-at date.,data/raw/FactARAgeing.csv
+FactARAgeing,DaysOverdue,Days past due at the as-at date.,data/raw/FactARAgeing.csv
+FactARAgeing,AgeingBucket,Current / 1-30 / 31-60 / 61-90 / 91-180 / Over 180 days.,data/raw/FactARAgeing.csv
+FactARAgeing,DisputedFlag,Customer disputes the invoice.,data/raw/FactARAgeing.csv
+FactARAgeing,AsAtDate,Ageing date (30 September 2025).,data/raw/FactARAgeing.csv
+FactBankTransactions,BankTxnID,Primary key.,data/raw/FactBankTransactions.csv
+FactBankTransactions,BankAccount,Bank account name.,data/raw/FactBankTransactions.csv
+FactBankTransactions,TxnDate,Transaction date.,data/raw/FactBankTransactions.csv
+FactBankTransactions,ValueDate,Value date from the bank.,data/raw/FactBankTransactions.csv
+FactBankTransactions,Narration,Bank narrative text - use for keyword matching in forensic work.,data/raw/FactBankTransactions.csv
+FactBankTransactions,DebitUSD,Money out.,data/raw/FactBankTransactions.csv
+FactBankTransactions,CreditUSD,Money in.,data/raw/FactBankTransactions.csv
+FactBankTransactions,BalanceUSD,Running balance.,data/raw/FactBankTransactions.csv
+FactBankTransactions,ReconciledFlag,Yes if matched to the ledger.,data/raw/FactBankTransactions.csv
+FactBankTransactions,UnmatchedItemsAgeDays,Age of the unreconciled item - long-aged items are a control weakness.,data/raw/FactBankTransactions.csv
+FactBudget,Period,yyyy-MM.,data/raw/FactBudget.csv
+FactBudget,FiscalYear,Financial year.,data/raw/FactBudget.csv
+FactBudget,MonthNum,Month number - useful for month-on-month comparatives.,data/raw/FactBudget.csv
+FactBudget,AccountCode,FK to DimAccount.,data/raw/FactBudget.csv
+FactBudget,CostCentreCode,FK to DimCostCentre.,data/raw/FactBudget.csv
+FactBudget,BudgetUSD,Board approved budget amount.,data/raw/FactBudget.csv
+FactBudget,BudgetVersion,Version of the budget.,data/raw/FactBudget.csv
+FactExpenseClaims,ClaimID,Primary key.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,EmployeeID,FK to DimEmployee.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,EmployeeName,Claimant.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,ClaimDate,Date of the expense.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,Period,yyyy-MM.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,ExpenseCategory,Expense type.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,ClaimedUSD,Amount claimed.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,ReceiptAttached,No = claim paid without supporting receipt.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,ApprovedBy,Approver.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,PaidDate,Date reimbursed.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,DuplicateSuspected,Flagged for duplicate testing.,data/raw/FactExpenseClaims.csv
+FactExpenseClaims,WeekendClaim,Yes if the claim date falls on a weekend.,data/raw/FactExpenseClaims.csv
+FactFixedAssets,AssetID,Primary key.,data/raw/FactFixedAssets.csv
+FactFixedAssets,AssetDescription,Asset description.,data/raw/FactFixedAssets.csv
+FactFixedAssets,AssetClass,Asset class.,data/raw/FactFixedAssets.csv
+FactFixedAssets,CostAccountCode,Cost account in the GL.,data/raw/FactFixedAssets.csv
+FactFixedAssets,AccDepAccountCode,Accumulated depreciation account in the GL.,data/raw/FactFixedAssets.csv
+FactFixedAssets,LocationCode,FK to DimCostCentre.,data/raw/FactFixedAssets.csv
+FactFixedAssets,AcquisitionDate,Date acquired.,data/raw/FactFixedAssets.csv
+FactFixedAssets,CostUSD,Capitalised cost.,data/raw/FactFixedAssets.csv
+FactFixedAssets,UsefulLifeYears,Useful life.,data/raw/FactFixedAssets.csv
+FactFixedAssets,MonthlyDepreciationUSD,Monthly depreciation charge.,data/raw/FactFixedAssets.csv
+FactFixedAssets,AccumulatedDepreciationUSD,Accumulated depreciation to date.,data/raw/FactFixedAssets.csv
+FactFixedAssets,NBVUSD,Net book value.,data/raw/FactFixedAssets.csv
+FactFixedAssets,DisposalDate,Disposal date where applicable.,data/raw/FactFixedAssets.csv
+FactFixedAssets,Custodian,Person responsible for the asset (physical verification input).,data/raw/FactFixedAssets.csv
+FactGLJournal,LineID,Row-level primary key.,data/raw/FactGLJournal.csv
+FactGLJournal,JournalID,Journal header. All lines with the same JournalID must balance.,data/raw/FactGLJournal.csv
+FactGLJournal,LineNo,Line number within journal.,data/raw/FactGLJournal.csv
+FactGLJournal,AccountCode,FK to DimAccount.,data/raw/FactGLJournal.csv
+FactGLJournal,PostingDate,Date the entry hit the ledger (the date you must use for period analysis).,data/raw/FactGLJournal.csv
+FactGLJournal,DocumentDate,Date of the underlying document - gaps vs PostingDate are a red flag.,data/raw/FactGLJournal.csv
+FactGLJournal,Period,yyyy-MM posting period. FK to DimDate[FiscalPeriod].,data/raw/FactGLJournal.csv
+FactGLJournal,FiscalYear,Year of posting.,data/raw/FactGLJournal.csv
+FactGLJournal,Description,Narration.,data/raw/FactGLJournal.csv
+FactGLJournal,Debit,Debit amount in USD.,data/raw/FactGLJournal.csv
+FactGLJournal,Credit,Credit amount in USD.,data/raw/FactGLJournal.csv
+FactGLJournal,AmountUSD,"Signed amount: debit positive, credit negative.",data/raw/FactGLJournal.csv
+FactGLJournal,AbsAmountUSD,Absolute value - use for value-based analytics.,data/raw/FactGLJournal.csv
+FactGLJournal,Currency,Transaction currency.,data/raw/FactGLJournal.csv
+FactGLJournal,FXRate,Rate used to translate to USD.,data/raw/FactGLJournal.csv
+FactGLJournal,CostCentreCode,FK to DimCostCentre.,data/raw/FactGLJournal.csv
+FactGLJournal,PreparedBy,FK to DimUser. The person who captured the entry.,data/raw/FactGLJournal.csv
+FactGLJournal,ApprovedBy,FK to DimUser. Blank where approval was bypassed.,data/raw/FactGLJournal.csv
+FactGLJournal,SourceSystem,ERP-GL / Manual-JE / Payroll / Opening Balance Upload / Year-End Close.,data/raw/FactGLJournal.csv
+FactGLJournal,EntryType,Automatic / Manual / Opening / Closing - manual entries carry the most risk.,data/raw/FactGLJournal.csv
+FactGLJournal,EnteredOn,Timestamp the entry was keyed in - exposes after-hours and backdated postings.,data/raw/FactGLJournal.csv
+FactGLJournal,IsReversal,Yes / No.,data/raw/FactGLJournal.csv
+FactGLJournal,VendorID,FK to DimVendor where the line relates to a supplier.,data/raw/FactGLJournal.csv
+FactGLJournal,CustomerID,FK to DimCustomer where the line relates to a customer.,data/raw/FactGLJournal.csv
+FactGLJournal,AnomalyLabel,ANSWER KEY column - blank in the learner workbook. Remove it before presenting.,data/raw/FactGLJournal.csv
+FactSalesOrders,OrderNo,Primary key.,data/raw/FactSalesOrders.csv
+FactSalesOrders,CustomerID,FK to DimCustomer.,data/raw/FactSalesOrders.csv
+FactSalesOrders,OrderDate,Order date.,data/raw/FactSalesOrders.csv
+FactSalesOrders,Period,yyyy-MM.,data/raw/FactSalesOrders.csv
+FactSalesOrders,ProductFamily,Product family.,data/raw/FactSalesOrders.csv
+FactSalesOrders,ProductLine,Product line code.,data/raw/FactSalesOrders.csv
+FactSalesOrders,Quantity,Units ordered.,data/raw/FactSalesOrders.csv
+FactSalesOrders,UnitPriceUSD,List unit price.,data/raw/FactSalesOrders.csv
+FactSalesOrders,GrossAmountUSD,Quantity x unit price less discount.,data/raw/FactSalesOrders.csv
+FactSalesOrders,DiscountPct,Discount granted - unusual discounts are a fraud indicator.,data/raw/FactSalesOrders.csv
+FactSalesOrders,CostCentreCode,FK to DimCostCentre.,data/raw/FactSalesOrders.csv
+FactSalesOrders,SalesRep,Sales representative.,data/raw/FactSalesOrders.csv
+FactSalesOrders,Status,Invoiced / Open / Cancelled.,data/raw/FactSalesOrders.csv
+FactSalesOrders,MarginPct,Gross margin percentage on the order.,data/raw/FactSalesOrders.csv
+FactTrialBalance,PeriodEnd,Last day of the period.,data/raw/FactTrialBalance.csv
+FactTrialBalance,Period,yyyy-MM.,data/raw/FactTrialBalance.csv
+FactTrialBalance,FiscalYear,Financial year.,data/raw/FactTrialBalance.csv
+FactTrialBalance,AccountCode,FK to DimAccount.,data/raw/FactTrialBalance.csv
+FactTrialBalance,DebitMovement,Total debits in the period.,data/raw/FactTrialBalance.csv
+FactTrialBalance,CreditMovement,Total credits in the period.,data/raw/FactTrialBalance.csv
+FactTrialBalance,NetMovementSigned,Movement signed to the account's normal balance.,data/raw/FactTrialBalance.csv
+FactTrialBalance,OpeningBalance,Opening balance for the period.,data/raw/FactTrialBalance.csv
+FactTrialBalance,ClosingBalance,Opening + net movement.,data/raw/FactTrialBalance.csv
+InjectionLog,EntryID,Journal ID of the injected anomaly.,data/raw/InjectionLog.csv
+InjectionLog,AnomalyType,"Scheme name: DUPLICATE-PAYMENT, GHOST-VENDOR, ROUND-NUMBER-THRESHOLD, SPLIT-PURCHASE, WEEKEND-AFTERHOURS, UNREVERSED-ACCRUAL, SOD-RARE-COMBO.",data/raw/InjectionLog.csv
+InjectionLog,AmountUSD,Value of the anomaly.,data/raw/InjectionLog.csv
+InjectionLog,PreparedBy,User who posted it.,data/raw/InjectionLog.csv
+InjectionLog,ExpectedDetection,The test that should catch it.,data/raw/InjectionLog.csv
+InjectionLog,Description,What the scheme looks like.,data/raw/InjectionLog.csv
+MaxhubEngagements,EngagementID,Engagement key.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,ClientName,Client.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,ServiceLine,Service line.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,EngagementManager,Manager accountable.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,StartDate,Start date.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,Period,yyyy-MM.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,PlannedHours,Budgeted hours.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,ActualHours,Hours actually spent.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,FeeUSD,Agreed fee.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,WriteOffUSD,Fee written off.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,Status,Completed / In progress / Proposal / Lost.,data/raw/MaxhubEngagements.csv
+MaxhubEngagements,NetPromoterScore,Client satisfaction score.,data/raw/MaxhubEngagements.csv
+maxhub_billable_hours,Period,yyyy-MM.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,Month,Month start date.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,ConsultantID,Consultant key.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,ConsultantName,Consultant.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,Grade,Grade.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,AvailableHours,Working hours available.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,WorkedHours,Hours worked.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,BillableHours,Hours charged to clients.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,UtilisationPct,Billable hours / available hours.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,StandardRateUSD,Standard charge-out rate.,data/raw/maxhub_billable_hours.csv
+maxhub_billable_hours,RealisedRateUSD,Rate actually invoiced - the gap to standard is write-off.,data/raw/maxhub_billable_hours.csv
+maxhub_client_churn,ClientID,Client key.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,ClientName,Client.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,Industry,Industry.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,ClientSince,Year the relationship began.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,ClientSize,Small / Medium / Large.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,Year,Observation year.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,AnnualFeeUSD,Fees billed in the year.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,ServicesPurchased,Number of different services bought.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,NPS,Client's latest Net Promoter Score.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,ComplaintsLogged,Complaints raised.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,AvgPaymentDays,Average days to pay.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,EngagementDelayDays,Days deliverables slipped.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,PartnerHoursOnClient,Partner hours invested in the relationship.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,AuditFindingsRaised,Findings raised in advisory work.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,FeeChangePct,Year-on-year fee change.,data/raw/maxhub_client_churn.csv
+maxhub_client_churn,Stayed,"LABEL: 1 = client bought again the next year, 0 = churned.",data/raw/maxhub_client_churn.csv
+maxhub_pipeline,OpportunityID,Deal key.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,ClientName,Prospect or client.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,Industry,Industry.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,ServiceLine,Service being sold.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,OpenedDate,Date the opportunity opened.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,Period,yyyy-MM.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,Stage,Lead / Qualified / Proposal / Negotiation / Won / Lost.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,ProbabilityPct,Win probability.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,ExpectedFeeUSD,Expected fee.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,Source,Lead source.,data/raw/maxhub_pipeline.csv
+maxhub_pipeline,DecisionTargetDate,Target decision date.,data/raw/maxhub_pipeline.csv
+maxhub_service_line_financials,Month,Month start date.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,Period,yyyy-MM.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,FiscalYear,Year.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,ServiceLine,Maxhub service line.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,RevenueUSD,Fees billed.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,DirectStaffCostUSD,Cost of the delivery team.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,RechargeableExpensesUSD,Expenses recharged to clients.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,OverheadAllocatedUSD,Allocated firm overhead.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,GrossProfitUSD,Revenue less direct staff cost.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,EngagementsDelivered,Engagements completed in the month.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,ProposalsSubmitted,Proposals issued.,data/raw/maxhub_service_line_financials.csv
+maxhub_service_line_financials,ProposalsWon,Proposals won (conversion input).,data/raw/maxhub_service_line_financials.csv

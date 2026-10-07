@@ -1,0 +1,13 @@
+UserID,UserName,JobTitle,Department,Role,CanPostManualJE,CanApprovePayment,SystemAccess,StartDate
+USR-001,T. Makuvaza,Financial Controller,Finance,Controller,Yes,Yes,Finance ERP,2021-03-01
+USR-002,R. Chikafu,Accounts Payable Clerk,Finance,Clerk,Yes,No,Finance ERP,2021-03-01
+USR-003,M. Nyathi,Accounts Receivable Clerk,Finance,Clerk,Yes,No,Finance ERP,2021-03-01
+USR-004,K. Dube,Payroll Officer,Finance,Clerk,Yes,No,Finance ERP,2021-03-01
+USR-005,S. Moyo,Management Accountant,Finance,Accountant,Yes,No,Finance ERP,2021-03-01
+USR-006,L. Sibanda,Chief Financial Officer,Finance,Approver,No,Yes,Finance ERP,2021-03-01
+USR-007,P. Gumbo,Procurement Officer,Supply Chain,Officer,No,No,Operational module,2021-03-01
+USR-008,A. Banda,Systems Administrator,IT,Admin,No,No,Operational module,2021-03-01
+USR-009,J. Marufu,Internal Auditor,Governance,Auditor,No,No,Operational module,2021-03-01
+USR-010,N. Zhou,Inventory Clerk,Manufacturing,Clerk,Yes,No,Operational module,2021-03-01
+USR-011,B. Ncube,Sales Manager,Sales,Manager,No,No,Operational module,2021-03-01
+USR-012,D. Mutasa,Shared Services Clerk,Finance,Clerk,Yes,No,Finance ERP,2021-03-01

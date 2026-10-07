@@ -1,0 +1,160 @@
+name: Verify course data
+
+# The course publishes exact expected results (line counts, control totals, scheme values).
+# This workflow proves, on every push, that:
+#   1. the generators still run on a clean machine with the standard library only,
+#   2. the control-total checks pass,
+#   3. the committed data is exactly what the generators produce (determinism),
+#   4. the Excel build and data dictionary still work.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Regenerate and verify (stdlib only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Regenerate the full dataset
+        run: |
+          python3 scripts/generate_data.py
+          python3 scripts/generate_maxhub_data.py
+          python3 scripts/ml_churn_model.py
+          python3 scripts/fuzzy_match_vendors.py --file data/practice/VendorName_Matching_Practice.csv
+
+      - name: Control-total checks
+        run: python3 scripts/verify_data.py
+
+      - name: Data must be deterministic
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            echo "::error::Regeneration changed the committed data - the generators are not deterministic,"
+            echo "or the committed data was hand-edited. Expected lab results would no longer be true."
+            git --no-pager diff --stat data/
+            exit 1
+          fi
+          echo "Committed data matches the generator output byte for byte."
+
+      - name: Check the churn model beats its baseline
+        run: |
+          python3 scripts/ml_churn_model.py | tee churn.txt
+          grep -q "Baseline" churn.txt
+          grep -q "accuracy" churn.txt
+          echo "Model output looks sane."
+
+  workbooks:
+    name: Build workbooks and dictionary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install openpyxl
+        run: pip install openpyxl==3.1.5
+
+      - name: Build the Excel workbooks
+        run: python3 scripts/build_workbooks.py
+
+      - name: Rebuild the data dictionary
+        run: python3 scripts/build_dictionary.py
+
+      - name: Confirm the files were produced
+        run: |
+          test -s data/xlsx/Mhondoro_Accounting_Data.xlsx
+          test -s data/xlsx/PowerBI_Practice_Workbook.xlsx
+          test -s data/xlsx/Maxhub_Firm_Financials.xlsx
+          test -s data/dictionary/DataDictionary.csv
+          echo "All deliverables built."
+
+      - name: Workbooks must be reproducible too
+        run: |
+          if [ -n "$(git status --porcelain data/xlsx data/dictionary)" ]; then
+            echo "::error::Rebuilding the workbooks or the dictionary changed the committed files."
+            git --no-pager diff --stat data/xlsx data/dictionary
+            exit 1
+          fi
+          echo "Workbooks and dictionary rebuild to the same bytes."
+
+  markdown:
+    name: Links and structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check every relative Markdown link resolves
+        run: |
+          python3 - <<'PY'
+          import glob, os, re, sys
+
+          broken = []
+          checked = 0
+          for path in glob.glob("**/*.md", recursive=True):
+              base = os.path.dirname(path)
+              text = open(path, encoding="utf-8").read()
+              for m in re.finditer(r"\[[^\]]+\]\(([^)\s]+)\)", text):
+                  target = m.group(1)
+                  if target.startswith(("http", "mailto:", "#")):
+                      continue
+                  target = target.split("#", 1)[0]
+                  if not target:
+                      continue
+                  checked += 1
+                  if not os.path.exists(os.path.normpath(os.path.join(base, target))):
+                      broken.append(f"{path} -> {m.group(1)}")
+
+          print(f"checked {checked} relative links")
+          for b in sorted(set(broken)):
+              print("BROKEN:", b)
+          sys.exit(1 if broken else 0)
+          PY
+
+      - name: Check the course structure is complete
+        run: |
+          python3 - <<'PY'
+          import os, sys
+
+          required = [
+              "README.md",
+              "course/Course_Syllabus.md",
+              "course/Instructor_Guide.md",
+              "course/Progress_Tracker.csv",
+              "course/Course_Preview.html",
+              "labs/Lab_Index.md",
+              "capstones/Capstone_1_Forensic_Investigation.md",
+              "capstones/Capstone_2_Financial_Reporting_Pack.md",
+              "capstones/Capstone_3_Data_Analytics_Engagement.md",
+              "capstones/Capstone_4_AI_Advisory_Service.md",
+              "business/Maxhub_Service_Catalogue.md",
+              "business/Client_Proposal_Template.md",
+              "business/Engagement_Letter_Template.md",
+              "business/Advisory_Report_Template.md",
+              "business/PowerBI_Build_Standard.md",
+              "assessments/Quiz_Questions.md",
+              "assessments/Practical_Assessments.md",
+              "reference/Cheat_Sheet.md",
+              "data/README.md",
+              "data/raw/InjectionLog.csv",
+              "data/dictionary/DataDictionary.csv",
+          ]
+          missing = [item for item in required if not os.path.exists(item)]
+          modules = os.listdir("modules")
+          for n in range(1, 13):
+              if not any(f.startswith(f"{n:02d}_") for f in modules):
+                  missing.append(f"modules/{n:02d}_*.md")
+          if missing:
+              print("MISSING:", *missing, sep="\n  ")
+              sys.exit(1)
+          print(f"all {len(required)} required course files present, 12 modules found")
+          PY

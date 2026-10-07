@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maxhub Pvt Ltd — Power BI for Forensic Accounting, Analytics, ML &amp; AI</title>
+<style>
+  :root{
+    --navy:#1F4E79; --blue:#2E75B6; --lightblue:#9DC3E6; --accent:#C55A11;
+    --good:#548235; --caution:#BF9000; --bad:#C00000; --grey:#7F7F7F;
+    --canvas:#F2F6FA; --ink:#1B2430;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--canvas); color:var(--ink);
+    font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.55; font-size:16px;
+  }
+  a{color:var(--navy); text-decoration:none; border-bottom:1px solid rgba(31,78,121,.35)}
+  a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+  header.hero{background:linear-gradient(135deg,#12365A 0%,var(--navy) 45%,#2E75B6 100%); color:#fff; padding:38px 0 30px}
+  .brandrow{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+  .serviceline{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:#CFE2F3; margin-top:6px}
+  h1{font-size:clamp(1.6rem,3.6vw,2.5rem); margin:26px 0 10px; line-height:1.15}
+  .lede{font-size:1.06rem; color:#E7F0F8; max-width:74ch; margin:0 0 22px}
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:12px; margin-top:8px}
+  .stat{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:10px; padding:12px 14px}
+  .stat b{display:block; font-size:1.5rem; line-height:1.2}
+  .stat span{font-size:.8rem; color:#DCE9F5}
+  section{padding:34px 0 8px}
+  h2{font-size:1.35rem; color:var(--navy); margin:0 0 6px; border-left:5px solid var(--accent); padding-left:12px}
+  .sub{color:#4A5A6A; margin:0 0 20px; max-width:86ch}
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(228px,1fr)); gap:14px}
+  .card{background:#fff; border:1px solid #DCE6EF; border-radius:12px; padding:16px 16px 14px; box-shadow:0 1px 2px rgba(27,36,48,.05)}
+  .card h3{margin:0 0 6px; font-size:1rem; color:var(--navy)}
+  .card p{margin:0; font-size:.92rem; color:#40505f}
+  .pill{display:inline-block; font-size:.72rem; font-weight:600; letter-spacing:.04em; padding:3px 9px; border-radius:999px; background:#E8F0F8; color:var(--navy); margin-bottom:8px}
+  table{width:100%; border-collapse:collapse; background:#fff; border:1px solid #DCE6EF; border-radius:10px; overflow:hidden; font-size:.92rem}
+  th,td{padding:9px 11px; text-align:left; border-bottom:1px solid #E7EEF5}
+  th{background:#EAF1F8; color:var(--navy); font-size:.82rem; letter-spacing:.03em; text-transform:uppercase}
+  tr:last-child td{border-bottom:none}
+  td.num,th.num{text-align:right; font-variant-numeric:tabular-nums}
+  .panel{background:#fff; border:1px solid #DCE6EF; border-radius:12px; padding:18px}
+  .callout{border-left:5px solid var(--accent); background:#FFF7F1; border-radius:8px; padding:12px 16px; font-size:.94rem; margin:18px 0}
+  .ok{border-left-color:var(--good); background:#F3F8F0}
+  .two{display:grid; grid-template-columns:1.15fr .85fr; gap:18px; align-items:start}
+  @media (max-width:820px){.two{grid-template-columns:1fr}}
+  pre{background:#0F2333; color:#DCE9F5; padding:14px 16px; border-radius:10px; overflow:auto; font-size:.84rem; line-height:1.5}
+  .mono{font-family:"Cascadia Mono","Consolas","SFMono-Regular",monospace}
+  .legend{display:flex; gap:16px; flex-wrap:wrap; font-size:.82rem; color:#4A5A6A; margin-top:8px}
+  .dot{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:middle}
+  ol.flow{counter-reset:s; list-style:none; padding:0; margin:0}
+  ol.flow li{counter-increment:s; position:relative; padding:9px 0 9px 44px; border-bottom:1px dashed #DCE6EF}
+  ol.flow li:last-child{border-bottom:none}
+  ol.flow li::before{content:counter(s); position:absolute; left:0; top:9px; width:28px; height:28px; border-radius:50%; background:var(--navy); color:#fff; font-size:.82rem; font-weight:700; display:flex; align-items:center; justify-content:center}
+  footer{background:#12365A; color:#DCE9F5; margin-top:40px; padding:26px 0 30px; font-size:.88rem}
+  footer a{color:#fff; border-bottom-color:rgba(255,255,255,.4)}
+  .tag{font-size:.75rem; background:#EAF1F8; color:var(--navy); border-radius:5px; padding:2px 7px; margin-right:6px; white-space:nowrap}
+  @media print{
+    header.hero{background:var(--navy) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+    section{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brandrow">
+      <svg width="52" height="52" viewBox="0 0 52 52" role="img" aria-label="Maxhub mark">
+        <rect x="1" y="1" width="50" height="50" rx="11" fill="#FFFFFF" opacity=".10" stroke="#9DC3E6" stroke-width="1.5"/>
+        <path d="M12 37V19l7 9 7-13 7 13 7-9v18" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="12" y="39.5" width="28" height="2.6" rx="1.3" fill="#ED7D31"/>
+      </svg>
+      <div>
+        <div style="font-size:1.18rem; font-weight:700; letter-spacing:.02em">Maxhub Pvt Ltd</div>
+        <div class="serviceline">Forensic Accounting · Data Analytics · Machine Learning &amp; AI · Advisory</div>
+      </div>
+    </div>
+
+    <h1>Power BI for Forensic Accounting, Data Analytics, ML &amp; AI</h1>
+    <p class="lede">A complete self-study course built for an accountant: real accounting data with genuinely
+      hidden fraud schemes, twelve modules, twelve labs, four client-ready capstones — and the commercial
+      templates that turn the skill into a service line.</p>
+
+    <div class="stats">
+      <div class="stat"><b>12</b><span>modules · 12 labs</span></div>
+      <div class="stat"><b>4</b><span>capstone engagements</span></div>
+      <div class="stat"><b>90–110</b><span>hours of study</span></div>
+      <div class="stat"><b>13,929</b><span>ledger lines of practice data</span></div>
+      <div class="stat"><b>7</b><span>fraud schemes to find</span></div>
+      <div class="stat"><b>$1.95m</b><span>of exceptions to quantify</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2>What you will be able to do</h2>
+    <p class="sub">Every module ends with a lab that produces a work product. The course is judged by what
+      you can deliver, not by what you have watched.</p>
+    <div class="cards">
+      <div class="card">
+        <span class="pill" style="background:#FBEDE4; color:#8A3D0C">Forensic accounting</span>
+        <h3>Find and prove irregularities</h3>
+        <p>Duplicate payments, ghost vendors, threshold avoidance, split purchases, segregation-of-duties
+          breaches, weekend and after-hours journals, unreversed accruals — tested across 100% of the
+          population, quantified conservatively, and written up without accusing anyone.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Data analytics</span>
+        <h3>Build reporting that reconciles</h3>
+        <p>A P&amp;L, balance sheet and cash flow built from raw ledger data, on a star schema, with a close-pack
+          page that proves the numbers tie to the trial balance — and drillthrough to every transaction.</p>
+      </div>
+      <div class="card">
+        <span class="pill" style="background:#EAF3E5; color:#3D6127">Machine learning &amp; AI</span>
+        <h3>Predict, explain, govern</h3>
+        <p>A client churn model that beats its baseline by 17.8 points, forecasting, anomaly detection, AI-assisted
+          commentary with human review — plus the model card and governance pack clients now ask for.</p>
+      </div>
+      <div class="card">
+        <span class="pill" style="background:#F3EDF8; color:#5A2D82">Advisory practice</span>
+        <h3>Sell and price the work</h3>
+        <p>Productised service lines with prices, proposals, engagement letters with data-handling clauses,
+          a build standard and an independent quality-control review before anything is issued.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The practice data: Mhondoro Manufacturing (Pvt) Ltd</h2>
+    <p class="sub">A Harare/Bulawayo light manufacturer, two financial years (1 Jan 2024 – 30 Sep 2025), USD,
+      15% VAT — and seven fraud schemes deliberately hidden in the ledger. The generator is deterministic, so
+      every lab's expected results are reproducible.</p>
+
+    <div class="two">
+      <div class="panel">
+        <h3 style="margin:0 0 10px; color:var(--navy); font-size:1rem">What your model must reproduce</h3>
+        <table>
+          <tr><th>Control</th><th class="num">Value</th></tr>
+          <tr><td>Ledger lines / journals</td><td class="num">13,929 / 5,504</td></tr>
+          <tr><td>Total debits = total credits</td><td class="num">$122,878,886.54</td></tr>
+          <tr><td>FY2024 result</td><td class="num">$447,052 profit</td></tr>
+          <tr><td>FY2025 result (9 months)</td><td class="num" style="color:var(--bad)">−$61,867</td></tr>
+          <tr><td>Receivables / payables / cash</td><td class="num">$3.79m / $2.37m / $0.79m</td></tr>
+          <tr><td>Suspense account</td><td class="num">$51,058.87</td></tr>
+          <tr><td>Flagged forensic value</td><td class="num" style="color:var(--accent)">$1,945,536.55</td></tr>
+          <tr><td>Balance sheet check</td><td class="num" style="color:var(--good)">0.00</td></tr>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h3 style="margin:0 0 6px; color:var(--navy); font-size:1rem">Two years, in one picture</h3>
+        <svg viewBox="0 0 420 250" width="100%" height="240" role="img"
+             aria-label="Bar chart: FY2024 revenue 13.79 million versus FY2025 nine-month revenue 10.54 million; profit 447 thousand versus a loss of 61.9 thousand">
+          <line x1="46" y1="196" x2="404" y2="196" stroke="#C9D6E2" stroke-width="1.5"/>
+          <line x1="46" y1="40" x2="46" y2="196" stroke="#C9D6E2" stroke-width="1.5"/>
+          <text x="40" y="44" text-anchor="end" font-size="10" fill="#7F7F7F">14m</text>
+          <text x="40" y="120" text-anchor="end" font-size="10" fill="#7F7F7F">7m</text>
+          <text x="40" y="199" text-anchor="end" font-size="10" fill="#7F7F7F">0</text>
+
+          <rect x="86" y="42" width="58" height="154" fill="#1F4E79"/>
+          <rect x="176" y="78" width="58" height="118" fill="#2E75B6"/>
+          <rect x="266" y="42" width="58" height="52" fill="#548235"/>
+          <rect x="266" y="94" width="58" height="102" fill="#C00000" opacity=".85"/>
+
+          <text x="115" y="214" text-anchor="middle" font-size="11" fill="#1B2430">FY2024</text>
+          <text x="205" y="214" text-anchor="middle" font-size="11" fill="#1B2430">FY2025 (9M)</text>
+          <text x="295" y="214" text-anchor="middle" font-size="11" fill="#1B2430">Result</text>
+
+          <text x="115" y="34" text-anchor="middle" font-size="11" font-weight="600" fill="#1F4E79">13.79m</text>
+          <text x="205" y="70" text-anchor="middle" font-size="11" font-weight="600" fill="#2E75B6">10.54m</text>
+          <text x="295" y="34" text-anchor="middle" font-size="11" font-weight="600" fill="#548235">+447k</text>
+          <text x="295" y="110" text-anchor="middle" font-size="11" font-weight="600" fill="#C00000">−61.9k</text>
+
+          <text x="46" y="238" font-size="10" fill="#7F7F7F">Revenue (left two bars) vs current-year result · USD · regenerated by scripts/generate_data.py</text>
+        </svg>
+        <div class="legend">
+          <span><span class="dot" style="background:#1F4E79"></span>FY2024 revenue</span>
+          <span><span class="dot" style="background:#2E75B6"></span>FY2025 revenue</span>
+          <span><span class="dot" style="background:#548235"></span>Profit</span>
+          <span><span class="dot" style="background:#C00000"></span>Loss</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>The reveal is earned, not given.</strong> <span class="mono">data/raw/InjectionLog.csv</span> is the
+      answer key. Open it only after you have built your own evidence register in Lab 09 — the learning lives in
+      the gap between what you found and what is actually there.
+    </div>
+  </section>
+
+  <section>
+    <h2>The twelve modules</h2>
+    <p class="sub">Modules 1–6 build the tool and the model. Modules 7–10 turn it into analytics and forensics.
+      Modules 11–12 turn it into services you can sell.</p>
+    <div class="cards">
+      <div class="card"><span class="pill">4 hrs</span><h3>1 · Getting Started</h3><p>Install, navigate, build and publish your first report. Lab: a 3-visual report in 40 minutes.</p></div>
+      <div class="card"><span class="pill">6 hrs</span><h3>2 · Power Query &amp; M</h3><p>Import accounting extracts and clean them reproducibly. Lab: the data-source layer.</p></div>
+      <div class="card"><span class="pill">8 hrs</span><h3>3 · Star Schema</h3><p>Chart-of-accounts modelling that scales; role-playing dimensions. Lab: model the Mhondoro warehouse.</p></div>
+      <div class="card"><span class="pill">8 hrs</span><h3>4 · DAX Fundamentals</h3><p>Measures, filter context, sign conventions. Lab: 25 core accounting measures.</p></div>
+      <div class="card"><span class="pill">10 hrs</span><h3>5 · Advanced DAX</h3><p>Time intelligence, opening/closing balances, context transition. Lab: the time &amp; balance engine.</p></div>
+      <div class="card"><span class="pill">10 hrs</span><h3>6 · Financial Statements</h3><p>A live P&amp;L, balance sheet and cash flow that reconcile. Lab: the reporting pack with a close-check page.</p></div>
+      <div class="card"><span class="pill">8 hrs</span><h3>7 · Visualisation</h3><p>Dashboards a CFO or a court will read. Lab: executive dashboard to a written spec.</p></div>
+      <div class="card"><span class="pill">8 hrs</span><h3>8 · Analytics &amp; KPIs</h3><p>Variance, margin, DSO/DPO/DIO, trend and exception analysis. Lab: variance and exception pages.</p></div>
+      <div class="card"><span class="pill">12 hrs</span><h3>9 · Forensic Analytics</h3><p>Benford, duplicates, ghost vendors, threshold tests, JE risk scoring. Lab: the forensic workbench.</p></div>
+      <div class="card"><span class="pill">10 hrs</span><h3>10 · Investigation</h3><p>Run the case end to end and write it up. Lab: the investigation and the board pack.</p></div>
+      <div class="card"><span class="pill">12 hrs</span><h3>11 · ML &amp; AI</h3><p>AutoML, Key Influencers, anomaly detection, forecasting, Copilot, governance. Lab: churn model.</p></div>
+      <div class="card"><span class="pill">6 hrs</span><h3>12 · Advisory Practice</h3><p>Productise, price, propose and deliver. Lab: propose and price a retainer.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Four capstones — the portfolio you show clients</h2>
+    <table>
+      <tr><th>Capstone</th><th>What you deliver</th><th>Sellable as</th><th class="num">Fee band</th></tr>
+      <tr>
+        <td><strong>1 · Forensic Investigation</strong></td>
+        <td>Findings pack, quantified loss, evidence register, board presentation</td>
+        <td>Forensic investigation</td>
+        <td class="num">$8k–$45k</td>
+      </tr>
+      <tr>
+        <td><strong>2 · Financial Reporting Pack</strong></td>
+        <td>Live P&amp;L, BS, cash flow, KPIs, hidden data-quality page</td>
+        <td>CFO reporting retainer</td>
+        <td class="num">$4k–$15k</td>
+      </tr>
+      <tr>
+        <td><strong>3 · Data Analytics Engagement</strong></td>
+        <td>Procurement, receivables and cash analytics suite + committee pack</td>
+        <td>Internal audit analytics</td>
+        <td class="num">$6k–$18k</td>
+      </tr>
+      <tr>
+        <td><strong>4 · AI &amp; Advisory Service</strong></td>
+        <td>Churn model, forecast, anomaly detection, governance pack, service blueprint</td>
+        <td>ML / AI advisory retainer</td>
+        <td class="num">$6k–$30k + monthly</td>
+      </tr>
+    </table>
+    <div class="callout ok">
+      <strong>Every capstone ends with the three questions every client asks</strong> — how long, how much, and
+      how do I know it is right — answered in writing, with a priced scope of work built from hours and roles.
+    </div>
+  </section>
+
+  <section>
+    <h2>How the repository fits together</h2>
+    <div class="two">
+      <div class="panel">
+        <pre class="mono">Power_BI/
+├── README.md            course home page and orientation
+├── course/              syllabus, instructor guide, progress tracker
+├── modules/             01–12, the teaching material
+├── labs/                Lab_Index.md — 12 exercises + expected results
+├── dax/                 Core, Time Intelligence &amp; Forensic measure libraries
+├── powerquery/          M_Query_Library.pqm (10 documented queries)
+├── powerbi/             Windows install &amp; macOS options guides
+├── capstones/           four simulated client engagements
+├── business/            service catalogue, proposals, engagement letters, build standard
+├── assessments/         60 quiz questions, 3 practical exams, self-assessment
+├── reference/           cheat sheet, glossary, common errors, career guide
+├── data/                raw CSVs, three workbooks, dictionary, scored model output
+├── scripts/             generators, verifier, churn model, vendor matcher
+└── assets/              theme JSON + brand guidelines</pre>
+      </div>
+      <div class="panel">
+        <h3 style="margin:0 0 10px; color:var(--navy); font-size:1rem">Start here, in this order</h3>
+        <ol class="flow">
+          <li>Read the <span class="mono">README.md</span> and the syllabus.</li>
+          <li>Install Power BI Desktop (or set up a Windows route if you are on a Mac).</li>
+          <li>Run <span class="mono">scripts/verify_data.py</span> so you know the data is intact.</li>
+          <li>Work Module 1 → Lab 01, and do not move on until the lab output matches.</li>
+          <li>Track progress in <span class="mono">course/Progress_Tracker.csv</span>.</li>
+          <li>Finish with Capstone 1 or 2 — that is your portfolio.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Study schedules</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>8 weeks (full-time)</h3>
+        <p><span class="tag">4 hrs/day</span> Two modules a week with the labs done the same day. Capstones in
+          weeks 7–8. This is the pace for a career change or between engagements.</p>
+      </div>
+      <div class="card">
+        <h3>16 weeks (working)</h3>
+        <p><span class="tag">10 hrs/week</span> One module per week, labs at the weekend, capstones in the last
+          month. Sustainable alongside a full-time audit or finance role.</p>
+      </div>
+      <div class="card">
+        <h3>10-day intensive</h3>
+        <p><span class="tag">9am–4pm</span> Instructor-led: module in the morning, lab in the afternoon, review
+          against expected results before the day ends. See the instructor guide.</p>
+      </div>
+      <div class="card">
+        <h3>Pass standard</h3>
+        <p><span class="tag">70%</span> Quizzes, three practical exams and two capstones, marked against rubrics.
+          A model whose control checks do not return zero does not pass.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Professional standards built into the course</h2>
+    <p class="sub">Technique without standards produces reports nobody can rely on. These rules run through every
+      module, lab and capstone.</p>
+    <div class="cards">
+      <div class="card"><h3>Evidence discipline</h3><p>Keep the original extract, record its hash, analyse a copy,
+        and document every cleaning decision so a third party can reproduce the result.</p></div>
+      <div class="card"><h3>Language discipline</h3><p>Report transactions and controls, never people. Separate
+        fact, inference and opinion. Value at risk is not quantified loss — the distinction is stated every time.</p></div>
+      <div class="card"><h3>Reconciliation discipline</h3><p>No number is issued until debits equal credits, the
+        balance sheet checks to zero and every headline figure ties to the client's own records.</p></div>
+      <div class="card"><h3>Quality control</h3><p>An independent reviewer who did not build the work re-performs a
+        calculation on every page and signs a checklist before the client sees anything.</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <strong style="color:#fff">Maxhub Pvt Ltd</strong> — Forensic Accounting · Data Analytics · Machine Learning &amp; AI · Advisory Services
+    <div style="margin-top:8px">
+      In the repository:
+      <a href="../README.md">course home</a> ·
+      <a href="Course_Syllabus.md">syllabus</a> ·
+      <a href="Instructor_Guide.md">instructor guide</a> ·
+      <a href="../labs/Lab_Index.md">labs</a> ·
+      <a href="../capstones/README.md">capstones</a> ·
+      <a href="../business/README.md">business templates</a> ·
+      <a href="../assessments/README.md">assessments</a> ·
+      <a href="../reference/Cheat_Sheet.md">cheat sheet</a> ·
+      <a href="../data/README.md">the data</a>
+    </div>
+    <div style="margin-top:10px; color:#9DC3E6; font-size:.82rem">
+      All data in this course is fictional and generated for training purposes. Confidential — for the named
+      learner. Prepared by Maxhub Pvt Ltd.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

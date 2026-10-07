@@ -1,0 +1,365 @@
+// =====================================================================================
+// FORENSIC TESTS LIBRARY - DAX implementations
+// Reference: Module 9. Every test is written as: population / assertion / expectation /
+//            exception / follow-up. Copy the measure, then document how you used it.
+// Note     : DAX is for the interactive workbench. For very large client ledgers run the
+//            heavy tests in Power Query (see powerquery/M_Query_Library.pqm).
+// =====================================================================================
+
+
+// =====================================================================================
+// P1 - DUPLICATE PAYMENTS
+// Population  : payments (debit lines) to vendors
+// Assertion   : occurrence - each payment represents a distinct liability
+// Expectation : one payment per vendor + amount + document reference
+// Exception   : the same vendor and amount paid more than once within 30 days
+// Follow-up   : obtain both invoices; confirm with the vendor; check the bank statement
+// =====================================================================================
+
+Duplicate Payment Groups =
+COUNTROWS (
+    FILTER (
+        SUMMARIZE ( FactGLJournal, DimVendor[VendorName], FactGLJournal[Debit] ),
+        CALCULATE ( COUNTROWS ( FactGLJournal ) ) > 1
+            && FactGLJournal[Debit] >= 2000
+    )
+)
+
+Duplicate Payment Lines =
+SUMX (
+    FILTER (
+        SUMMARIZE ( FactGLJournal, DimVendor[VendorName], FactGLJournal[Debit] ),
+        CALCULATE ( COUNTROWS ( FactGLJournal ) ) > 1
+            && FactGLJournal[Debit] >= 2000 ),
+    CALCULATE ( COUNTROWS ( FactGLJournal ) )
+)
+
+Duplicate Value Flagged =
+SUMX (
+    FILTER (
+        SUMMARIZE ( FactGLJournal, DimVendor[VendorName], FactGLJournal[Debit] ),
+        CALCULATE ( COUNTROWS ( FactGLJournal ) ) > 1
+            && FactGLJournal[Debit] >= 2000 ),
+    CALCULATE ( SUM ( FactGLJournal[Debit] ) )
+)
+
+// Conservative estimate of the improper portion: the extra payment(s) in each pair/group
+Probable Overpayment =
+SUMX (
+    FILTER (
+        SUMMARIZE ( FactGLJournal, DimVendor[VendorName], FactGLJournal[Debit] ),
+        CALCULATE ( COUNTROWS ( FactGLJournal ) ) > 1
+            && FactGLJournal[Debit] >= 2000 ),
+    VAR Times = CALCULATE ( COUNTROWS ( FactGLJournal ) )
+    VAR Amount = CALCULATE ( MAX ( FactGLJournal[Debit] ) )
+    RETURN Amount * ( Times - 1 )
+)
+
+
+// =====================================================================================
+// P2 - GHOST / RELATED-PARTY VENDORS
+// Population  : vendor master + payments
+// Assertion   : existence - the vendor is a real, independent supplier
+// Expectation : vendors have tax clearance, have been established for a period, are not
+//               linked to employees, and are not paid exclusively by one person
+// Exception   : any of those indicators present
+// Follow-up   : company registry search, site visit, bank confirmation, conflict declaration
+// =====================================================================================
+
+Employee Linked Vendors =
+CALCULATE ( COUNTROWS ( DimVendor ), DimVendor[IsEmployeeLinked] = "Yes" )
+
+Employee Linked Vendor Spend =
+CALCULATE ( [GL Amount Abs], DimVendor[IsEmployeeLinked] = "Yes", FactGLJournal[Debit] > 0 )
+
+Vendors Missing Tax Clearance =
+CALCULATE ( COUNTROWS ( DimVendor ), DimVendor[TaxClearanceNo] = "" )
+
+Vendors Created In Last 6 Months Of Spend =
+COUNTROWS (
+    FILTER ( DimVendor,
+        DimVendor[VendorCreatedOn] <> BLANK ()
+        && DimVendor[LastBankChangeDate] = DimVendor[VendorCreatedOn] ) )
+
+// Payments made within 60 days of the vendor being created (weak onboarding + urgency)
+Spend With New Vendors =
+SUMX (
+    FILTER ( DimVendor,
+        DimVendor[VendorCreatedOn] <> BLANK ()
+        && CALCULATE ( MIN ( FactGLJournal[PostingDate] ) ) - DimVendor[VendorCreatedOn] <= 60 ),
+    CALCULATE ( SUM ( FactGLJournal[Debit] ) ) )
+
+// THE test - does a vendor bank account match an employee bank account?
+Employee Bank Account Matches =
+COUNTROWS (
+    FILTER ( DimVendor,
+        CALCULATE ( COUNTROWS ( DimEmployee ),
+            TREATAS ( VALUES ( DimVendor[BankAccount] ), DimEmployee[BankAccount] ) ) > 0 ) )
+
+// Vendor name appears to contain an employee surname
+Vendors Resembling Employees =
+COUNTROWS (
+    FILTER ( DimVendor,
+        COUNTROWS (
+            FILTER ( DimEmployee,
+                VAR Surname = UPPER ( TRIM ( MID ( DimEmployee[EmployeeName],
+                        FIND ( " ", DimEmployee[EmployeeName] ) + 1, 50 ) ) )
+                RETURN LEN ( Surname ) > 3
+                       && SEARCH ( Surname, UPPER ( DimVendor[VendorName] ), 1, 0 ) > 0 ) ) > 0 ) )
+
+// Vendors paid by a single preparer (concentration of control)
+Vendors With One Preparer =
+COUNTROWS (
+    FILTER ( VALUES ( DimVendor[VendorID] ),
+        CALCULATE ( DISTINCTCOUNT ( FactGLJournal[PreparedBy] ), FactGLJournal[Debit] > 0 ) = 1 ) )
+
+
+// =====================================================================================
+// P3 - ROUND NUMBERS AND PSYCHOLOGICAL THRESHOLDS
+// Population  : all journal lines above a de-minimis value
+// Assertion   : occurrence / accuracy - amounts reflect real documents
+// Expectation : amounts are irregular (as real invoices are); approvals follow the matrix
+// Exception   : round amounts, and clustering just below approval limits
+// Follow-up   : vouch to the invoice; check who approved and why the amount was set
+// =====================================================================================
+
+Round Number Lines =
+CALCULATE ( COUNTROWS ( FactGLJournal ),
+    FILTER ( FactGLJournal,
+        VAR A = ABS ( FactGLJournal[AmountUSD] )
+        RETURN A > 0 && MOD ( A, 1000 ) = 0 ) )
+
+Round Number % =
+DIVIDE ( [Round Number Lines],
+         CALCULATE ( COUNTROWS ( FactGLJournal ), FILTER ( FactGLJournal, ABS ( FactGLJournal[AmountUSD] ) >= 10 ) ) )
+
+Round Number Value =
+CALCULATE ( SUM ( FactGLJournal[AbsAmountUSD] ),
+    FILTER ( FactGLJournal,
+        VAR A = ABS ( FactGLJournal[AmountUSD] )
+        RETURN A > 0 && MOD ( A, 1000 ) = 0 ) )
+
+// Threshold tests - change the numbers to the client's actual approval matrix.
+// Mhondoro: $10,000 CFO approval, $5,000 PO required.
+Entries Just Below Approval Limit =
+CALCULATE ( COUNTROWS ( FactGLJournal ),
+    FILTER ( FactGLJournal, FactGLJournal[Debit] >= 9000 && FactGLJournal[Debit] < 10000 ) )
+
+Entries Just Above Approval Limit =
+CALCULATE ( COUNTROWS ( FactGLJournal ),
+    FILTER ( FactGLJournal, FactGLJournal[Debit] >= 10000 && FactGLJournal[Debit] < 11000 ) )
+
+Threshold Avoidance Ratio =
+DIVIDE ( [Entries Just Below Approval Limit], [Entries Just Above Approval Limit] )
+// > 3 suggests structuring. Compare also with the average of the two bands above.
+
+Entries Just Below PO Limit =
+CALCULATE ( COUNTROWS ( FactGLJournal ),
+    FILTER ( FactGLJournal, FactGLJournal[Debit] >= 3000 && FactGLJournal[Debit] < 5000 ) )
+
+Payments Without Required Approval =
+CALCULATE ( COUNTROWS ( FactGLJournal ),
+    FILTER ( FactGLJournal,
+        FactGLJournal[Debit] >= 10000 && FactGLJournal[ApprovedBy] = "" ) )
+
+Payments Without Required Approval Value =
+CALCULATE ( SUM ( FactGLJournal[Debit] ),
+    FILTER ( FactGLJournal,
+        FactGLJournal[Debit] >= 10000 && FactGLJournal[ApprovedBy] = "" ) )
+
+
+// =====================================================================================
+// P4 - SPLIT PURCHASES (STRUCTURING)
+// Expectation : a single requirement is covered by one PO; invoices are not staged
+// Exception   : two or more invoices just below the PO limit, same vendor, same month,
+//               whose total exceeds the limit
+// =====================================================================================
+
+Split Purchase Groups =
+COUNTROWS (
+    FILTER (
+        SUMMARIZE ( FactGLJournal, DimVendor[VendorID], DimDate[MonthYear] ),
+        VAR BelowLimit = CALCULATE ( COUNTROWS ( FactGLJournal ),
+                FactGLJournal[Debit] > 3000, FactGLJournal[Debit] < 5000 )
+        VAR MonthSpend = CALCULATE ( SUM ( FactGLJournal[Debit] ) )
+        RETURN BelowLimit >= 2 && MonthSpend > 5000 ) )
+
+Split Purchase Value =
+SUMX (
+    FILTER (
+        SUMMARIZE ( FactGLJournal, DimVendor[VendorID], DimDate[MonthYear] ),
+        VAR BelowLimit = CALCULATE ( COUNTROWS ( FactGLJournal ),
+                FactGLJournal[Debit] > 3000, FactGLJournal[Debit] < 5000 )
+        VAR MonthSpend = CALCULATE ( SUM ( FactGLJournal[Debit] ) )
+        RETURN BelowLimit >= 2 && MonthSpend > 5000 ),
+    CALCULATE ( SUM ( FactGLJournal[Debit] ) ) )
+
+
+// =====================================================================================
+// J1-J10 - JOURNAL ENTRY TESTING
+// =====================================================================================
+
+// J1 Manual journals (the population for most other tests)
+Manual Entry Lines = CALCULATE ( [GL Lines], FactGLJournal[EntryType] = "Manual" )
+
+Manual Entry Value = CALCULATE ( [GL Amount Abs], FactGLJournal[EntryType] = "Manual" )
+
+Manual Entry % of Value = DIVIDE ( [Manual Entry Value], [GL Amount Abs] )
+
+// J2 Round numbers - see P3
+
+// J3 Weekend and after-hours postings
+Weekend Postings =
+CALCULATE ( [GL Lines], FactGLJournal[EntryType] = "Manual",
+    FILTER ( FactGLJournal, WEEKDAY ( FactGLJournal[EnteredOn], 2 ) >= 6 ) )
+
+Weekend Posting Value =
+CALCULATE ( [GL Amount Abs], FactGLJournal[EntryType] = "Manual",
+    FILTER ( FactGLJournal, WEEKDAY ( FactGLJournal[EnteredOn], 2 ) >= 6 ) )
+
+After Hours Postings =
+CALCULATE ( [GL Lines], FactGLJournal[EntryType] = "Manual",
+    FILTER ( FactGLJournal,
+        HOUR ( FactGLJournal[EnteredOn] ) < 7 || HOUR ( FactGLJournal[EnteredOn] ) > 19 ) )
+
+After Hours Value =
+CALCULATE ( [GL Amount Abs], FactGLJournal[EntryType] = "Manual",
+    FILTER ( FactGLJournal,
+        HOUR ( FactGLJournal[EnteredOn] ) < 7 || HOUR ( FactGLJournal[EnteredOn] ) > 19 ) )
+
+// J4 Backdated postings (document date significantly earlier than the posting date)
+Backdated Lines =
+CALCULATE ( [GL Lines],
+    FILTER ( FactGLJournal, DATEDIFF ( FactGLJournal[DocumentDate], FactGLJournal[PostingDate], DAY ) >= 10 ) )
+
+Backdated Value =
+CALCULATE ( [GL Amount Abs],
+    FILTER ( FactGLJournal, DATEDIFF ( FactGLJournal[DocumentDate], FactGLJournal[PostingDate], DAY ) >= 10 ) )
+
+// J5 Unusual user x account combinations (computed against the user's own posting profile)
+User Account Concentration % =
+VAR UserTotal = CALCULATE ( [GL Lines], ALLSELECTED ( DimAccount[AccountCode] ) )
+RETURN DIVIDE ( [GL Lines], UserTotal )
+
+// J6 Reversals and suspense as the offset
+Reversal Lines = CALCULATE ( [GL Lines], FactGLJournal[IsReversal] = "Yes" )
+
+Suspense Postings =
+CALCULATE ( [GL Lines], DimAccount[IsSuspense] = "Yes" )
+
+Suspense Balance = CALCULATE ( [Closing Balance], DimAccount[IsSuspense] = "Yes" ) * -1
+
+Suspense Age Days =
+VAR LastSuspense = CALCULATE ( MAX ( FactGLJournal[PostingDate] ), DimAccount[IsSuspense] = "Yes" )
+RETURN DATEDIFF ( LastSuspense, MAX ( DimDate[Date] ), DAY )
+
+// J7 Accruals that were never reversed
+Unreversed Accruals =
+CALCULATE ( [GL Lines],
+    FactGLJournal[EntryType] = "Manual",
+    FILTER ( DimAccount, DimAccount[AccountCode] IN { "1300", "2010", "6080", "6190" } ) )
+
+// J8 Journals that do not balance
+Unbalanced Journals = [Unbalanced Journals]  // defined in Core_Measures_Library
+
+// J9 Period-end clustering - value in the last 3 days of the period
+Period End Value % =
+VAR LastThree = CALCULATE ( [GL Amount Abs], FILTER ( DimDate, DimDate[Days From Period End] <= 3 ) )
+RETURN DIVIDE ( LastThree, [GL Amount Abs] )
+
+// J10 Rarely used accounts
+Rare Account Lines =
+CALCULATE ( [GL Lines],
+    FILTER ( VALUES ( DimAccount[AccountCode] ),
+        CALCULATE ( [GL Lines], ALL ( DimDate ) ) < 3 ) )
+
+
+// =====================================================================================
+// U1 - SECREGATION OF DUTIES AND MAKER-CHECKER
+// =====================================================================================
+
+SoD Breach Lines =
+CALCULATE ( [GL Lines],
+    DimUser[JobTitle] = "Accounts Payable Clerk",
+    DimAccount[AccountType] = "Revenue" )
+
+SoD Breach Value =
+CALCULATE ( [GL Amount Abs],
+    DimUser[JobTitle] = "Accounts Payable Clerk",
+    DimAccount[AccountType] = "Revenue" )
+
+Unapproved Value =
+CALCULATE ( [GL Amount Abs],
+    FILTER ( FactGLJournal, FactGLJournal[ApprovedBy] = "" && FactGLJournal[AbsAmountUSD] > 10000 ) )
+
+Unapproved % = DIVIDE ( [Unapproved Value], [GL Amount Abs] )
+
+Self Approved Lines =
+CALCULATE ( [GL Lines],
+    FILTER ( FactGLJournal,
+        FactGLJournal[ApprovedBy] <> "" && FactGLJournal[ApprovedBy] = FactGLJournal[PreparedBy] ) )
+
+// Users who both post and approve (a structural control weakness)
+Users Who Post And Approve =
+COUNTROWS (
+    FILTER ( VALUES ( DimUser[UserID] ),
+        CALCULATE ( COUNTROWS ( FactGLJournal ), USERELATIONSHIP ( DimUser[UserID], FactGLJournal[ApprovedBy] ) ) > 0
+        && CALCULATE ( COUNTROWS ( FactGLJournal ) ) > 0 ) )
+
+
+// =====================================================================================
+// R1 - RISK SCORING AND THE EVIDENCE REGISTER
+// Weighting is judgemental - disclose that in the methodology note.
+// =====================================================================================
+
+Risk Score =
+VAR Duplicate   = IF ( [Duplicate Payment Lines] > 1, 30, 0 )
+VAR RoundNumber = IF ( MOD ( MAX ( FactGLJournal[Debit] ), 1000 ) = 0 && MAX ( FactGLJournal[Debit] ) > 5000, 15, 0 )
+VAR Weekend     = IF ( WEEKDAY ( MAX ( FactGLJournal[EnteredOn] ), 2 ) >= 6, 15, 0 )
+VAR NoApproval  = IF ( MAX ( FactGLJournal[ApprovedBy] ) = "" && MAX ( FactGLJournal[AbsAmountUSD] ) > 10000, 20, 0 )
+VAR ManualJE    = IF ( MAX ( FactGLJournal[EntryType] ) = "Manual", 10, 0 )
+VAR NewVendor   = IF ( DATEDIFF ( MAX ( DimVendor[VendorCreatedOn] ), MAX ( FactGLJournal[PostingDate] ), DAY ) < 180, 20, 0 )
+VAR HighValue   = IF ( MAX ( FactGLJournal[AbsAmountUSD] ) > 25000, 10, 0 )
+RETURN Duplicate + RoundNumber + Weekend + NoApproval + ManualJE + NewVendor + HighValue
+
+Risk Band =
+SWITCH ( TRUE (),
+    [Risk Score] >= 60, "1. Critical",
+    [Risk Score] >= 40, "2. High",
+    [Risk Score] >= 20, "3. Medium",
+    [Risk Score] >  0,  "4. Low",
+    "5. None" )
+
+Risk Weighted Value = [Risk Score] * [GL Amount Abs]
+
+
+// =====================================================================================
+// B1 - BENFORD'S LAW (built on a BenfordDigits table created in Power Query)
+// Expected proportion for digit d = LOG10(1 + 1/d)
+// Chi-square degrees of freedom = 8. Critical values 15.51 (5%), 20.09 (1%).
+// Exclusions to document: amounts < 10, VAT multiples, fixed fees, salaries, small samples.
+// =====================================================================================
+
+Benford Lines = SUM ( BenfordDigits[Actual] )
+
+Benford Chi Square =
+VAR Total = CALCULATE ( SUM ( BenfordDigits[Actual] ) )
+VAR ChiSq =
+    SUMX ( BenfordDigits,
+        VAR Expected = Total * BenfordDigits[ExpectedPct]
+        RETURN DIVIDE ( ( BenfordDigits[Actual] - Expected ) ^ 2, Expected ) )
+RETURN ChiSq
+
+Benford Conclusion =
+SWITCH ( TRUE (),
+    [Benford Chi Square] > 20.09, "Significant deviation (1% level) - investigate the drivers",
+    [Benford Chi Square] > 15.51, "Deviation at the 5% level - review subgroups",
+    "No significant deviation from Benford's Law" )
+
+Benford Max Deviation % =
+MAXX ( BenfordDigits,
+    ABS ( BenfordDigits[ActualPct] - BenfordDigits[ExpectedPct] ) )
+
+// =====================================================================================
+// END OF FORENSIC TESTS LIBRARY
+// =====================================================================================

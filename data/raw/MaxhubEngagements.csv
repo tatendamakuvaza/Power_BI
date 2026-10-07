@@ -1,0 +1,161 @@
+EngagementID,ClientName,ServiceLine,EngagementManager,StartDate,Period,PlannedHours,ActualHours,FeeUSD,WriteOffUSD,Status,NetPromoterScore
+MX-20250000,Great Dyke Mining,Power BI dashboard,S. Moyo,2025-03-07,2025-03,120,81.77537688020314,16587.09,0.0,In progress,10
+MX-20240001,SADC Industrial Supplies,Fraud risk assessment,T. Makuvaza,2024-04-07,2024-04,320,422.5966439547568,29417.0,0.0,In progress,7
+MX-20240002,Sunrise Hospitals,IFRS advisory,T. Makuvaza,2024-03-09,2024-03,200,302.63643738116104,49728.35,0.0,Completed,8
+MX-20240003,Municipality of Kadoma,Tax analytics,S. Moyo,2024-11-12,2024-11,80,34.96469978386925,105802.09,0.0,Completed,7
+MX-20240004,Municipality of Kadoma,Fraud risk assessment,J. Marufu,2024-11-15,2024-11,120,89.02584856651144,8353.16,361.57,Lost,9
+MX-20250005,TransContinental Haulage,Internal audit co-sourcing,J. Marufu,2025-04-29,2025-04,320,43.010205183496325,4483.72,492.15,Completed,10
+MX-20240006,Mhondoro Manufacturing,Power BI dashboard,S. Moyo,2024-07-27,2024-07,320,215.83528725937393,12870.8,0.0,Proposal,10
+MX-20250007,Great Dyke Mining,Tax analytics,T. Makuvaza,2025-04-30,2025-04,120,282.38618424321527,27047.95,2201.41,Completed,10
+MX-20250008,RetailZ Supermarkets,Tax analytics,J. Marufu,2025-08-03,2025-08,200,116.13535719622023,29228.75,0.0,Proposal,8
+MX-20240009,Mhondoro Manufacturing,Data analytics build,J. Marufu,2024-06-01,2024-06,24,101.61520422999084,82851.0,0.0,Lost,9
+MX-20240010,FoodProcessors Alliance,Power BI dashboard,S. Moyo,2024-07-04,2024-07,40,443.9029260839736,25499.86,0.0,In progress,9
+MX-20250011,Mhondoro Manufacturing,Internal audit co-sourcing,T. Makuvaza,2025-05-25,2025-05,200,54.8434500650415,16820.68,635.15,Completed,8
+MX-20240012,Great Dyke Mining,Fraud risk assessment,J. Marufu,2024-01-16,2024-01,200,141.28415768359102,39905.86,1819.45,Proposal,9
+MX-20240013,TransContinental Haulage,Tax analytics,T. Makuvaza,2024-09-30,2024-09,120,71.32865718033628,25688.41,0.0,Completed,10
+MX-20240014,FoodProcessors Alliance,CFO advisory retainer,S. Moyo,2024-04-18,2024-04,40,157.88492804001456,111285.92,0.0,Lost,10
+MX-20240015,UnivTrust Procurement,Tax analytics,T. Makuvaza,2024-02-09,2024-02,24,112.69861572888625,114920.47,13431.45,Proposal,10
+MX-20250016,FoodProcessors Alliance,Data analytics build,T. Makuvaza,2025-08-05,2025-08,200,31.43271794714433,4506.18,0.0,In progress,6
+MX-20240017,Mhondoro Manufacturing,IFRS advisory,S. Moyo,2024-10-03,2024-10,120,74.630455817312,27910.08,0.0,Completed,8
+MX-20250018,FoodProcessors Alliance,Tax analytics,J. Marufu,2025-09-11,2025-09,24,109.2987761179096,15498.31,1798.57,Completed,9
+MX-20240019,FoodProcessors Alliance,IFRS advisory,S. Moyo,2024-09-03,2024-09,200,20.11023479048879,50003.94,0.0,Lost,9
+MX-20240020,UnivTrust Procurement,CFO advisory retainer,J. Marufu,2024-10-15,2024-10,200,57.37243510221063,47215.32,0.0,Proposal,8
+MX-20240021,FoodProcessors Alliance,IFRS advisory,T. Makuvaza,2024-09-20,2024-09,120,201.19321422065966,32122.27,0.0,Completed,8
+MX-20250022,UnivTrust Procurement,Power BI dashboard,J. Marufu,2025-01-23,2025-01,40,131.5974019166549,10465.98,0.0,Completed,6
+MX-20240023,RetailZ Supermarkets,Tax analytics,J. Marufu,2024-04-26,2024-04,80,182.2841231216907,45241.87,0.0,Completed,9
+MX-20240024,UnivTrust Procurement,IFRS advisory,T. Makuvaza,2024-02-26,2024-02,40,449.2053148632343,67151.59,0.0,Completed,6
+MX-20240025,SADC Industrial Supplies,Fraud risk assessment,T. Makuvaza,2024-05-24,2024-05,40,37.74163392269563,4356.06,0.0,Completed,9
+MX-20240026,UnivTrust Procurement,Power BI dashboard,J. Marufu,2024-10-03,2024-10,80,34.58142793652642,48746.6,966.56,In progress,7
+MX-20250027,RetailZ Supermarkets,Forensic investigation,S. Moyo,2025-06-16,2025-06,40,405.7993817525809,66864.63,0.0,Proposal,8
+MX-20240028,Sunrise Hospitals,Fraud risk assessment,J. Marufu,2024-04-09,2024-04,24,110.26871562963007,10308.8,0.0,Proposal,10
+MX-20240029,RetailZ Supermarkets,Power BI dashboard,T. Makuvaza,2024-11-20,2024-11,120,188.81109466358834,13437.07,458.92,Lost,8
+MX-20240030,TransContinental Haulage,Data analytics build,T. Makuvaza,2024-03-01,2024-03,80,132.53613090968668,124303.3,0.0,Completed,9
+MX-20240031,Municipality of Kadoma,CFO advisory retainer,S. Moyo,2024-09-21,2024-09,320,276.45219072428574,69662.78,6573.35,Proposal,6
+MX-20240032,SADC Industrial Supplies,Forensic investigation,S. Moyo,2024-02-11,2024-02,320,268.25586193080187,78725.21,5395.27,In progress,8
+MX-20240033,RetailZ Supermarkets,Tax analytics,T. Makuvaza,2024-06-11,2024-06,120,71.60617396767967,31987.33,250.1,Completed,7
+MX-20240034,UnivTrust Procurement,IFRS advisory,S. Moyo,2024-09-23,2024-09,120,261.3755879540834,4218.12,0.0,Completed,7
+MX-20240035,TransContinental Haulage,Forensic investigation,T. Makuvaza,2024-06-20,2024-06,40,404.5300697827612,31389.89,344.2,Lost,9
+MX-20250036,SADC Industrial Supplies,Power BI dashboard,S. Moyo,2025-05-28,2025-05,80,112.46921821349329,8884.47,0.0,Proposal,7
+MX-20240037,RetailZ Supermarkets,Power BI dashboard,T. Makuvaza,2024-11-13,2024-11,200,300.9818264478813,68599.04,0.0,Proposal,6
+MX-20240038,FoodProcessors Alliance,Power BI dashboard,S. Moyo,2024-06-14,2024-06,320,80.83259452518394,122232.05,0.0,In progress,10
+MX-20250039,UnivTrust Procurement,Forensic investigation,J. Marufu,2025-08-05,2025-08,320,303.9170383218066,3869.28,0.0,In progress,8
+MX-20240040,UnivTrust Procurement,Forensic investigation,S. Moyo,2024-02-16,2024-02,120,167.39952096089033,9424.48,1665.64,In progress,6
+MX-20250041,AgriHub Cooperative,Tax analytics,T. Makuvaza,2025-03-05,2025-03,120,82.3274524513109,14191.51,0.0,Completed,9
+MX-20250042,AgriHub Cooperative,CFO advisory retainer,T. Makuvaza,2025-06-09,2025-06,40,80.87111781028926,29444.17,474.31,In progress,9
+MX-20250043,UnivTrust Procurement,Tax analytics,T. Makuvaza,2025-05-05,2025-05,320,155.2666566139249,8401.79,0.0,Completed,10
+MX-20240044,UnivTrust Procurement,Machine learning model,J. Marufu,2024-07-22,2024-07,320,72.27791154538868,15107.05,0.0,Completed,10
+MX-20250045,Mhondoro Manufacturing,Machine learning model,T. Makuvaza,2025-08-04,2025-08,40,440.73291346816126,135304.78,0.0,Completed,7
+MX-20250046,TransContinental Haulage,CFO advisory retainer,T. Makuvaza,2025-01-05,2025-01,40,97.09146785094919,10340.43,0.0,Completed,8
+MX-20250047,RetailZ Supermarkets,Machine learning model,J. Marufu,2025-07-05,2025-07,320,44.42925760494171,4258.82,0.0,Proposal,10
+MX-20250048,AgriHub Cooperative,CFO advisory retainer,J. Marufu,2025-08-30,2025-08,24,81.90839510938794,49039.51,0.0,In progress,9
+MX-20250049,Mhondoro Manufacturing,Fraud risk assessment,S. Moyo,2025-05-09,2025-05,120,22.739119661387353,30297.48,0.0,In progress,6
+MX-20240050,Sunrise Hospitals,CFO advisory retainer,T. Makuvaza,2024-05-03,2024-05,320,280.77671952703975,8387.72,35.26,Completed,9
+MX-20240051,TransContinental Haulage,Forensic investigation,S. Moyo,2024-07-07,2024-07,40,45.17232297704606,9131.6,938.67,Completed,10
+MX-20250052,Municipality of Kadoma,Power BI dashboard,J. Marufu,2025-01-20,2025-01,320,362.6614699078044,16732.29,2838.62,Completed,6
+MX-20250053,SADC Industrial Supplies,Fraud risk assessment,J. Marufu,2025-05-05,2025-05,320,26.579492084461805,73394.67,0.0,Lost,7
+MX-20240054,Great Dyke Mining,Internal audit co-sourcing,J. Marufu,2024-08-13,2024-08,80,31.793242013052293,129200.48,0.0,In progress,6
+MX-20240055,UnivTrust Procurement,Forensic investigation,T. Makuvaza,2024-07-22,2024-07,40,137.96561267635508,85591.75,0.0,Completed,6
+MX-20250056,FoodProcessors Alliance,Fraud risk assessment,T. Makuvaza,2025-01-25,2025-01,80,98.69401315979522,4253.32,498.2,Proposal,6
+MX-20240057,Sunrise Hospitals,Fraud risk assessment,T. Makuvaza,2024-01-21,2024-01,80,99.39095765313574,13930.9,0.0,In progress,10
+MX-20240058,RetailZ Supermarkets,Data analytics build,S. Moyo,2024-08-31,2024-08,120,399.26564895961405,77725.17,10953.67,Completed,10
+MX-20240059,Mhondoro Manufacturing,Internal audit co-sourcing,T. Makuvaza,2024-07-14,2024-07,200,255.30271625307947,10491.49,1271.74,Lost,9
+MX-20240060,SADC Industrial Supplies,Machine learning model,T. Makuvaza,2024-10-31,2024-10,200,181.75926486599064,107284.29,0.0,Completed,9
+MX-20250061,Municipality of Kadoma,IFRS advisory,S. Moyo,2025-04-18,2025-04,120,152.18776260389748,42029.98,0.0,In progress,9
+MX-20240062,Sunrise Hospitals,IFRS advisory,T. Makuvaza,2024-11-03,2024-11,24,115.60191766456548,77881.51,5607.5,Proposal,9
+MX-20240063,Great Dyke Mining,IFRS advisory,T. Makuvaza,2024-04-02,2024-04,40,224.37095616286234,47772.45,0.0,Completed,10
+MX-20250064,Municipality of Kadoma,CFO advisory retainer,T. Makuvaza,2025-03-14,2025-03,40,112.16594766512317,4542.24,0.0,Proposal,10
+MX-20240065,SADC Industrial Supplies,Tax analytics,S. Moyo,2024-06-08,2024-06,120,24.360026722875176,51198.55,0.0,Lost,6
+MX-20250066,TransContinental Haulage,Fraud risk assessment,S. Moyo,2025-02-04,2025-02,200,342.7207424471835,14553.2,0.0,Lost,10
+MX-20250067,SADC Industrial Supplies,Power BI dashboard,S. Moyo,2025-01-05,2025-01,24,22.580653079970137,15360.18,0.0,In progress,9
+MX-20240068,SADC Industrial Supplies,IFRS advisory,S. Moyo,2024-06-16,2024-06,40,33.041676350703355,134284.78,0.0,Completed,7
+MX-20240069,SADC Industrial Supplies,IFRS advisory,J. Marufu,2024-01-07,2024-01,24,37.994546834055015,68988.23,0.0,Proposal,9
+MX-20240070,FoodProcessors Alliance,Machine learning model,S. Moyo,2024-04-03,2024-04,40,40.22022971665622,12775.03,0.0,Completed,10
+MX-20250071,Sunrise Hospitals,Data analytics build,S. Moyo,2025-08-18,2025-08,40,195.38537066951383,124018.57,0.0,Lost,9
+MX-20250072,UnivTrust Procurement,Internal audit co-sourcing,T. Makuvaza,2025-06-08,2025-06,320,294.5870676753841,111445.27,0.0,In progress,10
+MX-20240073,Municipality of Kadoma,CFO advisory retainer,J. Marufu,2024-08-09,2024-08,200,167.41570541400233,47355.79,0.0,Completed,10
+MX-20240074,FoodProcessors Alliance,Forensic investigation,T. Makuvaza,2024-12-27,2024-12,120,274.2437640141703,10607.94,0.0,Completed,10
+MX-20240075,FoodProcessors Alliance,Data analytics build,S. Moyo,2024-08-05,2024-08,40,65.91263680962825,5168.57,0.0,Proposal,6
+MX-20250076,RetailZ Supermarkets,Tax analytics,T. Makuvaza,2025-05-14,2025-05,40,38.80015134755204,16563.0,0.0,Completed,9
+MX-20250077,Sunrise Hospitals,Machine learning model,T. Makuvaza,2025-08-18,2025-08,120,54.662282757151566,24264.06,0.0,Completed,10
+MX-20240078,Great Dyke Mining,Forensic investigation,S. Moyo,2024-04-17,2024-04,24,20.45390148968867,29016.2,0.0,Completed,9
+MX-20240079,UnivTrust Procurement,Machine learning model,J. Marufu,2024-06-26,2024-06,200,128.088915815402,111119.79,6290.39,Lost,7
+MX-20250080,SADC Industrial Supplies,Tax analytics,S. Moyo,2025-04-11,2025-04,80,107.49257216292634,16263.6,0.0,Proposal,10
+MX-20250081,RetailZ Supermarkets,Internal audit co-sourcing,S. Moyo,2025-08-08,2025-08,120,226.45401630927165,49302.59,0.0,Completed,10
+MX-20240082,Great Dyke Mining,Data analytics build,J. Marufu,2024-02-28,2024-02,120,120.94525711800783,15784.14,0.0,Completed,7
+MX-20240083,FoodProcessors Alliance,Tax analytics,T. Makuvaza,2024-11-26,2024-11,120,149.461131724784,51078.83,0.0,Proposal,7
+MX-20250084,SADC Industrial Supplies,Data analytics build,J. Marufu,2025-05-04,2025-05,200,21.91860808916531,51213.12,3929.72,Proposal,6
+MX-20250085,AgriHub Cooperative,Data analytics build,T. Makuvaza,2025-09-22,2025-09,120,110.58687572143495,28724.51,0.0,Completed,7
+MX-20240086,Municipality of Kadoma,IFRS advisory,T. Makuvaza,2024-06-30,2024-06,120,19.547148568494638,42475.17,0.0,In progress,7
+MX-20240087,SADC Industrial Supplies,Data analytics build,J. Marufu,2024-10-29,2024-10,200,45.44124472908533,48653.96,2123.9,Completed,6
+MX-20250088,Great Dyke Mining,IFRS advisory,T. Makuvaza,2025-06-06,2025-06,24,231.29778387886333,12954.41,0.0,Completed,9
+MX-20240089,Great Dyke Mining,Tax analytics,S. Moyo,2024-02-26,2024-02,80,151.9089019896179,128496.82,0.0,Lost,10
+MX-20250090,FoodProcessors Alliance,Data analytics build,J. Marufu,2025-05-02,2025-05,24,274.40859800104056,45372.89,0.0,Completed,9
+MX-20250091,FoodProcessors Alliance,CFO advisory retainer,S. Moyo,2025-09-24,2025-09,200,161.73770534469654,85351.09,11858.46,In progress,6
+MX-20240092,FoodProcessors Alliance,Internal audit co-sourcing,S. Moyo,2024-12-01,2024-12,80,415.986693063154,4688.97,0.0,Lost,9
+MX-20240093,UnivTrust Procurement,Tax analytics,S. Moyo,2024-06-23,2024-06,120,463.7522069916906,10559.39,510.18,Proposal,10
+MX-20240094,SADC Industrial Supplies,Tax analytics,T. Makuvaza,2024-06-22,2024-06,320,217.74501199114175,64283.12,0.0,Lost,9
+MX-20250095,Sunrise Hospitals,Fraud risk assessment,T. Makuvaza,2025-08-02,2025-08,120,49.274217305995776,13352.56,804.93,In progress,10
+MX-20250096,SADC Industrial Supplies,Machine learning model,J. Marufu,2025-03-19,2025-03,200,211.2106542475833,76380.18,11670.99,In progress,6
+MX-20240097,Mhondoro Manufacturing,Data analytics build,T. Makuvaza,2024-09-20,2024-09,320,262.68945893495,8316.92,248.06,In progress,9
+MX-20240098,FoodProcessors Alliance,Tax analytics,T. Makuvaza,2024-04-16,2024-04,80,64.92141901232442,102535.59,0.0,Completed,10
+MX-20240099,FoodProcessors Alliance,CFO advisory retainer,T. Makuvaza,2024-01-31,2024-01,120,43.36817450808687,32001.93,2956.57,Proposal,10
+MX-20250100,Great Dyke Mining,Power BI dashboard,J. Marufu,2025-05-21,2025-05,80,27.107286548354008,66601.35,0.0,Proposal,7
+MX-20250101,Sunrise Hospitals,Forensic investigation,T. Makuvaza,2025-02-14,2025-02,40,31.216871679885163,45807.06,5129.6,In progress,10
+MX-20240102,FoodProcessors Alliance,Fraud risk assessment,J. Marufu,2024-09-08,2024-09,200,30.872937898163794,120040.42,0.0,Proposal,9
+MX-20240103,Mhondoro Manufacturing,CFO advisory retainer,J. Marufu,2024-03-31,2024-03,80,34.701308622819596,9725.99,0.0,Completed,10
+MX-20240104,Mhondoro Manufacturing,Fraud risk assessment,J. Marufu,2024-04-06,2024-04,120,297.1755597120103,83082.1,2010.18,Completed,6
+MX-20240105,SADC Industrial Supplies,Power BI dashboard,S. Moyo,2024-11-13,2024-11,120,86.57442534225133,8477.08,0.0,Proposal,9
+MX-20250106,TransContinental Haulage,CFO advisory retainer,S. Moyo,2025-07-19,2025-07,120,174.85763236397872,4469.96,319.95,Lost,9
+MX-20250107,FoodProcessors Alliance,Fraud risk assessment,J. Marufu,2025-08-16,2025-08,40,208.79012243349447,50057.48,0.0,Completed,9
+MX-20240108,Sunrise Hospitals,Machine learning model,S. Moyo,2024-09-05,2024-09,320,167.9139503213891,12911.98,0.0,Lost,9
+MX-20250109,SADC Industrial Supplies,Power BI dashboard,T. Makuvaza,2025-08-07,2025-08,80,241.72047834985045,40056.72,0.0,Completed,6
+MX-20240110,Great Dyke Mining,Internal audit co-sourcing,T. Makuvaza,2024-03-06,2024-03,40,140.8475286214405,46859.77,0.0,Proposal,6
+MX-20240111,FoodProcessors Alliance,CFO advisory retainer,J. Marufu,2024-10-24,2024-10,80,25.83046595518523,111958.49,0.0,In progress,8
+MX-20240112,UnivTrust Procurement,Tax analytics,T. Makuvaza,2024-03-12,2024-03,120,281.67620221047713,129036.88,0.0,Lost,9
+MX-20250113,Sunrise Hospitals,Machine learning model,J. Marufu,2025-06-23,2025-06,200,57.400498525317104,26833.18,388.49,Proposal,10
+MX-20240114,Sunrise Hospitals,Machine learning model,J. Marufu,2024-12-12,2024-12,200,220.55284568521554,39293.62,0.0,In progress,9
+MX-20240115,SADC Industrial Supplies,Fraud risk assessment,T. Makuvaza,2024-09-30,2024-09,80,64.91507740338743,40816.74,1783.2,Completed,10
+MX-20240116,Municipality of Kadoma,Power BI dashboard,S. Moyo,2024-02-10,2024-02,80,168.81129202902906,8453.78,0.0,Proposal,9
+MX-20250117,Great Dyke Mining,Power BI dashboard,J. Marufu,2025-04-29,2025-04,320,109.93922138368245,9389.3,0.0,Completed,9
+MX-20250118,RetailZ Supermarkets,Internal audit co-sourcing,J. Marufu,2025-07-27,2025-07,40,171.69850164171513,4445.9,642.88,Proposal,10
+MX-20240119,Mhondoro Manufacturing,IFRS advisory,T. Makuvaza,2024-08-03,2024-08,120,95.01994052211646,26918.85,0.0,Proposal,9
+MX-20240120,Great Dyke Mining,Forensic investigation,J. Marufu,2024-02-21,2024-02,80,411.9326290449714,10491.63,108.61,Completed,10
+MX-20250121,RetailZ Supermarkets,Internal audit co-sourcing,J. Marufu,2025-06-07,2025-06,200,98.94535273449286,16197.69,0.0,Proposal,7
+MX-20250122,Mhondoro Manufacturing,Data analytics build,S. Moyo,2025-07-10,2025-07,120,33.074136049332644,16037.58,0.0,Proposal,6
+MX-20250123,RetailZ Supermarkets,Forensic investigation,J. Marufu,2025-05-31,2025-05,120,20.804988487740843,16607.33,0.0,Proposal,10
+MX-20250124,SADC Industrial Supplies,Fraud risk assessment,J. Marufu,2025-02-14,2025-02,200,40.51354550033036,25878.77,3711.96,Proposal,9
+MX-20250125,Great Dyke Mining,Data analytics build,J. Marufu,2025-01-19,2025-01,200,112.88705185761245,4074.36,96.77,In progress,7
+MX-20240126,Mhondoro Manufacturing,Internal audit co-sourcing,T. Makuvaza,2024-07-22,2024-07,200,137.74320644656734,14375.65,1298.41,Completed,9
+MX-20250127,SADC Industrial Supplies,Internal audit co-sourcing,J. Marufu,2025-03-17,2025-03,80,48.01787057527644,15148.44,0.0,Completed,9
+MX-20250128,RetailZ Supermarkets,Tax analytics,S. Moyo,2025-05-29,2025-05,120,109.37335924845345,44991.88,5554.34,Proposal,7
+MX-20240129,FoodProcessors Alliance,Internal audit co-sourcing,T. Makuvaza,2024-12-19,2024-12,120,56.115690146354744,3944.58,0.0,Lost,8
+MX-20250130,AgriHub Cooperative,Machine learning model,T. Makuvaza,2025-05-07,2025-05,40,28.725052928942553,15976.31,0.0,Completed,8
+MX-20250131,FoodProcessors Alliance,Fraud risk assessment,J. Marufu,2025-01-25,2025-01,24,113.84317832658544,45897.09,0.0,Completed,10
+MX-20250132,Municipality of Kadoma,CFO advisory retainer,J. Marufu,2025-05-12,2025-05,24,21.90231035737766,65941.95,0.0,Completed,7
+MX-20250133,SADC Industrial Supplies,CFO advisory retainer,J. Marufu,2025-06-12,2025-06,200,98.86382616717148,31255.59,0.0,Proposal,9
+MX-20240134,SADC Industrial Supplies,CFO advisory retainer,S. Moyo,2024-03-13,2024-03,80,23.400220498753534,10144.61,1552.84,Completed,10
+MX-20240135,Mhondoro Manufacturing,IFRS advisory,J. Marufu,2024-04-19,2024-04,40,31.94060000124351,8703.77,0.0,Lost,10
+MX-20250136,Mhondoro Manufacturing,Tax analytics,J. Marufu,2025-01-24,2025-01,24,281.1464605978917,131645.1,0.0,In progress,8
+MX-20240137,FoodProcessors Alliance,Internal audit co-sourcing,T. Makuvaza,2024-09-03,2024-09,320,34.69577593269917,4623.9,0.0,Completed,9
+MX-20250138,Great Dyke Mining,Data analytics build,S. Moyo,2025-05-17,2025-05,24,259.41643604661476,5111.03,414.91,Lost,9
+MX-20240139,RetailZ Supermarkets,Machine learning model,T. Makuvaza,2024-07-08,2024-07,200,66.04319552261617,73711.41,0.0,Completed,9
+MX-20240140,AgriHub Cooperative,Power BI dashboard,S. Moyo,2024-04-08,2024-04,200,205.76355725656464,10623.47,491.75,In progress,6
+MX-20250141,Great Dyke Mining,Internal audit co-sourcing,S. Moyo,2025-04-17,2025-04,80,170.3635711518264,75085.26,0.0,Lost,8
+MX-20250142,RetailZ Supermarkets,IFRS advisory,T. Makuvaza,2025-09-02,2025-09,80,228.9800511150795,10104.84,0.0,Lost,10
+MX-20250143,Municipality of Kadoma,Fraud risk assessment,S. Moyo,2025-04-22,2025-04,200,211.06103559440328,25402.17,0.0,In progress,9
+MX-20250144,Municipality of Kadoma,Machine learning model,S. Moyo,2025-06-14,2025-06,24,263.96710291043644,15572.3,0.0,Lost,7
+MX-20240145,RetailZ Supermarkets,Tax analytics,T. Makuvaza,2024-06-09,2024-06,80,80.53251823777948,31514.84,4971.69,Lost,7
+MX-20250146,Mhondoro Manufacturing,Fraud risk assessment,J. Marufu,2025-04-30,2025-04,120,54.01500796350262,9905.14,0.0,In progress,6
+MX-20240147,Mhondoro Manufacturing,Fraud risk assessment,S. Moyo,2024-03-30,2024-03,40,40.96155916923603,39936.44,0.0,In progress,10
+MX-20240148,FoodProcessors Alliance,IFRS advisory,S. Moyo,2024-01-23,2024-01,24,34.64135604349928,4387.22,0.0,Completed,9
+MX-20250149,Sunrise Hospitals,Data analytics build,S. Moyo,2025-08-31,2025-08,120,294.07493606144567,29521.53,0.0,Proposal,10
+MX-20250150,AgriHub Cooperative,Fraud risk assessment,J. Marufu,2025-04-02,2025-04,24,275.31410369437805,72201.09,0.0,In progress,9
+MX-20240151,AgriHub Cooperative,CFO advisory retainer,T. Makuvaza,2024-06-17,2024-06,120,22.570651547912703,4225.35,607.38,Completed,10
+MX-20250152,SADC Industrial Supplies,Forensic investigation,T. Makuvaza,2025-07-13,2025-07,200,33.71665225741081,9271.93,0.0,Lost,9
+MX-20240153,Sunrise Hospitals,Machine learning model,S. Moyo,2024-07-13,2024-07,40,160.44121915177695,68675.43,0.0,Completed,9
+MX-20250154,AgriHub Cooperative,Tax analytics,T. Makuvaza,2025-06-04,2025-06,120,71.56668527626952,132952.82,0.0,Proposal,7
+MX-20240155,SADC Industrial Supplies,Machine learning model,S. Moyo,2024-04-21,2024-04,120,24.202153340456363,74085.16,9797.32,Proposal,10
+MX-20250156,Mhondoro Manufacturing,Data analytics build,S. Moyo,2025-04-15,2025-04,24,125.72967106873763,9529.04,1249.34,In progress,6
+MX-20240157,Municipality of Kadoma,Forensic investigation,T. Makuvaza,2024-10-11,2024-10,40,47.63369697151759,29382.21,0.0,Completed,9
+MX-20240158,RetailZ Supermarkets,Fraud risk assessment,T. Makuvaza,2024-08-31,2024-08,24,180.01378848909397,24866.15,203.75,Completed,10
+MX-20240159,Great Dyke Mining,IFRS advisory,S. Moyo,2024-05-11,2024-05,80,32.216917003776814,120851.57,0.0,In progress,10

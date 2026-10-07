@@ -1,0 +1,27 @@
+VendorID,VendorCode,VendorName,Category,BankAccount,BankName,TaxClearanceNo,Address,PaymentTerms,VendorCreatedOn,LastBankChangeDate,IsEmployeeLinked,IsActive
+V1001,STEELSUP,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,1091616056,Stanbic Bank,TCL242067,"53 Samora Machel Ave, Mutare",45,2022-01-30,2024-09-23,No,Yes
+V1002,POLYPLAS,PolyPlas Holdings (Pvt) Ltd,Raw materials,1063843426,Nedbank,TCL742328,"105 Kwame Nkrumah Ave, Harare",30,2024-06-02,2025-01-09,No,Yes
+V1003,CHEMPRO,ChemPro Industrial Chemicals,Raw materials,1069140314,Steward Bank,TCL595741,"117 Samora Machel Ave, Harare",45,2024-01-31,2025-07-12,No,Yes
+V1004,PACKRITE,PackRite Packaging Solutions,Packaging,1074315612,Steward Bank,TCL707905,"86 Jason Moyo St, Gweru",30,2022-09-21,2024-06-30,No,Yes
+V1005,LOGIWIN,Logistics Windward Freight,Logistics,1096082780,Nedbank,TCL281879,"143 Samora Machel Ave, Mutare",30,2023-02-22,2025-04-03,No,Yes
+V1006,POWERCO,PowerCo Utilities Zimbabwe,Utilities,1045526849,Steward Bank,TCL305924,"113 Jason Moyo St, Gweru",30,2023-12-12,2025-04-15,No,Yes
+V1007,TELSTAR,TelStar Communications,Telecoms,1091348727,FBC Bank,TCL450974,"137 Kwame Nkrumah Ave, Bulawayo",30,2023-12-02,2024-09-28,No,Yes
+V1008,SECUREG,SecureGuard Security Services,Security,1053649765,Stanbic Bank,TCL573741,"105 Fife St, Mutare",45,2024-03-21,2024-04-23,No,Yes
+V1009,FUELMAX,FuelMax Petroleum,Fuel,1059032071,CBZ Bank,TCL733022,"169 Samora Machel Ave, Harare",45,2020-05-10,2025-07-11,No,Yes
+V1010,INSUREC,InsureCorp Brokers,Insurance,1011999864,CBZ Bank,TCL341398,"1 Jason Moyo St, Mutare",45,2023-02-04,2025-08-08,No,Yes
+V1011,LEGALVL,LegalVault Attorneys,Professional services,1081257335,CBZ Bank,TCL408591,"149 Fife St, Bulawayo",30,2023-06-27,2024-05-15,No,Yes
+V1012,AUDITAX,Auditax Chartered Accountants,Professional services,1084547251,Steward Bank,TCL228652,"103 Jason Moyo St, Mutare",30,2023-03-12,2025-08-05,No,Yes
+V1013,TRAINCO,TrainCo Skills Institute,Training,1010052775,CBZ Bank,TCL847478,"140 Samora Machel Ave, Harare",45,2021-10-16,2024-08-25,No,Yes
+V1014,ITSUPP,IT Support Partners (Pvt) Ltd,IT services,1046341241,Steward Bank,TCL741543,"54 Boshoff Dr, Bulawayo",30,2019-02-28,2024-01-26,No,Yes
+V1015,OFFICEQ,OfficeQuip Stationers,Office supplies,1077479035,CBZ Bank,TCL192958,"188 Kwame Nkrumah Ave, Bulawayo",45,2020-08-05,2025-06-10,No,Yes
+V1016,MAINTEK,MainTek Engineering Services,Maintenance,1033580183,Stanbic Bank,TCL123344,"5 Kwame Nkrumah Ave, Bulawayo",60,2021-05-26,2024-09-02,No,Yes
+V1017,CLEANSER,CleanServ Facilities,Facilities,1090561560,FBC Bank,TCL507542,"60 Kwame Nkrumah Ave, Harare",30,2023-03-06,2025-07-20,No,Yes
+V1018,ADVERTS,AdvertStar Media,Marketing,1095115334,Stanbic Bank,TCL768700,"93 Fife St, Gweru",14,2022-09-02,2024-10-22,No,Yes
+V1019,RENTPROP,RentPro Properties,Rent,1030290488,CBZ Bank,TCL717785,"64 Fife St, Harare",30,2023-09-06,2024-03-19,No,Yes
+V1020,SPAREPO,SparePart Outfitters,Spare parts,1088834629,Stanbic Bank,TCL525548,"69 Samora Machel Ave, Mutare",60,2019-07-21,2024-02-28,No,Yes
+V1021,SOFTPRO,SoftPro Licensing Africa,Software,1049918666,Steward Bank,TCL832755,"113 Kwame Nkrumah Ave, Gweru",14,2019-10-04,2024-12-31,No,Yes
+V1022,MEDICALX,MediCareX Health Services,Medical,1080651744,CBZ Bank,TCL167948,"86 Samora Machel Ave, Gweru",30,2020-03-24,2025-04-10,No,Yes
+V2001,SUP-771,R Chikafu Trading Enterprises,Professional services,104471882301,Steward Bank,,"Suite 12, Cecil House, Harare",7,2024-08-20,2024-08-20,Yes,Yes
+V2002,SUP-772,Zhou Logistics & Advisory,Logistics,105512774109,Steward Bank,,"Suite 12, Cecil House, Harare",7,2024-07-09,2024-07-09,Yes,Yes
+V2003,SUP-773,Gumbo General Suppliers,Office supplies,103390221477,Steward Bank,,"Suite 12, Cecil House, Harare",7,2024-08-30,2024-08-30,Yes,Yes
+V2004,SUP-774,Meridian Consulting Group,Professional services,109911004512,Steward Bank,,"Suite 12, Cecil House, Harare",7,2024-07-16,2024-07-16,Yes,Yes
