@@ -1,0 +1,159 @@
+MAXHUB POWER BI READY-TO-IMPORT PACK - VALIDATION REPORT
+Generated 2025-10-08
+
+Each line re-performs a measure exactly as the shipped DAX defines it - same filter,
+same sign convention - directly against the CSVs in Data_Ready_To_Import, and compares
+it with the control total used in the Word and Excel deliverables. Tolerance 0.01.
+
+As-at date used by the [Closing Balance] measures: 2025-09-30 (273 days elapsed in FY2025).
+
+[PASS] [Debit Total] = SUM(FactGLJournal[Debit])
+        computed 122,878,886.54   expected 122,878,886.54
+[PASS] [Credit Total] = SUM(FactGLJournal[Credit])
+        computed 122,878,886.54   expected 122,878,886.54
+[PASS] [GL Balance Check] = [Debit Total] - [Credit Total]
+        computed 0.00   expected 0.00
+[PASS] [GL Lines] = COUNTROWS(FactGLJournal)
+        computed 13,929   expected 13,929
+[PASS] [Journal Count] = DISTINCTCOUNT(FactGLJournal[JournalID])
+        computed 5,504   expected 5,504
+[PASS] [Unbalanced Journals] = journals where |debits - credits| > 0.005
+        computed 0   expected 0
+[PASS] [GL Lines With Unknown Account] = lines with no DimAccount match
+        computed 0   expected 0
+[PASS] [Manual Journal Lines] = CALCULATE([GL Lines], EntryType = "Manual")
+        computed 945   expected 945
+[PASS] [Total Revenue] = CALCULATE([GL Amount Signed], AccountType = "Revenue") * -1
+        computed 10,543,059.22   expected 10,543,059.22
+[PASS] [Cost of Sales] = CALCULATE([GL Amount Signed], FSLine = "Cost of sales")
+        computed 5,216,591.66   expected 5,216,591.66
+[PASS] [Operating Expenses] = CALCULATE([GL Amount Signed], FSLine = "Operating expenses")
+        computed 5,115,987.31   expected 5,115,987.31
+[PASS] [Finance Costs] = CALCULATE([GL Amount Signed], FSLine = "Finance costs")
+        computed 50,906.54   expected 50,906.54
+[PASS] [Tax Expense] after the correction (FSLine = "Taxation" AND Statement = "PL")
+        computed 221,440.69   expected 221,440.69
+[PASS] [Profit After Tax] = revenue - cost of sales - opex - finance - tax
+        computed -61,866.98   expected -61,866.98
+[PASS] [Gross Margin %] = ([Total Revenue] - [Cost of Sales]) / [Total Revenue]
+        computed 50.52   expected 50.52
+[PASS] Revenue FY2024 on a closed year: FSLine = Revenue, EntryType <> "Closing"
+        computed 13,786,572.99   expected 13,786,572.99
+[PASS] The trap, stated as a number: [Total Revenue] sliced to FiscalYear 2024 with no EntryType filter
+        computed -0.00   expected 0.00
+[PASS] [Assets Total] = CALCULATE([Closing Balance], AccountType = "Asset") - suspense included, ledger convention
+        computed 8,949,384.37   expected 8,949,384.37
+[PASS] [Liabilities Total] = CALCULATE([Closing Balance], AccountType = "Liability") * -1
+        computed 4,756,698.88   expected 4,756,698.88
+[PASS] [Equity Total] = CALCULATE([Closing Balance], AccountType = "Equity") * -1
+        computed 4,254,552.47   expected 4,254,552.47
+[PASS] [Suspense Balance] = CALCULATE([Closing Balance], IsSuspense = "Yes") * -1
+        computed 51,058.87   expected 51,058.87
+[PASS] [BS Check] = [Assets Total] - ([Liabilities Total] + [Equity Total] + [Current Year Result])
+        computed 0.00   expected 0.00
+[PASS] Statement presentation: assets excluding the suspense account
+        computed 9,000,443.24   expected 9,000,443.24
+[PASS] Statement presentation: liabilities including the suspense credit
+        computed 4,807,757.75   expected 4,807,757.75
+[PASS] Statement presentation: assets - liabilities - equity - current year result
+        computed -0.00   expected 0.00
+[PASS] [Cash Balance] = CALCULATE([Closing Balance], IsCashAccount = "Yes")
+        computed 792,548.41   expected 792,548.41
+[PASS] [Receivables Balance] = CALCULATE([Closing Balance], AccountCode = "1100")
+        computed 3,790,173.74   expected 3,790,173.74
+[PASS] [Payables Balance] = CALCULATE([Closing Balance], AccountCode = "2000") * -1
+        computed 2,373,620.98   expected 2,373,620.98
+[PASS] [Inventory Balance] = CALCULATE([Closing Balance], FSLine = "Inventories")
+        computed 871,342.83   expected 871,342.83
+[PASS] [Current Ratio] after the correction (income tax payable 2130 and the suspense credit in current liabilities)
+        computed 1.35   expected 1.35
+[PASS] [DSO] = [Receivables Balance] / [Total Revenue] * [Days In Period]
+        computed 98.14   expected 98.14
+[PASS] [DPO] = [Payables Balance] / [Cost of Sales] * [Days In Period]
+        computed 124.22   expected 124.22
+[PASS] [DIO] = [Inventory Balance] / [Cost of Sales] * [Days In Period]
+        computed 45.60   expected 45.60
+[PASS] [Cash Conversion Cycle] = [DSO] + [DIO] - [DPO]
+        computed 19.52   expected 19.52
+[PASS] Supplier spend = SUM(Debit) on lines carrying a VendorID
+        computed 30,505,968.04   expected 30,505,968.04
+[PASS] [Employee Linked Vendor Spend] = CALCULATE([GL Amount Abs], IsEmployeeLinked = "Yes", Debit > 0)
+        computed 2,773,799.20   expected 2,773,799.20
+[PASS] [AP Invoiced] = SUM(FactAPInvoices[AmountUSD])
+        computed 6,188,968.40   expected 6,188,968.40
+[PASS] [AP Failed 3-Way Match] = COUNTROWS where ThreeWayMatch = "Exception"
+        computed 168   expected 168
+[PASS] [AR Outstanding] = [AR Invoiced] - [AR Received]
+        computed 9,781,168.34   expected 9,781,168.34
+[PASS] [AR Disputed] = CALCULATE([AR Outstanding], DisputedFlag = "Yes")
+        computed 244,018.32   expected 244,018.32
+[PASS] [Expense Claims Value] = SUM(FactExpenseClaims[ClaimedUSD])
+        computed 975,570.31   expected 975,570.31
+[PASS] [Claims Without Receipt] = CALCULATE([Expense Claims Value], ReceiptAttached = "No")
+        computed 117,897.70   expected 117,897.70
+[PASS] [Unreconciled Items] = COUNTROWS where ReconciledFlag = "No"
+        computed 129   expected 129
+[PASS] [Unreconciled Value] = DebitUSD + CreditUSD where ReconciledFlag = "No"
+        computed 1,884,271.16   expected 1,884,271.16
+[PASS] [Oldest Unreconciled Days] = MAX(UnmatchedItemsAgeDays)
+        computed 210   expected 210
+[PASS] Exception register rows = COUNTROWS(FactExceptionRegister)
+        computed 171   expected 171
+[PASS] Exception value = SUM(FactExceptionRegister[AmountUSD])
+        computed 1,945,536.55   expected 1,945,536.55
+[PASS] Risk-weighted value = SUM(FactExceptionRegister[RiskWeightedValueUSD])
+        computed 811,593.31   expected 811,593.31
+[PASS] Injection journals flagged in FactGLJournal
+        computed 171   expected 171
+[PASS] Injection journals detected against the answer key
+        computed 171   expected 171
+
+50 of 50 checks tie to the control totals.
+
+
+Corrections applied to the repository's DAX before shipping (see DAX_Change_Note.md):
+
+  [Tax Expense] in Core_Measures_Library.dax
+      The FSLine "Taxation" spans two accounts: 8000 Income Tax Expense (P&L) and 2130 Income Tax Payable (balance sheet). Without the statement filter the measure netted the liability into the charge and returned -239,329.32 - a negative tax expense. Filtered to the P&L it returns 221,440.69, agreeing with the tax charge in the financial statements.
+  [Current Ratio] in Core_Measures_Library.dax
+      Current liabilities omitted income tax payable (account 2130, 460,770.01) and the suspense credit balance (51,058.87), so the measure returned 1.54 against 1.35 in the financial statements. Both are added by account code rather than by the Taxation FSLine, because that FSLine also contains 8000 Income Tax Expense in the P&L - filtering on it would drag the tax charge into current liabilities and give 1.43. Corrected, the measure returns 1.35 and agrees.
+  [DSO] in Core_Measures_Library.dax
+      The day count was hard-coded to 365 while the revenue measure covers nine months, which overstates the days: 131 against the 98 published. Using [Days In Period] (273 days to 30 September 2025) agrees. Set it to 365 for a full-year model.
+  [DPO] in Core_Measures_Library.dax
+      As DSO: 166 days on a 365-day basis against 124 on the 273 days actually elapsed.
+  [DIO] in Core_Measures_Library.dax
+      As DSO: 61 days on a 365-day basis against 46 on the 273 days actually elapsed.
+
+For reference, the measures before correction returned: Tax Expense -239,329.32 (a negative charge, because it swept in account 2130 Income Tax Payable) and Current Ratio 1.5419.
+
+Table and column inventory:
+
+  FactGLJournal                 13,929 rows   54 columns
+  FactJournal                    5,504 rows   33 columns
+  DimDate                        1,461 rows   22 columns
+  DimAccount                        71 rows   18 columns
+  DimVendor                         26 rows   24 columns
+  DimCustomer                       18 rows   17 columns
+  DimUser                           12 rows   16 columns
+  DimEmployee                       63 rows   13 columns
+  DimCostCentre                      9 rows    4 columns
+  DimFXRate                         84 rows    6 columns
+  DimScheme                          7 rows   18 columns
+  FactAPInvoices                   520 rows   21 columns
+  FactARAgeing                     420 rows   21 columns
+  FactBankTransactions           1,400 rows   16 columns
+  FactExpenseClaims                650 rows   16 columns
+  FactExceptionRegister            171 rows   34 columns
+  FactDismissedExceptions          141 rows    9 columns
+  FactTrialBalance               1,323 rows    9 columns
+  FactBudget                     1,299 rows    7 columns
+  FactSalesOrders                  900 rows   14 columns
+  FactFixedAssets                  120 rows   14 columns
+  FactClientChurnScored            150 rows   21 columns
+  FactEngagementEconomics          160 rows   17 columns
+  FactRevenueForecast               45 rows   10 columns
+  FactPipeline                     240 rows   11 columns
+  FactServiceLineMonthly           231 rows   12 columns
+
+The three DAX libraries in this pack were written against these table and column
+names; no rename is required on import.

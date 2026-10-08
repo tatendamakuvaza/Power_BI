@@ -1,0 +1,191 @@
+// =====================================================================================
+// TIME INTELLIGENCE LIBRARY - Mhondoro / Maxhub engagements
+// Prerequisite: DimDate is (a) continuous, (b) marked as the date table, (c) with
+//               auto date/time OFF. See Module 3 section 3.6.
+// =====================================================================================
+
+
+// -------------------------------------------------------------------------------------
+// 1. THE BASELINE - always define these three first, then compare against them
+// -------------------------------------------------------------------------------------
+
+GL Amount Signed = SUM ( FactGLJournal[Debit] ) - SUM ( FactGLJournal[Credit] )
+
+Total Revenue =
+CALCULATE ( [GL Amount Signed], DimAccount[AccountType] = "Revenue" ) * -1
+
+Revenue Prior Month = CALCULATE ( [Total Revenue], DATEADD ( DimDate[Date], -1, MONTH ) )
+
+Revenue Prior Year = CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+
+
+// -------------------------------------------------------------------------------------
+// 2. PERIOD COMPARISONS - daily / weekly / monthly / quarterly / annual
+// -------------------------------------------------------------------------------------
+
+Revenue Yesterday =
+CALCULATE ( [Total Revenue], DATEADD ( DimDate[Date], -1, DAY ) )
+
+Revenue Prior Week =
+CALCULATE ( [Total Revenue], DATEADD ( DimDate[Date], -7, DAY ) )
+
+Revenue Prior Quarter =
+CALCULATE ( [Total Revenue], DATEADD ( DimDate[Date], -1, QUARTER ) )
+
+Revenue Prior Year By Year =
+CALCULATE ( [Total Revenue], PARALLELPERIOD ( DimDate[Date], -1, YEAR ) )
+
+// Difference between the two prior-year patterns:
+//   SAMEPERIODLASTYEAR -> 1 Jan 2024 to 31 Jan 2024 (same dates last year)
+//   PARALLELPERIOD(-1 YEAR) -> the whole of the prior year, regardless of the selected range
+// Use SAMEPERIODLASTYEAR for comparatives; PARALLELPERIOD for full-year totals in a card.
+
+
+// -------------------------------------------------------------------------------------
+// 3. YEAR / QUARTER / MONTH TO DATE
+// -------------------------------------------------------------------------------------
+
+Revenue YTD = TOTALYTD ( [Total Revenue], DimDate[Date] )
+
+Revenue QTD = TOTALQTD ( [Total Revenue], DimDate[Date] )
+
+Revenue MTD = TOTALMTD ( [Total Revenue], DimDate[Date] )
+
+// Financial year that does not follow the calendar (e.g. FY ends 30 June)
+Revenue FYTD =
+CALCULATE ( [Total Revenue], DATESYTD ( DimDate[Date], "06-30" ) )
+
+Revenue YTD Prior Year =
+CALCULATE ( [Revenue YTD], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+
+Revenue YTD vs Prior Year % =
+DIVIDE ( [Revenue YTD] - [Revenue YTD Prior Year], [Revenue YTD Prior Year] )
+
+
+// -------------------------------------------------------------------------------------
+// 4. PERIOD-END / SEMI-ADDITIVE (balances must never be summed across time)
+// -------------------------------------------------------------------------------------
+
+Closing Balance =
+VAR LastVisibleDate = MAX ( DimDate[Date] )
+RETURN CALCULATE ( [GL Amount Signed], DimDate[Date] <= LastVisibleDate )
+
+Opening Balance =
+VAR FirstVisibleDate = MIN ( DimDate[Date] )
+RETURN CALCULATE ( [GL Amount Signed], DimDate[Date] < FirstVisibleDate )
+
+// Balance at the end of the period containing the currently selected date
+Closing Balance Period End =
+VAR PeriodEnd = MAX ( DimDate[FiscalPeriodEnd] )
+RETURN CALCULATE ( [GL Amount Signed], DimDate[Date] <= PeriodEnd )
+
+// Balance as at the last date that has any data (a "latest position" card)
+Closing Balance Latest =
+VAR MaxDate = CALCULATE ( MAX ( FactGLJournal[PostingDate] ), ALL ( FactGLJournal ) )
+RETURN CALCULATE ( [GL Amount Signed], DimDate[Date] <= MaxDate, ALL ( DimDate ) )
+
+// Balance one period ago - the comparator for balance sheet review
+Closing Balance Prior Month =
+VAR PeriodEnd = CALCULATE ( MAX ( DimDate[FiscalPeriodEnd] ), DATEADD ( DimDate[Date], -1, MONTH ) )
+RETURN CALCULATE ( [GL Amount Signed], DimDate[Date] <= PeriodEnd, ALL ( DimDate ) )
+
+Closing Balance Movement vs Prior Month =
+[Closing Balance] - [Closing Balance Prior Month]
+
+
+// -------------------------------------------------------------------------------------
+// 5. MOVING AVERAGES - smooth noise and seasonality
+// -------------------------------------------------------------------------------------
+
+Revenue 3M Moving Average =
+AVERAGEX ( DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -3, MONTH ), [Total Revenue] )
+
+Revenue 12M Moving Average =
+AVERAGEX ( DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -12, MONTH ), [Total Revenue] )
+
+Revenue Rolling 12M Total =
+CALCULATE ( [Total Revenue], DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -12, MONTH ) )
+
+// Seasonality: is this month normally above or below the annual average?
+Seasonal Index =
+VAR MonthValue = [Total Revenue]
+VAR YearAverage =
+    CALCULATE ( [Total Revenue],
+        REMOVEFILTERS ( DimDate[MonthName] ),
+        VALUES ( DimDate[FiscalYear] ) )
+RETURN DIVIDE ( MonthValue, YearAverage )
+
+Month Rank Within Year =
+RANKX ( FILTER ( ALL ( DimDate[MonthName] ), DimDate[FiscalYear] = MAX ( DimDate[FiscalYear] ) ),
+        [Total Revenue], , DESC, DENSE )
+
+
+// -------------------------------------------------------------------------------------
+// 6. PERIOD-END / CLOSE MANAGEMENT (accounting specific)
+// -------------------------------------------------------------------------------------
+
+// How much of the month's activity is posted in its final three days? (expect 10-15%)
+Period End Clustering % =
+VAR LastThree = CALCULATE ( [GL Lines], FILTER ( DimDate, DimDate[Days From Period End] <= 3 ) )
+RETURN DIVIDE ( LastThree, [GL Lines] )
+
+// Days between the transaction date and the posting date - backdating indicator
+Average Backdating Days =
+AVERAGEX ( FILTER ( FactGLJournal, FactGLJournal[DocumentDate] <> BLANK () ),
+           DATEDIFF ( FactGLJournal[DocumentDate], FactGLJournal[PostingDate], DAY ) )
+
+// Is the selected period closed? (no postings after the 5th of the following month expected)
+Post Close Adjustments =
+CALCULATE ( [GL Lines], FactGLJournal[EnteredOn] > MAX ( DimDate[FiscalPeriodEnd] ) + 5 )
+
+Open Item Age Days =
+DATEDIFF ( MAX ( DimDate[Date] ), TODAY(), DAY )
+
+Periods With No Activity =
+COUNTROWS (
+    FILTER ( VALUES ( DimDate[FiscalPeriod] ),
+             CALCULATE ( [GL Lines] ) = 0
+             && MAX ( DimDate[Date] ) <= CALCULATE ( MAX ( FactGLJournal[PostingDate] ), ALL ( FactGLJournal ) ) )
+)
+
+
+// -------------------------------------------------------------------------------------
+// 7. FORECASTING HELPERS
+// -------------------------------------------------------------------------------------
+
+Revenue Forecast Next Month =
+VAR LastActual = CALCULATE ( MAX ( FactGLJournal[PostingDate] ), ALL ( FactGLJournal ) )
+VAR Growth = [Revenue 3M Moving Average] / [Revenue 12M Moving Average]
+RETURN [Revenue LM] * Growth
+
+Revenue Full Year Run Rate =
+VAR MonthsElapsed = COUNTROWS ( FILTER ( VALUES ( DimDate[MonthYear] ),
+                          CALCULATE ( [Total Revenue] ) <> BLANK () ) )
+RETURN DIVIDE ( [Revenue YTD], MonthsElapsed ) * 12
+
+Forecast Line =
+VAR LastActualDate = CALCULATE ( MAX ( FactGLJournal[PostingDate] ), ALL ( FactGLJournal ) )
+RETURN IF ( MAX ( DimDate[Date] ) > LastActualDate,
+            FORECAST.LINEAR ( MAX ( DimDate[Date] ), [Total Revenue],
+                              CALCULATE ( MAX ( DimDate[Date] ), DimDate[Date] <= LastActualDate ) ),
+            BLANK () )
+
+
+// -------------------------------------------------------------------------------------
+// 8. DYNAMIC TITLES (use on cards / text boxes to make the report read like commentary)
+// -------------------------------------------------------------------------------------
+
+Dynamic Title =
+VAR Period = IF ( HASONEVALUE ( DimDate[MonthYear] ), VALUES ( DimDate[MonthYear] ), "Selected period" )
+VAR Amount = FORMAT ( [Total Revenue], "$#,##0" )
+VAR Change = FORMAT ( [Revenue YoY %], "+0.0%;-0.0%;0.0%" )
+RETURN Period & ": revenue " & Amount & " (" & Change & " vs prior year)"
+
+Variance Title =
+VAR Amount = FORMAT ( [Variance $], "+$#,##0;-$#,##0;$0" )
+VAR Pct = FORMAT ( [Variance %], "+0.0%;-0.0%;0.0%" )
+RETURN "Variance to budget " & Amount & " (" & Pct & ")"
+
+// =====================================================================================
+// END OF TIME INTELLIGENCE LIBRARY
+// =====================================================================================

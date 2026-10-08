@@ -1,0 +1,521 @@
+﻿APInvoiceNo,SupplierInvoiceRef,VendorID,InvoiceDate,DueDate,AmountUSD,PONumber,GRNNumber,ThreeWayMatch,DuplicateSuspected,ApprovedBy,PaidStatus,PaymentDate,VendorName,VendorCategory,EmployeeLinkedVendor,HasPO,HasGRN,DuplicateFlag,ExceptionFlag,ExceptionReason
+PI-00000,INV-30607,V1014,2025-04-05,2025-05-05,7324.66,PO-5932,GRN-7147,Matched,No,,Paid,2025-05-31,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,Yes,No approver recorded
+PI-00001,INV-25600,V1014,2025-04-07,2025-05-07,15514.14,PO-5287,GRN-8628,Matched,No,USR-002,Paid,2025-05-17,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00002,INV-28992,V2004,2025-04-12,2025-04-19,8252.59,PO-6634,GRN-7676,Matched,No,USR-002,Outstanding,2025-05-12,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,No,-
+PI-00003,INV-21109,V1006,2025-02-24,2025-03-26,2995.51,PO-5640,GRN-8541,Matched,No,USR-002,Paid,2025-04-10,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00004,INV-21371,V1010,2025-05-25,2025-07-09,15711.51,PO-5252,GRN-7086,Matched,No,USR-002,Paid,2025-07-28,InsureCorp Brokers,Insurance,No,Yes,Yes,No,No,-
+PI-00005,INV-36859,V1020,2025-07-03,2025-09-01,31205.51,PO-6786,GRN-8373,Matched,No,USR-002,Outstanding,2025-08-02,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00006,INV-17141,V1012,2025-07-14,2025-08-13,10059.9,PO-6127,GRN-8357,Matched,No,USR-006,Paid,2025-09-06,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00007,INV-23510,V1010,2025-09-13,2025-10-28,7095.47,,GRN-8975,Exception,No,,Paid,2025-11-16,InsureCorp Brokers,Insurance,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00008,INV-15126,V1006,2025-07-12,2025-08-11,40084.36,PO-5066,GRN-8051,Matched,No,,Paid,2025-09-16,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00009,INV-21961,V1003,2025-08-20,2025-10-04,18076.79,PO-6983,GRN-7115,Matched,No,,Paid,2025-09-20,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00010,INV-10404,V1004,2025-05-23,2025-06-22,13690.15,PO-6326,GRN-7768,Matched,Yes,USR-006,Paid,2025-07-15,PackRite Packaging Solutions,Packaging,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00011,INV-11360,V1022,2025-09-07,2025-10-07,14347.04,PO-5057,,Exception,No,,Paid,2025-11-02,MediCareX Health Services,Medical,No,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00012,INV-11646,V1001,2025-06-02,2025-07-17,22324.42,PO-6258,GRN-7170,Matched,No,USR-001,Paid,2025-07-23,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00013,INV-12085,V2003,2025-03-17,2025-03-24,11019.85,PO-5650,GRN-7228,Matched,No,,Paid,2025-05-26,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00014,INV-14192,V1001,2025-06-13,2025-07-28,36087.36,,,Exception,No,USR-001,Outstanding,2025-08-22,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,No,No,No,Yes,No purchase order
+PI-00015,INV-37526,V1005,2025-04-09,2025-05-09,43203.51,,GRN-8571,Exception,No,,Paid,2025-05-19,Logistics Windward Freight,Logistics,No,No,Yes,No,Yes,"No purchase order; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00016,INV-30308,V1005,2025-06-23,2025-07-23,2408.26,PO-5806,GRN-8908,Matched,No,USR-006,Outstanding,2025-07-26,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00017,INV-37168,V2001,2025-07-03,2025-07-10,26564.71,PO-6981,GRN-8908,Matched,No,USR-001,Paid,2025-08-28,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00018,INV-25154,V1018,2025-05-23,2025-06-06,8355.66,PO-6699,GRN-8553,Matched,No,USR-001,Outstanding,2025-07-11,AdvertStar Media,Marketing,No,Yes,Yes,No,No,-
+PI-00019,INV-13359,V1008,2025-05-29,2025-07-13,7895.34,PO-6009,,Exception,No,USR-002,Outstanding,2025-07-19,SecureGuard Security Services,Security,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00020,INV-16493,V1007,2025-07-23,2025-08-22,1051.17,PO-6840,GRN-7612,Matched,No,USR-006,Paid,2025-08-24,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00021,INV-22941,V1017,2025-08-18,2025-09-17,11718.99,PO-6204,GRN-7174,Matched,No,USR-001,Paid,2025-09-26,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00022,INV-15087,V2002,2025-09-05,2025-09-12,1329.39,PO-5903,GRN-7767,Matched,No,,Paid,2025-10-15,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00023,INV-35158,V1002,2025-03-03,2025-04-02,14899.73,PO-5682,GRN-7120,Matched,No,USR-001,Paid,2025-05-04,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00024,INV-16793,V1017,2025-06-29,2025-07-29,20708.28,PO-6392,GRN-8245,Matched,No,USR-006,Paid,2025-08-10,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00025,INV-30695,V1016,2025-07-11,2025-09-09,9755.64,PO-5999,GRN-7723,Matched,No,USR-002,Paid,2025-09-21,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,No,-
+PI-00026,INV-15860,V1008,2025-06-20,2025-08-04,3229.33,PO-6692,GRN-7198,Matched,Yes,USR-001,Paid,2025-09-02,SecureGuard Security Services,Security,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00027,INV-21400,V1005,2025-05-31,2025-06-30,3280.79,PO-6842,,Exception,No,USR-006,Paid,2025-08-14,Logistics Windward Freight,Logistics,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00028,INV-34338,V1014,2025-05-10,2025-06-09,17507.62,PO-5472,GRN-7663,Matched,No,USR-002,Paid,2025-06-01,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00029,INV-31084,V1008,2025-04-25,2025-06-09,1423.14,PO-5092,,Exception,No,USR-002,Outstanding,2025-06-04,SecureGuard Security Services,Security,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00030,INV-12079,V1001,2025-03-06,2025-04-20,35814.6,PO-5484,GRN-7177,Matched,No,USR-001,Paid,2025-04-27,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00031,INV-38291,V1013,2025-03-24,2025-05-08,3222.35,PO-6928,GRN-7554,Matched,No,,Paid,2025-04-21,TrainCo Skills Institute,Training,No,Yes,Yes,No,Yes,No approver recorded
+PI-00032,INV-20444,V1002,2025-06-17,2025-07-17,6477.41,PO-5285,GRN-8496,Matched,No,USR-001,Paid,2025-08-01,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00033,INV-25957,V2003,2025-05-01,2025-05-08,1160.7,PO-6438,GRN-7108,Matched,No,,Paid,2025-06-04,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00034,INV-37665,V2004,2025-03-20,2025-03-27,25181.02,,GRN-8872,Exception,No,,Paid,2025-04-30,Meridian Consulting Group,Professional services,Yes,No,Yes,No,Yes,"No purchase order; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00035,INV-24973,V1005,2025-08-15,2025-09-14,21347.49,PO-6526,GRN-7451,Matched,No,USR-002,Paid,2025-10-10,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00036,INV-18045,V1017,2025-06-12,2025-07-12,42148.22,,GRN-7684,Exception,No,USR-001,Paid,2025-08-03,CleanServ Facilities,Facilities,No,No,Yes,No,Yes,No purchase order
+PI-00037,INV-28886,V1009,2025-06-20,2025-08-04,20673.99,PO-6200,GRN-7252,Matched,No,USR-006,Outstanding,2025-08-02,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00038,INV-22007,V1015,2025-09-16,2025-10-31,7875.69,PO-5273,GRN-8721,Matched,No,USR-002,Paid,2025-10-17,OfficeQuip Stationers,Office supplies,No,Yes,Yes,No,No,-
+PI-00039,INV-21480,V1017,2025-09-20,2025-10-20,36669.6,,GRN-7127,Exception,No,USR-006,Paid,2025-10-29,CleanServ Facilities,Facilities,No,No,Yes,No,Yes,No purchase order
+PI-00040,INV-35188,V1013,2025-08-06,2025-09-20,22622.39,,,Exception,No,USR-006,Paid,2025-09-15,TrainCo Skills Institute,Training,No,No,No,No,Yes,No purchase order
+PI-00041,INV-17136,V1016,2025-05-01,2025-06-30,2414.1,PO-6220,GRN-7813,Matched,No,USR-006,Paid,2025-05-28,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,No,-
+PI-00042,INV-23423,V1021,2025-02-25,2025-03-11,10736.49,PO-5543,,Exception,No,USR-002,Paid,2025-03-27,SoftPro Licensing Africa,Software,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00043,INV-13689,V1003,2025-05-06,2025-06-20,9221.87,PO-6639,GRN-8325,Matched,No,USR-001,Paid,2025-06-02,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,No,-
+PI-00044,INV-20501,V1020,2025-07-07,2025-09-05,14735.35,PO-6470,GRN-8472,Matched,No,USR-002,Paid,2025-08-29,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00045,INV-18028,V1015,2025-09-17,2025-11-01,38969.41,PO-5120,GRN-8890,Matched,No,USR-001,Outstanding,2025-10-28,OfficeQuip Stationers,Office supplies,No,Yes,Yes,No,No,-
+PI-00046,INV-25853,V1011,2025-08-28,2025-09-27,31164.32,PO-5361,GRN-7090,Matched,No,USR-002,Paid,2025-10-11,LegalVault Attorneys,Professional services,No,Yes,Yes,No,No,-
+PI-00047,INV-27056,V1013,2025-05-30,2025-07-14,1130.28,PO-5638,GRN-7300,Matched,No,,Paid,2025-06-25,TrainCo Skills Institute,Training,No,Yes,Yes,No,Yes,No approver recorded
+PI-00048,INV-13960,V1022,2025-05-07,2025-06-06,1250.39,PO-5545,GRN-8961,Matched,No,USR-006,Paid,2025-06-12,MediCareX Health Services,Medical,No,Yes,Yes,No,No,-
+PI-00049,INV-21583,V1007,2025-08-19,2025-09-18,41712.44,,GRN-7643,Exception,No,USR-001,Outstanding,2025-09-15,TelStar Communications,Telecoms,No,No,Yes,No,Yes,No purchase order
+PI-00050,INV-27062,V2001,2025-08-04,2025-08-11,17739.03,PO-5900,GRN-7178,Matched,No,USR-001,Outstanding,2025-10-14,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00051,INV-27549,V1008,2025-07-02,2025-08-16,15548.36,PO-5818,GRN-8770,Matched,No,USR-006,Paid,2025-08-10,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00052,INV-11219,V1002,2025-05-25,2025-06-24,8414.88,PO-5928,GRN-7085,Matched,No,USR-006,Paid,2025-08-02,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00053,INV-20517,V1009,2025-03-15,2025-04-29,14183.5,,,Exception,No,USR-002,Paid,2025-04-27,FuelMax Petroleum,Fuel,No,No,No,No,Yes,No purchase order
+PI-00054,INV-18554,V2002,2025-09-12,2025-09-19,4267.97,PO-5012,GRN-8512,Matched,No,USR-006,Outstanding,2025-10-28,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00055,INV-22592,V1010,2025-02-23,2025-04-09,36350.62,,GRN-8319,Exception,No,USR-006,Paid,2025-04-13,InsureCorp Brokers,Insurance,No,No,Yes,No,Yes,No purchase order
+PI-00056,INV-23740,V1005,2025-03-03,2025-04-02,9066.39,,GRN-8464,Exception,No,USR-001,Outstanding,2025-03-26,Logistics Windward Freight,Logistics,No,No,Yes,No,Yes,No purchase order
+PI-00057,INV-30380,V1017,2025-07-07,2025-08-06,1419.85,PO-5549,GRN-8783,Matched,No,,Paid,2025-09-18,CleanServ Facilities,Facilities,No,Yes,Yes,No,Yes,No approver recorded
+PI-00058,INV-39275,V1006,2025-03-22,2025-04-21,17392.66,PO-5182,GRN-7176,Matched,No,USR-002,Paid,2025-05-17,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00059,INV-29690,V1016,2025-09-25,2025-11-24,8397.59,,GRN-8992,Exception,No,USR-001,Outstanding,2025-12-03,MainTek Engineering Services,Maintenance,No,No,Yes,No,Yes,No purchase order
+PI-00060,INV-17274,V1003,2025-09-06,2025-10-21,1321.07,PO-5165,GRN-8288,Matched,No,USR-001,Paid,2025-10-18,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,No,-
+PI-00061,INV-26151,V1003,2025-03-11,2025-04-25,32154.56,PO-5786,GRN-8953,Matched,No,USR-002,Paid,2025-04-16,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,No,-
+PI-00062,INV-19728,V2002,2025-04-21,2025-04-28,16424.66,,GRN-8584,Exception,No,USR-006,Paid,2025-06-08,Zhou Logistics & Advisory,Logistics,Yes,No,Yes,No,Yes,No purchase order
+PI-00063,INV-20957,V1005,2025-08-23,2025-09-22,3280.22,PO-6807,GRN-8346,Matched,No,USR-001,Paid,2025-10-17,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00064,INV-35087,V1019,2025-06-08,2025-07-08,5509.91,PO-5155,GRN-7817,Matched,No,USR-006,Paid,2025-08-18,RentPro Properties,Rent,No,Yes,Yes,No,No,-
+PI-00065,INV-19182,V1012,2025-04-13,2025-05-13,2856.16,PO-5259,GRN-7610,Matched,Yes,,Paid,2025-05-14,Auditax Chartered Accountants,Professional services,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected; No approver recorded
+PI-00066,INV-36772,V1013,2025-05-03,2025-06-17,4882.65,PO-5846,GRN-7860,Matched,No,USR-001,Paid,2025-07-02,TrainCo Skills Institute,Training,No,Yes,Yes,No,No,-
+PI-00067,INV-17174,V2001,2025-04-05,2025-04-12,10598.48,PO-5922,GRN-8757,Matched,No,,Paid,2025-04-25,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00068,INV-25519,V1006,2025-08-25,2025-09-24,5220.89,PO-6777,GRN-7240,Matched,No,,Outstanding,2025-09-24,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,Yes,No approver recorded
+PI-00069,INV-38086,V1001,2025-05-29,2025-07-13,1420.04,PO-6653,GRN-7914,Matched,No,,Paid,2025-07-04,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,Yes,No approver recorded
+PI-00070,INV-26376,V1020,2025-07-27,2025-09-25,13566.69,PO-5235,GRN-7549,Matched,No,USR-002,Paid,2025-08-20,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00071,INV-20443,V1004,2025-03-10,2025-04-09,1063.43,,,Exception,No,,Paid,2025-04-07,PackRite Packaging Solutions,Packaging,No,No,No,No,Yes,No purchase order; No approver recorded
+PI-00072,INV-15973,V1001,2025-04-04,2025-05-19,18436.56,PO-6332,GRN-7237,Matched,No,,Paid,2025-06-01,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00073,INV-35879,V1019,2025-09-14,2025-10-14,37679.5,PO-5317,GRN-8694,Matched,No,,Paid,2025-10-18,RentPro Properties,Rent,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00074,INV-15334,V1016,2025-02-27,2025-04-28,10918.33,,,Exception,No,USR-001,Paid,2025-05-05,MainTek Engineering Services,Maintenance,No,No,No,No,Yes,No purchase order
+PI-00075,INV-18743,V1007,2025-03-18,2025-04-17,1112.45,,GRN-7414,Exception,No,USR-002,Paid,2025-04-28,TelStar Communications,Telecoms,No,No,Yes,No,Yes,No purchase order
+PI-00076,INV-33410,V2002,2025-03-04,2025-03-11,1343.43,PO-6248,GRN-7260,Matched,No,USR-001,Outstanding,2025-04-07,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00077,INV-23071,V1001,2025-05-15,2025-06-29,8103.02,PO-6795,GRN-7098,Matched,No,USR-001,Paid,2025-06-18,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00078,INV-28707,V1002,2025-02-28,2025-03-30,7007.47,PO-6106,GRN-7857,Matched,No,USR-001,Paid,2025-04-17,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00079,INV-27867,V2004,2025-05-29,2025-06-05,20588.69,PO-5462,GRN-8116,Matched,No,USR-002,Paid,2025-07-18,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,No,-
+PI-00080,INV-24061,V1018,2025-03-09,2025-03-23,4819.06,PO-5442,GRN-7745,Matched,No,,Outstanding,2025-04-10,AdvertStar Media,Marketing,No,Yes,Yes,No,Yes,No approver recorded
+PI-00081,INV-35335,V1006,2025-07-13,2025-08-12,1142.38,PO-5831,,Exception,No,USR-002,Paid,2025-09-24,PowerCo Utilities Zimbabwe,Utilities,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00082,INV-27294,V1021,2025-04-28,2025-05-12,14122.72,PO-5538,GRN-7815,Matched,No,USR-002,Paid,2025-06-24,SoftPro Licensing Africa,Software,No,Yes,Yes,No,No,-
+PI-00083,INV-34885,V1021,2025-06-13,2025-06-27,23964.46,,GRN-8541,Exception,No,USR-006,Outstanding,2025-08-22,SoftPro Licensing Africa,Software,No,No,Yes,No,Yes,No purchase order
+PI-00084,INV-11973,V1021,2025-06-03,2025-06-17,34603.95,,GRN-7944,Exception,No,USR-006,Paid,2025-07-24,SoftPro Licensing Africa,Software,No,No,Yes,No,Yes,No purchase order
+PI-00085,INV-25921,V2002,2025-04-22,2025-04-29,20010.95,PO-6339,GRN-8886,Matched,No,USR-002,Outstanding,2025-06-02,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00086,INV-15839,V2001,2025-07-21,2025-07-28,11748.89,PO-6613,GRN-8186,Matched,No,USR-006,Paid,2025-08-19,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00087,INV-16217,V1015,2025-06-15,2025-07-30,7610.24,PO-5536,,Exception,No,USR-001,Outstanding,2025-07-18,OfficeQuip Stationers,Office supplies,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00088,INV-25453,V1007,2025-03-08,2025-04-07,9618.1,PO-5089,,Exception,No,USR-001,Paid,2025-04-15,TelStar Communications,Telecoms,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00089,INV-14492,V1014,2025-04-18,2025-05-18,1293.49,PO-5696,GRN-8363,Matched,No,USR-002,Paid,2025-06-15,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00090,INV-32353,V2002,2025-07-04,2025-07-11,8769.89,,GRN-7699,Exception,No,USR-006,Outstanding,2025-09-09,Zhou Logistics & Advisory,Logistics,Yes,No,Yes,No,Yes,No purchase order
+PI-00091,INV-38749,V1008,2025-06-21,2025-08-05,11668.76,PO-5284,GRN-7408,Matched,No,,Paid,2025-07-22,SecureGuard Security Services,Security,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00092,INV-25974,V2002,2025-05-26,2025-06-02,18116.98,PO-5106,GRN-7134,Matched,No,,Paid,2025-06-15,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00093,INV-31314,V1002,2025-04-11,2025-05-11,1176.96,PO-6535,GRN-8154,Matched,No,,Paid,2025-05-22,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,Yes,No approver recorded
+PI-00094,INV-23833,V1006,2025-03-11,2025-04-10,26039.49,PO-6977,GRN-7025,Matched,No,USR-001,Paid,2025-04-10,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00095,INV-26356,V2001,2025-04-08,2025-04-15,6782.02,PO-6952,,Exception,No,,Paid,2025-05-15,R Chikafu Trading Enterprises,Professional services,Yes,Yes,No,No,Yes,Purchase order but no goods-received note; No approver recorded
+PI-00096,INV-30258,V2001,2025-06-28,2025-07-05,5478.15,PO-6848,,Exception,No,USR-001,Paid,2025-08-26,R Chikafu Trading Enterprises,Professional services,Yes,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00097,INV-33370,V2002,2025-04-29,2025-05-06,31220.5,PO-6826,GRN-8625,Matched,No,USR-006,Paid,2025-05-28,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00098,INV-30662,V1016,2025-08-19,2025-10-18,14900.24,PO-6062,GRN-7460,Matched,No,USR-001,Paid,2025-10-26,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,No,-
+PI-00099,INV-32391,V1001,2025-07-27,2025-09-10,13410.14,PO-5314,GRN-8929,Matched,No,USR-001,Outstanding,2025-09-25,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00100,INV-21202,V2001,2025-08-17,2025-08-24,3289.3,PO-6094,GRN-8744,Matched,No,USR-006,Paid,2025-10-08,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00101,INV-38190,V1022,2025-08-15,2025-09-14,8489.14,PO-5354,,Exception,No,USR-006,Outstanding,2025-09-06,MediCareX Health Services,Medical,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00102,INV-27637,V1020,2025-08-08,2025-10-07,1226.37,PO-5707,,Exception,No,USR-001,Outstanding,2025-09-29,SparePart Outfitters,Spare parts,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00103,INV-23788,V1018,2025-08-26,2025-09-09,2705.2,,GRN-7033,Exception,No,,Paid,2025-09-27,AdvertStar Media,Marketing,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00104,INV-20577,V1009,2025-05-22,2025-07-06,2535.54,PO-6226,GRN-8703,Matched,No,USR-001,Paid,2025-07-15,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00105,INV-23725,V1016,2025-04-28,2025-06-27,3919.23,,GRN-7996,Exception,No,,Paid,2025-06-15,MainTek Engineering Services,Maintenance,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00106,INV-17288,V1011,2025-04-09,2025-05-09,1034.4,PO-5071,GRN-7354,Matched,No,,Paid,2025-05-21,LegalVault Attorneys,Professional services,No,Yes,Yes,No,Yes,No approver recorded
+PI-00107,INV-21526,V2002,2025-05-30,2025-06-06,1065.35,PO-5361,GRN-7046,Matched,No,,Paid,2025-07-07,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00108,INV-25795,V1017,2025-07-12,2025-08-11,5253.78,PO-5442,GRN-7917,Matched,Yes,,Paid,2025-08-16,CleanServ Facilities,Facilities,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected; No approver recorded
+PI-00109,INV-20333,V2001,2025-07-31,2025-08-07,33266.24,PO-5147,GRN-8215,Matched,No,,Paid,2025-10-01,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00110,INV-23143,V1011,2025-04-25,2025-05-25,25997.76,PO-5504,GRN-8772,Matched,No,,Paid,2025-05-20,LegalVault Attorneys,Professional services,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00111,INV-20519,V1002,2025-03-24,2025-04-23,10278.95,PO-5429,GRN-7722,Matched,No,USR-002,Outstanding,2025-04-26,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00112,INV-27208,V1004,2025-05-31,2025-06-30,15694.18,PO-5787,GRN-8022,Matched,No,,Paid,2025-07-17,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00113,INV-32303,V1005,2025-07-13,2025-08-12,22917.79,PO-6225,GRN-8213,Matched,No,USR-006,Paid,2025-09-06,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00114,INV-32903,V1005,2025-03-27,2025-04-26,6397.24,,GRN-7110,Exception,No,USR-001,Outstanding,2025-05-28,Logistics Windward Freight,Logistics,No,No,Yes,No,Yes,No purchase order
+PI-00115,INV-24604,V1020,2025-03-06,2025-05-05,1279.51,PO-6646,GRN-8615,Matched,No,USR-006,Paid,2025-05-04,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00116,INV-34132,V1013,2025-08-08,2025-09-22,1427.56,PO-6345,GRN-7125,Matched,No,USR-006,Paid,2025-09-22,TrainCo Skills Institute,Training,No,Yes,Yes,No,No,-
+PI-00117,INV-19112,V1008,2025-04-15,2025-05-30,9852.22,PO-6836,GRN-7317,Matched,No,,Paid,2025-05-19,SecureGuard Security Services,Security,No,Yes,Yes,No,Yes,No approver recorded
+PI-00118,INV-12985,V2002,2025-08-10,2025-08-17,1324.71,PO-6082,GRN-7555,Matched,No,,Paid,2025-10-13,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00119,INV-27779,V2001,2025-08-29,2025-09-05,14911.11,PO-5175,GRN-7555,Matched,No,USR-006,Paid,2025-10-26,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00120,INV-12314,V1014,2025-08-17,2025-09-16,9993.57,PO-5282,GRN-8465,Matched,No,USR-002,Paid,2025-10-09,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00121,INV-32387,V2004,2025-06-30,2025-07-07,3060.05,,GRN-7816,Exception,No,USR-001,Paid,2025-08-19,Meridian Consulting Group,Professional services,Yes,No,Yes,No,Yes,No purchase order
+PI-00122,INV-29564,V1015,2025-05-10,2025-06-24,23799.34,,GRN-7808,Exception,No,USR-001,Outstanding,2025-06-23,OfficeQuip Stationers,Office supplies,No,No,Yes,No,Yes,No purchase order
+PI-00123,INV-25947,V1006,2025-09-21,2025-10-21,35181.23,PO-5052,GRN-7220,Matched,No,USR-006,Paid,2025-11-04,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00124,INV-20123,V2002,2025-05-26,2025-06-02,7409.64,PO-5175,GRN-8416,Matched,No,USR-006,Outstanding,2025-07-17,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00125,INV-12055,V1014,2025-03-25,2025-04-24,7082.52,PO-5664,GRN-7409,Matched,No,USR-001,Paid,2025-04-23,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00126,INV-10878,V2004,2025-06-29,2025-07-06,2648.25,PO-5007,,Exception,No,,Paid,2025-08-19,Meridian Consulting Group,Professional services,Yes,Yes,No,No,Yes,Purchase order but no goods-received note; No approver recorded
+PI-00127,INV-27085,V1001,2025-04-07,2025-05-22,9683.71,PO-6203,GRN-8112,Matched,No,USR-002,Paid,2025-06-08,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00128,INV-19819,V1015,2025-09-01,2025-10-16,1341.66,PO-5884,,Exception,No,USR-006,Outstanding,2025-09-25,OfficeQuip Stationers,Office supplies,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00129,INV-29665,V1018,2025-03-31,2025-04-14,11106.09,PO-6317,GRN-8098,Matched,No,USR-001,Paid,2025-05-20,AdvertStar Media,Marketing,No,Yes,Yes,No,No,-
+PI-00130,INV-16128,V1010,2025-09-26,2025-11-10,3229.92,PO-5827,GRN-8585,Matched,No,USR-002,Paid,2025-11-12,InsureCorp Brokers,Insurance,No,Yes,Yes,No,No,-
+PI-00131,INV-33402,V1006,2025-07-25,2025-08-24,9851.74,,,Exception,No,,Paid,2025-09-14,PowerCo Utilities Zimbabwe,Utilities,No,No,No,No,Yes,No purchase order; No approver recorded
+PI-00132,INV-33297,V1012,2025-04-05,2025-05-05,42354.62,PO-6342,GRN-7345,Matched,No,USR-001,Outstanding,2025-05-05,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00133,INV-37207,V1009,2025-08-03,2025-09-17,6793.64,,GRN-7655,Exception,No,USR-006,Paid,2025-08-25,FuelMax Petroleum,Fuel,No,No,Yes,No,Yes,No purchase order
+PI-00134,INV-14602,V1005,2025-05-28,2025-06-27,2495.26,PO-5660,GRN-8497,Matched,No,,Paid,2025-07-15,Logistics Windward Freight,Logistics,No,Yes,Yes,No,Yes,No approver recorded
+PI-00135,INV-18497,V1021,2025-05-25,2025-06-08,1322.69,PO-6921,GRN-8257,Matched,No,USR-006,Paid,2025-07-27,SoftPro Licensing Africa,Software,No,Yes,Yes,No,No,-
+PI-00136,INV-28574,V1005,2025-09-15,2025-10-15,15354.9,PO-5916,,Exception,No,,Paid,2025-10-27,Logistics Windward Freight,Logistics,No,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00137,INV-19014,V1010,2025-06-08,2025-07-23,38710.92,PO-6838,GRN-8252,Matched,No,USR-001,Paid,2025-08-22,InsureCorp Brokers,Insurance,No,Yes,Yes,No,No,-
+PI-00138,INV-12746,V1010,2025-07-18,2025-09-01,31263.48,,GRN-8674,Exception,No,USR-006,Paid,2025-09-19,InsureCorp Brokers,Insurance,No,No,Yes,No,Yes,No purchase order
+PI-00139,INV-18569,V1002,2025-06-14,2025-07-14,25423.74,PO-6185,GRN-8896,Matched,No,,Paid,2025-08-09,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00140,INV-13997,V1004,2025-05-03,2025-06-02,17555.97,PO-6524,GRN-8215,Matched,No,USR-001,Outstanding,2025-06-02,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00141,INV-36310,V1008,2025-06-24,2025-08-08,10438.26,,,Exception,No,USR-002,Outstanding,2025-08-19,SecureGuard Security Services,Security,No,No,No,No,Yes,No purchase order
+PI-00142,INV-27851,V2002,2025-03-20,2025-03-27,43485.48,PO-5544,GRN-8415,Matched,No,,Paid,2025-05-13,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00143,INV-24192,V1015,2025-03-12,2025-04-26,6762.04,,GRN-8061,Exception,No,USR-006,Paid,2025-04-02,OfficeQuip Stationers,Office supplies,No,No,Yes,No,Yes,No purchase order
+PI-00144,INV-29225,V1005,2025-06-15,2025-07-15,9628.59,PO-6000,GRN-7471,Matched,No,,Paid,2025-07-11,Logistics Windward Freight,Logistics,No,Yes,Yes,No,Yes,No approver recorded
+PI-00145,INV-16324,V1017,2025-09-13,2025-10-13,4680.95,PO-6435,GRN-8231,Matched,No,USR-001,Paid,2025-11-05,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00146,INV-14740,V1018,2025-09-15,2025-09-29,8436.33,PO-6849,GRN-7859,Matched,No,USR-006,Paid,2025-11-18,AdvertStar Media,Marketing,No,Yes,Yes,No,No,-
+PI-00147,INV-28704,V1022,2025-06-06,2025-07-06,2771.29,PO-5232,GRN-8948,Matched,No,USR-002,Outstanding,2025-07-27,MediCareX Health Services,Medical,No,Yes,Yes,No,No,-
+PI-00148,INV-26333,V1008,2025-09-17,2025-11-01,9409.47,,GRN-7754,Exception,No,USR-002,Paid,2025-10-16,SecureGuard Security Services,Security,No,No,Yes,No,Yes,No purchase order
+PI-00149,INV-10504,V1011,2025-03-15,2025-04-14,8711.19,,GRN-7684,Exception,No,USR-001,Paid,2025-04-21,LegalVault Attorneys,Professional services,No,No,Yes,No,Yes,No purchase order
+PI-00150,INV-28463,V1009,2025-02-24,2025-04-10,5498.17,PO-5212,GRN-8699,Matched,No,USR-006,Paid,2025-03-27,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00151,INV-32203,V1010,2025-06-23,2025-08-07,5453.24,,GRN-8033,Exception,No,USR-006,Outstanding,2025-08-12,InsureCorp Brokers,Insurance,No,No,Yes,No,Yes,No purchase order
+PI-00152,INV-21862,V1011,2025-05-15,2025-06-14,10771.53,,GRN-8403,Exception,No,USR-002,Paid,2025-07-27,LegalVault Attorneys,Professional services,No,No,Yes,No,Yes,No purchase order
+PI-00153,INV-14443,V1007,2025-03-28,2025-04-27,25925.41,PO-6893,GRN-8149,Matched,No,USR-006,Paid,2025-04-30,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00154,INV-39527,V1015,2025-09-24,2025-11-08,7943.25,,GRN-7666,Exception,No,,Paid,2025-10-19,OfficeQuip Stationers,Office supplies,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00155,INV-17302,V1007,2025-09-11,2025-10-11,20921.52,PO-6126,GRN-7323,Matched,No,,Paid,2025-10-26,TelStar Communications,Telecoms,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00156,INV-16624,V1007,2025-05-26,2025-06-25,24817.48,PO-5236,GRN-8272,Matched,No,USR-002,Paid,2025-07-07,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00157,INV-13232,V2002,2025-02-26,2025-03-05,16889.87,,GRN-7834,Exception,No,,Paid,2025-05-05,Zhou Logistics & Advisory,Logistics,Yes,No,Yes,No,Yes,"No purchase order; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00158,INV-23848,V1015,2025-02-27,2025-04-13,3262.81,PO-6245,GRN-8259,Matched,No,USR-006,Paid,2025-05-13,OfficeQuip Stationers,Office supplies,No,Yes,Yes,No,No,-
+PI-00159,INV-19864,V1012,2025-06-23,2025-07-23,4049.35,,GRN-8287,Exception,No,USR-002,Outstanding,2025-08-17,Auditax Chartered Accountants,Professional services,No,No,Yes,No,Yes,No purchase order
+PI-00160,INV-16424,V2002,2025-08-03,2025-08-10,8029.03,,GRN-7321,Exception,No,USR-001,Outstanding,2025-10-03,Zhou Logistics & Advisory,Logistics,Yes,No,Yes,No,Yes,No purchase order
+PI-00161,INV-22917,V1003,2025-09-17,2025-11-01,4392.16,PO-6704,,Exception,No,USR-001,Paid,2025-11-26,ChemPro Industrial Chemicals,Raw materials,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00162,INV-32352,V1014,2025-03-11,2025-04-10,15846.52,PO-5495,,Exception,No,,Outstanding,2025-05-03,IT Support Partners (Pvt) Ltd,IT services,No,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00163,INV-39234,V2002,2025-08-31,2025-09-07,2940.21,,GRN-8237,Exception,No,USR-006,Outstanding,2025-09-21,Zhou Logistics & Advisory,Logistics,Yes,No,Yes,No,Yes,No purchase order
+PI-00164,INV-17729,V1022,2025-04-14,2025-05-14,16086.58,PO-5961,GRN-7806,Matched,No,USR-002,Paid,2025-06-03,MediCareX Health Services,Medical,No,Yes,Yes,No,No,-
+PI-00165,INV-15450,V1005,2025-07-30,2025-08-29,21322.41,PO-6936,GRN-8235,Matched,No,USR-002,Paid,2025-08-22,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00166,INV-10646,V1003,2025-02-27,2025-04-13,19592.9,PO-6095,GRN-8193,Matched,No,,Outstanding,2025-05-05,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00167,INV-33597,V1017,2025-03-10,2025-04-09,15714.31,,GRN-8368,Exception,No,,Outstanding,2025-05-23,CleanServ Facilities,Facilities,No,No,Yes,No,Yes,"No purchase order; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00168,INV-15469,V1003,2025-03-18,2025-05-02,3177.7,PO-6101,GRN-8964,Matched,No,USR-006,Paid,2025-05-24,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,No,-
+PI-00169,INV-24538,V1021,2025-09-24,2025-10-08,24178.7,PO-6758,GRN-7193,Matched,No,,Outstanding,2025-10-25,SoftPro Licensing Africa,Software,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00170,INV-29547,V1017,2025-03-01,2025-03-31,34603.02,PO-6575,GRN-7762,Matched,No,USR-001,Paid,2025-05-07,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00171,INV-18413,V1020,2025-08-02,2025-10-01,1092.15,PO-6842,GRN-8678,Matched,No,USR-006,Paid,2025-09-14,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00172,INV-33673,V1006,2025-04-04,2025-05-04,25890.82,PO-6431,GRN-7052,Matched,No,USR-002,Paid,2025-06-15,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00173,INV-28447,V1005,2025-07-25,2025-08-24,1370.33,PO-5759,GRN-8013,Matched,No,USR-006,Outstanding,2025-09-28,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00174,INV-20648,V1017,2025-03-03,2025-04-02,1132.81,PO-6575,GRN-7977,Matched,No,USR-006,Outstanding,2025-05-09,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00175,INV-22366,V1022,2025-03-28,2025-04-27,7207.23,,,Exception,No,USR-006,Paid,2025-05-01,MediCareX Health Services,Medical,No,No,No,No,Yes,No purchase order
+PI-00176,INV-36765,V2004,2025-09-26,2025-10-03,37965.09,PO-5143,GRN-8313,Matched,No,USR-006,Paid,2025-11-08,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,No,-
+PI-00177,INV-23880,V1020,2025-07-20,2025-09-18,1255.1,PO-6018,,Exception,No,USR-001,Outstanding,2025-09-14,SparePart Outfitters,Spare parts,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00178,INV-15180,V2002,2025-07-12,2025-07-19,16267.81,PO-6522,GRN-7033,Matched,No,USR-006,Paid,2025-08-25,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00179,INV-33533,V1016,2025-08-31,2025-10-30,6517.04,PO-5311,GRN-7068,Matched,No,,Paid,2025-10-19,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,Yes,No approver recorded
+PI-00180,INV-30578,V1008,2025-03-04,2025-04-18,11513.05,PO-6053,GRN-7680,Matched,No,USR-001,Outstanding,2025-04-22,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00181,INV-25267,V1009,2025-08-26,2025-10-10,9250.48,,GRN-8915,Exception,No,USR-001,Paid,2025-09-22,FuelMax Petroleum,Fuel,No,No,Yes,No,Yes,No purchase order
+PI-00182,INV-12476,V1010,2025-06-29,2025-08-13,13123.28,PO-5342,GRN-8549,Matched,No,USR-006,Paid,2025-08-11,InsureCorp Brokers,Insurance,No,Yes,Yes,No,No,-
+PI-00183,INV-35788,V1019,2025-05-18,2025-06-17,4064.42,,GRN-7077,Exception,No,USR-001,Paid,2025-06-27,RentPro Properties,Rent,No,No,Yes,No,Yes,No purchase order
+PI-00184,INV-21180,V1015,2025-07-25,2025-09-08,2982.56,PO-5138,,Exception,No,USR-001,Paid,2025-10-08,OfficeQuip Stationers,Office supplies,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00185,INV-31437,V2001,2025-03-14,2025-03-21,7292.23,PO-5982,GRN-7544,Matched,No,USR-006,Outstanding,2025-04-25,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00186,INV-30871,V2004,2025-04-29,2025-05-06,3277.02,PO-5160,GRN-7414,Matched,No,USR-006,Paid,2025-06-03,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,No,-
+PI-00187,INV-17384,V1020,2025-07-08,2025-09-06,17002.04,PO-5018,GRN-8159,Matched,No,,Paid,2025-08-26,SparePart Outfitters,Spare parts,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00188,INV-18273,V2003,2025-03-29,2025-04-05,8644.13,PO-6521,GRN-7846,Matched,No,USR-001,Paid,2025-05-18,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,No,No,-
+PI-00189,INV-33682,V1002,2025-08-12,2025-09-11,1371.15,,GRN-8705,Exception,No,USR-002,Paid,2025-09-13,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,No,Yes,No,Yes,No purchase order
+PI-00190,INV-37670,V1007,2025-04-07,2025-05-07,6587.94,PO-6519,GRN-8406,Matched,Yes,USR-006,Paid,2025-04-29,TelStar Communications,Telecoms,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00191,INV-26550,V1017,2025-03-22,2025-04-21,7154.25,,,Exception,No,USR-001,Paid,2025-05-27,CleanServ Facilities,Facilities,No,No,No,No,Yes,No purchase order
+PI-00192,INV-22181,V1018,2025-08-18,2025-09-01,7280.77,PO-6516,GRN-7583,Matched,No,USR-001,Paid,2025-10-04,AdvertStar Media,Marketing,No,Yes,Yes,No,No,-
+PI-00193,INV-32459,V1009,2025-07-18,2025-09-01,13562.11,,GRN-7935,Exception,No,USR-002,Outstanding,2025-08-17,FuelMax Petroleum,Fuel,No,No,Yes,No,Yes,No purchase order
+PI-00194,INV-39224,V1021,2025-06-08,2025-06-22,20178.87,PO-6580,,Exception,No,USR-002,Paid,2025-07-04,SoftPro Licensing Africa,Software,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00195,INV-22999,V1012,2025-04-16,2025-05-16,3018.84,PO-6687,GRN-7070,Matched,No,,Paid,2025-05-23,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,Yes,No approver recorded
+PI-00196,INV-38810,V1006,2025-08-25,2025-09-24,1171.1,PO-6390,GRN-7658,Matched,No,USR-002,Paid,2025-11-04,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00197,INV-35355,V1003,2025-03-26,2025-05-10,21893.96,PO-5047,GRN-7229,Matched,No,,Paid,2025-04-30,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00198,INV-31486,V1012,2025-04-27,2025-05-27,16334.08,PO-6220,,Exception,No,,Outstanding,2025-07-09,Auditax Chartered Accountants,Professional services,No,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00199,INV-37661,V1014,2025-07-02,2025-08-01,13616.36,PO-6158,GRN-8476,Matched,No,,Outstanding,2025-08-26,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00200,INV-18787,V1016,2025-07-26,2025-09-24,4310.91,PO-6229,GRN-7138,Matched,No,USR-001,Paid,2025-08-26,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,No,-
+PI-00201,INV-38077,V1001,2025-03-07,2025-04-21,20657.38,,,Exception,No,USR-006,Paid,2025-04-08,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,No,No,No,Yes,No purchase order
+PI-00202,INV-16851,V1018,2025-03-18,2025-04-01,7526.51,PO-6144,GRN-8767,Matched,No,USR-002,Paid,2025-04-18,AdvertStar Media,Marketing,No,Yes,Yes,No,No,-
+PI-00203,INV-30808,V1022,2025-09-17,2025-10-17,2617.74,PO-5697,,Exception,No,USR-001,Paid,2025-11-28,MediCareX Health Services,Medical,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00204,INV-12550,V1004,2025-06-15,2025-07-15,4720.96,PO-6382,GRN-7262,Matched,No,USR-002,Paid,2025-08-14,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00205,INV-27736,V1011,2025-08-26,2025-09-25,1426.66,,GRN-7305,Exception,No,USR-001,Paid,2025-11-03,LegalVault Attorneys,Professional services,No,No,Yes,No,Yes,No purchase order
+PI-00206,INV-25354,V1008,2025-07-24,2025-09-07,20766.5,,GRN-7265,Exception,No,USR-006,Paid,2025-08-20,SecureGuard Security Services,Security,No,No,Yes,No,Yes,No purchase order
+PI-00207,INV-25151,V1017,2025-05-08,2025-06-07,7409.03,,GRN-7394,Exception,No,USR-002,Paid,2025-06-21,CleanServ Facilities,Facilities,No,No,Yes,No,Yes,No purchase order
+PI-00208,INV-17531,V1008,2025-06-29,2025-08-13,31475.18,,GRN-7113,Exception,No,USR-006,Paid,2025-08-29,SecureGuard Security Services,Security,No,No,Yes,No,Yes,No purchase order
+PI-00209,INV-23046,V1001,2025-06-11,2025-07-26,11678.81,PO-5277,GRN-7618,Matched,No,USR-006,Outstanding,2025-08-19,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00210,INV-15243,V1004,2025-08-29,2025-09-28,1064.08,PO-5832,GRN-7029,Matched,No,USR-001,Outstanding,2025-10-24,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00211,INV-11475,V1011,2025-09-24,2025-10-24,43000.04,PO-6473,GRN-8609,Matched,No,,Paid,2025-10-15,LegalVault Attorneys,Professional services,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00212,INV-20273,V1014,2025-03-27,2025-04-26,10056.87,PO-6624,GRN-8669,Matched,No,USR-002,Paid,2025-05-09,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00213,INV-26829,V1020,2025-07-03,2025-09-01,22772.83,PO-6112,GRN-8301,Matched,No,USR-001,Paid,2025-09-09,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00214,INV-29006,V1022,2025-09-26,2025-10-26,4695.63,PO-5042,GRN-7189,Matched,No,USR-006,Outstanding,2025-11-25,MediCareX Health Services,Medical,No,Yes,Yes,No,No,-
+PI-00215,INV-17259,V1007,2025-03-29,2025-04-28,7588.67,PO-5853,GRN-8930,Matched,No,USR-006,Paid,2025-05-26,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00216,INV-22070,V1009,2025-03-30,2025-05-14,1237.81,PO-5287,,Exception,No,USR-001,Paid,2025-04-20,FuelMax Petroleum,Fuel,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00217,INV-15959,V1009,2025-05-08,2025-06-22,11387.34,PO-5938,GRN-8431,Matched,No,USR-006,Paid,2025-06-17,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00218,INV-13927,V1011,2025-09-17,2025-10-17,10447.15,PO-6877,GRN-7803,Matched,No,,Paid,2025-11-19,LegalVault Attorneys,Professional services,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00219,INV-23212,V2001,2025-07-15,2025-07-22,14698.12,PO-5456,GRN-7183,Matched,No,,Paid,2025-09-09,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00220,INV-19744,V1002,2025-06-17,2025-07-17,4161.66,PO-5824,GRN-8687,Matched,No,USR-002,Outstanding,2025-08-02,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00221,INV-23454,V1002,2025-04-12,2025-05-12,23218.15,PO-6245,GRN-7121,Matched,No,USR-002,Paid,2025-06-07,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00222,INV-24291,V1016,2025-07-15,2025-09-13,23693.84,PO-6488,GRN-7477,Matched,No,USR-006,Paid,2025-09-25,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,No,-
+PI-00223,INV-26132,V1021,2025-05-11,2025-05-25,6817.45,PO-5112,GRN-7056,Matched,No,,Outstanding,2025-06-05,SoftPro Licensing Africa,Software,No,Yes,Yes,No,Yes,No approver recorded
+PI-00224,INV-28646,V2002,2025-06-24,2025-07-01,3078.82,PO-6424,GRN-7974,Matched,No,,Paid,2025-08-13,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00225,INV-21284,V1011,2025-03-10,2025-04-09,17584.34,PO-5515,GRN-7634,Matched,No,USR-001,Paid,2025-04-17,LegalVault Attorneys,Professional services,No,Yes,Yes,No,No,-
+PI-00226,INV-10452,V2003,2025-06-10,2025-06-17,15491.24,,GRN-7142,Exception,No,USR-006,Paid,2025-07-10,Gumbo General Suppliers,Office supplies,Yes,No,Yes,No,Yes,No purchase order
+PI-00227,INV-23200,V1009,2025-03-29,2025-05-13,3292.42,PO-5789,GRN-7243,Matched,No,,Outstanding,2025-05-24,FuelMax Petroleum,Fuel,No,Yes,Yes,No,Yes,No approver recorded
+PI-00228,INV-38099,V1014,2025-04-15,2025-05-15,3159.27,,GRN-7286,Exception,Yes,,Paid,2025-05-07,IT Support Partners (Pvt) Ltd,IT services,No,No,Yes,Yes,Yes,No purchase order; Duplicate invoice suspected; No approver recorded
+PI-00229,INV-22281,V1017,2025-07-03,2025-08-02,2974.74,,GRN-8599,Exception,No,USR-001,Paid,2025-08-11,CleanServ Facilities,Facilities,No,No,Yes,No,Yes,No purchase order
+PI-00230,INV-30637,V1009,2025-04-03,2025-05-18,24905.92,PO-5037,,Exception,Yes,USR-006,Paid,2025-06-16,FuelMax Petroleum,Fuel,No,Yes,No,Yes,Yes,Purchase order but no goods-received note; Duplicate invoice suspected
+PI-00231,INV-22497,V1009,2025-03-10,2025-04-24,17234.71,PO-6601,GRN-7892,Matched,No,,Paid,2025-04-30,FuelMax Petroleum,Fuel,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00232,INV-16694,V1019,2025-09-07,2025-10-07,2596.23,PO-6932,GRN-8986,Matched,No,USR-002,Paid,2025-10-05,RentPro Properties,Rent,No,Yes,Yes,No,No,-
+PI-00233,INV-34635,V1011,2025-08-01,2025-08-31,7218.79,PO-6993,,Exception,No,USR-001,Paid,2025-09-27,LegalVault Attorneys,Professional services,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00234,INV-35700,V1017,2025-04-07,2025-05-07,7856.58,PO-6234,GRN-7609,Matched,No,USR-006,Paid,2025-06-18,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00235,INV-14017,V1009,2025-03-28,2025-05-12,21988.24,PO-5773,GRN-8151,Matched,No,USR-006,Outstanding,2025-04-28,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00236,INV-12481,V1008,2025-08-06,2025-09-20,8532.45,PO-5092,GRN-7880,Matched,No,USR-006,Paid,2025-09-25,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00237,INV-39431,V1006,2025-04-23,2025-05-23,1191.97,PO-5961,GRN-7055,Matched,No,USR-006,Paid,2025-06-18,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00238,INV-38004,V1005,2025-06-28,2025-07-28,20573.7,PO-5135,GRN-8805,Matched,No,USR-006,Paid,2025-08-25,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00239,INV-21754,V1009,2025-05-27,2025-07-11,8697.18,PO-5195,GRN-8329,Matched,No,USR-002,Outstanding,2025-06-27,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00240,INV-28336,V2003,2025-06-30,2025-07-07,3321.4,PO-6023,GRN-8203,Matched,No,USR-001,Outstanding,2025-08-10,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,No,No,-
+PI-00241,INV-10365,V1009,2025-09-09,2025-10-24,10138.37,PO-6926,GRN-8159,Matched,No,,Paid,2025-11-17,FuelMax Petroleum,Fuel,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00242,INV-38148,V2003,2025-04-04,2025-04-11,1433.34,PO-6847,,Exception,No,USR-001,Paid,2025-05-26,Gumbo General Suppliers,Office supplies,Yes,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00243,INV-29896,V1004,2025-07-11,2025-08-10,9435.23,PO-5238,GRN-8991,Matched,No,USR-002,Paid,2025-08-08,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00244,INV-24791,V1006,2025-07-13,2025-08-12,4511.23,PO-6527,GRN-8890,Matched,Yes,USR-006,Paid,2025-08-21,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00245,INV-16104,V1009,2025-04-19,2025-06-03,11127.6,PO-5808,GRN-7364,Matched,No,USR-001,Paid,2025-06-27,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00246,INV-11381,V1015,2025-06-26,2025-08-10,4062.04,PO-5810,,Exception,No,USR-006,Paid,2025-09-03,OfficeQuip Stationers,Office supplies,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00247,INV-26671,V2003,2025-04-18,2025-04-25,7875.32,PO-6389,,Exception,No,USR-006,Paid,2025-05-28,Gumbo General Suppliers,Office supplies,Yes,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00248,INV-26047,V1019,2025-07-15,2025-08-14,8436.47,PO-6962,GRN-7114,Matched,No,USR-006,Paid,2025-08-24,RentPro Properties,Rent,No,Yes,Yes,No,No,-
+PI-00249,INV-35393,V1004,2025-06-21,2025-07-21,2975.93,PO-6792,,Exception,No,USR-006,Paid,2025-08-05,PackRite Packaging Solutions,Packaging,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00250,INV-36194,V1009,2025-09-14,2025-10-29,13343.84,PO-5544,,Exception,No,USR-001,Paid,2025-11-03,FuelMax Petroleum,Fuel,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00251,INV-20632,V1011,2025-08-10,2025-09-09,3014.67,PO-6401,GRN-7007,Matched,No,USR-002,Outstanding,2025-09-07,LegalVault Attorneys,Professional services,No,Yes,Yes,No,No,-
+PI-00252,INV-23322,V1012,2025-08-20,2025-09-19,2700.11,,,Exception,No,USR-006,Paid,2025-09-28,Auditax Chartered Accountants,Professional services,No,No,No,No,Yes,No purchase order
+PI-00253,INV-26046,V1002,2025-08-16,2025-09-15,4457.44,PO-6589,GRN-7485,Matched,No,USR-006,Paid,2025-09-15,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00254,INV-16060,V1003,2025-05-30,2025-07-14,40417.33,PO-6049,GRN-8550,Matched,No,,Paid,2025-06-20,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00255,INV-25789,V1017,2025-06-26,2025-07-26,8249.64,PO-6690,GRN-7240,Matched,No,USR-001,Paid,2025-08-28,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00256,INV-10648,V1019,2025-07-12,2025-08-11,4232.13,,GRN-7248,Exception,No,USR-006,Paid,2025-08-31,RentPro Properties,Rent,No,No,Yes,No,Yes,No purchase order
+PI-00257,INV-15807,V1013,2025-09-24,2025-11-08,2504.4,PO-6299,GRN-8290,Matched,No,,Paid,2025-10-31,TrainCo Skills Institute,Training,No,Yes,Yes,No,Yes,No approver recorded
+PI-00258,INV-22523,V1009,2025-07-15,2025-08-29,6603.28,,GRN-8832,Exception,No,USR-002,Paid,2025-08-05,FuelMax Petroleum,Fuel,No,No,Yes,No,Yes,No purchase order
+PI-00259,INV-28538,V1020,2025-09-09,2025-11-08,7573.27,PO-5227,GRN-7619,Matched,No,,Paid,2025-10-17,SparePart Outfitters,Spare parts,No,Yes,Yes,No,Yes,No approver recorded
+PI-00260,INV-23135,V1004,2025-06-17,2025-07-17,8259.74,PO-5720,GRN-8337,Matched,No,USR-006,Paid,2025-08-05,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00261,INV-36839,V2004,2025-03-14,2025-03-21,2822.85,,GRN-7806,Exception,No,USR-006,Paid,2025-05-16,Meridian Consulting Group,Professional services,Yes,No,Yes,No,Yes,No purchase order
+PI-00262,INV-17850,V1013,2025-04-22,2025-06-06,3293.89,PO-6282,GRN-7531,Matched,No,,Paid,2025-06-16,TrainCo Skills Institute,Training,No,Yes,Yes,No,Yes,No approver recorded
+PI-00263,INV-38859,V1008,2025-06-13,2025-07-28,32216.62,,,Exception,No,USR-001,Paid,2025-07-06,SecureGuard Security Services,Security,No,No,No,No,Yes,No purchase order
+PI-00264,INV-35962,V1008,2025-07-01,2025-08-15,21866.62,PO-5770,,Exception,No,USR-006,Outstanding,2025-08-14,SecureGuard Security Services,Security,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00265,INV-33598,V1001,2025-07-14,2025-08-28,2492.92,PO-6091,GRN-7775,Matched,No,USR-002,Paid,2025-09-21,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00266,INV-13461,V1006,2025-03-01,2025-03-31,2768.09,PO-5460,GRN-7858,Matched,No,,Paid,2025-03-21,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,Yes,No approver recorded
+PI-00267,INV-32219,V1013,2025-08-21,2025-10-05,1335.99,,GRN-7821,Exception,No,,Paid,2025-11-01,TrainCo Skills Institute,Training,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00268,INV-39431,V2002,2025-04-04,2025-04-11,14803.05,PO-6877,,Exception,No,USR-006,Paid,2025-05-16,Zhou Logistics & Advisory,Logistics,Yes,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00269,INV-12536,V1016,2025-02-24,2025-04-25,19841.6,PO-6168,GRN-8250,Matched,No,USR-002,Paid,2025-04-19,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,No,-
+PI-00270,INV-16650,V1002,2025-05-15,2025-06-14,8201.83,PO-5131,GRN-7415,Matched,No,,Paid,2025-07-19,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,Yes,No approver recorded
+PI-00271,INV-31463,V1016,2025-06-08,2025-08-07,14564.89,PO-5103,GRN-8440,Matched,No,USR-006,Paid,2025-07-12,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,No,-
+PI-00272,INV-35092,V2002,2025-07-23,2025-07-30,26317.01,PO-6432,GRN-7827,Matched,No,USR-001,Outstanding,2025-09-20,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00273,INV-20059,V1002,2025-03-12,2025-04-11,2709.67,PO-5770,GRN-7649,Matched,No,USR-001,Paid,2025-05-06,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00274,INV-24919,V1008,2025-04-05,2025-05-20,2622.68,,GRN-7818,Exception,No,USR-001,Paid,2025-04-29,SecureGuard Security Services,Security,No,No,Yes,No,Yes,No purchase order
+PI-00275,INV-25507,V1001,2025-05-26,2025-07-10,1268.9,,GRN-7285,Exception,No,,Paid,2025-07-08,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00276,INV-23588,V1010,2025-09-17,2025-11-01,10654.5,PO-6227,GRN-8426,Matched,No,,Paid,2025-11-26,InsureCorp Brokers,Insurance,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00277,INV-22115,V1010,2025-07-12,2025-08-26,2537.45,PO-5159,GRN-7635,Matched,No,,Outstanding,2025-08-26,InsureCorp Brokers,Insurance,No,Yes,Yes,No,Yes,No approver recorded
+PI-00278,INV-10078,V1002,2025-03-30,2025-04-29,7162.58,PO-6086,,Exception,No,,Paid,2025-04-22,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,No,No,Yes,Purchase order but no goods-received note; No approver recorded
+PI-00279,INV-30005,V1019,2025-06-30,2025-07-30,23936.82,PO-5446,GRN-7408,Matched,No,USR-006,Paid,2025-07-25,RentPro Properties,Rent,No,Yes,Yes,No,No,-
+PI-00280,INV-13172,V1005,2025-09-08,2025-10-08,4679.63,PO-6498,,Exception,No,USR-002,Outstanding,2025-10-23,Logistics Windward Freight,Logistics,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00281,INV-20607,V1006,2025-09-04,2025-10-04,8736.1,PO-5495,GRN-8654,Matched,No,USR-002,Paid,2025-10-05,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00282,INV-28764,V1005,2025-05-23,2025-06-22,38842.61,PO-6718,,Exception,No,,Outstanding,2025-07-22,Logistics Windward Freight,Logistics,No,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00283,INV-13891,V1009,2025-07-23,2025-09-06,17330.19,PO-5060,,Exception,No,,Outstanding,2025-08-28,FuelMax Petroleum,Fuel,No,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00284,INV-18403,V2001,2025-03-14,2025-03-21,4185.19,PO-6331,GRN-8544,Matched,No,,Paid,2025-04-27,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00285,INV-11549,V1017,2025-06-21,2025-07-21,3998.19,PO-6026,GRN-7312,Matched,No,USR-002,Outstanding,2025-07-25,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00286,INV-19909,V1007,2025-05-11,2025-06-10,1081.21,,GRN-8884,Exception,No,USR-001,Outstanding,2025-06-01,TelStar Communications,Telecoms,No,No,Yes,No,Yes,No purchase order
+PI-00287,INV-12076,V2002,2025-06-01,2025-06-08,1213.96,PO-6249,GRN-8033,Matched,No,USR-001,Outstanding,2025-07-14,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00288,INV-15695,V1015,2025-03-27,2025-05-11,2900.75,PO-5884,GRN-7844,Matched,No,USR-002,Paid,2025-05-29,OfficeQuip Stationers,Office supplies,No,Yes,Yes,No,No,-
+PI-00289,INV-15975,V1014,2025-08-08,2025-09-07,5510.79,PO-5476,GRN-7220,Matched,No,,Paid,2025-10-14,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,Yes,No approver recorded
+PI-00290,INV-32476,V1021,2025-02-22,2025-03-08,6235.5,PO-6802,GRN-8689,Matched,No,USR-001,Paid,2025-03-18,SoftPro Licensing Africa,Software,No,Yes,Yes,No,No,-
+PI-00291,INV-24705,V1009,2025-08-27,2025-10-11,3327.7,PO-6125,GRN-8527,Matched,No,,Outstanding,2025-10-18,FuelMax Petroleum,Fuel,No,Yes,Yes,No,Yes,No approver recorded
+PI-00292,INV-36149,V1002,2025-02-24,2025-03-26,5459.93,PO-5693,GRN-7637,Matched,No,USR-002,Paid,2025-04-01,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00293,INV-30712,V1008,2025-08-22,2025-10-06,1104.19,PO-6503,GRN-8388,Matched,Yes,,Outstanding,2025-09-19,SecureGuard Security Services,Security,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected; No approver recorded
+PI-00294,INV-10565,V1015,2025-09-01,2025-10-16,5482.49,PO-6869,GRN-8589,Matched,Yes,,Paid,2025-10-24,OfficeQuip Stationers,Office supplies,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected; No approver recorded
+PI-00295,INV-34844,V1020,2025-04-23,2025-06-22,20652.04,PO-6122,GRN-7294,Matched,No,USR-002,Paid,2025-06-27,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00296,INV-36270,V1007,2025-09-12,2025-10-12,10810.34,PO-5087,GRN-8617,Matched,No,,Outstanding,2025-11-11,TelStar Communications,Telecoms,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00297,INV-24660,V1015,2025-07-12,2025-08-26,13769.5,PO-5518,GRN-8305,Matched,No,,Paid,2025-08-17,OfficeQuip Stationers,Office supplies,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00298,INV-11976,V1007,2025-03-09,2025-04-08,7308.84,PO-6011,GRN-8814,Matched,No,USR-001,Paid,2025-05-12,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00299,INV-36598,V1005,2025-08-06,2025-09-05,36611.34,PO-6652,GRN-7438,Matched,No,USR-006,Paid,2025-09-26,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00300,INV-36657,V1001,2025-09-02,2025-10-17,8206.19,PO-6873,GRN-8910,Matched,No,USR-002,Outstanding,2025-11-06,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00301,INV-23247,V1021,2025-08-14,2025-08-28,1348.53,,GRN-7821,Exception,No,USR-001,Paid,2025-09-29,SoftPro Licensing Africa,Software,No,No,Yes,No,Yes,No purchase order
+PI-00302,INV-37152,V1017,2025-08-15,2025-09-14,3113.67,,GRN-8285,Exception,No,USR-002,Paid,2025-10-06,CleanServ Facilities,Facilities,No,No,Yes,No,Yes,No purchase order
+PI-00303,INV-35955,V1019,2025-02-28,2025-03-30,5438.8,,GRN-8828,Exception,No,,Paid,2025-04-26,RentPro Properties,Rent,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00304,INV-21268,V2003,2025-06-03,2025-06-10,3036.24,,GRN-8141,Exception,No,USR-006,Outstanding,2025-08-09,Gumbo General Suppliers,Office supplies,Yes,No,Yes,No,Yes,No purchase order
+PI-00305,INV-20188,V1008,2025-03-16,2025-04-30,3169.96,PO-6046,GRN-8006,Matched,No,USR-001,Paid,2025-05-06,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00306,INV-38322,V1012,2025-07-09,2025-08-08,6870.34,PO-5123,,Exception,No,USR-006,Paid,2025-08-19,Auditax Chartered Accountants,Professional services,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00307,INV-19701,V1002,2025-08-29,2025-09-28,10992.29,PO-6400,GRN-8692,Matched,No,USR-001,Paid,2025-09-24,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00308,INV-34534,V1022,2025-06-21,2025-07-21,1293.23,,GRN-7876,Exception,No,USR-002,Outstanding,2025-07-15,MediCareX Health Services,Medical,No,No,Yes,No,Yes,No purchase order
+PI-00309,INV-18401,V1012,2025-09-02,2025-10-02,9018.66,PO-6565,GRN-8301,Matched,No,USR-001,Paid,2025-10-25,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00310,INV-21289,V1015,2025-06-28,2025-08-12,4139.76,PO-6394,GRN-7719,Matched,No,USR-006,Paid,2025-08-27,OfficeQuip Stationers,Office supplies,No,Yes,Yes,No,No,-
+PI-00311,INV-16359,V1005,2025-06-24,2025-07-24,25669.21,PO-6538,GRN-8383,Matched,No,USR-002,Paid,2025-09-04,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00312,INV-12964,V1005,2025-08-05,2025-09-04,38742.71,PO-6849,GRN-7628,Matched,No,,Paid,2025-10-10,Logistics Windward Freight,Logistics,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00313,INV-38484,V1011,2025-05-23,2025-06-22,15081.74,,,Exception,No,,Outstanding,2025-06-17,LegalVault Attorneys,Professional services,No,No,No,No,Yes,"No purchase order; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00314,INV-29145,V1020,2025-05-11,2025-07-10,7631.17,PO-6907,GRN-8567,Matched,No,USR-002,Paid,2025-06-16,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00315,INV-35815,V1019,2025-06-22,2025-07-22,9950.87,,GRN-8099,Exception,No,,Paid,2025-08-01,RentPro Properties,Rent,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00316,INV-37602,V1011,2025-08-11,2025-09-10,7471.95,PO-6306,GRN-7697,Matched,No,USR-002,Paid,2025-09-27,LegalVault Attorneys,Professional services,No,Yes,Yes,No,No,-
+PI-00317,INV-30222,V1006,2025-04-15,2025-05-15,23009.28,PO-5295,GRN-7815,Matched,No,,Paid,2025-05-30,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00318,INV-10685,V1021,2025-04-30,2025-05-14,7466.98,PO-6078,GRN-8082,Matched,No,USR-002,Paid,2025-05-26,SoftPro Licensing Africa,Software,No,Yes,Yes,No,No,-
+PI-00319,INV-10162,V1009,2025-06-30,2025-08-14,1330.71,,GRN-7020,Exception,No,,Paid,2025-09-01,FuelMax Petroleum,Fuel,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00320,INV-13675,V1021,2025-06-07,2025-06-21,36757.91,PO-5488,GRN-8492,Matched,No,,Paid,2025-08-19,SoftPro Licensing Africa,Software,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00321,INV-12714,V1019,2025-04-20,2025-05-20,4389.01,,GRN-7713,Exception,No,USR-002,Paid,2025-05-30,RentPro Properties,Rent,No,No,Yes,No,Yes,No purchase order
+PI-00322,INV-25260,V1021,2025-05-24,2025-06-07,3247.41,PO-6783,GRN-7119,Matched,No,,Paid,2025-07-02,SoftPro Licensing Africa,Software,No,Yes,Yes,No,Yes,No approver recorded
+PI-00323,INV-25121,V1008,2025-05-30,2025-07-14,8516.85,PO-6622,GRN-7145,Matched,No,USR-002,Paid,2025-07-06,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00324,INV-36618,V1014,2025-02-27,2025-03-29,1353.02,PO-5545,GRN-8793,Matched,No,USR-002,Paid,2025-05-04,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00325,INV-31746,V1022,2025-06-07,2025-07-07,13530.56,PO-6297,GRN-7386,Matched,No,USR-006,Paid,2025-07-01,MediCareX Health Services,Medical,No,Yes,Yes,No,No,-
+PI-00326,INV-32356,V2003,2025-07-06,2025-07-13,3145.09,PO-5904,GRN-7210,Matched,No,USR-001,Paid,2025-08-17,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,No,No,-
+PI-00327,INV-27630,V1021,2025-03-13,2025-03-27,1312.23,,,Exception,No,USR-001,Paid,2025-04-27,SoftPro Licensing Africa,Software,No,No,No,No,Yes,No purchase order
+PI-00328,INV-12857,V1012,2025-06-02,2025-07-02,10117.1,,GRN-7739,Exception,No,USR-006,Paid,2025-07-07,Auditax Chartered Accountants,Professional services,No,No,Yes,No,Yes,No purchase order
+PI-00329,INV-17491,V1006,2025-09-27,2025-10-27,33403.31,PO-6259,GRN-8024,Matched,No,USR-002,Paid,2025-10-18,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00330,INV-22387,V1012,2025-07-07,2025-08-06,43651.7,PO-5180,,Exception,No,USR-006,Outstanding,2025-08-06,Auditax Chartered Accountants,Professional services,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00331,INV-32211,V1012,2025-04-04,2025-05-04,6789.37,PO-6560,GRN-7403,Matched,No,USR-001,Paid,2025-05-23,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00332,INV-24403,V1021,2025-04-10,2025-04-24,1328.4,PO-6649,,Exception,No,USR-001,Paid,2025-05-18,SoftPro Licensing Africa,Software,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00333,INV-10996,V1009,2025-07-19,2025-09-02,2579.29,PO-6702,GRN-8071,Matched,No,USR-002,Outstanding,2025-08-15,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00334,INV-38442,V1012,2025-06-09,2025-07-09,8793.34,,GRN-7631,Exception,No,,Paid,2025-08-23,Auditax Chartered Accountants,Professional services,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00335,INV-33859,V1018,2025-02-24,2025-03-10,3245.37,PO-5995,,Exception,No,,Outstanding,2025-04-26,AdvertStar Media,Marketing,No,Yes,No,No,Yes,Purchase order but no goods-received note; No approver recorded
+PI-00336,INV-35348,V2003,2025-07-20,2025-07-27,13695.55,PO-6648,GRN-7620,Matched,No,USR-002,Paid,2025-08-26,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,No,No,-
+PI-00337,INV-11842,V1017,2025-04-19,2025-05-19,1287.94,PO-5411,GRN-8971,Matched,No,USR-006,Paid,2025-06-26,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00338,INV-21895,V1021,2025-07-09,2025-07-23,6409.52,PO-6755,GRN-8313,Matched,No,,Paid,2025-07-30,SoftPro Licensing Africa,Software,No,Yes,Yes,No,Yes,No approver recorded
+PI-00339,INV-23271,V1022,2025-06-13,2025-07-13,13564.16,,,Exception,No,USR-006,Paid,2025-07-15,MediCareX Health Services,Medical,No,No,No,No,Yes,No purchase order
+PI-00340,INV-10640,V1011,2025-03-10,2025-04-09,26079.22,,GRN-7183,Exception,No,USR-006,Paid,2025-04-26,LegalVault Attorneys,Professional services,No,No,Yes,No,Yes,No purchase order
+PI-00341,INV-13620,V2001,2025-03-06,2025-03-13,7620.45,PO-5365,,Exception,No,USR-001,Outstanding,2025-05-19,R Chikafu Trading Enterprises,Professional services,Yes,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00342,INV-25855,V1022,2025-09-16,2025-10-16,3318.88,PO-5316,GRN-7233,Matched,No,,Paid,2025-10-29,MediCareX Health Services,Medical,No,Yes,Yes,No,Yes,No approver recorded
+PI-00343,INV-36000,V1022,2025-04-15,2025-05-15,3319.2,PO-6549,GRN-7512,Matched,No,USR-001,Paid,2025-06-24,MediCareX Health Services,Medical,No,Yes,Yes,No,No,-
+PI-00344,INV-38973,V1010,2025-09-07,2025-10-22,1376.67,PO-5134,GRN-7923,Matched,No,USR-006,Paid,2025-10-14,InsureCorp Brokers,Insurance,No,Yes,Yes,No,No,-
+PI-00345,INV-18914,V1001,2025-05-14,2025-06-28,7127.07,PO-6140,GRN-7577,Matched,No,USR-006,Outstanding,2025-06-09,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00346,INV-26026,V1003,2025-07-20,2025-09-03,15188.07,PO-5657,GRN-8361,Matched,No,USR-001,Paid,2025-09-25,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,No,-
+PI-00347,INV-39268,V1006,2025-05-01,2025-05-31,4918.44,,GRN-7306,Exception,No,USR-002,Paid,2025-05-30,PowerCo Utilities Zimbabwe,Utilities,No,No,Yes,No,Yes,No purchase order
+PI-00348,INV-23610,V1022,2025-03-03,2025-04-02,35484.3,PO-5197,GRN-8177,Matched,No,,Outstanding,2025-05-16,MediCareX Health Services,Medical,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00349,INV-32129,V1005,2025-09-17,2025-10-17,2872.98,PO-6013,GRN-7805,Matched,No,USR-002,Paid,2025-10-10,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00350,INV-33601,V1007,2025-06-04,2025-07-04,15394.79,PO-6725,GRN-7445,Matched,No,USR-001,Paid,2025-08-18,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00351,INV-26098,V2001,2025-04-09,2025-04-16,36696.46,PO-5339,GRN-8417,Matched,No,USR-001,Paid,2025-06-12,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00352,INV-14362,V1007,2025-03-16,2025-04-15,14005.7,PO-5650,GRN-8579,Matched,No,USR-006,Paid,2025-05-19,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00353,INV-39271,V1009,2025-04-16,2025-05-31,1197.37,PO-6465,GRN-7828,Matched,No,,Paid,2025-05-18,FuelMax Petroleum,Fuel,No,Yes,Yes,No,Yes,No approver recorded
+PI-00354,INV-32336,V1003,2025-06-30,2025-08-14,1369.5,PO-5442,GRN-7031,Matched,No,USR-006,Paid,2025-09-01,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,No,-
+PI-00355,INV-31473,V1006,2025-09-25,2025-10-25,15500.63,PO-5736,GRN-7396,Matched,Yes,USR-002,Outstanding,2025-10-25,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00356,INV-13609,V1015,2025-06-01,2025-07-16,3343.78,PO-6990,GRN-8255,Matched,Yes,USR-006,Outstanding,2025-07-01,OfficeQuip Stationers,Office supplies,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00357,INV-32621,V2004,2025-06-20,2025-06-27,8374.09,PO-6638,GRN-7016,Matched,No,USR-006,Paid,2025-08-13,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,No,-
+PI-00358,INV-22635,V1004,2025-04-11,2025-05-11,37778.16,PO-5130,GRN-7207,Matched,No,USR-006,Outstanding,2025-05-11,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00359,INV-17646,V1012,2025-08-05,2025-09-04,7677.62,PO-5873,GRN-7217,Matched,No,,Paid,2025-09-17,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,Yes,No approver recorded
+PI-00360,INV-10529,V1021,2025-06-14,2025-06-28,1302.25,PO-5285,GRN-8854,Matched,No,,Outstanding,2025-08-21,SoftPro Licensing Africa,Software,No,Yes,Yes,No,Yes,No approver recorded
+PI-00361,INV-26328,V1008,2025-04-15,2025-05-30,9365.69,PO-5281,GRN-7219,Matched,No,,Paid,2025-05-19,SecureGuard Security Services,Security,No,Yes,Yes,No,Yes,No approver recorded
+PI-00362,INV-28856,V1001,2025-04-14,2025-05-29,1153.46,PO-6114,GRN-8482,Matched,No,USR-002,Outstanding,2025-06-26,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00363,INV-16283,V1001,2025-03-05,2025-04-19,3292.57,PO-6423,GRN-8230,Matched,No,USR-001,Outstanding,2025-05-08,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00364,INV-24815,V1016,2025-03-22,2025-05-21,31261.16,PO-6005,GRN-7659,Matched,No,USR-002,Outstanding,2025-06-05,MainTek Engineering Services,Maintenance,No,Yes,Yes,No,No,-
+PI-00365,INV-33124,V1007,2025-03-27,2025-04-26,13464.74,,GRN-7740,Exception,No,USR-006,Outstanding,2025-05-15,TelStar Communications,Telecoms,No,No,Yes,No,Yes,No purchase order
+PI-00366,INV-24379,V1018,2025-08-10,2025-08-24,10347.55,,GRN-8956,Exception,No,USR-006,Paid,2025-10-08,AdvertStar Media,Marketing,No,No,Yes,No,Yes,No purchase order
+PI-00367,INV-18028,V2004,2025-04-22,2025-04-29,11051.99,PO-5039,GRN-7312,Matched,No,USR-002,Paid,2025-06-08,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,No,-
+PI-00368,INV-26299,V1015,2025-07-01,2025-08-15,11012.04,PO-5120,GRN-8683,Matched,No,USR-001,Paid,2025-07-28,OfficeQuip Stationers,Office supplies,No,Yes,Yes,No,No,-
+PI-00369,INV-23698,V1014,2025-03-14,2025-04-13,1222.85,,GRN-7084,Exception,No,USR-006,Paid,2025-04-25,IT Support Partners (Pvt) Ltd,IT services,No,No,Yes,No,Yes,No purchase order
+PI-00370,INV-13368,V2004,2025-02-28,2025-03-07,4207.39,PO-5154,GRN-7890,Matched,Yes,USR-002,Paid,2025-04-09,Meridian Consulting Group,Professional services,Yes,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00371,INV-39046,V1017,2025-07-04,2025-08-03,8848.67,PO-5400,GRN-7963,Matched,No,USR-001,Paid,2025-08-17,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00372,INV-16266,V1001,2025-08-08,2025-09-22,1073.18,PO-6750,GRN-8785,Matched,No,USR-006,Outstanding,2025-08-31,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00373,INV-31257,V2003,2025-04-05,2025-04-12,42015.5,,,Exception,No,USR-001,Paid,2025-05-14,Gumbo General Suppliers,Office supplies,Yes,No,No,No,Yes,No purchase order
+PI-00374,INV-20999,V1015,2025-06-02,2025-07-17,43655.55,,GRN-7713,Exception,No,,Paid,2025-07-04,OfficeQuip Stationers,Office supplies,No,No,Yes,No,Yes,"No purchase order; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00375,INV-29361,V2004,2025-02-26,2025-03-05,23599.35,,GRN-7112,Exception,No,USR-001,Outstanding,2025-04-09,Meridian Consulting Group,Professional services,Yes,No,Yes,No,Yes,No purchase order
+PI-00376,INV-27172,V2003,2025-07-05,2025-07-12,7017.65,PO-5502,,Exception,No,USR-001,Paid,2025-09-02,Gumbo General Suppliers,Office supplies,Yes,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00377,INV-32975,V2001,2025-07-02,2025-07-09,11868.33,PO-6366,GRN-7868,Matched,No,USR-001,Paid,2025-08-10,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00378,INV-39217,V2002,2025-04-10,2025-04-17,20660.56,PO-6510,GRN-8713,Matched,No,USR-002,Paid,2025-05-13,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00379,INV-32058,V1019,2025-07-24,2025-08-23,33129.18,PO-5729,GRN-8558,Matched,No,,Outstanding,2025-10-07,RentPro Properties,Rent,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00380,INV-21255,V1021,2025-03-30,2025-04-13,8548.27,,GRN-8916,Exception,No,,Paid,2025-04-22,SoftPro Licensing Africa,Software,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00381,INV-35190,V1011,2025-06-03,2025-07-03,2543.01,PO-5833,GRN-7610,Matched,No,USR-001,Paid,2025-07-10,LegalVault Attorneys,Professional services,No,Yes,Yes,No,No,-
+PI-00382,INV-21319,V1004,2025-06-06,2025-07-06,35792.34,PO-5189,,Exception,No,USR-002,Outstanding,2025-08-15,PackRite Packaging Solutions,Packaging,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00383,INV-24407,V1017,2025-07-09,2025-08-08,15329.62,PO-6574,GRN-8115,Matched,No,USR-002,Paid,2025-07-29,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00384,INV-30693,V1004,2025-09-13,2025-10-13,1357.37,PO-5171,GRN-8677,Matched,No,USR-006,Paid,2025-11-18,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00385,INV-22018,V2002,2025-03-01,2025-03-08,1372.76,PO-6686,,Exception,Yes,USR-002,Paid,2025-03-29,Zhou Logistics & Advisory,Logistics,Yes,Yes,No,Yes,Yes,Purchase order but no goods-received note; Duplicate invoice suspected
+PI-00386,INV-29492,V1020,2025-08-26,2025-10-25,1368.25,PO-6099,GRN-7147,Matched,No,USR-002,Paid,2025-09-26,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00387,INV-24823,V1002,2025-03-26,2025-04-25,15885.06,PO-6688,GRN-8797,Matched,No,,Outstanding,2025-05-12,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00388,INV-19576,V2003,2025-09-10,2025-09-17,8001.01,,GRN-8135,Exception,No,USR-002,Paid,2025-10-04,Gumbo General Suppliers,Office supplies,Yes,No,Yes,No,Yes,No purchase order
+PI-00389,INV-35423,V1007,2025-09-10,2025-10-10,1070.06,PO-5886,GRN-7398,Matched,No,USR-001,Paid,2025-10-01,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00390,INV-11878,V1004,2025-06-28,2025-07-28,6365.62,PO-6667,GRN-8733,Matched,Yes,USR-006,Paid,2025-09-10,PackRite Packaging Solutions,Packaging,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00391,INV-32089,V2003,2025-09-14,2025-09-21,13206.92,PO-6636,,Exception,No,,Paid,2025-11-18,Gumbo General Suppliers,Office supplies,Yes,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00392,INV-38137,V1008,2025-06-06,2025-07-21,25934.58,PO-6269,GRN-8626,Matched,No,USR-006,Paid,2025-07-14,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00393,INV-21257,V1013,2025-08-15,2025-09-29,16986.43,,GRN-8852,Exception,No,USR-001,Paid,2025-09-17,TrainCo Skills Institute,Training,No,No,Yes,No,Yes,No purchase order
+PI-00394,INV-24204,V1001,2025-05-10,2025-06-24,7289.18,PO-5529,GRN-7213,Matched,No,,Paid,2025-05-31,Steel Supplies Zimbabwe (Pvt) Ltd,Raw materials,No,Yes,Yes,No,Yes,No approver recorded
+PI-00395,INV-11913,V2002,2025-07-18,2025-07-25,33534.74,PO-6963,GRN-8938,Matched,No,USR-006,Paid,2025-08-29,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00396,INV-17609,V1022,2025-05-29,2025-06-28,8752.9,PO-5451,GRN-7431,Matched,No,,Paid,2025-06-27,MediCareX Health Services,Medical,No,Yes,Yes,No,Yes,No approver recorded
+PI-00397,INV-18064,V2002,2025-03-22,2025-03-29,3961.24,,GRN-7827,Exception,No,USR-006,Outstanding,2025-05-10,Zhou Logistics & Advisory,Logistics,Yes,No,Yes,No,Yes,No purchase order
+PI-00398,INV-24356,V1010,2025-03-08,2025-04-22,4414.47,PO-5618,GRN-7914,Matched,No,USR-002,Paid,2025-05-19,InsureCorp Brokers,Insurance,No,Yes,Yes,No,No,-
+PI-00399,INV-20247,V1012,2025-06-21,2025-07-21,26821.6,PO-5196,GRN-7032,Matched,No,USR-001,Paid,2025-09-04,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00400,INV-36283,V1017,2025-04-28,2025-05-28,4444.08,PO-6571,GRN-7686,Matched,No,USR-006,Paid,2025-05-25,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00401,INV-36976,V1019,2025-09-10,2025-10-10,4757.07,PO-6842,GRN-8808,Matched,No,USR-006,Paid,2025-11-04,RentPro Properties,Rent,No,Yes,Yes,No,No,-
+PI-00402,INV-10841,V1022,2025-04-19,2025-05-19,5014.51,PO-5366,GRN-8711,Matched,No,,Paid,2025-06-17,MediCareX Health Services,Medical,No,Yes,Yes,No,Yes,No approver recorded
+PI-00403,INV-21193,V2001,2025-07-24,2025-07-31,1365.27,PO-6883,GRN-7482,Matched,No,USR-001,Outstanding,2025-09-18,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00404,INV-13556,V1017,2025-02-24,2025-03-26,1322.51,PO-5205,GRN-7414,Matched,No,USR-006,Paid,2025-04-11,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00405,INV-16407,V1011,2025-08-19,2025-09-18,3263.21,PO-5971,GRN-7707,Matched,No,USR-002,Paid,2025-10-29,LegalVault Attorneys,Professional services,No,Yes,Yes,No,No,-
+PI-00406,INV-20737,V2004,2025-02-24,2025-03-03,1296.96,,GRN-8716,Exception,No,USR-001,Outstanding,2025-03-19,Meridian Consulting Group,Professional services,Yes,No,Yes,No,Yes,No purchase order
+PI-00407,INV-20348,V1014,2025-09-08,2025-10-08,6556.24,PO-6771,GRN-7199,Matched,No,,Outstanding,2025-11-16,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,Yes,No approver recorded
+PI-00408,INV-27816,V1018,2025-07-22,2025-08-05,1212.14,PO-6534,GRN-7126,Matched,No,USR-006,Outstanding,2025-08-18,AdvertStar Media,Marketing,No,Yes,Yes,No,No,-
+PI-00409,INV-29531,V2002,2025-09-22,2025-09-29,10450.04,PO-6916,GRN-8566,Matched,No,,Paid,2025-10-16,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00410,INV-17190,V1002,2025-03-05,2025-04-04,38517.41,PO-5341,,Exception,No,USR-002,Paid,2025-05-09,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00411,INV-24548,V1019,2025-07-06,2025-08-05,6653.02,PO-5558,GRN-8650,Matched,No,,Paid,2025-08-05,RentPro Properties,Rent,No,Yes,Yes,No,Yes,No approver recorded
+PI-00412,INV-21006,V1008,2025-05-21,2025-07-05,5108.86,PO-5887,GRN-7139,Matched,No,USR-002,Paid,2025-07-17,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00413,INV-36301,V1003,2025-04-08,2025-05-23,24256.94,PO-5622,,Exception,No,USR-006,Paid,2025-05-23,ChemPro Industrial Chemicals,Raw materials,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00414,INV-29414,V1004,2025-04-03,2025-05-03,24976.4,PO-5975,GRN-7465,Matched,No,,Outstanding,2025-05-04,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00415,INV-21101,V1021,2025-08-05,2025-08-19,1243.86,PO-6507,GRN-8069,Matched,No,USR-002,Paid,2025-10-08,SoftPro Licensing Africa,Software,No,Yes,Yes,No,No,-
+PI-00416,INV-31432,V1006,2025-09-22,2025-10-22,4086.34,PO-6735,,Exception,No,USR-001,Paid,2025-11-10,PowerCo Utilities Zimbabwe,Utilities,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00417,INV-14381,V1010,2025-05-02,2025-06-16,2997.01,PO-5795,GRN-8134,Matched,No,USR-001,Outstanding,2025-07-05,InsureCorp Brokers,Insurance,No,Yes,Yes,No,No,-
+PI-00418,INV-28753,V1017,2025-04-11,2025-05-11,43538.34,PO-6366,GRN-7572,Matched,No,USR-001,Paid,2025-06-15,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00419,INV-37005,V1009,2025-07-26,2025-09-09,1436.63,,GRN-7459,Exception,No,USR-006,Paid,2025-09-16,FuelMax Petroleum,Fuel,No,No,Yes,No,Yes,No purchase order
+PI-00420,INV-38225,V1014,2025-09-10,2025-10-10,5146.46,PO-6067,GRN-8117,Matched,No,,Paid,2025-10-31,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,Yes,No approver recorded
+PI-00421,INV-19274,V1011,2025-06-26,2025-07-26,41620.68,PO-6933,GRN-8275,Matched,No,,Paid,2025-07-19,LegalVault Attorneys,Professional services,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00422,INV-15189,V1004,2025-07-28,2025-08-27,15302.95,PO-6808,GRN-7221,Matched,No,USR-002,Paid,2025-09-18,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00423,INV-39407,V1003,2025-04-24,2025-06-08,37843.36,PO-6284,GRN-7560,Matched,No,,Paid,2025-06-03,ChemPro Industrial Chemicals,Raw materials,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00424,INV-10881,V1013,2025-06-11,2025-07-26,6561.29,PO-5227,GRN-7770,Matched,No,USR-006,Paid,2025-08-23,TrainCo Skills Institute,Training,No,Yes,Yes,No,No,-
+PI-00425,INV-36706,V1009,2025-02-26,2025-04-12,41003.28,PO-6861,GRN-7478,Matched,No,USR-002,Paid,2025-04-25,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00426,INV-10515,V1014,2025-08-02,2025-09-01,24674.57,,GRN-8963,Exception,No,USR-001,Paid,2025-10-01,IT Support Partners (Pvt) Ltd,IT services,No,No,Yes,No,Yes,No purchase order
+PI-00427,INV-15405,V1004,2025-03-05,2025-04-04,15368.98,PO-5871,GRN-8554,Matched,No,USR-006,Paid,2025-04-01,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00428,INV-16616,V1022,2025-09-02,2025-10-02,6510.27,PO-6348,GRN-7365,Matched,No,,Paid,2025-09-30,MediCareX Health Services,Medical,No,Yes,Yes,No,Yes,No approver recorded
+PI-00429,INV-18043,V1007,2025-02-28,2025-03-30,4578.49,,GRN-8854,Exception,No,USR-002,Paid,2025-04-14,TelStar Communications,Telecoms,No,No,Yes,No,Yes,No purchase order
+PI-00430,INV-13905,V1002,2025-07-02,2025-08-01,5119.33,PO-5170,GRN-7295,Matched,No,USR-002,Paid,2025-08-24,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00431,INV-31708,V1002,2025-06-07,2025-07-07,18409.13,PO-5023,GRN-7578,Matched,No,USR-006,Paid,2025-07-27,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00432,INV-28908,V1007,2025-06-11,2025-07-11,23153.11,PO-5691,GRN-8811,Matched,No,USR-001,Outstanding,2025-08-01,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00433,INV-21042,V1015,2025-06-14,2025-07-29,8404.11,,,Exception,No,USR-006,Outstanding,2025-07-14,OfficeQuip Stationers,Office supplies,No,No,No,No,Yes,No purchase order
+PI-00434,INV-21369,V2001,2025-09-24,2025-10-01,1337.98,PO-6139,,Exception,No,USR-006,Paid,2025-10-28,R Chikafu Trading Enterprises,Professional services,Yes,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00435,INV-19352,V2002,2025-06-21,2025-06-28,3140.52,PO-6543,GRN-8423,Matched,No,,Paid,2025-07-17,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00436,INV-10371,V1021,2025-06-17,2025-07-01,6425.52,PO-6007,GRN-8912,Matched,No,USR-002,Paid,2025-07-15,SoftPro Licensing Africa,Software,No,Yes,Yes,No,No,-
+PI-00437,INV-36525,V1006,2025-07-28,2025-08-27,14441.25,PO-6744,,Exception,No,USR-006,Outstanding,2025-08-29,PowerCo Utilities Zimbabwe,Utilities,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00438,INV-28881,V1016,2025-06-21,2025-08-20,3315.58,,GRN-8669,Exception,No,USR-002,Paid,2025-08-02,MainTek Engineering Services,Maintenance,No,No,Yes,No,Yes,No purchase order
+PI-00439,INV-29038,V1004,2025-04-19,2025-05-19,4437.02,PO-5818,GRN-8047,Matched,No,USR-002,Paid,2025-06-25,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00440,INV-37899,V1021,2025-08-29,2025-09-12,9077.14,PO-6860,GRN-8593,Matched,No,,Paid,2025-09-24,SoftPro Licensing Africa,Software,No,Yes,Yes,No,Yes,No approver recorded
+PI-00441,INV-24528,V1014,2025-07-27,2025-08-26,5415.93,PO-6375,GRN-8740,Matched,No,USR-006,Outstanding,2025-10-06,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00442,INV-12508,V2003,2025-05-05,2025-05-12,2529.22,PO-6217,GRN-8831,Matched,No,USR-001,Outstanding,2025-06-13,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,No,No,-
+PI-00443,INV-30678,V1013,2025-03-14,2025-04-28,9645.76,PO-6423,GRN-7098,Matched,No,USR-006,Paid,2025-04-21,TrainCo Skills Institute,Training,No,Yes,Yes,No,No,-
+PI-00444,INV-38247,V2004,2025-02-27,2025-03-06,5231.97,PO-6042,GRN-7556,Matched,No,,Outstanding,2025-04-17,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00445,INV-15225,V2001,2025-07-21,2025-07-28,1354.56,PO-5659,GRN-7388,Matched,No,USR-001,Outstanding,2025-09-09,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00446,INV-18528,V1006,2025-09-11,2025-10-11,2490.37,PO-5272,GRN-8073,Matched,No,USR-001,Outstanding,2025-10-22,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00447,INV-12442,V2003,2025-03-07,2025-03-14,27175.34,PO-5866,,Exception,No,,Outstanding,2025-05-13,Gumbo General Suppliers,Office supplies,Yes,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00448,INV-15553,V1005,2025-04-07,2025-05-07,4743.47,PO-6977,GRN-8163,Matched,No,USR-002,Paid,2025-04-29,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00449,INV-15680,V1012,2025-02-26,2025-03-28,7563.18,PO-6157,GRN-7369,Matched,No,USR-002,Paid,2025-04-03,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00450,INV-22500,V1020,2025-09-12,2025-11-11,8600.71,PO-5692,GRN-8968,Matched,No,USR-006,Outstanding,2025-10-13,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00451,INV-28098,V1017,2025-05-14,2025-06-13,6249.8,PO-5639,GRN-7785,Matched,No,USR-002,Paid,2025-07-17,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00452,INV-31929,V1019,2025-05-25,2025-06-24,1422.27,,GRN-7876,Exception,No,USR-001,Paid,2025-07-24,RentPro Properties,Rent,No,No,Yes,No,Yes,No purchase order
+PI-00453,INV-23054,V1005,2025-04-20,2025-05-20,21721.7,PO-6503,GRN-7381,Matched,No,USR-006,Paid,2025-06-19,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00454,INV-39592,V1002,2025-05-27,2025-06-26,11284.2,PO-5805,GRN-7431,Matched,No,USR-006,Paid,2025-07-10,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00455,INV-32274,V1020,2025-05-29,2025-07-28,17205.94,PO-5094,GRN-8972,Matched,No,USR-001,Paid,2025-08-01,SparePart Outfitters,Spare parts,No,Yes,Yes,No,No,-
+PI-00456,INV-30379,V1002,2025-04-24,2025-05-24,3356.83,PO-5190,GRN-8491,Matched,No,USR-001,Paid,2025-05-16,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,Yes,Yes,No,No,-
+PI-00457,INV-27098,V1007,2025-08-26,2025-09-25,26013.2,PO-5621,GRN-8816,Matched,No,USR-006,Paid,2025-09-30,TelStar Communications,Telecoms,No,Yes,Yes,No,No,-
+PI-00458,INV-36877,V1002,2025-04-22,2025-05-22,19896.84,,GRN-8745,Exception,No,USR-002,Paid,2025-05-12,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,No,Yes,No,Yes,No purchase order
+PI-00459,INV-30456,V1008,2025-05-25,2025-07-09,9711.43,PO-6689,GRN-7858,Matched,No,USR-001,Paid,2025-06-29,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00460,INV-24176,V1017,2025-05-29,2025-06-28,1150.61,PO-6135,GRN-8427,Matched,No,USR-002,Outstanding,2025-07-10,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00461,INV-36754,V1021,2025-04-04,2025-04-18,25675.8,PO-6816,GRN-7451,Matched,No,,Outstanding,2025-05-24,SoftPro Licensing Africa,Software,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00462,INV-31667,V1012,2025-03-12,2025-04-11,4958.27,PO-6300,GRN-7063,Matched,No,USR-001,Outstanding,2025-04-19,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00463,INV-32354,V2004,2025-05-24,2025-05-31,23605.81,PO-6072,GRN-7615,Matched,No,,Paid,2025-06-28,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00464,INV-15300,V1012,2025-08-23,2025-09-22,10561.21,,,Exception,No,USR-001,Paid,2025-10-13,Auditax Chartered Accountants,Professional services,No,No,No,No,Yes,No purchase order
+PI-00465,INV-24704,V1011,2025-06-16,2025-07-16,22280.15,PO-6009,GRN-7017,Matched,No,,Paid,2025-08-25,LegalVault Attorneys,Professional services,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00466,INV-31952,V1005,2025-08-27,2025-09-26,4425.15,PO-5261,GRN-8958,Matched,No,,Paid,2025-10-03,Logistics Windward Freight,Logistics,No,Yes,Yes,No,Yes,No approver recorded
+PI-00467,INV-13531,V2002,2025-03-21,2025-03-28,31941.7,PO-6876,,Exception,No,USR-006,Paid,2025-04-17,Zhou Logistics & Advisory,Logistics,Yes,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00468,INV-18653,V1012,2025-04-04,2025-05-04,11646.74,PO-5880,GRN-7160,Matched,No,USR-002,Paid,2025-05-17,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00469,INV-26687,V1007,2025-04-13,2025-05-13,21535.53,,GRN-7715,Exception,No,USR-002,Outstanding,2025-06-02,TelStar Communications,Telecoms,No,No,Yes,No,Yes,No purchase order
+PI-00470,INV-22539,V1006,2025-09-08,2025-10-08,1052.52,PO-5794,GRN-7550,Matched,No,USR-002,Paid,2025-11-14,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00471,INV-36827,V1019,2025-04-15,2025-05-15,4347.96,PO-5786,GRN-7201,Matched,No,USR-002,Paid,2025-06-20,RentPro Properties,Rent,No,Yes,Yes,No,No,-
+PI-00472,INV-10912,V1008,2025-09-20,2025-11-04,2514.01,,GRN-7456,Exception,No,USR-006,Paid,2025-11-07,SecureGuard Security Services,Security,No,No,Yes,No,Yes,No purchase order
+PI-00473,INV-31486,V1010,2025-09-01,2025-10-16,8633.51,PO-5245,,Exception,No,USR-002,Paid,2025-11-03,InsureCorp Brokers,Insurance,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00474,INV-24897,V1011,2025-06-16,2025-07-16,4817.27,PO-5312,,Exception,No,USR-001,Paid,2025-08-17,LegalVault Attorneys,Professional services,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00475,INV-37334,V2002,2025-05-05,2025-05-12,17257.15,PO-6476,GRN-7826,Matched,No,USR-006,Paid,2025-06-04,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00476,INV-17273,V1019,2025-09-13,2025-10-13,22579.72,PO-6301,,Exception,No,,Paid,2025-10-27,RentPro Properties,Rent,No,Yes,No,No,Yes,"Purchase order but no goods-received note; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00477,INV-22649,V1005,2025-09-06,2025-10-06,6494.8,PO-6388,GRN-7628,Matched,No,,Outstanding,2025-10-18,Logistics Windward Freight,Logistics,No,Yes,Yes,No,Yes,No approver recorded
+PI-00478,INV-27208,V1003,2025-06-14,2025-07-29,11115.59,PO-5266,,Exception,No,USR-001,Paid,2025-07-15,ChemPro Industrial Chemicals,Raw materials,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00479,INV-21415,V1017,2025-06-08,2025-07-08,4276.65,PO-5091,GRN-8327,Matched,No,USR-002,Paid,2025-08-22,CleanServ Facilities,Facilities,No,Yes,Yes,No,No,-
+PI-00480,INV-12306,V1006,2025-03-04,2025-04-03,1179.77,PO-6483,GRN-8787,Matched,No,USR-006,Paid,2025-04-09,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00481,INV-38417,V1012,2025-03-12,2025-04-11,21727.8,,GRN-7997,Exception,No,USR-006,Paid,2025-04-08,Auditax Chartered Accountants,Professional services,No,No,Yes,No,Yes,No purchase order
+PI-00482,INV-14782,V1012,2025-04-23,2025-05-23,5081.38,PO-5526,GRN-7180,Matched,No,USR-001,Paid,2025-05-13,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,No,-
+PI-00483,INV-38836,V1017,2025-03-16,2025-04-15,6420.9,,GRN-8130,Exception,No,USR-002,Paid,2025-05-27,CleanServ Facilities,Facilities,No,No,Yes,No,Yes,No purchase order
+PI-00484,INV-20134,V1007,2025-05-06,2025-06-05,4098.89,PO-6401,,Exception,No,USR-006,Outstanding,2025-06-09,TelStar Communications,Telecoms,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00485,INV-34834,V1014,2025-04-23,2025-05-23,2868.84,,GRN-7282,Exception,No,USR-002,Paid,2025-06-27,IT Support Partners (Pvt) Ltd,IT services,No,No,Yes,No,Yes,No purchase order
+PI-00486,INV-13682,V1006,2025-04-25,2025-05-25,10099.17,PO-6604,GRN-7064,Matched,No,USR-006,Paid,2025-06-20,PowerCo Utilities Zimbabwe,Utilities,No,Yes,Yes,No,No,-
+PI-00487,INV-30147,V2003,2025-02-28,2025-03-07,26337.75,,GRN-7003,Exception,No,USR-002,Paid,2025-05-04,Gumbo General Suppliers,Office supplies,Yes,No,Yes,No,Yes,No purchase order
+PI-00488,INV-24631,V1002,2025-06-19,2025-07-19,40066.2,,GRN-8909,Exception,No,,Outstanding,2025-08-29,PolyPlas Holdings (Pvt) Ltd,Raw materials,No,No,Yes,No,Yes,"No purchase order; No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00489,INV-36711,V1018,2025-09-13,2025-09-27,1290.8,,GRN-8342,Exception,No,USR-002,Outstanding,2025-10-30,AdvertStar Media,Marketing,No,No,Yes,No,Yes,No purchase order
+PI-00490,INV-17294,V2003,2025-07-28,2025-08-04,7111.26,PO-6036,GRN-8290,Matched,Yes,USR-001,Paid,2025-09-16,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00491,INV-19723,V2003,2025-03-10,2025-03-17,2535.66,PO-6238,GRN-8390,Matched,No,,Paid,2025-04-17,Gumbo General Suppliers,Office supplies,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00492,INV-22655,V1004,2025-04-05,2025-05-05,6543.97,PO-5879,GRN-8074,Matched,No,USR-001,Paid,2025-05-18,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,No,-
+PI-00493,INV-35267,V1008,2025-04-15,2025-05-30,2799.86,PO-5083,GRN-7874,Matched,No,USR-001,Paid,2025-05-06,SecureGuard Security Services,Security,No,Yes,Yes,No,No,-
+PI-00494,INV-25124,V1010,2025-09-13,2025-10-28,5028.68,PO-5275,GRN-7467,Matched,No,,Paid,2025-11-20,InsureCorp Brokers,Insurance,No,Yes,Yes,No,Yes,No approver recorded
+PI-00495,INV-25304,V1019,2025-06-29,2025-07-29,17481.63,PO-6555,GRN-8794,Matched,No,USR-002,Outstanding,2025-09-04,RentPro Properties,Rent,No,Yes,Yes,No,No,-
+PI-00496,INV-22199,V1019,2025-03-25,2025-04-24,23989.21,PO-5131,GRN-7028,Matched,No,USR-006,Paid,2025-05-03,RentPro Properties,Rent,No,Yes,Yes,No,No,-
+PI-00497,INV-34492,V1020,2025-03-28,2025-05-27,26735.93,,GRN-7318,Exception,No,USR-006,Paid,2025-04-22,SparePart Outfitters,Spare parts,No,No,Yes,No,Yes,No purchase order
+PI-00498,INV-18239,V1011,2025-03-29,2025-04-28,26626.61,PO-5503,GRN-8979,Matched,No,,Paid,2025-05-26,LegalVault Attorneys,Professional services,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00499,INV-11929,V1012,2025-05-08,2025-06-07,15398.12,PO-6471,GRN-8597,Matched,No,,Paid,2025-06-21,Auditax Chartered Accountants,Professional services,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00500,INV-32832,V1005,2025-05-17,2025-06-16,3082.62,,GRN-7555,Exception,No,USR-001,Paid,2025-06-15,Logistics Windward Freight,Logistics,No,No,Yes,No,Yes,No purchase order
+PI-00501,INV-26261,V1016,2025-04-25,2025-06-24,7030.78,,GRN-7239,Exception,No,,Paid,2025-05-30,MainTek Engineering Services,Maintenance,No,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00502,INV-33952,V1012,2025-06-03,2025-07-03,22110.7,PO-5320,,Exception,No,USR-006,Paid,2025-06-26,Auditax Chartered Accountants,Professional services,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00503,INV-37114,V1017,2025-06-17,2025-07-17,3097.08,PO-5982,,Exception,No,USR-002,Paid,2025-08-09,CleanServ Facilities,Facilities,No,Yes,No,No,Yes,Purchase order but no goods-received note
+PI-00504,INV-23302,V2001,2025-07-11,2025-07-18,18068.63,PO-6798,GRN-7727,Matched,No,USR-006,Paid,2025-08-30,R Chikafu Trading Enterprises,Professional services,Yes,Yes,Yes,No,No,-
+PI-00505,INV-26767,V1022,2025-08-09,2025-09-08,5348.12,PO-5577,GRN-8638,Matched,No,,Paid,2025-09-15,MediCareX Health Services,Medical,No,Yes,Yes,No,Yes,No approver recorded
+PI-00506,INV-23763,V1015,2025-09-06,2025-10-21,1105.58,PO-5884,GRN-8725,Matched,No,USR-006,Outstanding,2025-10-30,OfficeQuip Stationers,Office supplies,No,Yes,Yes,No,No,-
+PI-00507,INV-17078,V1012,2025-05-04,2025-06-03,11808.73,PO-6660,GRN-7580,Matched,Yes,USR-002,Paid,2025-06-12,Auditax Chartered Accountants,Professional services,No,Yes,Yes,Yes,Yes,Duplicate invoice suspected
+PI-00508,INV-23118,V2002,2025-04-20,2025-04-27,26831.18,PO-5805,GRN-8905,Matched,No,USR-001,Paid,2025-06-27,Zhou Logistics & Advisory,Logistics,Yes,Yes,Yes,No,No,-
+PI-00509,INV-38493,V1014,2025-05-18,2025-06-17,17974.65,PO-6213,GRN-7708,Matched,No,USR-001,Paid,2025-08-01,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,No,-
+PI-00510,INV-33697,V1004,2025-04-12,2025-05-12,7737.31,PO-6604,GRN-7395,Matched,No,,Outstanding,2025-06-22,PackRite Packaging Solutions,Packaging,No,Yes,Yes,No,Yes,No approver recorded
+PI-00511,INV-15583,V1005,2025-06-30,2025-07-30,1317.31,PO-6360,GRN-7671,Matched,No,USR-002,Paid,2025-08-29,Logistics Windward Freight,Logistics,No,Yes,Yes,No,No,-
+PI-00512,INV-24832,V1010,2025-05-12,2025-06-26,38663.68,PO-6732,GRN-8223,Matched,No,,Paid,2025-06-04,InsureCorp Brokers,Insurance,No,Yes,Yes,No,Yes,"No approver recorded; Above the $10,000 approval limit with no approver"
+PI-00513,INV-24089,V2004,2025-09-27,2025-10-04,5404.86,PO-5283,GRN-8842,Matched,No,,Paid,2025-11-16,Meridian Consulting Group,Professional services,Yes,Yes,Yes,No,Yes,No approver recorded
+PI-00514,INV-16403,V1008,2025-08-30,2025-10-14,1212.26,PO-6155,GRN-8640,Matched,No,,Outstanding,2025-11-13,SecureGuard Security Services,Security,No,Yes,Yes,No,Yes,No approver recorded
+PI-00515,INV-35534,V2004,2025-09-15,2025-09-22,8146.43,,GRN-8900,Exception,No,,Paid,2025-10-29,Meridian Consulting Group,Professional services,Yes,No,Yes,No,Yes,No purchase order; No approver recorded
+PI-00516,INV-37271,V1014,2025-05-07,2025-06-06,6456.15,PO-6855,GRN-7043,Matched,No,,Paid,2025-07-09,IT Support Partners (Pvt) Ltd,IT services,No,Yes,Yes,No,Yes,No approver recorded
+PI-00517,INV-23901,V1007,2025-08-03,2025-09-02,17678.77,,GRN-7065,Exception,Yes,USR-006,Outstanding,2025-09-17,TelStar Communications,Telecoms,No,No,Yes,Yes,Yes,No purchase order; Duplicate invoice suspected
+PI-00518,INV-10709,V1009,2025-07-26,2025-09-09,11429.42,PO-6392,GRN-8620,Matched,No,USR-002,Outstanding,2025-08-16,FuelMax Petroleum,Fuel,No,Yes,Yes,No,No,-
+PI-00519,INV-39453,V1011,2025-07-01,2025-07-31,17525.27,PO-6532,GRN-8188,Matched,No,USR-006,Paid,2025-08-30,LegalVault Attorneys,Professional services,No,Yes,Yes,No,No,-

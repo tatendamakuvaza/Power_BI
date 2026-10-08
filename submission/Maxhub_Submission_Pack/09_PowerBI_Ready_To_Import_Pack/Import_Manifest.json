@@ -1,0 +1,2315 @@
+{
+  "pack": "Maxhub Power BI ready-to-import pack",
+  "generated": "2025-10-08",
+  "target": "Power BI Desktop (2023 or later) or Microsoft Fabric",
+  "parameter": {
+    "name": "DataFolder",
+    "type": "Text",
+    "value": "full path to Data_Ready_To_Import, no trailing slash"
+  },
+  "load order": [
+    "DimAccount",
+    "DimCostCentre",
+    "DimCustomer",
+    "DimDate",
+    "DimEmployee",
+    "DimFXRate",
+    "DimScheme",
+    "DimUser",
+    "DimVendor",
+    "FactAPInvoices",
+    "FactARAgeing",
+    "FactBankTransactions",
+    "FactBudget",
+    "FactClientChurnScored",
+    "FactDismissedExceptions",
+    "FactEngagementEconomics",
+    "FactExceptionRegister",
+    "FactExpenseClaims",
+    "FactFixedAssets",
+    "FactGLJournal",
+    "FactJournal",
+    "FactPipeline",
+    "FactRevenueForecast",
+    "FactSalesOrders",
+    "FactServiceLineMonthly",
+    "FactTrialBalance"
+  ],
+  "encoding": "UTF-8 with BOM; ISO 8601 dates; integer DateKey on DimDate",
+  "tables": [
+    {
+      "query": "FactGLJournal",
+      "kind": "Fact",
+      "source": "derived",
+      "file": "Data_Ready_To_Import/FactGLJournal.csv",
+      "rows": 13929,
+      "columns": [
+        {
+          "name": "LineID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "JournalID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "LineNo",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AccountCode",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "PostingDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "DocumentDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FiscalYear",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "Description",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Debit",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Credit",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "AmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "AbsAmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Currency",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FXRate",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "CostCentreCode",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PreparedBy",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ApprovedBy",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SourceSystem",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EntryType",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EnteredOn",
+          "powerQueryType": "type datetime"
+        },
+        {
+          "name": "IsReversal",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CustomerID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AnomalyLabel",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AccountName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AccountType",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FSLine",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Statement",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "StatementName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsPL",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PLSign",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "BSSign",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "NormalBalance",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsCashAccount",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsSuspense",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PLValue",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "BSValue",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "VendorName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorCategory",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EmployeeLinkedVendor",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CustomerName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PreparerName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PreparerRole",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ApproverName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsApproved",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsManual",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsWeekendPosting",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsAfterHours",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsInjection",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SchemeID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TestID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Scheme",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "RiskBand",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Every general ledger line, with statement signs and fraud flags pre-computed"
+    },
+    {
+      "query": "FactJournal",
+      "kind": "Fact",
+      "source": "derived",
+      "file": "Data_Ready_To_Import/FactJournal.csv",
+      "rows": 5504,
+      "columns": [
+        {
+          "name": "JournalID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PostingDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "DocumentDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FiscalYear",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "EntryType",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SourceSystem",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Description",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PreparedBy",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PreparerName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PreparerRole",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ApprovedBy",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ApproverName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsApproved",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsSelfApproved",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "LineCount",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "TotalDebitUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "TotalCreditUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "BalanceDiffUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "IsWeekendPosting",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsAfterHours",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsReversal",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorCount",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AccountCount",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "TouchesSuspense",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TouchesRevenue",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsInjection",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SchemeID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TestID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Scheme",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "InjectionAmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "RiskScore",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "RiskBand",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Journal header: one row per journal with its approval status"
+    },
+    {
+      "query": "DimDate",
+      "kind": "Dimension",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/DimDate.csv",
+      "rows": 1461,
+      "columns": [
+        {
+          "name": "Date",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "DateKey",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "DayName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DayNameShort",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DayOfMonth",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "DayOfWeekNumber",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "IsWeekend",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "WeekNumberISO",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "MonthNumber",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "MonthName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "MonthShort",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "MonthYear",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Quarter",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "QuarterYear",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FiscalYear",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FiscalPeriod",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FiscalPeriodEnd",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "IsMonthEnd",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsCurrentFY",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsWeekendYN",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsMonthEndYN",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "MonthYearSort",
+          "powerQueryType": "Int64.Type"
+        }
+      ],
+      "description": "Calendar with fiscal period, weekend and month-end flags"
+    },
+    {
+      "query": "DimAccount",
+      "kind": "Dimension",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/DimAccount.csv",
+      "rows": 71,
+      "columns": [
+        {
+          "name": "AccountCode",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AccountName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AccountType",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "NormalBalance",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FSLine",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Statement",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsCashAccount",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsControlAccount",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsSuspense",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsPL",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PLSign",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "BSSign",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "StatementName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "NormalBalanceName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsRevenue",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsExpense",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsContra",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsActive",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Chart of accounts with statement sign columns"
+    },
+    {
+      "query": "DimVendor",
+      "kind": "Dimension",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/DimVendor.csv",
+      "rows": 26,
+      "columns": [
+        {
+          "name": "VendorID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorCode",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Category",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "BankAccount",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "BankName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TaxClearanceNo",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Address",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PaymentTerms",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "VendorCreatedOn",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "LastBankChangeDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "IsEmployeeLinked",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsActive",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "BankAccountMasked",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "HasTaxClearance",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EmployeeLinkedFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorRiskFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "GLSpendUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "GLPostings",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "GLSpendSharePct",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "APSpendUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "APInvoices",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ThreeWayExceptions",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ExceptionRatePct",
+          "powerQueryType": "type number"
+        }
+      ],
+      "description": "Vendor master with bank masking and spend analytics"
+    },
+    {
+      "query": "DimCustomer",
+      "kind": "Dimension",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/DimCustomer.csv",
+      "rows": 18,
+      "columns": [
+        {
+          "name": "CustomerID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CustomerCode",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CustomerName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Segment",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Currency",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CreditLimitUSD",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "PaymentTerms",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "Country",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AccountManager",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CustomerSince",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "AROutstandingUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "ARInvoices",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "DisputedUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Overdue90USD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "AvgDaysOverdue",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "CreditUtilisationPct",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "CollectionsAction",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Customer master with receivables and collections priority"
+    },
+    {
+      "query": "DimUser",
+      "kind": "Dimension",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/DimUser.csv",
+      "rows": 12,
+      "columns": [
+        {
+          "name": "UserID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "UserName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "JobTitle",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Department",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Role",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CanPostManualJE",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CanApprovePayment",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SystemAccess",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "StartDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "JournalsPrepared",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "JournalsApproved",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "UnapprovedJournals",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "UnapprovedValueUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "WeekendJournals",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ManualJournals",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ExceptionsPrepared",
+          "powerQueryType": "Int64.Type"
+        }
+      ],
+      "description": "System users with posting and approval statistics"
+    },
+    {
+      "query": "DimEmployee",
+      "kind": "Dimension",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/DimEmployee.csv",
+      "rows": 63,
+      "columns": [
+        {
+          "name": "EmployeeID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EmployeeName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Department",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "JobTitle",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "GradeLevel",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "MonthlyGrossUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "DateOfBirth",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "HireDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "BankAccount",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "NationalIDPresent",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TerminationDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "IsFlaggedForReview",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "BankAccountMasked",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Employee master (bank accounts masked)"
+    },
+    {
+      "query": "DimCostCentre",
+      "kind": "Dimension",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/DimCostCentre.csv",
+      "rows": 9,
+      "columns": [
+        {
+          "name": "CostCentreCode",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CostCentreName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Department",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AnnualBudgetUSD",
+          "powerQueryType": "Int64.Type"
+        }
+      ],
+      "description": "Cost centres and annual budgets"
+    },
+    {
+      "query": "DimFXRate",
+      "kind": "Dimension",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/DimFXRate.csv",
+      "rows": 84,
+      "columns": [
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PeriodEndDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "FromCurrency",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ToCurrency",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AverageRate",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "ClosingRate",
+          "powerQueryType": "type number"
+        }
+      ],
+      "description": "Monthly FX rates"
+    },
+    {
+      "query": "DimScheme",
+      "kind": "Dimension",
+      "source": "derived",
+      "file": "Data_Ready_To_Import/DimScheme.csv",
+      "rows": 7,
+      "columns": [
+        {
+          "name": "SchemeKey",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "SchemeID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Scheme",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TestID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TestName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Assertion tested",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Control weakness",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Detection rule",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Follow-up",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Process area",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "JournalsInjected",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ValueInjectedUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "JournalsDetected",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ValueDetectedUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "DetectionRatePct",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "AnswerKeyExpected",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AnswerKeyDetected",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AnswerKeyMissed",
+          "powerQueryType": "Int64.Type"
+        }
+      ],
+      "description": "The seven fraud schemes, injected vs detected"
+    },
+    {
+      "query": "FactAPInvoices",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactAPInvoices.csv",
+      "rows": 520,
+      "columns": [
+        {
+          "name": "APInvoiceNo",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SupplierInvoiceRef",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "InvoiceDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "DueDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "AmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "PONumber",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "GRNNumber",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ThreeWayMatch",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DuplicateSuspected",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ApprovedBy",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PaidStatus",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PaymentDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "VendorName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorCategory",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EmployeeLinkedVendor",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "HasPO",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "HasGRN",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DuplicateFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ExceptionFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ExceptionReason",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Supplier invoices with three-way-match exception reasons"
+    },
+    {
+      "query": "FactARAgeing",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactARAgeing.csv",
+      "rows": 420,
+      "columns": [
+        {
+          "name": "InvoiceNo",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CustomerID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "InvoiceDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "DueDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Currency",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "AmountReceivedUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "DaysOverdue",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AgeingBucket",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DisputedFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AsAtDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "CustomerName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Segment",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AccountManager",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "OutstandingUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "SettledFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DisputedFlagYN",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Overdue90Flag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PriorityScore",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "PriorityRank",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "RecommendedAction",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Receivables ageing with collections priority scores"
+    },
+    {
+      "query": "FactBankTransactions",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactBankTransactions.csv",
+      "rows": 1400,
+      "columns": [
+        {
+          "name": "BankTxnID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "BankAccount",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TxnDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "ValueDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Narration",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DebitUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "CreditUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "BalanceUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "ReconciledFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "UnmatchedItemsAgeDays",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Direction",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ReconciledYN",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ExceptionFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AgeBucket",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Over90Flag",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Bank transactions with reconciliation status"
+    },
+    {
+      "query": "FactExpenseClaims",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactExpenseClaims.csv",
+      "rows": 650,
+      "columns": [
+        {
+          "name": "ClaimID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EmployeeID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EmployeeName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ClaimDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ExpenseCategory",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ClaimedUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "ReceiptAttached",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ApprovedBy",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PaidDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "DuplicateSuspected",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "WeekendClaim",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ReceiptFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ApprovedFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ExceptionFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ExceptionReason",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Expense claims with receipt and approval exceptions"
+    },
+    {
+      "query": "FactExceptionRegister",
+      "kind": "Fact",
+      "source": "derived",
+      "file": "Data_Ready_To_Import/FactExceptionRegister.csv",
+      "rows": 171,
+      "columns": [
+        {
+          "name": "Rank",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "JournalID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TestID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TestName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AllTestsFired",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SchemeID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ExceptionDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "DocumentDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "EnteredOn",
+          "powerQueryType": "type datetime"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AccountCode",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AccountName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Description",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DocumentRef",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "VendorName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EmployeeLinked",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CounterAccount",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "JournalDebits",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Debit",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Credit",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Preparer",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PreparerName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PreparerRole",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Approver",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EntryType",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SourceSystem",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "RiskScore",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "RiskBand",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "RiskWeightedValueUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Status",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Conclusion",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ReviewedBy",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "The 171 scored exceptions raised by the twelve forensic tests"
+    },
+    {
+      "query": "FactDismissedExceptions",
+      "kind": "Fact",
+      "source": "derived",
+      "file": "Data_Ready_To_Import/FactDismissedExceptions.csv",
+      "rows": 141,
+      "columns": [
+        {
+          "name": "TestID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "TestName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "JournalID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ExceptionDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Description",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Preparer",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ReasonDismissed",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PopulationNote",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Exceptions raised by a test, investigated and dismissed with a reason"
+    },
+    {
+      "query": "FactTrialBalance",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactTrialBalance.csv",
+      "rows": 1323,
+      "columns": [
+        {
+          "name": "PeriodEnd",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FiscalYear",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AccountCode",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "DebitMovement",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "CreditMovement",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "NetMovementSigned",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "OpeningBalance",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "ClosingBalance",
+          "powerQueryType": "type number"
+        }
+      ],
+      "description": "Delivered trial balance, for the GL-to-TB reconciliation"
+    },
+    {
+      "query": "FactBudget",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactBudget.csv",
+      "rows": 1299,
+      "columns": [
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FiscalYear",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "MonthNum",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AccountCode",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "CostCentreCode",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "BudgetUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "BudgetVersion",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Monthly budget by account and cost centre"
+    },
+    {
+      "query": "FactSalesOrders",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactSalesOrders.csv",
+      "rows": 900,
+      "columns": [
+        {
+          "name": "OrderNo",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CustomerID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "OrderDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ProductFamily",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ProductLine",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Quantity",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "UnitPriceUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "GrossAmountUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "DiscountPct",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "CostCentreCode",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "SalesRep",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Status",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "MarginPct",
+          "powerQueryType": "type number"
+        }
+      ],
+      "description": "Sales orders with margin"
+    },
+    {
+      "query": "FactFixedAssets",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactFixedAssets.csv",
+      "rows": 120,
+      "columns": [
+        {
+          "name": "AssetID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AssetDescription",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AssetClass",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "CostAccountCode",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AccDepAccountCode",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "LocationCode",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "AcquisitionDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "CostUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "UsefulLifeYears",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "MonthlyDepreciationUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "AccumulatedDepreciationUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "NBVUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "DisposalDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Custodian",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Fixed asset register"
+    },
+    {
+      "query": "FactClientChurnScored",
+      "kind": "Fact",
+      "source": "derived",
+      "file": "Data_Ready_To_Import/FactClientChurnScored.csv",
+      "rows": 150,
+      "columns": [
+        {
+          "name": "ClientID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ClientName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Industry",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ClientSince",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ClientSize",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Year",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AnnualFeeUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "ServicesPurchased",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "NPS",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ComplaintsLogged",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "AvgPaymentDays",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "EngagementDelayDays",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "PartnerHoursOnClient",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "AuditFindingsRaised",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "FeeChangePct",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Stayed",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "PStay",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "PChurn",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "RiskBand",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FeeAtRiskUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "ModelVersion",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Maxhub client churn: every client-year scored, with P(churn) and fee at risk"
+    },
+    {
+      "query": "FactEngagementEconomics",
+      "kind": "Fact",
+      "source": "derived",
+      "file": "Data_Ready_To_Import/FactEngagementEconomics.csv",
+      "rows": 160,
+      "columns": [
+        {
+          "name": "EngagementID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ClientName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ServiceLine",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "EngagementManager",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Status",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "PlannedHours",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "ActualHours",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "OverrunPct",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "FeeUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "WriteOffUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "RealisationPct",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "MarginPct",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "NPS",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "SeverityUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "AnomalyFlag",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Anomaly",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Maxhub engagement economics with over-run, realisation, margin and anomaly flags"
+    },
+    {
+      "query": "FactRevenueForecast",
+      "kind": "Fact",
+      "source": "derived",
+      "file": "Data_Ready_To_Import/FactRevenueForecast.csv",
+      "rows": 45,
+      "columns": [
+        {
+          "name": "Month",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Moving average (3-month)",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Linear trend",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Driver based",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Base (mean of methods)",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Low",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "High",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Method",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "IsForecast",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Source",
+          "powerQueryType": "type text"
+        }
+      ],
+      "description": "Twelve-month revenue forecast, three methods"
+    },
+    {
+      "query": "FactPipeline",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactPipeline.csv",
+      "rows": 240,
+      "columns": [
+        {
+          "name": "OpportunityID",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ClientName",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Industry",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ServiceLine",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "OpenedDate",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "Stage",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "ProbabilityPct",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ExpectedFeeUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "Source",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "DecisionTargetDate",
+          "powerQueryType": "type date"
+        }
+      ],
+      "description": "Maxhub opportunity pipeline with weighted values"
+    },
+    {
+      "query": "FactServiceLineMonthly",
+      "kind": "Fact",
+      "source": "raw extract, typed",
+      "file": "Data_Ready_To_Import/FactServiceLineMonthly.csv",
+      "rows": 231,
+      "columns": [
+        {
+          "name": "Month",
+          "powerQueryType": "type date"
+        },
+        {
+          "name": "Period",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "FiscalYear",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ServiceLine",
+          "powerQueryType": "type text"
+        },
+        {
+          "name": "RevenueUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "DirectStaffCostUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "RechargeableExpensesUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "OverheadAllocatedUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "GrossProfitUSD",
+          "powerQueryType": "type number"
+        },
+        {
+          "name": "EngagementsDelivered",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ProposalsSubmitted",
+          "powerQueryType": "Int64.Type"
+        },
+        {
+          "name": "ProposalsWon",
+          "powerQueryType": "Int64.Type"
+        }
+      ],
+      "description": "Maxhub service-line revenue and margin by month"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "DimDate[Date]",
+      "to": "FactGLJournal[PostingDate]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Main date relationship. Mark DimDate as the date table and switch off Auto date/time."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactGLJournal[DocumentDate]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single (inactive)",
+      "note": "Role-playing date for cut-off testing; activate with USERELATIONSHIP."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactGLJournal[EnteredOn]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single (inactive)",
+      "note": "Role-playing date for entry timestamp; drives the weekend and after-hours tests."
+    },
+    {
+      "from": "DimAccount[AccountCode]",
+      "to": "FactGLJournal[AccountCode]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Carries AccountType, FSLine, PLSign and BSSign - the statement engine."
+    },
+    {
+      "from": "DimVendor[VendorID]",
+      "to": "FactGLJournal[VendorID]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Blank VendorID on the fact is filtered out with VendorID <> \"\" in the spend measures."
+    },
+    {
+      "from": "DimCustomer[CustomerID]",
+      "to": "FactGLJournal[CustomerID]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Revenue by customer."
+    },
+    {
+      "from": "DimUser[UserID]",
+      "to": "FactGLJournal[PreparedBy]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Preparer analysis; the SoD test."
+    },
+    {
+      "from": "DimUser[UserID]",
+      "to": "FactGLJournal[ApprovedBy]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single (inactive)",
+      "note": "Approver analysis; activate with USERELATIONSHIP."
+    },
+    {
+      "from": "DimCostCentre[CostCentreCode]",
+      "to": "FactGLJournal[CostCentreCode]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Cost-centre reporting."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactAPInvoices[InvoiceDate]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Procurement page."
+    },
+    {
+      "from": "DimVendor[VendorID]",
+      "to": "FactAPInvoices[VendorID]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Supplier invoice analysis."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactARAgeing[InvoiceDate]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Receivables page."
+    },
+    {
+      "from": "DimCustomer[CustomerID]",
+      "to": "FactARAgeing[CustomerID]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Debtor analysis and collections priority."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactBankTransactions[TxnDate]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Bank reconciliation page."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactExpenseClaims[ClaimDate]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Expense claims page."
+    },
+    {
+      "from": "DimScheme[SchemeID]",
+      "to": "FactExceptionRegister[SchemeID]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Fraud page."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactExceptionRegister[ExceptionDate]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Fraud page timeline."
+    },
+    {
+      "from": "DimVendor[VendorID]",
+      "to": "FactExceptionRegister[VendorID]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Exceptions by supplier."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactJournal[PostingDate]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Journal-level analysis."
+    },
+    {
+      "from": "DimUser[UserID]",
+      "to": "FactJournal[PreparedBy]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Maker-checker analysis."
+    },
+    {
+      "from": "DimScheme[SchemeID]",
+      "to": "FactDismissedExceptions[TestID]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "False positives dismissed - create the relationship on TestID, not SchemeID."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactClientChurnScored[ClientSince]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Churn page; optional, the Year column carries the analysis."
+    },
+    {
+      "from": "DimDate[Date]",
+      "to": "FactRevenueForecast[Month]",
+      "cardinality": "One-to-many",
+      "crossFilter": "Single",
+      "note": "Forecast page; Month is text in YYYY-MM, so add a first-of-month date column if you want a continuous axis."
+    }
+  ],
+  "dax libraries": [
+    "Core_Measures_Library.dax",
+    "Forensic_Tests_Library.dax",
+    "Time_Intelligence_Library.dax"
+  ],
+  "measures": 196,
+  "control totals": {
+    "GL lines": 13929,
+    "Journals": 5504,
+    "Total debits": 122878886.54,
+    "Total credits": 122878886.54,
+    "Unbalanced journals": 0,
+    "Trial balance differences": 0,
+    "Revenue FY2024": 13786572.99,
+    "Revenue FY2025 nine months": 10543059.22,
+    "Net profit FY2025 nine months": -61866.98,
+    "Total assets": 9000443.24,
+    "Balance sheet check": -0.0,
+    "Supplier spend": 30505968.04,
+    "Exception journals": 171,
+    "Exception value": 1945536.55,
+    "Answer key coverage pct": 100.0
+  }
+}

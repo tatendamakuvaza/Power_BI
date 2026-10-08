@@ -1,0 +1,19 @@
+﻿CustomerID,CustomerCode,CustomerName,Segment,Currency,CreditLimitUSD,PaymentTerms,Country,AccountManager,CustomerSince,AROutstandingUSD,ARInvoices,DisputedUSD,Overdue90USD,AvgDaysOverdue,CreditUtilisationPct,CollectionsAction
+C3001,ZIMGRAIN,Zimbabwe Grain Millers (Pvt) Ltd,Wholesale,USD,150000,45,Zimbabwe,B. Ncube,2022-12-15,593230.91,23,0,493635.54,78.7,395.5,Telephone contact this week
+C3002,SAFRET,Safret Traders CC,Export - ZA,ZAR,25000,30,South Africa,T. Makuvaza,2020-05-23,571109.91,22,101906.91,402346.21,121.8,2284.4,Telephone contact this week
+C3003,UKBUILD,UK Builder Depot Ltd,Export - UK,GBP,75000,30,United Kingdom,T. Makuvaza,2019-05-01,525454.62,24,0,351746.68,85.7,700.6,Telephone contact this week
+C3004,DEUTSCHT,Deutsch Technik GmbH,Export - DE,EUR,25000,60,Germany,B. Ncube,2021-02-04,762449.71,31,0,460309.04,86,3049.8,Telephone contact this week
+C3005,MININGCO,Great Dyke Mining Corporation,Mining,USD,75000,30,South Africa,T. Makuvaza,2021-01-29,606365.49,26,9935.74,371384.06,104.2,808.5,Telephone contact this week
+C3006,AGRIHUB,AgriHub Cooperative,Agriculture,USD,75000,60,Zimbabwe,B. Ncube,2020-05-08,707815.7,30,56926.33,391283.63,76.2,943.8,Telephone contact this week
+C3007,RETAILZ,RetailZ Supermarkets,Retail,USD,25000,30,South Africa,S. Moyo,2019-12-21,421971.51,18,0,305381.16,137.2,1687.9,Telephone contact this week
+C3008,BUILDMART,BuildMart Hardware,Retail,USD,250000,30,Zimbabwe,T. Makuvaza,2020-10-19,375325.78,23,0,195514.29,106.1,150.1,Telephone contact this week
+C3009,SADCIND,SADC Industrial Supplies,Export - Region,USD,150000,30,Zimbabwe,B. Ncube,2022-01-28,652946.06,25,41760.69,375272.31,104.2,435.3,Telephone contact this week
+C3010,HOSPITALS,Sunrise Hospitals Group,Healthcare,USD,75000,30,Zimbabwe,T. Makuvaza,2022-07-05,463872.67,23,0,156337.34,86.1,618.5,Telephone contact this week
+C3011,UNIVTRUST,University Trust Procurement,Public sector,USD,150000,30,Zimbabwe,S. Moyo,2022-11-27,548364.1,23,0,367138.07,111.9,365.6,Telephone contact this week
+C3012,MUNICIPALY,Municipality of Kadoma,Public sector,USD,25000,60,Zimbabwe,B. Ncube,2020-05-08,229202.09,12,13440.8,154961.36,80.1,916.8,Telephone contact this week
+C3013,TRANSCO,TransContinental Haulage,Logistics,USD,25000,45,Zimbabwe,B. Ncube,2017-07-01,403089.92,20,5119.74,295909.87,96.8,1612.4,Telephone contact this week
+C3014,FARMSUP,FarmSupply Depot,Agriculture,USD,50000,45,Zimbabwe,S. Moyo,2016-12-05,596822.57,27,7536.64,477515.2,103.3,1193.6,Telephone contact this week
+C3015,PLASTICF,PlastiCorp Factory,Manufacturing,USD,25000,30,South Africa,S. Moyo,2017-03-12,621345.78,24,0,416824.68,112.6,2485.4,Telephone contact this week
+C3016,PRINTWORKS,PrintWorks Limited,Services,GBP,150000,30,United Kingdom,S. Moyo,2023-01-09,705694.72,25,0,388852.39,115.5,470.5,Telephone contact this week
+C3017,ENERGYAF,EnergyAfrica Distributors,Energy,USD,25000,30,Zimbabwe,S. Moyo,2017-03-05,421028.11,18,0,329621.48,133.2,1684.1,Telephone contact this week
+C3018,FOODPROC,FoodProcessors Alliance,Food,USD,250000,30,Zimbabwe,S. Moyo,2020-09-30,575078.69,26,7391.47,478860.03,107.5,230,Telephone contact this week

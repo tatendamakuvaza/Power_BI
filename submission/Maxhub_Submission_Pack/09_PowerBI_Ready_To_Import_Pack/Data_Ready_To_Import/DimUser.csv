@@ -1,0 +1,13 @@
+﻿UserID,UserName,JobTitle,Department,Role,CanPostManualJE,CanApprovePayment,SystemAccess,StartDate,JournalsPrepared,JournalsApproved,UnapprovedJournals,UnapprovedValueUSD,WeekendJournals,ManualJournals,ExceptionsPrepared
+USR-001,T. Makuvaza,Financial Controller,Finance,Controller,Yes,Yes,Finance ERP,2021-03-01,94,107,89,976657.13,22,74,15
+USR-002,R. Chikafu,Accounts Payable Clerk,Finance,Clerk,Yes,No,Finance ERP,2021-03-01,2158,0,1153,17009548.96,614,65,87
+USR-003,M. Nyathi,Accounts Receivable Clerk,Finance,Clerk,Yes,No,Finance ERP,2021-03-01,2569,0,2569,52209074.46,749,0,0
+USR-004,K. Dube,Payroll Officer,Finance,Clerk,Yes,No,Finance ERP,2021-03-01,210,0,210,7543985.92,60,0,0
+USR-005,S. Moyo,Management Accountant,Finance,Accountant,Yes,No,Finance ERP,2021-03-01,256,0,256,7314707.06,71,120,6
+USR-006,L. Sibanda,Chief Financial Officer,Finance,Approver,No,Yes,Finance ERP,2021-03-01,0,903,0,0,0,0,0
+USR-007,P. Gumbo,Procurement Officer,Supply Chain,Officer,No,No,Operational module,2021-03-01,0,0,0,0,0,0,0
+USR-008,A. Banda,Systems Administrator,IT,Admin,No,No,Operational module,2021-03-01,0,0,0,0,0,0,0
+USR-009,J. Marufu,Internal Auditor,Governance,Auditor,No,No,Operational module,2021-03-01,0,0,0,0,0,0,0
+USR-010,N. Zhou,Inventory Clerk,Manufacturing,Clerk,Yes,No,Operational module,2021-03-01,66,0,66,411264.21,14,66,0
+USR-011,B. Ncube,Sales Manager,Sales,Manager,No,No,Operational module,2021-03-01,0,0,0,0,0,0,0
+USR-012,D. Mutasa,Shared Services Clerk,Finance,Clerk,Yes,No,Finance ERP,2021-03-01,151,0,151,2096916.16,53,88,63

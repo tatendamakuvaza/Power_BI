@@ -1,0 +1,27 @@
+File,Type,Bytes,Extracted,Provided by,SHA-256
+data/raw/DimAccount.csv,CSV extract,5817,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),c6eb83f9bd04025ff1dee0f1070c43d05e3ef1f5ad428c3645b78e125a2359e3
+data/raw/DimCostCentre.csv,CSV extract,495,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),b10c79f7caaf6382e3e33156bb85490be4a1cd7c3fb884105388feb4271aacc3
+data/raw/DimCustomer.csv,CSV extract,1809,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),affe6ce603c29479c6db0b51468b81b8b2c73d9c43248d51e6037d5e765990d3
+data/raw/DimDate.csv,CSV extract,160402,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),406fadfb6fb130e13f5638d525cbc7247382dfb63cb4fab4963654814065fbca
+data/raw/DimEmployee.csv,CSV extract,6330,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),a6d4fb12f4df34d980ad5b16b2d6946bf5b59c8177ff605b3b0abea33939c7d7
+data/raw/DimFXRate.csv,CSV extract,3255,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),7fe2628e56d35a0a263459edb2de26ab1eca764dd3f0deba7ccdfdcac8018bb9
+data/raw/DimUser.csv,CSV extract,1151,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),29da17d8190599744e8844794f19c6190bf9200fad01b462ff92a119536f3125
+data/raw/DimVendor.csv,CSV extract,3937,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),ddbed3b4253cd3b3b625ee42c230c308e238d7af9f035ffdf3eec2595fe94b60
+data/raw/FactAPInvoices.csv,CSV extract,55349,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),95a8512736595305bee72ba2125b261fe3dfa1ae2803c3996d88a0cc61a9d6d8
+data/raw/FactARAgeing.csv,CSV extract,37230,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),b4ea7dc85a242f5e49d2c88e21450ec5033d6127061d42255ccdf123ade14fc7
+data/raw/FactBankTransactions.csv,CSV extract,138811,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),161ccfd8c21333938ce78e10e5ad0f8dc9f823392293f87d34e797e7791fe243
+data/raw/FactBudget.csv,CSV extract,69965,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),f0c08499bbd3bd2e7364bb310542c311056d4dc38acac395c4bad700cf6abe12
+data/raw/FactExpenseClaims.csv,CSV extract,62887,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),2f7d27fddfad62f84596f7b407691461746c57da0e4563cfca29c3ea2fd3dfbd
+data/raw/FactFixedAssets.csv,CSV extract,13705,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),74116d977f6ffbea57095c0a807d3d9563610a8adeb913748dd110e6755f7419
+data/raw/FactGLJournal.csv,CSV extract,2793836,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),da7f78964e4092f431614fa678f90082c12061712fbab3e68066d142ea79983b
+data/raw/FactSalesOrders.csv,CSV extract,98953,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),2f116ec45492da0094b0f6610591a5973fd0185491a7d2bcb0d014afc188c6c2
+data/raw/FactTrialBalance.csv,CSV extract,90270,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),484cb35c049737aaf2c3c3814a5b5f3af7bdb39698944799b9da4e7ac019031f
+data/raw/InjectionLog.csv,CSV extract,31937,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),1e234d86dcc049b4efcedef2417511a852faab086d6117bbd67b9db83c31565b
+data/raw/MaxhubEngagements.csv,CSV extract,21249,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),c8fd9c53d2f045f6f23d03bfd281a790e0feeece1b5a77e4aa30fe855d74ad21
+data/raw/maxhub_billable_hours.csv,CSV extract,26140,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),10de4cb471858b9cbeb5482eae4715dfba18264a05d63e46ea8c823295c9d687
+data/raw/maxhub_client_churn.csv,CSV extract,13941,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),5e02d9731c372f8cfc229d393833d4218409b56632ef760c931fee5e7bd39273
+data/raw/maxhub_pipeline.csv,CSV extract,29174,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),097abb0bddd3f37df1524cede5cf6cbd268cc7d3956adb5f3bf01abb2a4b7d8a
+data/raw/maxhub_service_line_financials.csv,CSV extract,20903,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),865590248e5cfb51161fe403fcc2e1e7b30f8a62266572ee83f611a78884382b
+data/xlsx/Maxhub_Firm_Financials.xlsx,Excel workbook,81656,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),c6c9a4c201f46760ef98225b5e5bae3d06535081cfd6f1dce409e7d69a5869a4
+data/xlsx/Mhondoro_Accounting_Data.xlsx,Excel workbook,1863071,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),b5c5907888b9521fb7716e6a70c4b60c05a8c25d5ab42778dc0c4f421f21e52a
+data/xlsx/PowerBI_Practice_Workbook.xlsx,Excel workbook,20243,2025-10-01,Mhondoro Manufacturing - Financial Controller (simulated),a39e9eb923931e78fe1f92a8d9c6b31af38f6d0b6ec675d49a5378942a1db077

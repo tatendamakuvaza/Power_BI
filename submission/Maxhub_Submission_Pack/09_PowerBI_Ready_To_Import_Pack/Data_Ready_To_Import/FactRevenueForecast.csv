@@ -1,0 +1,46 @@
+﻿Month,Moving average (3-month),Linear trend,Driver based,Base (mean of methods),Low,High,Method,IsForecast,Source
+2025-10,155902.03,169690.88,180290.24,168627.71,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2025-11,155902.03,171011.65,180290.24,169067.97,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2025-12,155902.03,172332.42,180290.24,169508.23,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2026-01,155902.03,173653.18,180290.24,169948.48,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2026-02,155902.03,174973.95,180290.24,170388.74,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2026-03,155902.03,176294.72,180290.24,170829,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2026-04,155902.03,177615.49,180290.24,171269.25,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2026-05,155902.03,178936.26,180290.24,171709.51,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2026-06,155902.03,180257.03,180290.24,172149.76,138623.28,197568.99,Base (mean of methods),Yes,Maxhub forecast model
+2026-07,155902.03,181577.8,180290.24,172590.02,138623.28,198856.55,Base (mean of methods),Yes,Maxhub forecast model
+2026-08,155902.03,182898.56,180290.24,173030.28,138623.28,200177.32,Base (mean of methods),Yes,Maxhub forecast model
+2026-09,155902.03,184219.33,180290.24,173470.53,138623.28,201498.09,Base (mean of methods),Yes,Maxhub forecast model
+2023-01-01,0,0,0,120425.87,120425.87,120425.87,Actual,No,maxhub_service_line_financials
+2023-02-01,0,0,0,148020.8,148020.8,148020.8,Actual,No,maxhub_service_line_financials
+2023-03-01,0,0,0,119336.31,119336.31,119336.31,Actual,No,maxhub_service_line_financials
+2023-04-01,0,0,0,146139.33,146139.33,146139.33,Actual,No,maxhub_service_line_financials
+2023-05-01,0,0,0,113748.83,113748.83,113748.83,Actual,No,maxhub_service_line_financials
+2023-06-01,0,0,0,132708.54,132708.54,132708.54,Actual,No,maxhub_service_line_financials
+2023-07-01,0,0,0,133422.24,133422.24,133422.24,Actual,No,maxhub_service_line_financials
+2023-08-01,0,0,0,119898.8,119898.8,119898.8,Actual,No,maxhub_service_line_financials
+2023-09-01,0,0,0,143928.9,143928.9,143928.9,Actual,No,maxhub_service_line_financials
+2023-10-01,0,0,0,135356.51,135356.51,135356.51,Actual,No,maxhub_service_line_financials
+2023-11-01,0,0,0,141166.12,141166.12,141166.12,Actual,No,maxhub_service_line_financials
+2023-12-01,0,0,0,105327.19,105327.19,105327.19,Actual,No,maxhub_service_line_financials
+2024-01-01,0,0,0,169313.96,169313.96,169313.96,Actual,No,maxhub_service_line_financials
+2024-02-01,0,0,0,143672.43,143672.43,143672.43,Actual,No,maxhub_service_line_financials
+2024-03-01,0,0,0,126221.56,126221.56,126221.56,Actual,No,maxhub_service_line_financials
+2024-04-01,0,0,0,153850.43,153850.43,153850.43,Actual,No,maxhub_service_line_financials
+2024-05-01,0,0,0,151117.9,151117.9,151117.9,Actual,No,maxhub_service_line_financials
+2024-06-01,0,0,0,148630.55,148630.55,148630.55,Actual,No,maxhub_service_line_financials
+2024-07-01,0,0,0,158936.18,158936.18,158936.18,Actual,No,maxhub_service_line_financials
+2024-08-01,0,0,0,184684.97,184684.97,184684.97,Actual,No,maxhub_service_line_financials
+2024-09-01,0,0,0,130676.97,130676.97,130676.97,Actual,No,maxhub_service_line_financials
+2024-10-01,0,0,0,146753.48,146753.48,146753.48,Actual,No,maxhub_service_line_financials
+2024-11-01,0,0,0,163302.22,163302.22,163302.22,Actual,No,maxhub_service_line_financials
+2024-12-01,0,0,0,173959.57,173959.57,173959.57,Actual,No,maxhub_service_line_financials
+2025-01-01,0,0,0,155787.78,155787.78,155787.78,Actual,No,maxhub_service_line_financials
+2025-02-01,0,0,0,151430.53,151430.53,151430.53,Actual,No,maxhub_service_line_financials
+2025-03-01,0,0,0,166669.25,166669.25,166669.25,Actual,No,maxhub_service_line_financials
+2025-04-01,0,0,0,175581.27,175581.27,175581.27,Actual,No,maxhub_service_line_financials
+2025-05-01,0,0,0,170946.98,170946.98,170946.98,Actual,No,maxhub_service_line_financials
+2025-06-01,0,0,0,160126.17,160126.17,160126.17,Actual,No,maxhub_service_line_financials
+2025-07-01,0,0,0,111001.1,111001.1,111001.1,Actual,No,maxhub_service_line_financials
+2025-08-01,0,0,0,181523.02,181523.02,181523.02,Actual,No,maxhub_service_line_financials
+2025-09-01,0,0,0,175181.97,175181.97,175181.97,Actual,No,maxhub_service_line_financials

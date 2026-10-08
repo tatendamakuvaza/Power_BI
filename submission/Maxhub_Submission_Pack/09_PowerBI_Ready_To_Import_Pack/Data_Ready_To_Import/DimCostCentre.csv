@@ -1,0 +1,10 @@
+﻿CostCentreCode,CostCentreName,Department,AnnualBudgetUSD
+CC100,Head Office Finance,Finance,180000
+CC110,Head Office Admin,Administration,240000
+CC200,Harare Plant,Manufacturing,650000
+CC210,Bulawayo Plant,Manufacturing,420000
+CC300,Sales - Domestic,Sales and Marketing,380000
+CC310,Sales - Export,Sales and Marketing,150000
+CC400,Logistics and Distribution,Supply Chain,260000
+CC500,IT and Systems,Information Technology,195000
+CC900,Advisory Services Unit,Professional Services,90000

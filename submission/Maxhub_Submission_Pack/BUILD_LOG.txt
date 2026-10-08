@@ -1,0 +1,90 @@
+Maxhub submission pack - build log
+Built 2026-10-08 18:12:10 by scripts/build_submission.py
+Python 3.11.2
+
+Control-total checks: 64 of 64 tie
+Forensic exceptions: 171 / $1,945,536.55
+Answer-key coverage: 100%
+Dismissed exceptions: 141
+Churn accuracy: 68.9% (baseline 51.1%)
+
+Files written (75):
+    45,514  00_Submission_Index_and_QC/Submission_Index_and_QC.docx
+    19,611  00_Submission_Index_and_QC/Reconciliation_and_QC.xlsx
+    40,885  01_Data_Governance/Data_Governance_Record.docx
+     4,796  01_Data_Governance/Source_File_Hashes.csv
+     9,508  01_Data_Governance/Data_Request_List_and_Lineage.xlsx
+    40,673  02_Practical_Exam_1_Modelling_and_DAX/Methodology_Note.docx
+    40,711  02_Practical_Exam_1_Modelling_and_DAX/Model_Documentation.docx
+    23,915  02_Practical_Exam_1_Modelling_and_DAX/Control_Checks_and_Measure_Library.xlsx
+    10,766  03_Practical_Exam_2_Forensic_Analytics/Test_Programme.xlsx
+    42,570  03_Practical_Exam_2_Forensic_Analytics/Findings_Summary.docx
+    40,076  03_Practical_Exam_2_Forensic_Analytics/Forensic_Workbench_Specification.docx
+    41,431  04_Practical_Exam_3_Advisory_Proposal/Client_Proposal.docx
+    40,848  04_Practical_Exam_3_Advisory_Proposal/Engagement_Letter.docx
+     9,352  04_Practical_Exam_3_Advisory_Proposal/Priced_Scope_of_Work.xlsx
+    39,459  04_Practical_Exam_3_Advisory_Proposal/Pitch_Outline.docx
+    40,535  05_Capstone_1_Forensic_Fraud_Detection/Engagement_and_Methodology_Memo.docx
+    10,766  05_Capstone_1_Forensic_Fraud_Detection/Appendix_A_Test_Programme.xlsx
+    56,862  05_Capstone_1_Forensic_Fraud_Detection/Evidence_Register.xlsx
+    47,050  05_Capstone_1_Forensic_Fraud_Detection/Findings_Report.docx
+    74,138  05_Capstone_1_Forensic_Fraud_Detection/Board_Presentation.pptx
+     8,604  05_Capstone_1_Forensic_Fraud_Detection/Remediation_Plan.xlsx
+    20,667  06_Capstone_2_Financial_Statements_and_Close/Financial_Statements_and_Close_Pack.xlsx
+    41,043  06_Capstone_2_Financial_Statements_and_Close/Management_Pack_Commentary_and_Guide.docx
+    27,915  07_Capstone_3_Procurement_and_Working_Capital/Procurement_Analytics.xlsx
+    47,743  07_Capstone_3_Procurement_and_Working_Capital/Receivables_and_Collections.xlsx
+    15,639  07_Capstone_3_Procurement_and_Working_Capital/Cash_and_Working_Capital.xlsx
+    26,640  07_Capstone_3_Procurement_and_Working_Capital/Exception_Register.xlsx
+    41,011  07_Capstone_3_Procurement_and_Working_Capital/Analytics_Findings_Memo.docx
+    39,245  07_Capstone_3_Procurement_and_Working_Capital/Data_Quality_Report.docx
+    78,320  07_Capstone_3_Procurement_and_Working_Capital/Committee_Pack.pptx
+    31,777  08_Capstone_4_Predictive_Analytics_and_Advisory/Churn_Model_Scored_Clients.xlsx
+     9,860  08_Capstone_4_Predictive_Analytics_and_Advisory/Forecast_and_Scenarios.xlsx
+    13,773  08_Capstone_4_Predictive_Analytics_and_Advisory/Anomaly_Register.xlsx
+    41,263  08_Capstone_4_Predictive_Analytics_and_Advisory/Model_Governance_Pack.docx
+    40,579  08_Capstone_4_Predictive_Analytics_and_Advisory/AI_Assisted_Reporting_Routine.docx
+    39,824  08_Capstone_4_Predictive_Analytics_and_Advisory/Service_Blueprint_and_Pricing.docx
+    27,428  09_PowerBI_Ready_To_Import_Pack/PowerQuery_Load.m
+    23,421  09_PowerBI_Ready_To_Import_Pack/DAX_Measures_Reference.xlsx
+    48,402  09_PowerBI_Ready_To_Import_Pack/PowerBI_Data_Model.xlsx
+    42,754  09_PowerBI_Ready_To_Import_Pack/Build_Instructions.docx
+     6,226  09_PowerBI_Ready_To_Import_Pack/Build_Instructions.md
+     9,915  09_PowerBI_Ready_To_Import_Pack/Validation_Report.txt
+    57,309  09_PowerBI_Ready_To_Import_Pack/Import_Manifest.json
+     2,061  09_PowerBI_Ready_To_Import_Pack/README.md
+    16,296  09_PowerBI_Ready_To_Import_Pack/Core_Measures_Library.dax
+    15,700  09_PowerBI_Ready_To_Import_Pack/Forensic_Tests_Library.dax
+     8,454  09_PowerBI_Ready_To_Import_Pack/Time_Intelligence_Library.dax
+   118,520  10_Interactive_Dashboard/index.html
+     1,451  10_Interactive_Dashboard/README.md
+     8,554  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimAccount.csv
+       498  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimCostCentre.csv
+     3,134  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimCustomer.csv
+   179,902  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimDate.csv
+     6,981  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimEmployee.csv
+     3,258  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimFXRate.csv
+     4,039  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimScheme.csv
+     1,557  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimUser.csv
+     5,631  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/DimVendor.csv
+    95,666  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactAPInvoices.csv
+    91,377  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactARAgeing.csv
+   188,949  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactBankTransactions.csv
+    69,968  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactBudget.csv
+    21,201  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactClientChurnScored.csv
+    43,559  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactDismissedExceptions.csv
+    22,985  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactEngagementEconomics.csv
+    94,216  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactExceptionRegister.csv
+    79,315  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactExpenseClaims.csv
+    13,708  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactFixedAssets.csv
+ 5,326,568  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactGLJournal.csv
+ 1,136,992  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactJournal.csv
+    29,177  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactPipeline.csv
+     4,452  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactRevenueForecast.csv
+    98,956  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactSalesOrders.csv
+    20,906  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactServiceLineMonthly.csv
+    90,273  09_PowerBI_Ready_To_Import_Pack/Data_Ready_To_Import/FactTrialBalance.csv
+
+No planned file is missing.
+
+No module raised an error.
