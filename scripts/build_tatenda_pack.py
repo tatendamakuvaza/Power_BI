@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the two-file learner ZIP from checked-in CSVs and the workbook manuscript.
+"""Build the separate-table learner ZIP from checked-in CSVs and the workbook manuscript.
 Requires reportlab; validation additionally uses pypdf. Run from any directory.
 """
 from pathlib import Path
@@ -21,12 +21,19 @@ INJ=DATA.pop('InjectionLog')
 # Do not give away investigation labels in the practice population.
 for row in DATA['FactGLJournal']: row.pop('AnomalyLabel',None)
 FIELDS={k:list(v[0]) for k,v in DATA.items()}
-columns=['RecordType','RecordID']+list(dict.fromkeys(c for cs in FIELDS.values() for c in cs))
-csvpath=OUT/'Tatenda_Makuvaza_Practice_Data.csv'
-with csvpath.open('w',encoding='utf-8-sig',newline='') as f:
-    w=csv.DictWriter(f,fieldnames=columns); w.writeheader()
-    for name,rows in DATA.items():
-        for i,row in enumerate(rows,1): w.writerow(dict(RecordType=name,RecordID=f'{name}:{i:06}',**row))
+CSV_DIR=OUT/'CSV_Tables'
+CSV_DIR.mkdir(parents=True,exist_ok=True)
+csvpaths=[]
+for name, rows in DATA.items():
+    csvpath=CSV_DIR/(name+'.csv')
+    with csvpath.open('w',encoding='utf-8-sig',newline='') as f:
+        writer=csv.DictWriter(f,fieldnames=FIELDS[name])
+        writer.writeheader()
+        writer.writerows(rows)
+    csvpaths.append(csvpath)
+# The old combined file is replaced, not included alongside the new tables.
+old_bundle=OUT/'Tatenda_Makuvaza_Practice_Data.csv'
+if old_bundle.exists(): old_bundle.unlink()
 D=lambda x:Decimal(str(x or '0'))
 def total(rows,c): return sum((D(r[c]) for r in rows),Decimal(0))
 def money(x): return f'{x:,.2f}'
@@ -36,8 +43,8 @@ def pl(rows,line=None):
     return sum((D(r['Credit'])-D(r['Debit']) for r in rows if accounts[r['AccountCode']]['IsPL']=='Yes' and (line is None or accounts[r['AccountCode']]['FSLine']==line)),Decimal(0))
 checks=[]
 def ck(n,v): checks.append([n,str(v)])
-ck('CSV records (all types)',f'{sum(map(len,DATA.values())):,}')
-ck('CSV columns (including routing keys)',len(columns))
+ck('Rows across all 22 CSV files',f'{sum(map(len,DATA.values())):,}')
+ck('Separate CSV files',len(csvpaths))
 ck('Distinct GL journals',len({r['JournalID'] for r in gl}))
 ck('Total GL debits / credits (each)',money(total(gl,'Debit')))
 ck('GL debit minus credit',money(total(gl,'Debit')-total(gl,'Credit')))
@@ -99,7 +106,7 @@ def chart():
 def dynamic(name):
     if name=='CONTROLS': table([['Check (no filters unless stated)','Expected answer']]+checks,[325,165])
     elif name=='MANIFEST':
-        table([['RecordType / query name','Rows','Source grain']]+[[k,f'{len(v):,}',GRAINS[k]] for k,v in DATA.items()],[185,45,260])
+        table([['CSV filename (without .csv)','Rows','One row means']]+[[k,f'{len(v):,}',GRAINS[k]] for k,v in DATA.items()],[185,45,260])
     elif name=='CHART': chart()
     elif name=='MONTHLY':
         rows=[['Period','Revenue USD','P&L result USD']]
@@ -109,12 +116,12 @@ def dynamic(name):
     elif name=='FORENSIC':
         groups=defaultdict(list)
         for r in INJ: groups[r['AnomalyType']].append(r)
-        table([['Injected scheme','Journals','Debit-side amount USD']]+[[k,len(v),money(total(v,'AmountUSD'))] for k,v in sorted(groups.items())]+[['TOTAL',len(INJ),money(total(INJ,'AmountUSD'))]],[250,65,175])
+        table([['Planted practice case','Journals','Amount USD (one side)']]+[[k,len(v),money(total(v,'AmountUSD'))] for k,v in sorted(groups.items())]+[['TOTAL',len(INJ),money(total(INJ,'AmountUSD'))]],[250,65,175])
     elif name=='RULES':
         rules=[('Manual GL lines',lambda r:r['EntryType']=='Manual'),('Manual weekend posting date',lambda r:r['EntryType']=='Manual' and __import__('datetime').date.fromisoformat(r['PostingDate']).weekday()>=5),('Missing approver, positive debit',lambda r:not r['ApprovedBy'].strip() and D(r['Debit'])>0),('Self-approved, positive debit',lambda r:bool(r['ApprovedBy'].strip()) and r['ApprovedBy']==r['PreparedBy'] and D(r['Debit'])>0),('Positive debit 4,900 to below 5,000',lambda r:4900<=D(r['Debit'])<5000),('USR-002 revenue lines',lambda r:r['PreparedBy']=='USR-002' and accounts[r['AccountCode']]['AccountType']=='Revenue')]
-        table([['Rule (entire GL population)','Lines','Sum Debit USD']]+[[n,len(rr:=list(filter(fn,gl))),money(total(rr,'Debit'))] for n,fn in rules],[280,50,160])
+        table([['Rule (all GL rows)','Lines','Sum Debit USD']]+[[n,len(rr:=list(filter(fn,gl))),money(total(rr,'Debit'))] for n,fn in rules],[280,50,160])
     elif name=='TRAIN':
-        table([['Split / purpose','Client-years','Churn = 0 label count','Stayed = 1 count']]+[[name,len(rr:=[r for r in DATA['maxhub_client_churn'] if lo<=int(r['Year'])<=hi]),sum(r['Stayed']=='0' for r in rr),sum(r['Stayed']=='1' for r in rr)] for name,lo,hi in [('Train 2021-2023',2021,2023),('Validation 2024',2024,2024),('Test 2025',2025,2025)]],[160,80,125,125])
+        table([['Years and purpose','Rows','Left (Stayed = 0)','Stayed (Stayed = 1)']]+[[name,len(rr:=[r for r in DATA['maxhub_client_churn'] if lo<=int(r['Year'])<=hi]),sum(r['Stayed']=='0' for r in rr),sum(r['Stayed']=='1' for r in rr)] for name,lo,hi in [('Train 2021-2023',2021,2023),('Validation 2024',2024,2024),('Test 2025',2025,2025)]],[160,80,125,125])
     elif name=='EXTENDED':
         end='2025-09-30'
         rr=[r for r in gl if r['PostingDate']<=end]
@@ -139,16 +146,19 @@ def dynamic(name):
             tp,fp,tn,fn=[counts[k] for k in [(1,1),(0,1),(0,0),(1,0)]]
             out.append([n,f'{tp} / {fp} / {tn} / {fn}',f'{(tp+tn)/len(test):.2%} / {tp/(tp+fp):.2%} / {tp/(tp+fn):.2%}'])
         table(out,[150,130,210])
-        story.append(p('These are exact results for the fixed teaching rules, not claims about a trained production model. Churn is the positive class. Same-year NPS has not been proven available before the outcome.'))
+        story.append(p('These answers are for the two simple rules in the lesson, not a proven prediction service. Leaving is the outcome being flagged. We have not shown that the NPS score was known before the client left.'))
     elif name=='DICTIONARY':
         desc={(r['Table'],r['Column']):r['Description'] for r in csv.DictReader((ROOT/'data/dictionary/DataDictionary.csv').open())}
         for name,fields in FIELDS.items():
-            page('Schema | '+name)
-            story.append(p(f'{len(DATA[name]):,} rows. Grain: {GRAINS[name]}. Keep precisely these source columns after filtering RecordType. Routing columns are not needed in the final model.'))
-            table([['Field','Suggested type','Meaning / example']]+[[c,typ(c,[r[c] for r in DATA[name]]),desc.get((name,c),'Example: '+next((r[c] for r in DATA[name] if r[c]),'(blank in this extract)'))] for c in fields],[130,80,280])
+            page('Column guide | '+name)
+            story.append(p(f'File: CSV_Tables/{name}.csv. Rows: {len(DATA[name]):,}. What one row means: {GRAINS[name]}. Import this file on its own; do not combine it with other files.'))
+            table([['Column name','Choose this type','Meaning / example']]+[[c,typ(c,[r[c] for r in DATA[name]]),plain_description(name,c,desc)] for c in fields],[130,80,280])
     elif name=='JOURNALS':
-        table([['JournalID','Injected scheme','USD (one side)']]+[[r['EntryID'],r['AnomalyType'],money(D(r['AmountUSD']))] for r in INJ],[130,235,125])
-    elif name=='HASH': story.append(p('Practice CSV SHA-256: '+hashlib.sha256(csvpath.read_bytes()).hexdigest(),'SmallX'))
+        table([['JournalID','Planted practice case','USD (one side)']]+[[r['EntryID'],r['AnomalyType'],money(D(r['AmountUSD']))] for r in INJ],[130,235,125])
+    elif name=='HASH':
+        story.append(p('A file fingerprint helps you check that a file has not changed. These SHA-256 values are optional advanced checks; you do not need them to start learning.','BodyX'))
+        for file in csvpaths:
+            story.append(p(file.name+': '+hashlib.sha256(file.read_bytes()).hexdigest(),'SmallX'))
     else: raise ValueError('Unknown workbook directive: '+name)
 
 def typ(c,vs):
@@ -163,13 +173,92 @@ def typ(c,vs):
         return 'Decimal number'
     except Exception:return 'Text'
 GRAINS={
-'DimAccount':'One chart-of-accounts member','DimCostCentre':'One cost centre','DimCustomer':'One customer','DimDate':'One calendar date','DimEmployee':'One employee','DimFXRate':'One currency / period rate','DimUser':'One posting user','DimVendor':'One vendor',
-'FactAPInvoices':'One AP invoice','FactARAgeing':'One receivable invoice at the snapshot date','FactBankTransactions':'One bank statement transaction','FactBudget':'Account / cost centre / month / version','FactExpenseClaims':'One expense claim','FactFixedAssets':'One fixed asset at extract date','FactGLJournal':'One journal line (not one journal)','FactSalesOrders':'One sales order line','FactTrialBalance':'One account / month-end balance',
-'MaxhubEngagements':'One consulting engagement','maxhub_billable_hours':'One consultant / month','maxhub_client_churn':'One client / year','maxhub_pipeline':'One sales opportunity','maxhub_service_line_financials':'One service line / month'}
+'DimAccount':'One accounting category, such as bank or sales',
+'DimCostCentre':'One department or business location',
+'DimCustomer':'One customer','DimDate':'One calendar date',
+'DimEmployee':'One employee','DimFXRate':'One currency rate for one month',
+'DimUser':'One person with accounting-system access','DimVendor':'One supplier',
+'FactAPInvoices':'One supplier bill',
+'FactARAgeing':'One customer bill at the date balances were measured',
+'FactBankTransactions':'One bank transaction',
+'FactBudget':'One planned amount for an account, department, month and plan version',
+'FactExpenseClaims':'One employee expense claim',
+'FactFixedAssets':'One long-term asset, such as a machine',
+'FactGLJournal':'One accounting line; a journal has several lines',
+'FactSalesOrders':'One sales order line',
+'FactTrialBalance':'One account balance at one month end',
+'MaxhubEngagements':'One consulting job',
+'maxhub_billable_hours':'One consultant in one month',
+'maxhub_client_churn':'One client in one year',
+'maxhub_pipeline':'One possible new job or sale',
+'maxhub_service_line_financials':'One service type in one month'}
+
+def plain_description(name, column, original):
+    examples=next((r[column] for r in DATA[name] if r[column]),'(blank in this file)')
+    meanings={
+        'FSLine':'The heading under which the account appears in a financial report.',
+        'IsControlAccount':'Yes for summary accounts for customer or supplier balances.',
+        'IsSuspense':'Yes for an account temporarily holding items that need explanation.',
+        'PLSign':'1 for income, -1 for costs, 0 for other accounts. A helper for signs.',
+        'FiscalPeriodEnd':'Supplied period date. In this file it is month-start, not month-end.',
+        'CustomerSince':'Date the business started dealing with the customer.',
+        'VendorCreatedOn':'Date the supplier was added to the records.',
+        'AccountManager':'Person responsible for the customer relationship.',
+        'AnnualBudgetUSD':'Annual planned spending in dollars. Do not repeat it for every transaction.',
+        'NormalBalance':'The side, Debit or Credit, that normally increases this account.',
+        'ThreeWayMatch':'Whether bill, purchase order and goods-received details match.',
+        'DuplicateSuspected':'Supplied review flag. Check the records; it is not proof of a duplicate.',
+        'IsEmployeeLinked':'Supplied supplier-employee link flag. Check the supporting details.',
+        'AmountReceivedUSD':'Money already received against this customer bill.',
+        'DaysOverdue':'Number of days payment is late under the supplied calculation.',
+        'AgeingBucket':'Group describing how overdue the amount is.',
+        'AsAtDate':'Date on which these balances were measured.',
+        'GrossAmountUSD':'Order value after the discount. Do not discount it again.',
+        'NetMovementSigned':'Account movement, positive on its normal side.',
+        'ClosingBalance':"Balance at period end, positive on the account's normal side.",
+        'AbsAmountUSD':'Size of the amount without a minus sign.',
+        'NBVUSD':'Asset cost less recorded depreciation, in dollars.',
+        'Stayed':'1 means the client stayed; 0 means the client left.',
+        'NPS':'Supplied client satisfaction score used in the practice model.',
+        'ProbabilityPct':'Estimated chance of winning, written as 70 for 70%.',
+        'UtilisationPct':'Billable hours as a percentage of available hours.',
+        'MarginPct':'Margin percentage, written as 15 for 15%.',
+        'DiscountPct':'Discount percentage, written as 15 for 15%.',
+        'WriteOffUSD':'Fees given up or removed from the recorded fee amount.',
+        'PONumber':'Purchase order reference, if one was supplied.',
+        'GRNNumber':'Reference for the record confirming goods were received.',
+        'IsReversal':'Yes if the source marks this as reversing an earlier entry.',
+        'PreparedBy':'ID of the person who entered or prepared the record.',
+        'ApprovedBy':'ID of the approving person; a blank needs appropriate review.'}
+    if column in meanings:return meanings[column]
+    if column.endswith('ID'):return 'Identifying code. Keep as Text. Example: '+examples
+    text=original.get((name,column))
+    if not text:return 'Example value: '+examples
+    replacements={
+        'Primary key.':'Unique identifying code.',
+        'Primary key':'Unique identifying code',
+        'GL account number.':'Accounting category number.',
+        'general ledger':'main accounting records',
+        'Financial statement caption':'Financial report heading',
+        'Onboarding date.':'Date the relationship started.',
+        'Relationship owner.':'Person responsible for the relationship.',
+        'Foreign key to':'Code matching a row in',
+        'Net book value':'Cost less recorded depreciation',
+        'Normal balance':'Usual debit or credit side',
+        'Source system':'System the record came from',
+        'Fiscal year':'Financial year',
+        'Current FY':'Current financial year',
+        'AR and AP':'customer and supplier',
+        'AR':'customer bills',
+        'AP':'supplier bills',
+    }
+    for before,after in replacements.items():text=text.replace(before,after)
+    return text
+
 # Cover
-story.extend([Spacer(1,55),p('THE POWER BI\nPRACTICE WORKBOOK'.replace('\n',' '),'TitleX'),p('Accounting • Analytics • Forensics • AI • Advisory','SubX'),Spacer(1,20),p('Prepared for','BodyX'),p('Tatenda Makuvaza','TitleX'),p('A complete, hands-on companion to your 12-module learning path.','SubX'),Spacer(1,22)])
-table([['YOUR PRACTICE LAB','WHAT YOU RECEIVE'],['22 typed populations in one CSV','A reusable financial and consulting analytics dataset'],['12 modules + 4 capstones','Notes, build steps, visual specifications and worked answers'],['Computed reconciliation controls','Monthly results and a full forensic journal answer key']],[245,245])
-story.extend([Spacer(1,25),p('Edition 1 • 9 October 2026','BodyX'),p('Synthetic training records only. USD reporting unless stated. No real customer, employee or bank information. This is a learning pack, not an audit opinion or a completed Power BI report.','SmallX')])
+story.extend([Spacer(1,55),p('THE POWER BI\nPRACTICE WORKBOOK'.replace('\n',' '),'TitleX'),p('Learn step by step, in plain language','SubX'),Spacer(1,20),p('Prepared for','BodyX'),p('Tatenda Makuvaza','TitleX'),p('Clear explanations, practical exercises and answers you can check.','SubX'),Spacer(1,22)])
+table([['YOUR PRACTICE LAB','WHAT YOU RECEIVE'],['22 separate CSV files','One table per file, ready to import into Power BI'],['12 modules + 4 capstones','Notes, build steps, visual specifications and worked answers'],['Answers checked from the data','Monthly totals and a full investigation answer key']],[245,245])
+story.extend([Spacer(1,25),p('Edition 2 • Separate CSV files • 9 October 2026','BodyX'),p('All records are made up for practice. Money is shown in US dollars unless stated. You will build the Power BI report yourself by following the exercises.','SmallX')])
 text=(ROOT/'learning_pack/workbook.md').read_text()
 in_code=False; buf=[]
 for line in text.splitlines():
@@ -200,5 +289,5 @@ doc=WorkbookDoc(str(pdfpath),pagesize=(595.28,841.89),rightMargin=52,leftMargin=
 doc.build(story,onFirstPage=footer,onLaterPages=footer)
 zip_path=OUT.parent/'Tatenda_Makuvaza_Power_BI_Learning_Pack.zip'
 with zipfile.ZipFile(zip_path,'w',zipfile.ZIP_DEFLATED) as z:
-    for f in [csvpath,pdfpath]:z.write(f,OUT.name+'/'+f.name)
-print(json.dumps({'csv_records':sum(map(len,DATA.values())),'csv_columns':len(columns),'pdf':str(pdfpath),'zip':str(zip_path),'checks':checks},indent=2))
+    for f in [*csvpaths,pdfpath]:z.write(f,OUT.name+'/'+str(f.relative_to(OUT)))
+print(json.dumps({'csv_records':sum(map(len,DATA.values())),'csv_files':len(csvpaths),'pdf':str(pdfpath),'zip':str(zip_path),'checks':checks},indent=2))

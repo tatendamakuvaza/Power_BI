@@ -13,7 +13,7 @@ professional service.
 
 ## 1. Start here
 
-**Tatenda Makuvaza's two-document practice pack:** [Download the ZIP](deliverables/Tatenda_Makuvaza_Power_BI_Learning_Pack.zip) — one CSV with 23,416 records and a personalised 66-page PDF containing the 12-module learning path, practical tasks, visual specifications and computed answers. See [pack details and rebuild instructions](learning_pack/README.md).
+**Tatenda Makuvaza's revised practice pack:** [Download the ZIP](deliverables/Tatenda_Makuvaza_Power_BI_Learning_Pack.zip) — 22 separate CSV tables (23,416 rows in total) and a 69-page PDF rewritten in plain, beginner-friendly language. Includes all 12 modules, step-by-step tasks, chart instructions and checked answers. See [pack details and rebuild instructions](learning_pack/README.md).
 
 | If you want to… | Open this |
 |---|---|

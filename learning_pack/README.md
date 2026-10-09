@@ -1,30 +1,50 @@
-# Tatenda Makuvaza — downloadable Power BI learning pack
+# Tatenda Makuvaza — Power BI learning pack, edition 2
 
-The requested folder is delivered as a ZIP containing **exactly two documents**:
+## Download
 
-- [Download the complete ZIP](../deliverables/Tatenda_Makuvaza_Power_BI_Learning_Pack.zip)
-- [Read the personalised PDF workbook](../deliverables/Tatenda_Makuvaza_Power_BI/Tatenda_Makuvaza_Power_BI_Workbook.pdf)
-- [Get the single practice CSV](../deliverables/Tatenda_Makuvaza_Power_BI/Tatenda_Makuvaza_Practice_Data.csv)
+- [Complete ZIP folder](../deliverables/Tatenda_Makuvaza_Power_BI_Learning_Pack.zip)
+- [Beginner-friendly PDF workbook](../deliverables/Tatenda_Makuvaza_Power_BI/Tatenda_Makuvaza_Power_BI_Workbook.pdf)
+- [Browse the 22 separate CSV files](../deliverables/Tatenda_Makuvaza_Power_BI/CSV_Tables)
 
-## Contents
+The revised ZIP contains **22 CSV files and one 69-page PDF**. Each CSV holds
+one record type, with only that table's own columns. There is no mixed master
+CSV and no need to filter a `RecordType` column. The original combined file has
+been removed from the current delivery.
 
-The 66-page workbook follows the repository's 12-module syllabus. It includes
-step-by-step labs, DAX and Power Query examples, expected visual specifications,
-computed controls, monthly answers, four capstones, practical exams, a field
-reference, and the complete 171-journal synthetic investigation answer key.
+```text
+Tatenda_Makuvaza_Power_BI/
+  Tatenda_Makuvaza_Power_BI_Workbook.pdf
+  CSV_Tables/
+    DimAccount.csv
+    DimCustomer.csv
+    FactGLJournal.csv
+    FactSalesOrders.csv
+    ... (22 separate tables in total)
+```
 
-The UTF-8 CSV has **23,416 records, 213 columns and 22 logical populations**.
-`RecordType` distinguishes tables; `RecordID` is a unique transport key. Blank
-fields outside a row's population are intentional. Module 02 explains how to
-split the single file into properly typed model tables. Never aggregate the
-unsplit bundle as a single fact table.
+Start with **Module 01** and **CSV_Tables/FactGLJournal.csv**. Add the other files
+as the lessons call for them. In Power BI, use **Get data > Text/CSV** for each
+file. Do not use Combine Files on the whole folder: these tables have different
+columns and purposes. CSV files cannot have Excel-style worksheet tabs; the
+requested record types are separate files instead.
 
-Source records come from `data/raw/`. The GL's `AnomalyLabel` and separate
-`InjectionLog` are withheld from the CSV; the latter supplies the PDF answer key.
-All other source fields are preserved. Financial controls are independently
-computed, not copied from repository prose. The workbook documents source
-limitations and distinguishes synthetic subledger populations from the
-GL-derived trial balance.
+## What changed
+
+- One separate UTF-8 CSV per table: **23,416 rows across 22 files**.
+- The PDF was rewritten in plain, beginner-friendly language, not just retitled.
+- Technical words are explained before use; file names and formula names stay
+  unchanged so the learner can find them in Power BI.
+- All twelve modules, formulas, practical steps, expected charts, answer totals,
+  four final projects, assessments and investigation answers remain covered.
+- Import instructions now refer to individual CSV files; no bundle-splitting
+  steps or mixed-table routing columns remain.
+
+The source data is fictional. It comes from `data/raw/`. The GL's `AnomalyLabel`
+column and `InjectionLog` are intentionally withheld from the CSVs so the
+investigation exercises are not spoiled. The PDF includes the full answer key.
+All other source fields and values are preserved. Separate practice subledgers
+are not assumed to reconcile to the main ledger; the PDF explains this in plain
+language.
 
 ## Rebuild and verify
 
@@ -35,19 +55,19 @@ python3 -m venv .venv
 .venv/bin/python scripts/verify_tatenda_pack.py
 ```
 
-Edit `workbook.md` for the narrative. The builder expands `@...` directives into
-computed tables and a reference chart, creates PDF bookmarks, and packages only
-the CSV and PDF. The build does not modify the original datasets.
+Edit `workbook.md` for the lesson text. The builder fills in computed answer
+tables, a reference chart, PDF bookmarks and per-file fingerprints, then writes
+the ZIP. It does not modify `data/raw/`.
 
-Verification checks source-field fidelity, unique bundle keys, row counts,
-debit/credit equality, every journal's balance, every account/month trial-balance
-reconciliation, sales and asset arithmetic, expected PDF sections and answer-key
-IDs, the published Python baseline exercise, PDF text boundaries, and ZIP
-integrity. Core financial logic has been checked with Python; a Windows Power BI
-Desktop or Service session was **not** available to execute DAX, inspect native
-visuals or test publishing/tenant security. The workbook explicitly asks the
-learner to perform those acceptance tests.
+Validation checks all 22 table schemas and source values, row counts, the
+absence of the old combined file, all journal balances, account/month trial
+balance agreement, sales and asset arithmetic, the fixed client-prediction
+examples, PDF sections, every planted journal ID, file fingerprints, PDF text
+boundaries and all 23 ZIP members.
 
-Generated deliverables are intentionally retained because they are the user's
-requested downloadable documents; temporary renders and build environments are
-not included in the ZIP.
+The amounts and examples are checked in Python. Windows Power BI Desktop and
+Service permissions were not available to execute the actual DAX, inspect native
+visuals or test online sharing. The PDF tells the learner to carry out those
+checks in their own report. Generated practice files and the PDF are retained
+because they are the requested download; the virtual environment and temporary
+page images are not delivered.

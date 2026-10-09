@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independently validate the two-file delivery. Requires pypdf (optional layout check: pymupdf)."""
+"""Independently validate the separate-CSV delivery. Requires pypdf (optional layout check: pymupdf)."""
 from pathlib import Path
 import csv, zipfile, hashlib, re
 from collections import Counter, defaultdict
@@ -8,26 +8,25 @@ from datetime import date
 from pypdf import PdfReader
 ROOT=Path(__file__).resolve().parents[1]
 folder=ROOT/'deliverables/Tatenda_Makuvaza_Power_BI'
-csvpath=folder/'Tatenda_Makuvaza_Practice_Data.csv'
+csvdir=folder/'CSV_Tables'
 pdfpath=folder/'Tatenda_Makuvaza_Power_BI_Workbook.pdf'
-with csvpath.open(encoding='utf-8-sig',newline='') as f:
-    reader=csv.DictReader(f); fields=reader.fieldnames; rows=list(reader)
-assert len(rows)==23416 and len(fields)==213
-assert len({r['RecordID'] for r in rows})==len(rows)
-assert 'AnomalyLabel' not in fields
-bundle=defaultdict(list)
-for r in rows:
-    assert None not in r
-    bundle[r['RecordType']].append(r)
-assert len(bundle)==22
-for p in sorted((ROOT/'data/raw').glob('*.csv')):
-    if p.stem=='InjectionLog':continue
-    raw=list(csv.DictReader(p.open(encoding='utf-8-sig',newline='')))
-    assert len(raw)==len(bundle[p.stem])
-    for source,delivered in zip(raw,bundle[p.stem]):
-        source.pop('AnomalyLabel',None)
-        assert all(delivered[k]==v for k,v in source.items())
-        assert all(not v for k,v in delivered.items() if k not in source and k not in ('RecordType','RecordID'))
+files=sorted(csvdir.glob('*.csv'))
+assert len(files)==22
+assert not (folder/'Tatenda_Makuvaza_Practice_Data.csv').exists()
+bundle={}
+for path in files:
+    with path.open(encoding='utf-8-sig',newline='') as f:
+        reader=csv.DictReader(f)
+        assert 'RecordType' not in reader.fieldnames
+        assert 'RecordID' not in reader.fieldnames
+        assert 'AnomalyLabel' not in reader.fieldnames
+        bundle[path.stem]=list(reader)
+    raw=list(csv.DictReader((ROOT/'data/raw'/path.name).open(encoding='utf-8-sig',newline='')))
+    for row in raw:row.pop('AnomalyLabel',None)
+    assert bundle[path.stem]==raw, path.name
+    assert reader.fieldnames==list(raw[0]), path.name
+rows=[r for table in bundle.values() for r in table]
+assert len(rows)==23416
 gl=bundle['FactGLJournal']; account={r['AccountCode']:r for r in bundle['DimAccount']}
 assert sum(D(r['Debit']) for r in gl)==D('122878886.54')
 assert sum(D(r['Credit']) for r in gl)==D('122878886.54')
@@ -56,20 +55,24 @@ pdf=PdfReader(pdfpath)
 text='\n'.join(p.extract_text() for p in pdf.pages)
 for i in range(1,13):assert f'Module {i:02}' in text
 assert 'Tatenda Makuvaza' in text
-assert hashlib.sha256(csvpath.read_bytes()).hexdigest() in text
+for file in files:assert hashlib.sha256(file.read_bytes()).hexdigest() in text
 assert len(pdf.outline)>40
 for r in csv.DictReader((ROOT/'data/raw/InjectionLog.csv').open()):assert r['EntryID'] in text
-# Execute the published standalone Python exercise against the delivered CSV.
-manuscript=(ROOT/'learning_pack/workbook.md').read_text()
-block=next(b for b in re.findall(r'```\n(.*?)\n```',manuscript,re.S) if b.startswith('import csv'))
-import os
-prior=os.getcwd();os.chdir(folder)
-try:exec(compile(block,'PDF baseline lab','exec'),{})
-finally:os.chdir(prior)
+# Check the fixed prediction examples printed in the revised beginner lesson.
+test=[r for r in bundle['maxhub_client_churn'] if r['Year']=='2025']
+assert len(test)==30
+assert sum(r['Stayed']=='0' for r in test)==18
+counts=Counter((1-int(r['Stayed']),int(D(r['NPS'])<=6)) for r in test)
+assert [counts[k] for k in [(1,1),(0,1),(0,0),(1,0)]]==[3,4,8,15]
+for phrase in ['Edition 2', '22 separate CSV files', 'CSV_Tables/FactGLJournal.csv',
+               '36.67%', '60.00%']:
+    assert phrase in text,phrase
+assert 'filtering RecordType' not in text
 zpath=folder.parent/'Tatenda_Makuvaza_Power_BI_Learning_Pack.zip'
 with zipfile.ZipFile(zpath) as z:
-    assert len(z.namelist())==2 and z.testzip() is None
-    for p in [csvpath,pdfpath]:assert z.read(folder.name+'/'+p.name)==p.read_bytes()
+    assert len(z.namelist())==23 and z.testzip() is None
+    for p in [*files,pdfpath]:
+        assert z.read(folder.name+'/'+str(p.relative_to(folder)))==p.read_bytes()
 try:
     import pymupdf
     doc=pymupdf.open(pdfpath)
