@@ -8,6 +8,7 @@ the Primary and Secondary school registers.
   * Primary: 10 passes (TTIS-P-001 … TTIS-P-010)
   * Secondary: 22 passes (TTIS-S-001 … TTIS-S-022)
 * No fees or amounts appear on the passes.
+* Passes are valid **12 – 16 October 2026** (edit `VALIDITY` in the script to change).
 * Students with no payment recorded in the register are excluded
   (Primary: Obert Ncube, Blessed Mafukidze, Ashwin Ncube, Munenyasha D. Makawa,
   Anika Matinyarare, Valerie Matinyarare, Yusuf Matinyarare;

@@ -82,6 +82,7 @@ SCHOOL_LINE1 = "TERERAI TRENT INTERNATIONAL"
 SCHOOL_LINE2 = "SCHOOL"
 CAMPUS = "MANDARA CAMPUS"
 MOTTO = "TINOGONA"
+VALIDITY = "12 – 16 OCTOBER 2026"
 
 
 # --------------------------------------------------------------------------
@@ -430,7 +431,7 @@ def draw_pass(cv, x, y, w, h, name, section, klass, reg_no, pass_no):
     fy -= 8 * MM
 
     # photo box (right-hand side, beside the remaining fields)
-    pb_w, pb_h = 25 * MM, 31 * MM
+    pb_w, pb_h = 25 * MM, 28 * MM
     pb_x = ix + iw - 8 * MM - pb_w
     pb_y = fy - 4 * MM - pb_h
     cv.setStrokeColor(GREY)
@@ -462,11 +463,22 @@ def draw_pass(cv, x, y, w, h, name, section, klass, reg_no, pass_no):
     field("SECTION :", section)
     field("CLASS :", klass.upper())
     field("PASS No :", pass_no)
-    field("VALID :", "3RD TERM 2026")
+
+    # validity line (full width, below the photo box)
+    fy = pb_y - 6 * MM
+    cv.setFont("Helvetica-Bold", 8.5)
+    cv.setFillColor(BLUE_DK)
+    cv.drawString(label_x, fy, "VALID :")
+    cv.setFont("Helvetica-Bold", 10)
+    cv.setFillColor(black)
+    cv.drawString(val_x, fy, VALIDITY)
+    cv.setStrokeColor(GREY)
+    cv.setLineWidth(0.5)
+    cv.line(val_x, fy - 1.6 * MM, full_end, fy - 1.6 * MM)
 
     # office-use box
-    ob_h = 11 * MM
-    ob_y = min(fy, pb_y) - 3 * MM - ob_h
+    ob_h = 9 * MM
+    ob_y = fy - 5 * MM - ob_h
     cv.setStrokeColor(GREY)
     cv.setLineWidth(0.6)
     cv.rect(label_x, ob_y, iw - 16 * MM, ob_h)
