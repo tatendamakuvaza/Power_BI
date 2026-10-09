@@ -13,8 +13,8 @@ the Primary and Secondary school registers.
   (Primary: Obert Ncube, Blessed Mafukidze, Ashwin Ncube, Munenyasha D. Makawa,
   Anika Matinyarare, Valerie Matinyarare, Yusuf Matinyarare;
   Secondary: Godfrey Ncube, Maita Motsi, Valentine Musariri).
-* The school crest is redrawn as vector art inside the script (the original
-  logo file was only available as a chat screenshot).
+* The official school logo (`school-logo.png`, transparent background, derived
+  from the original `school-logo-src.jpeg`) is embedded on every pass as-is.
 
 ## Regenerate
 
