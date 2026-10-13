@@ -1,5 +1,15 @@
 # reference/ — lookup material, not reading material
 
+## Detailed teaching notes
+
+[Download the teaching-notes PDF](../Maxhub_PowerBI_Modules_01_and_02_Detailed_Teaching_Notes.pdf).
+Despite the requested combined filename, this edition contains **Module 2 only**; Module 1 was not supplied.
+The editable [Module 2 source](Maxhub_Module_02_Detailed_Teaching_Notes.md) preserves the supplied notes.
+To rebuild the PDF, install `reportlab` and run `python scripts/build_teaching_notes_pdf.py` from the repository root
+(with DejaVu fonts installed; see the script docstring).
+
+## Lookup material
+
 | File | Use it for |
 |---|---|
 | [`Cheat_Sheet.md`](Cheat_Sheet.md) | One-page summary: pipeline, DAX patterns, control checks, design rules, the numbers to memorise |
